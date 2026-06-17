@@ -159,7 +159,7 @@ export default function GuidePage() {
                 </p>
               </div>
 
-              {/* Grille des Grades - Panoramique et Fixe */}
+              {/* Grille des Grades */}
               <div className="flex-1 overflow-y-auto pr-4 custom-scrollbar pb-10">
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                   {activeInst.roles.map((role, i) => (
@@ -194,12 +194,24 @@ export default function GuidePage() {
         </section>
       </div>
 
-      {/* Footer Protocole Doré */}
       <footer className="h-12 border-t border-gold/10 flex items-center justify-center bg-black/60 relative z-20">
         <span className="text-[9px] text-gold tracking-[0.8em] uppercase font-bold">
           OUTLAND STUDIOS — PROTOCOLE ASGARM V2.0.9
         </span>
       </footer>
+
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(212, 175, 55, 0.1);
+          border-radius: 10px;
+        }
+      `}</style>
     </main>
   )
 }
