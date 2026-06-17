@@ -3,20 +3,15 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 export const Hero: React.FC = () => {
-  // ID de la vidéo Outland
   const videoId = "VbuXGlnUwtY" 
 
   return (
     <section className="relative h-screen w-full flex flex-col items-center justify-end overflow-hidden bg-background">
-      {/* Conteneur Vidéo Ultra Pro Optimisé */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {/* Bouclier d'interaction absolu : capture tout pour empêcher l'UI YouTube */}
         <div className="absolute inset-0 z-10 bg-transparent cursor-default select-none" />
         
-        {/* Iframe recadrée pour masquer les bordures et l'interface YT */}
         <div className="absolute inset-0 flex items-center justify-center scale-110">
           <iframe
             className="w-[110vw] h-[110vh] max-w-none border-none object-cover will-change-transform"
@@ -26,11 +21,9 @@ export const Hero: React.FC = () => {
           />
         </div>
         
-        {/* Dégradé de finition pour une intégration douce */}
         <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-background via-background/40 to-transparent z-[15]" />
       </div>
 
-      {/* Interface utilisateur - Bouton Unique Dégradé */}
       <div className="relative z-20 flex flex-col items-center w-full pb-16 max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,26 +32,17 @@ export const Hero: React.FC = () => {
           className="flex items-center justify-center w-full"
         >
           <button className="group relative px-16 py-6 font-bold text-[10px] tracking-[0.6em] uppercase transition-all hover:scale-105 active:scale-95 overflow-hidden">
-            {/* Background avec dégradé fusionné */}
             <div className="absolute inset-0 bg-gradient-to-r from-gold via-gold/80 to-white/10 backdrop-blur-sm" />
-            
-            {/* Bordure lumineuse */}
             <div className="absolute inset-0 border border-gold/30 group-hover:border-gold/60 transition-colors" />
-            
-            {/* Effet de brillance au survol */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
-            
             <span className="relative z-10 text-night group-hover:text-black transition-colors">
               SUIVRE LE TUTO GUIDE ARRIVANT
             </span>
-            
-            {/* Ombre portée dorée */}
             <div className="absolute -inset-1 bg-gold/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
         </motion.div>
       </div>
 
-      {/* Indicateur de défilement magique */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.2 }}

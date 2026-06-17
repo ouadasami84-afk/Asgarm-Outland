@@ -1,7 +1,7 @@
 
 "use client"
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Volume2, VolumeX } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -33,11 +33,11 @@ export const BackgroundMusic = () => {
         )}
       </AnimatePresence>
 
-      <div className="absolute inset-0 overflow-hidden w-0 h-0">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden w-0 h-0">
         <iframe
           width="1"
           height="1"
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&mute=${isPlaying ? '0' : '1'}&enablejsapi=1&vq=small`}
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&mute=${isPlaying ? '0' : '1'}&enablejsapi=1`}
           allow="autoplay"
           frameBorder="0"
           className="opacity-0 pointer-events-none"

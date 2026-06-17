@@ -16,27 +16,27 @@ const regulationSections = [
   {
     id: "hrp",
     title: "Pacte HRP",
-    subtitle: "HORS-RÔLE-PLAY",
+    subtitle: "INTÉGRITÉ TECHNIQUE",
     color: "from-sky-500/20 to-blue-600/5",
     accent: "text-sky-400",
     glow: "text-glow-sky",
     shineClass: "shine-text-blue",
-    desc: "Lois fondamentales régissant le comportement communautaire et l'intégrité technique.",
+    desc: "Lois fondamentales régissant le comportement communautaire et l'intégrité technique absolue d'Asgarm.",
     chapters: [
       {
         title: "I. Comportement et Éthique",
         rules: [
-          { name: "1.1 Respect et Toxicité", desc: "Tout propos injurieux, raciste, sexiste ou homophobe, sur n'importe quel support (jeu, Discord, MP), entraîne un bannissement définitif immédiat." },
-          { name: "1.2 Publicité et Démarchage", desc: "La promotion de projets externes ou le détournement de communauté est strictement interdit (Ban permanent)." },
-          { name: "1.3 Qualité de l'Immersion", desc: "Un matériel audio correct est exigé. Le joueur doit rester cohérent avec l'univers d'Asgarm en toute circonstance." },
-          { name: "1.4 Streamstalking et Meta", desc: "L'utilisation d'informations hors-jeu pour influencer vos actions RP est formellement interdite." }
+          { name: "1.1 Respect et Toxicité", desc: "Tout propos injurieux, raciste, sexiste ou homophobe, sur n'importe quel support (jeu, Discord, MP), entraîne un bannissement définitif immédiat sans préavis." },
+          { name: "1.2 Publicité et Démarchage", desc: "La promotion de projets externes ou le détournement de communauté est strictement interdit et lourdement sanctionné par un bannissement permanent." },
+          { name: "1.3 Qualité de l'Immersion", desc: "Un matériel audio correct et fonctionnel est exigé. Le joueur doit rester cohérent avec l'univers d'Asgarm en toute circonstance, y compris dans ses interactions hors-jeu liées au serveur." },
+          { name: "1.4 Streamstalking et Meta", desc: "L'utilisation d'informations obtenues via des diffusions en direct ou des canaux externes pour influencer vos actions RP est formellement interdite." }
         ]
       },
       {
         title: "II. Mécaniques de Jeu et Abus",
         rules: [
-          { name: "2.1 Exploitation de Bugs (Glitch)", desc: "L'utilisation de bugs de script ou de collision pour un avantage est un motif de bannissement. Tout bug doit être signalé." },
-          { name: "2.4 Logiciels Tiers", desc: "L'usage de cheats, macros ou crosshairs externes est lourdement sanctionné." }
+          { name: "2.1 Exploitation de Bugs (Glitch)", desc: "L'utilisation de bugs de script, de collision ou de toute faille technique pour obtenir un avantage est un motif de bannissement immédiat. Tout bug doit être impérativement signalé au staff." },
+          { name: "2.4 Logiciels Tiers et Cheating", desc: "L'usage de cheats, macros, crosshairs externes ou tout logiciel modifiant l'expérience de jeu originale est lourdement sanctionné par une radiation définitive." }
         ]
       }
     ]
@@ -49,31 +49,31 @@ const regulationSections = [
     accent: "text-gold",
     glow: "text-glow-gold",
     shineClass: "shine-text",
-    desc: "Recueil des lois d'immersion régissant les interactions et les arcanes du royaume.",
+    desc: "Recueil des lois d'immersion régissant les interactions, les arcanes et la destinée des citoyens dans le royaume.",
     chapters: [
       {
         title: "I. Mécaniques du Rôle",
         rules: [
-          { name: "2.2 Powergaming", desc: "Interdiction de réaliser des actions physiquement impossibles ou de forcer le RP d'un tiers sans réaction possible." },
-          { name: "2.3 Metagaming", desc: "Votre personnage ne connaît que ce qu'il a appris en jeu. Coordination externe interdite." }
+          { name: "2.2 Powergaming", desc: "Interdiction de réaliser des actions physiquement impossibles ou de forcer le RP d'un tiers sans lui laisser la possibilité de réagir ou de s'opposer de manière cohérente." },
+          { name: "2.3 Metagaming", desc: "Votre personnage ne connaît que ce qu'il a appris en jeu. La coordination externe via Discord ou tout autre support est strictement interdite lors des scènes." }
         ]
       },
       {
         title: "II. Combat et Arcanes",
         rules: [
-          { name: "3.1 Fear RP", desc: "Vous devez simuler une peur réelle face à une menace supérieure (ex: 3 contre 1)." },
-          { name: "3.2 Pain RP", desc: "Toute blessure reçue doit être jouée physiquement (chute, incapacité temporaire)." },
-          { name: "3.3 Zone de Trêve Académique", desc: "L'école est une zone de paix. Aucun combat offensif n'y est toléré sans événement spécifique." },
-          { name: "3.4 Sorts Prohibés", desc: "L'usage public de la magie noire entraîne des conséquences administratives et pénales (Prison/CK)." }
+          { name: "3.1 Fear RP", desc: "Vous devez simuler une peur réelle et proportionnée face à une menace supérieure (ex: encerclement par plusieurs ennemis armés)." },
+          { name: "3.2 Pain RP", desc: "Toute blessure reçue doit être jouée physiquement et verbalement (chutes, gémissements, incapacité temporaire de courir ou de lancer des sorts complexes)." },
+          { name: "3.3 Zone de Trêve Académique", desc: "L'école est une zone de paix et de savoir. Aucun combat offensif n'y est toléré sans un événement narratif spécifique validé par le Conclave." },
+          { name: "3.4 Sorts Prohibés", desc: "L'usage public de la magie noire ou du sang sans autorisation magistrale entraîne des conséquences administratives et pénales lourdes (Emprisonnement/CK)." }
         ]
       },
       {
         title: "III. Mort et Fin de Personnage",
         rules: [
-          { name: "4.1 État de Coma (K.O.)", desc: "Interdiction de parler ou donner des infos une fois au sol. La réanimation entraîne l'amnésie de la scène." },
-          { name: "4.2 Character Kill (CK)", desc: "La mort définitive nécessite une validation administrative ou un accord mutuel lors d'un arc narratif majeur." },
-          { name: "4.3 Revenge Kill", desc: "Interdiction de revenir sur une scène où vous avez été mis K.O. pour vous venger." },
-          { name: "4.4 Spam de Réanimation", desc: "Abuser des soins pour revenir au combat sans convalescence est interdit." }
+          { name: "4.1 État de Coma (K.O.)", desc: "Interdiction totale de parler ou de transmettre des informations une fois au sol. La réanimation par un tiers entraîne l'amnésie partielle de la scène de combat." },
+          { name: "4.2 Character Kill (CK)", desc: "La mort définitive du personnage nécessite une validation administrative préalable ou un accord mutuel lors d'un arc narratif majeur et tragique." },
+          { name: "4.3 Revenge Kill", desc: "Interdiction formelle de revenir sur une scène où vous avez été mis K.O. pour tenter de vous venger de vos agresseurs." },
+          { name: "4.4 Spam de Réanimation", desc: "Abuser des systèmes de soins pour revenir immédiatement au combat sans respecter un temps de convalescence est proscrit." }
         ]
       }
     ]
@@ -86,42 +86,39 @@ const regulationSections = [
     accent: "text-red-600",
     glow: "text-glow-red",
     shineClass: "shine-text-red",
-    desc: "Protocoles et devoirs de la direction et de la modération d'Outland.",
+    desc: "Protocoles, devoirs de réserve et obligations déontologiques de la haute direction et de la modération d'Asgarm.",
     chapters: [
       {
         title: "I. Haute Administration",
         rules: [
-          { name: "Gestion Stratégique", desc: "Prise de décisions techniques, financières et direction générale du projet." },
-          { name: "Validation Majeure", desc: "Étude et validation des dossiers de clans, entreprises et arcs narratifs globaux." },
-          { name: "Audit et Éthique", desc: "Surveillance du staff. Neutralité absolue exigée : aucun avantage en jeu pour leurs personnages." },
-          { name: "Justice Suprême", desc: "Dernier recours pour les litiges complexes et les bannissements définitifs." }
+          { name: "Gestion Stratégique", desc: "Responsabilité des décisions techniques, financières et de la direction artistique globale du projet Outland." },
+          { name: "Validation Majeure", desc: "Étude et validation exclusive des dossiers de clans, des entreprises et des grands arcs narratifs impactant le royaume." },
+          { name: "Audit et Éthique", desc: "Surveillance constante du comportement du staff. Neutralité absolue exigée : aucun avantage en jeu n'est toléré pour leurs personnages." },
+          { name: "Justice Suprême", desc: "Arbitrage final des litiges complexes et validation des bannissements définitifs." }
         ]
       },
       {
         title: "II. Community Manager (CM)",
         rules: [
-          { name: "Image de Marque", desc: "Responsable de la communication officielle sur les réseaux et le Discord." },
-          { name: "Lien Communautaire", desc: "Analyse des suggestions et médiation entre les joueurs et l'administration." },
-          { name: "Régulation Discord", desc: "Garant de la bonne tenue des canaux hors-jeu et de l'ambiance générale." },
-          { name: "Marketing", desc: "Gestion des partenariats et visibilité du serveur sur les plateformes de vote." }
+          { name: "Image de Marque", desc: "Garant de la communication officielle et de la réputation d'Asgarm sur les réseaux et le Discord." },
+          { name: "Médiation", desc: "Analyse des suggestions citoyennes et médiation constante entre les joueurs et l'administration." },
+          { name: "Régulation Discord", desc: "Responsable de la bonne tenue des canaux de discussion hors-jeu et du maintien d'une ambiance saine." }
         ]
       },
       {
         title: "III. Modération",
         rules: [
-          { name: "Support Joueurs", desc: "Gestion des tickets. Dialogue et pédagogie prioritaires avant la sanction." },
-          { name: "Surveillance Active", desc: "Patrouilles invisibles pour vérifier le respect du Fear et Pain RP." },
-          { name: "Rapports & Preuves", desc: "Chaque sanction doit être documentée avec preuves (vidéos/logs) en interne." },
-          { name: "Évaluation Test", desc: "Les Modos Tests sont en apprentissage et doivent faire valider leurs actions majeures." }
+          { name: "Support et Pédagogie", desc: "Gestion des tickets de support. Le dialogue et la pédagogie sont prioritaires avant l'application de toute sanction." },
+          { name: "Surveillance Active", desc: "Vigilance constante sur le respect des règles d'immersion (Fear et Pain RP) lors des scènes de groupe." },
+          { name: "Rapports et Preuves", desc: "Toute sanction appliquée doit être rigoureusement documentée avec des preuves tangibles (vidéos, logs) en interne." }
         ]
       },
       {
         title: "IV. Animateurs",
         rules: [
-          { name: "Dynamisation Lore", desc: "Création de mini-scènes, gestion de PNJs et de créatures pour enrichir le monde." },
-          { name: "Usage des Outils", desc: "Le menu de spawn est réservé à l'animation. Tout usage personnel est banni." },
-          { name: "Neutralité Narrative", desc: "Interdiction de favoriser une faction ou un groupe spécifique." },
-          { name: "Projets Narratifs", desc: "Les arcs majeurs doivent être soumis à l'administration avant lancement." }
+          { name: "Dynamisation du Lore", desc: "Création de scènes narratives vivantes, gestion des PNJs et des créatures magiques pour enrichir l'expérience des citoyens." },
+          { name: "Neutralité Narrative", desc: "Interdiction formelle de favoriser une faction, une race ou un groupe spécifique au détriment des autres." },
+          { name: "Usage des Outils", desc: "Les outils d'animation sont strictement réservés aux événements. Tout usage pour convenance personnelle est motif de radiation." }
         ]
       }
     ]
@@ -147,7 +144,7 @@ export default function ReglementPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               className="flex-1 flex h-full"
             >
               {regulationSections.map((section) => (
@@ -195,7 +192,7 @@ export default function ReglementPage() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5 }}
               className="flex-1 flex flex-col px-12 pb-12 overflow-y-auto custom-scrollbar"
             >
               <div className="max-w-[1600px] mx-auto w-full pt-12">
