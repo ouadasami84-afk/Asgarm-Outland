@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { useState, useEffect } from 'react'
@@ -12,7 +13,7 @@ export const Navigation: React.FC = () => {
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -25,8 +26,8 @@ export const Navigation: React.FC = () => {
   ]
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-700 ease-in-out ${
-      scrolled ? 'h-16 bg-night-deep/95 backdrop-blur-xl border-b border-gold/10' : 'h-24 bg-transparent'
+    <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ease-in-out ${
+      scrolled ? 'h-16 bg-black/95 backdrop-blur-2xl border-b border-white/5' : 'h-24 bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto h-full px-8 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
@@ -62,7 +63,7 @@ export const Navigation: React.FC = () => {
 
         <div className="flex items-center gap-6">
           <Link href="/reglement">
-            <button className="hidden sm:flex items-center px-8 py-2 border border-gold/20 text-gold text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-night transition-all duration-500 bg-night/20">
+            <button className="hidden sm:flex items-center px-8 py-2 border border-gold/20 text-gold text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-night transition-all duration-500 bg-black/40">
               Réglement
             </button>
           </Link>
@@ -81,7 +82,7 @@ export const Navigation: React.FC = () => {
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
-            className="fixed inset-0 bg-night-deep z-[70] flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 bg-black z-[70] flex flex-col items-center justify-center gap-8"
           >
             <button 
               className="absolute top-8 right-8 text-gold"

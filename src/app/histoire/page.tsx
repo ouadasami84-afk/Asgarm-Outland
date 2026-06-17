@@ -4,7 +4,7 @@
 import React, { forwardRef, useState, useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { Navigation } from '@/components/Navigation'
-import { Loader2, BookOpen, ChevronRight, ChevronLeft, Sparkles } from 'lucide-react'
+import { Loader2, ChevronRight, ChevronLeft, Sparkles } from 'lucide-react'
 import { generateMagicalLore } from '@/ai/flows/generate-magical-lore-flow'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -12,9 +12,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 const HTMLFlipBook = dynamic(() => import('react-pageflip'), { 
   ssr: false,
   loading: () => (
-    <div className="w-[600px] h-[800px] bg-[#1a0f05]/40 backdrop-blur-xl flex flex-col items-center justify-center border border-gold/10 rounded-lg shadow-2xl">
+    <div className="w-[600px] h-[800px] flex flex-col items-center justify-center">
       <Loader2 className="w-12 h-12 animate-spin text-gold/20 mb-6" />
-      <span className="text-gold/20 text-[10px] tracking-[0.8em] uppercase font-bold">Extraction du Savoir...</span>
+      <span className="text-gold/20 text-[10px] tracking-[0.8em] uppercase font-bold text-glow-gold">Infiltration du Grimoire...</span>
     </div>
   )
 })
@@ -23,7 +23,7 @@ const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: nu
   ({ children, number }, ref) => (
     <div className="page" ref={ref}>
       <div className="page-content">
-        {/* Ornements de coins de page gravés */}
+        {/* Ornements de coins de page gravés en or bruni */}
         <div className="absolute inset-0 pointer-events-none p-8">
           <div className="absolute top-8 left-8 w-16 h-16 border-t-2 border-l-2 border-[#4a3721]/15 rounded-tl-sm" />
           <div className="absolute top-8 right-8 w-16 h-16 border-t-2 border-r-2 border-[#4a3721]/15 rounded-tr-sm" />
@@ -33,9 +33,9 @@ const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: nu
 
         {/* Contenu avec animation d'apparition magique */}
         <motion.div 
-          initial={{ opacity: 0, filter: 'blur(10px)' }}
-          whileInView={{ opacity: 1, filter: 'blur(0px)' }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 10, filter: 'blur(5px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="page-inner-content relative z-10 flex flex-col h-full"
         >
           {children}
@@ -80,7 +80,7 @@ export default function HistoirePage() {
       <Navigation />
       
       {/* Halo d'Éther Pulsant derrière le Grimoire */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gold/[0.04] blur-[150px] rounded-full pointer-events-none z-0 animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gold/[0.03] blur-[150px] rounded-full pointer-events-none z-0 animate-pulse" />
       
       <div className="flex-1 flex flex-col items-center justify-center p-6 pt-24 pb-12 relative z-10">
         
@@ -89,11 +89,11 @@ export default function HistoirePage() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
-          className="text-center mb-12 max-w-4xl"
+          className="text-center mb-10 max-w-4xl"
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-[1px] w-12 bg-gold/20" />
-            <span className="text-gold text-[9px] tracking-[1em] uppercase font-bold text-glow-gold">Archives Souveraines</span>
+            <span className="text-gold text-[9px] tracking-[1.2em] uppercase font-bold text-glow-gold">Archives Souveraines</span>
             <div className="h-[1px] w-12 bg-gold/20" />
           </div>
           <h1 className="text-4xl md:text-5xl font-headline text-white uppercase tracking-tighter mb-4 leading-tight">
@@ -114,18 +114,18 @@ export default function HistoirePage() {
           {/* Navigation Subtile */}
           <button 
             onClick={() => bookRef.current.pageFlip().flipPrev()}
-            className="absolute -left-20 top-1/2 -translate-y-1/2 p-4 text-gold/20 hover:text-gold transition-colors hidden xl:block"
+            className="absolute -left-24 top-1/2 -translate-y-1/2 p-4 text-gold/10 hover:text-gold transition-all hidden xl:block z-30"
           >
-            <ChevronLeft className="w-12 h-12" />
+            <ChevronLeft className="w-14 h-14" />
           </button>
           <button 
             onClick={() => bookRef.current.pageFlip().flipNext()}
-            className="absolute -right-20 top-1/2 -translate-y-1/2 p-4 text-gold/20 hover:text-gold transition-colors hidden xl:block"
+            className="absolute -right-24 top-1/2 -translate-y-1/2 p-4 text-gold/10 hover:text-gold transition-all hidden xl:block z-30"
           >
-            <ChevronRight className="w-12 h-12" />
+            <ChevronRight className="w-14 h-14" />
           </button>
 
-          <div className="flip-book-container relative shadow-[0_50px_100px_rgba(0,0,0,0.8)] border-4 border-[#2a1a0a] rounded-sm overflow-hidden bg-[#2a1a0a]">
+          <div className="flip-book-container relative shadow-[0_60px_120px_rgba(0,0,0,1)] border-[6px] border-[#2a1a0a] rounded-sm overflow-hidden bg-[#2a1a0a]">
             <HTMLFlipBook
               width={550}
               height={750}
@@ -134,7 +134,7 @@ export default function HistoirePage() {
               maxWidth={1000}
               minHeight={400}
               maxHeight={1533}
-              maxShadowOpacity={0.6}
+              maxShadowOpacity={0.7}
               showCover={false}
               mobileScrollSupport={true}
               className="flip-book"
@@ -278,7 +278,7 @@ export default function HistoirePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.4 }}
           transition={{ delay: 2 }}
-          className="mt-12 flex items-center gap-6"
+          className="mt-10 flex items-center gap-6"
         >
           <div className="h-[1px] w-12 bg-gold/20" />
           <span className="text-gold text-[8px] tracking-[0.6em] uppercase font-bold">Tournez les pages pour explorer l'histoire</span>
@@ -286,8 +286,8 @@ export default function HistoirePage() {
         </motion.div>
       </div>
 
-      <footer className="h-16 border-t border-gold/10 flex items-center justify-center bg-black/80 backdrop-blur-md relative z-20">
-        <span className="text-[10px] text-gold tracking-[1.4em] uppercase font-bold text-glow-gold">
+      <footer className="h-12 border-t border-gold/10 flex items-center justify-center bg-black/90 relative z-20">
+        <span className="text-[9px] text-gold tracking-[1em] uppercase font-bold text-glow-gold">
           OUTLAND STUDIOS — PROTOCOLE ASGARM V2.0.9
         </span>
       </footer>
