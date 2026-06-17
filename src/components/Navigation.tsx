@@ -32,7 +32,7 @@ export const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto h-full px-8 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
           <div className="flex flex-col">
-            <span className="font-headline text-lg tracking-[0.4em] text-white font-bold uppercase leading-none group-hover:text-gold transition-colors duration-500">
+            <span className="font-headline text-lg tracking-[0.4em] text-white font-bold uppercase leading-none group-hover:text-gold transition-colors duration-500 text-glow-gold">
               OUTLAND
             </span>
             <span className="text-gold/60 text-[8px] tracking-[0.6em] uppercase font-medium mt-1">
@@ -47,12 +47,12 @@ export const Navigation: React.FC = () => {
               key={item.name}
               href={item.href}
               className={`relative text-[10px] font-bold tracking-[0.3em] uppercase group transition-all duration-300 ${
-                pathname === item.href ? 'text-gold' : 'text-silver/40 hover:text-gold'
+                pathname === item.href ? 'text-gold text-glow-gold' : 'text-silver/40 hover:text-gold'
               }`}
             >
               {item.name}
               <motion.span 
-                className={`absolute -bottom-2 left-0 h-[1px] bg-gold`}
+                className={`absolute -bottom-2 left-0 h-[1px] bg-gold shadow-[0_0_8px_rgba(212,175,55,0.4)]`}
                 initial={false}
                 animate={{ width: pathname === item.href ? '100%' : '0%' }}
                 transition={{ duration: 0.3 }}

@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 const HTMLFlipBook = dynamic(() => import('react-pageflip'), { 
   ssr: false,
   loading: () => (
-    <div className="w-[600px] h-[820px] flex flex-col items-center justify-center">
+    <div className="w-[600px] h-[850px] flex flex-col items-center justify-center">
       <Loader2 className="w-12 h-12 animate-spin text-gold/20 mb-6" />
       <span className="text-gold/20 text-[10px] tracking-[0.8em] uppercase font-bold text-glow-gold">Infiltration du Grimoire...</span>
     </div>
@@ -93,8 +93,8 @@ export default function HistoirePage() {
         >
           <div className="flip-book-container relative shadow-[0_40px_100px_rgba(0,0,0,0.8)] border-[2px] border-[#1a120a] rounded-sm overflow-hidden bg-[#2a1a0a]">
             <HTMLFlipBook
-              width={550}
-              height={750}
+              width={600}
+              height={850}
               size="stretch"
               minWidth={315}
               maxWidth={1200}
@@ -121,10 +121,10 @@ export default function HistoirePage() {
               <Page number={1}>
                 <div className="h-full flex flex-col items-center pt-6">
                   <BookIcon className="w-6 h-6 text-[#4a3721]/20 mb-6" />
-                  <h2 className="text-base font-headline text-[#4a3721] uppercase tracking-[0.4em] mb-8 border-b border-[#4a3721]/10 pb-4 w-full text-center">Sommaire</h2>
-                  <div className="flex flex-col gap-3 w-full px-6">
+                  <h2 className="text-sm font-headline text-[#4a3721] uppercase tracking-[0.4em] mb-6 border-b border-[#4a3721]/10 pb-4 w-full text-center">Sommaire</h2>
+                  <div className="flex flex-col gap-2 w-full px-6">
                     {chapters.map((ch, i) => (
-                      <div key={i} className="flex items-baseline justify-between group cursor-pointer" onClick={() => bookRef.current.pageFlip().flip(ch.page - 1)}>
+                      <div key={i} className="flex items-baseline justify-between group cursor-pointer py-1" onClick={() => bookRef.current.pageFlip().flip(ch.page - 1)}>
                         <span className="text-[10px] font-serif uppercase tracking-widest text-[#4a3721]/60 group-hover:text-[#4a3721] transition-colors">{ch.title}</span>
                         <div className="flex-1 border-b border-dotted border-[#4a3721]/10 mx-2" />
                         <span className="text-[10px] font-serif text-[#4a3721]/40">{ch.page}</span>
@@ -187,7 +187,7 @@ export default function HistoirePage() {
                 <h2 className="text-[10px] font-headline text-[#4a3721]/60 uppercase tracking-[0.3em] mb-4 border-b border-[#4a3721]/5 pb-2">Chapitre VI</h2>
                 <h3 className="text-base font-headline text-[#4a3721] mb-4">Le Serment de Sang</h3>
                 <p className="text-[#3d2b19] first-letter:text-4xl first-letter:font-headline first-letter:mr-2 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-relaxed text-justify text-[11px]">
-                  Même les clans les plus reclus furent touchés. Les Vampires du Domaine Carmin, dirigés par le noble et énigmatique Lord Valerius, découvrirent que leur affinité innée avec le sang pouvait être canalisée à travers des baguettes. Au lieu de prendre la vie, ils apprirent à la manipuler pour la restaurer. Ils devinrent les plus grands guérisseurs de guerre, capables de refermer les blessures les plus mortelles par des sortilèges de sang complexes, des anges improbables sur un champ de bataille infernal. Leur intervention changea le cours de nombreuses batailles, sauvant d'innombrables vies et forgeant leur nouvelle réputation de sauveurs inattendus.
+                  Même les clans les plus reclus furent touchés. Les Vampires du Domaine Carmin, à la peau sombre comme la nuit ou rouge comme le sang, dirigés par le noble et énigmatique Lord Valerius, découvrirent que leur affinité innée avec le sang pouvait être canalisée à travers des baguettes. Au lieu de prendre la vie, ils apprirent à la manipuler pour la restaurer. Ils devinrent les plus grands guérisseurs de guerre, capables de refermer les blessures les plus mortelles par des sortilèges de sang complexes, des anges improbables sur un champ de bataille infernal. Leur intervention changea le cours de nombreuses batailles, sauvant d'innombrables vies et forgeant leur nouvelle réputation de sauveurs inattendus.
                 </p>
               </Page>
 
@@ -205,7 +205,7 @@ export default function HistoirePage() {
                 <h2 className="text-[10px] font-headline text-[#4a3721]/60 uppercase tracking-[0.3em] mb-4 border-b border-[#4a3721]/5 pb-2">Chapitre VIII</h2>
                 <h3 className="text-base font-headline text-[#4a3721] mb-4">Le Crépuscule des Cavaliers</h3>
                 <p className="text-[#3d2b19] first-letter:text-4xl first-letter:font-headline first-letter:mr-2 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-relaxed text-justify text-[11px]">
-                  La guerre changea de visage. L'avancée des Cavaliers fut stoppée dans le sang et la cendre. La bataille finale eut lieu sur les Plaines Calcinées. Le Seigneur des Cavaliers affronta Alaric en duel. Alors que le roi humain était sur le point de succomber, Thorgrim le Nain s'interposa, son corps et sa volonté de fer encaissant un sort mortel destiné à Alaric. Ce sacrifice héroïque offrit au roi une précieuse seconde. D'un cri de rage, il canalisa toute sa puissance dans sa baguette de chêne et déchaîna un sort qui anéantit le tyran. Les Cavaliers étaient vaincus, mais la faille dans le ciel demeurait.
+                  La guerre changea de visage. L'avancée des Cavaliers fut stoppée dans le sang et la cendre. La bataille finale eut lieu sur les Plaines Calcinées. Le Seigneur des Cavaliers, une entité d'une puissance colossale, affronta Alaric en duel. Alors que le roi humain était sur le point de succomber, Thorgrim le Nain s'interposa, son corps et sa volonté de fer encaissant un sort mortel destiné à Alaric. Ce sacrifice héroïque offrit au roi une précieuse seconde. D'un cri de rage, il canalisa toute sa puissance dans sa baguette de chêne et déchaîna un sort qui anéantit le tyran. Les Cavaliers étaient vaincus, mais la faille dans le ciel demeurait, une blessure béante prête à tout consumer.
                 </p>
               </Page>
 
@@ -214,7 +214,7 @@ export default function HistoirePage() {
                 <h2 className="text-[10px] font-headline text-[#4a3721]/60 uppercase tracking-[0.3em] mb-4 border-b border-[#4a3721]/5 pb-2">Chapitre IX</h2>
                 <h3 className="text-base font-headline text-[#4a3721] mb-4">Le Nouvel Équilibre</h3>
                 <p className="text-[#3d2b19] first-letter:text-4xl first-letter:font-headline first-letter:mr-2 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-relaxed text-justify text-[11px]">
-                  La guerre était gagnée, mais le monde était fracturé. Sans la sagesse millénaire des Elfes pour les guider, beaucoup de nouveaux manieurs de magie furent séduits par la puissance brute. De cette ambition naquit le Conclave des Ombres, un véritable royaume du mal cherchant à achever ce que les envahisseurs avaient commencé. Pour contrer cette nouvelle menace, l'Académie d'Asgarm et le Conclave des Arcanes furent fondés. Un nouvel équilibre précaire s'est installé. L'Académie forme une nouvelle génération, espérant qu'ils choisiront la lumière. Les pages de ce grimoire s'arrêtent ici, car c'est à vous d'écrire la suite.
+                  La guerre était gagnée, mais le monde était fracturé. Le don de Melfetys avait sauvé Asgarm, mais il avait aussi semé les graines du chaos. Sans la sagesse millénaire des Elfes pour les guider, beaucoup de nouveaux manieurs de magie furent séduits par la puissance brute et la corruption. Fascinés par le pouvoir des Cavaliers de la mort, ils se tournèrent vers les arts les plus sombres. De cette ambition naquit le Conclave des Ombres, un véritable royaume du mal cherchant à achever ce que les envahisseurs avaient commencé. Pour contrer cette nouvelle menace et guider les égarés, deux institutions furent fondées : l'Académie d'Asgarm et le Conclave des Arcanes, une pour enseigner, l'autre pour faire respecter la loi. Un nouvel équilibre précaire s'est installé. Le Conclave des Arcanes lutte pour la paix, tandis que celui des Ombres étend son influence. L'Académie forme une nouvelle génération, espérant qu'ils choisiront la lumière. Les pages de ce grimoire s'arrêtent ici, car c'est à vous, héros d'Asgarm, d'écrire la suite. Votre histoire commence maintenant.
                 </p>
               </Page>
             </HTMLFlipBook>
@@ -248,7 +248,7 @@ export default function HistoirePage() {
           position: relative;
         }
         .page-content { 
-          padding: 2rem 2rem; 
+          padding: 2.5rem 2.5rem; 
           height: 100%;
           display: flex;
           flex-direction: column;
