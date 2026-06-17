@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react'
@@ -26,36 +25,36 @@ const regulationSections = [
       {
         title: "I. Éthique et Comportement Social",
         rules: [
-          { name: "1.1 Respect Universel", desc: "Tout propos injurieux, raciste, sexiste, homophobe ou discriminant, quel que soit le support (In-Game, Discord, MP), entraînera un bannissement définitif immédiat." },
-          { name: "1.2 Harcèlement et Malveillance", desc: "Le harcèlement moral ou sexuel est puni d'une radiation permanente. Nous appliquons une tolérance zéro pour toute forme de harcèlement ciblé." },
-          { name: "1.3 Publicité et Parasitisme", desc: "La promotion de projets externes, le démarchage en MP ou le détournement de communauté sont strictement interdits et lourdement sanctionnés." },
-          { name: "1.4 Image de la Souveraineté", desc: "Tout comportement nuisant gravement à la réputation d'Outland sur les réseaux sociaux est passible de sanctions administratives majeures." }
+          { name: "1.1 Respect Universel", desc: "Tout propos injurieux, raciste, sexiste, homophobe ou discriminant, quel que soit le support, entraînera un bannissement définitif." },
+          { name: "1.2 Harcèlement et Malveillance", desc: "Le harcèlement moral ou sexuel est puni d'une radiation permanente sans appel possible." },
+          { name: "1.3 Publicité et Parasitisme", desc: "La promotion de projets externes ou le détournement de communauté est strictement interdit." },
+          { name: "1.4 Image de la Souveraineté", desc: "Tout comportement nuisant gravement à la réputation d'Outland sur les réseaux sociaux est passible de sanctions." }
         ]
       },
       {
         title: "II. Intégrité Technique et Sécurité",
         rules: [
-          { name: "2.1 Exploitation de Failles", desc: "L'utilisation intentionnelle de bugs, de glitches de collision, de scripts ou de duplications est un motif de bannissement permanent immédiat." },
-          { name: "2.2 Logiciels Tiers et Tricherie", desc: "L'usage de cheats, macros, crosshairs externes, multi-box ou tout logiciel modifiant les fichiers du jeu est formellement interdit." },
-          { name: "2.3 VPN et Dissimulation", desc: "L'utilisation de VPN pour contourner une sanction ou masquer son identité technique est prohibée et entraîne la radiation de tous les comptes liés." },
-          { name: "2.4 Transactions Hors-Cadre (RMT)", desc: "La vente ou l'achat d'objets, de monnaie éthérée ou de comptes contre de l'argent réel est strictement interdite." }
+          { name: "2.1 Exploitation de Failles", desc: "L'usage de bugs, glitches de collision, scripts ou duplications entraîne un bannissement permanent immédiat." },
+          { name: "2.2 Logiciels Tiers et Tricherie", desc: "Cheats, macros, crosshairs externes ou modifications de fichiers de jeu sont formellement interdits." },
+          { name: "2.3 VPN et Dissimulation", desc: "L'usage de VPN pour masquer son identité technique ou contourner une sanction entraîne la radiation globale." },
+          { name: "2.4 Multi-Comptes", desc: "Posséder plusieurs identités techniques sur le royaume est prohibé sauf autorisation magistrale exceptionnelle." }
         ]
       },
       {
-        title: "III. Meta-Gaming et Flux de Diffusion",
+        title: "III. Meta-Gaming et Immersion Technique",
         rules: [
-          { name: "3.1 Mix-RP et Fusion d'Identités", desc: "Il est interdit de mélanger des informations Hors-RP avec vos actions en jeu. Votre personnage ne connaît que ce qu'il a vécu en immersion." },
-          { name: "3.2 Streamstalking et Sniping", desc: "L'utilisation des flux de diffusion pour localiser ou influencer un joueur est sanctionnée par un bannissement définitif sans préavis." },
-          { name: "3.3 Meta-Gaming en Direct", desc: "L'interaction avec le chat de diffusion ne doit jamais influencer vos décisions RP. Le diffuseur doit ignorer toute information avantageuse." },
-          { name: "3.4 Canaux HRP In-Game", desc: "L'usage excessif du canal /me ou /do pour des informations non-visuelles ou pour forcer une scène sans réaction possible est interdit." }
+          { name: "3.1 Mix-RP et Fusion", desc: "Mélanger des informations Hors-RP avec vos actions en jeu est une faute grave. Votre personnage ignore tout du Discord ou des streams." },
+          { name: "3.2 Streamstalking et Sniping", desc: "Utiliser un flux de diffusion pour localiser ou influencer un citoyen est puni d'un bannissement définitif." },
+          { name: "3.3 Force RP", desc: "Il est interdit d'imposer une scène à un autre joueur sans lui laisser de porte de sortie narrative cohérente." },
+          { name: "3.4 Revenge Kill", desc: "Interdiction formelle de revenir sur une scène ou de se venger d'un joueur après avoir été mis K.O. ou être mort." }
         ]
       },
       {
-        title: "IV. Identité et Cohérence",
+        title: "IV. Identité et Nomenclature",
         rules: [
-          { name: "4.1 Nomenclature de Prestige", desc: "Le nom doit être réaliste et cohérent avec le lore d'Asgarm. Les noms de célébrités, jeux de mots ou pseudonymes ridicules sont bannis." },
-          { name: "4.2 Apparence et Cosmétiques", desc: "Votre tenue doit correspondre à votre statut, votre métier et votre race. L'usage de skins non-immersifs est passible de radiation." },
-          { name: "4.3 Background et Cohérence", desc: "Chaque citoyen doit posséder une histoire validée justifiant logiquement ses compétences et son comportement actuel." }
+          { name: "4.1 Noms de Prestige", desc: "Le nom doit être réaliste et cohérent avec le lore d'Asgarm. Pseudonymes ridicules ou noms de célébrités sont bannis." },
+          { name: "4.2 Apparence Immersive", desc: "Votre tenue doit correspondre à votre race, métier et statut. Les skins non-immersifs sont passibles de radiation." },
+          { name: "4.3 Reconnaissance Vocale", desc: "Si un citoyen porte un masque intégral, la reconnaissance vocale est interdite à moins d'une connaissance intime préalable." }
         ]
       }
     ]
@@ -73,36 +72,36 @@ const regulationSections = [
       {
         title: "I. Fondamentaux de l'Existence",
         rules: [
-          { name: "1.1 Fear RP (Valeur de la Vie)", desc: "Vous devez simuler une peur réelle face à une menace sérieuse. Votre vie est unique. On ne provoque pas une autorité armée sans protection." },
-          { name: "1.2 Pain RP (Jeu de la Souffrance)", desc: "Vous devez jouer vos blessures. Un impact de sort ou une blessure physique nécessite une réaction appropriée (incapacité de courir, cris, boitements)." },
-          { name: "1.3 Win RP et Fair-Play", desc: "Le but n'est pas de gagner mais de créer une scène mémorable. Accepter la défaite fait partie intégrante de l'excellence narrative." },
-          { name: "1.4 Power-Gaming", desc: "Interdiction de réaliser des actions impossibles (ex: courir avec un objet massif, lancer des sorts sans focus ou ignorer les limites éthérées)." }
+          { name: "1.1 Fear RP", desc: "Simulez une peur réelle face à une menace sérieuse. Votre vie est unique et précieuse." },
+          { name: "1.2 Pain RP", desc: "Jouez vos blessures. Un impact de sort ou une blessure physique nécessite une réaction appropriée immédiate." },
+          { name: "1.3 Win RP et Fair-Play", desc: "Le but est de créer une scène mémorable, pas de gagner. Accepter la défaite est une marque de qualité." },
+          { name: "1.4 No-BRP", desc: "Interdiction de sauter de manière répétitive ou d'utiliser la magie pour contourner des obstacles physiques de façon non-RP." }
         ]
       },
       {
         title: "II. L'Art des Arcanes et des Sorts",
         rules: [
-          { name: "2.1 Incantation et Focus", desc: "Chaque sortilège majeur nécessite un temps de concentration. Le spam de sorts sans RP verbal (formule) ou gestuel est strictement prohibé." },
-          { name: "2.2 Respect des Effets Subis", desc: "Si vous subissez un sort de contrôle (immobilisation, aveuglement), vous devez impérativement jouer l'effet jusqu'à sa dissipation totale." },
-          { name: "2.3 Magie Prohibée", desc: "L'usage de la magie noire ou du sang est un crime capital. Son utilisation entraîne des conséquences RP définitives (Exil ou Mort)." },
-          { name: "2.4 Zones de Paix Sacrées", desc: "L'Académie et les sanctuaires sont des zones de trêve absolue. Aucun combat offensif n'y est toléré." }
+          { name: "2.1 Incantation et Focus", desc: "Chaque sort majeur nécessite une formule vocale et un temps de concentration. Le spam de sorts est prohibé." },
+          { name: "2.2 Respect des Effets Subis", desc: "Vous devez impérativement jouer les effets de contrôle (étourdissement, aveuglement) jusqu'à leur dissipation totale." },
+          { name: "2.3 Vol de Baguette", desc: "Le vol d'une baguette magique est une scène majeure. Elle doit être justifiée par un background ou une raison RP sérieuse." },
+          { name: "2.4 Magie Interdite", desc: "L'usage de la magie noire ou du sang est un crime capital entraînant l'exil ou le Character Kill (CK) après jugement." }
         ]
       },
       {
         title: "III. Conflits, Justice et Destinée",
         rules: [
-          { name: "3.1 Activités Criminelles", desc: "Limitées à deux actions majeures par jour par groupe (braquages). Le vol d'objets uniques nécessite un dossier validé par les Ombres." },
-          { name: "3.2 Enlèvements", desc: "La durée maximale est de 2 heures. Le motif doit être légitime. Le harcèlement ou la torture gratuite sont strictement interdits." },
-          { name: "3.3 État de Coma (K.O.)", desc: "Interdiction de parler une fois au sol. Vous ne gardez aucun souvenir de la scène si vous n'êtes pas réanimé par un guérisseur sur place." },
-          { name: "3.4 Character Kill (CK)", desc: "La mort définitive nécessite une validation administrative. Le CK clôture l'histoire de votre personnage et réinitialise vos biens." }
+          { name: "3.1 Activités Criminelles", desc: "Limitées à deux actions majeures par jour par groupe. Les scènes de vol doivent être dynamiques et narratives." },
+          { name: "3.2 Otages et Négociations", desc: "La vie des otages doit être la priorité. Les demandes doivent être réalistes et cohérentes avec les moyens du Conclave." },
+          { name: "3.3 État de Coma (K.O.)", desc: "Interdiction de parler au sol. Amnésie totale de la scène si vous n'êtes pas réanimé par un guérisseur." },
+          { name: "3.4 Character Kill (CK)", desc: "La mort définitive clôture l'histoire de votre personnage. Elle nécessite une validation administrative ou un dossier solide." }
         ]
       },
       {
         title: "IV. Vie Civile et Économie",
         rules: [
-          { name: "4.1 Arnaques et Escroqueries", desc: "Les arnaques financières sont plafonnées à 5000 pièces d'or. Les arnaques portant sur des reliques ou domaines sont interdites." },
-          { name: "4.2 Emplois Légaux", desc: "Tout citoyen doit justifier d'une activité légale. Le travail au noir pour des clans est traqué par les Protecteurs des Arcanes." },
-          { name: "4.3 Valeur des Contrats", desc: "Les contrats signés en jeu ont une valeur juridique contraignante. Le non-respect entraîne des saisies de biens par décret royal." }
+          { name: "4.1 Arnaques et Escroqueries", desc: "Plafonnées à 5000 pièces d'or. Les arnaques sur des reliques ou domaines sont interdites sans dossier staff." },
+          { name: "4.2 Emplois et Contrats", desc: "Les contrats signés en jeu ont une valeur juridique. Le non-respect entraîne des saisies par décret royal." },
+          { name: "4.3 Travail au Noir", desc: "Exercer une activité lucrative sans licence officielle du Conclave est traqué par les Protecteurs des Arcanes." }
         ]
       }
     ]
@@ -120,17 +119,17 @@ const regulationSections = [
       {
         title: "I. Déontologie et Exemplarité",
         rules: [
-          { name: "1.1 Neutralité Absolue", desc: "Le membre du staff doit rester impartial. Aucun avantage n'est accordé à un groupe, une faction ou un ami personnel." },
-          { name: "1.2 Devoir de Réserve", desc: "Les informations confidentielles (événements, logs, dossiers) ne doivent jamais être divulguées sous peine de radiation immédiate." },
-          { name: "1.3 Excellence du Roleplay", desc: "Un représentant de la Magistrature doit incarner la perfection du RP. Toute erreur est sanctionnée plus lourdement." }
+          { name: "1.1 Neutralité Absolue", desc: "Aucun avantage n'est accordé à un groupe ou une faction. Le staff est le garant de l'équité." },
+          { name: "1.2 Devoir de Réserve", desc: "Les informations confidentielles et les futurs événements ne doivent jamais être divulgués." },
+          { name: "1.3 Excellence du Roleplay", desc: "Un Magistrat doit incarner la perfection du RP et servir de modèle aux nouveaux citoyens." }
         ]
       },
       {
-        title: "II. Protocoles de Support",
+        title: "II. Protocoles de Sanction",
         rules: [
-          { name: "2.1 Pédagogie", desc: "Sauf faute grave, l'explication des règles prime sur la sanction afin de favoriser l'apprentissage des nouveaux citoyens." },
-          { name: "2.2 Faisceau de Preuves", desc: "Toute sanction doit être justifiée par des logs ou captures d'écran archivés systématiquement." },
-          { name: "2.3 Gestion des Tickets", desc: "Le staff répond avec courtoisie. L'irrespect envers un Magistrat est sanctionnable pour entrave administrative." }
+          { name: "2.1 Faisceau de Preuves", desc: "Toute sanction doit être appuyée par des logs ou captures d'écran archivés systématiquement." },
+          { name: "2.2 Gradation des Peines", desc: "Pédagogie, Avertissement (Warn), Kick, puis Bannissement selon la gravité et la récidive." },
+          { name: "2.3 Gestion des Tickets", desc: "Le support doit être traité avec courtoisie. L'irrespect envers un Magistrat est une faute grave." }
         ]
       }
     ]
