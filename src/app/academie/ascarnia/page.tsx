@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react'
@@ -12,7 +11,7 @@ const houses = [
     name: "Maison Roselya",
     trait: "LA GRÂCE",
     desc: "Pour ceux dont l'esprit est pur et la volonté élégante. Ils excellent dans les sorts de protection et de cohésion.",
-    color: "from-pink-400 to-rose-600"
+    color: "from-yellow-400 to-amber-600"
   },
   {
     name: "Maison Verdantis",
@@ -32,6 +31,21 @@ const houses = [
     desc: "Le berceau des esprits ardents. Ils incarnent la force vitale et la détermination nécessaire pour forger le destin.",
     color: "from-red-500 to-red-800"
   }
+]
+
+const academicGrades = [
+  "DIRECTEUR D’ASGARM",
+  "DIRECTEUR ADJOINT",
+  "PROFESSEUR CONTRE LA MAGIE NOIRE",
+  "PROFESSEUR DE CRÉATURES MAGIQUES",
+  "PROFESSEUR DE SORTILÈGES",
+  "PROFESSEUR D’ALCHIMIE / BOTANIQUE",
+  "PROFESSEUR DE DIVINATION",
+  "PROFESSEUR DE VOL",
+  "PROFESSEUR HISTOIRE DE LA MAGIE",
+  "PROFESSEUR DE MORPHOLOGIE",
+  "PROFESSEUR ASTROLOGIE",
+  "SURVEILLANT ASGARM"
 ]
 
 export default function AscarniaPage() {
@@ -126,6 +140,29 @@ export default function AscarniaPage() {
                   <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${house.color}`} />
                   <span className="text-[8px] text-sky-400/40 uppercase tracking-widest font-bold">Héritage de {house.name.replace('Maison ', '')}</span>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Section Corps Enseignant */}
+        <section className="mb-24">
+          <div className="flex items-center gap-4 mb-12">
+            <h2 className="text-4xl font-headline text-white uppercase tracking-tight">Hiérarchie Académique</h2>
+            <div className="flex-1 h-[1px] bg-sky-500/10" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {academicGrades.map((grade, i) => (
+              <motion.div
+                key={grade}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.05 }}
+                className="p-6 bg-sky-950/5 border border-sky-500/10 hover:border-sky-400/30 transition-all group"
+              >
+                <span className="text-[8px] text-sky-500/40 font-bold uppercase tracking-[0.3em] mb-2 block">Grade Officiel {i + 1}</span>
+                <h4 className="text-sm font-headline text-white uppercase tracking-wider group-hover:text-sky-400 transition-colors">{grade}</h4>
               </motion.div>
             ))}
           </div>

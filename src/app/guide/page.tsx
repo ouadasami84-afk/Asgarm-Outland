@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react'
@@ -13,18 +12,18 @@ const institutions = [
     focus: "ÉDUCATION & DISCIPLINE",
     desc: "L'élite intellectuelle et magique d'Asgarm. Ici, l'avenir du royaume est forgé dans la rigueur et la maîtrise des arts occultes.",
     roles: [
-      { title: "Directeur d'Asgarm", rank: "HAUTE AUTORITÉ", function: "Souveraineté totale. Gestion du corps enseignant, validation des accréditations et arbitrage final des sanctions." },
-      { title: "Directeur Adjoint", rank: "COMMANDEMENT", function: "Coordination opérationnelle. Gestion des examens, supervision administrative et maintien de l'ordre général." },
-      { title: "Prof. Contre la Magie Noire", rank: "DÉFENSE", function: "Enseignement des protections. Autorisé à organiser des duels de défense et à sanctionner les abus de magie offensive." },
-      { title: "Prof. Créatures Magiques", rank: "BESTIAIRE", function: "Étude des écosystèmes et dressage. Gestion des entités sauvages et sécurité des expéditions éducatives." },
-      { title: "Prof. Sortilèges", rank: "CHARMES", function: "Théorie et pratique des enchantements. Certification des paliers de puissance magique des citoyens d'Asgarm." },
-      { title: "Prof. Alchimie / Botanique", rank: "PHARMACOPÉE", function: "Synthèse de potions et étude des plantes. Gestion des serres royales et de la sécurité chimique du royaume." },
-      { title: "Prof. Divination", rank: "PRÉSAGES", function: "Exploration des flux de l'Ether. Guidance des élèves dans la compréhension des signes et de leur destinée." },
-      { title: "Professeur de Vol", rank: "AÉRONAUTIQUE", function: "Maîtrise du pilotage de balais et montures. Surveillance des périmètres aériens et gestion des tournois de vol." },
-      { title: "Prof. Histoire de la Magie", rank: "ARCHIVES", function: "Étude des traités anciens et du passé d'Asgarm. Préservation de la chronologie et des racines du royaume." },
-      { title: "Prof. de Morphologie", rank: "TRANSFORMATION", function: "Maîtrise de la théorie du corps magique. Enseignement des métamorphoses physiques et structurelles." },
-      { title: "Prof. Astrologie", rank: "COSMOS", function: "Lecture des constellations et des flux stellaires. Rituels célestes et synchronisation avec les astres." },
-      { title: "Surveillant Asgarm", rank: "ORDRE", function: "Discipline des couloirs et rondes nocturnes. Application immédiate des sanctions et maintien de la paix académique." }
+      { title: "DIRECTEUR D’ASGARM", rank: "HAUTE AUTORITÉ", function: "Souveraineté totale. Gestion du corps enseignant, validation des accréditations et arbitrage final des sanctions." },
+      { title: "DIRECTEUR ADJOINT", rank: "COMMANDEMENT", function: "Coordination opérationnelle. Gestion des examens, supervision administrative et maintien de l'ordre général." },
+      { title: "PROFESSEUR CONTRE LA MAGIE NOIRE", rank: "DÉFENSE", function: "Enseignement des protections. Autorisé à organiser des duels de défense et à sanctionner les abus de magie offensive." },
+      { title: "PROFESSEUR DE CRÉATURES MAGIQUES", rank: "BESTIAIRE", function: "Étude des écosystèmes et dressage. Gestion des entités sauvages et sécurité des expéditions éducatives." },
+      { title: "PROFESSEUR DE SORTILÈGES", rank: "CHARMES", function: "Théorie et pratique des enchantements. Certification des paliers de puissance magique des citoyens d'Asgarm." },
+      { title: "PROFESSEUR D’ALCHIMIE / BOTANIQUE", rank: "PHARMACOPÉE", function: "Synthèse de potions et étude des plantes. Gestion des serres royales et de la sécurité chimique du royaume." },
+      { title: "PROFESSEUR DE DIVINATION", rank: "PRÉSAGES", function: "Exploration des flux de l'Ether. Guidance des élèves dans la compréhension des signes et de leur destinée." },
+      { title: "PROFESSEUR DE VOL", rank: "AÉRONAUTIQUE", function: "Maîtrise du pilotage de balais et montures. Surveillance des périmètres aériens et gestion des tournois de vol." },
+      { title: "PROFESSEUR HISTOIRE DE LA MAGIE", rank: "ARCHIVES", function: "Étude des traités anciens et du passé d'Asgarm. Préservation de la chronologie et des racines du royaume." },
+      { title: "PROFESSEUR DE MORPHOLOGIE", rank: "TRANSFORMATION", function: "Maîtrise de la théorie du corps magique. Enseignement des métamorphoses physiques et structurelles." },
+      { title: "PROFESSEUR ASTROLOGIE", rank: "COSMOS", function: "Lecture des constellations et des flux stellaires. Rituels célestes et synchronisation avec les astres." },
+      { title: "SURVEILLANT ASGARM", rank: "ORDRE", function: "Discipline des couloirs et rondes nocturnes. Application immédiate des sanctions et maintien de la paix académique." }
     ]
   },
   {
@@ -33,9 +32,11 @@ const institutions = [
     focus: "JUSTICE & LÉGISLATION",
     desc: "Le garant de l'ordre public et de la loi régalienne d'Asgarm. Une structure de fer pour un royaume uni.",
     roles: [
-      { title: "Grand Sorcier", rank: "LÉGISLATION", function: "Haute magistrature, rédaction du code législatif régalien et arbitrage des contentieux territoriaux." },
-      { title: "Maître Sorcier", rank: "ADMINISTRATION", function: "Architecture administrative, gestion des ressources publiques et coordination des services civils." },
-      { title: "Protecteur", rank: "FORCE PUBLIQUE", function: "Maintien de la paix, application du droit constitutionnel et protection des intérêts vitaux." }
+      { title: "GRAND SORCIER DU CONCLAVE", rank: "LÉGISLATION", function: "Haute magistrature, rédaction du code législatif régalien et arbitrage des contentieux territoriaux." },
+      { title: "MAÎTRE SORCIER DU CONCLAVE", rank: "ADMINISTRATION", function: "Architecture administrative, gestion des ressources publiques et coordination des services civils." },
+      { title: "CONSEILLER DU CONCLAVE", rank: "DIPLOMATIE", function: "Expertise en médiation et stratégie légale inter-royaumes." },
+      { title: "PROTECTEUR DU CONCLAVE", rank: "FORCE PUBLIQUE", function: "Maintien de la paix, application du droit constitutionnel et protection des intérêts vitaux." },
+      { title: "GARDIEN DU CONCLAVE", rank: "VIGILANCE", function: "Sentinelle des frontières éthérées et surveillance des flux de magie." }
     ]
   },
   {
@@ -44,9 +45,11 @@ const institutions = [
     focus: "ORDRE OCCULTE",
     desc: "La main invisible d'Asgarm. Renseignement, influence et protection absolue des secrets d'État du Trône.",
     roles: [
-      { title: "Haut Éminence", rank: "SOUVERAINETÉ", function: "Commandement suprême des réseaux clandestins. Gestion des archives secrètes et de l'influence politique." },
-      { title: "Maître Silencieux", rank: "COMMANDEMENT", function: "Planification tactique des opérations d'infiltration et coordination des agents de l'ombre." },
-      { title: "Lame d'Asgarm", rank: "OPÉRATIONS", function: "Exécution des directives royales silencieuses et protection des infrastructures sensibles du royaume." }
+      { title: "GRAND SORCIER DES OMBRES", rank: "SOUVERAINETÉ", function: "Commandement suprême des réseaux clandestins. Gestion des archives secrètes et de l'influence politique." },
+      { title: "MAÎTRE DES TÉNÈBRES", rank: "COMMANDEMENT", function: "Planification tactique des opérations d'infiltration et enseignement des arts interdits." },
+      { title: "CONSEILLER OBSCUR", rank: "INFLUENCE", function: "Architecte de la manipulation politique et tissage des toiles de pouvoir." },
+      { title: "PROTECTEUR DES OMBRES", rank: "OPÉRATIONS", function: "Exécution des directives royales silencieuses et neutralisation des menaces." },
+      { title: "GARDIEN DES OMBRES", rank: "SÉCURITÉ", function: "Protecteur des artefacts de sang et des rituels occultes du royaume." }
     ]
   },
   {
@@ -159,7 +162,7 @@ export default function GuidePage() {
                 </p>
               </div>
 
-              {/* Grille des Grades */}
+              {/* Zone de défilement des grades */}
               <div className="flex-1 overflow-y-auto pr-4 custom-scrollbar pb-10">
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                   {activeInst.roles.map((role, i) => (
