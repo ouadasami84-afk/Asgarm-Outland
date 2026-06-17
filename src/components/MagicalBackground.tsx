@@ -12,6 +12,7 @@ interface Star {
   delay: string;
   duration: string;
   opacity: number;
+  color: string;
 }
 
 interface ShootingStar {
@@ -19,6 +20,7 @@ interface ShootingStar {
   left: string;
   top: string;
   delay: string;
+  duration: string;
 }
 
 export const MagicalBackground: React.FC = () => {
@@ -26,26 +28,30 @@ export const MagicalBackground: React.FC = () => {
   const [shootingStars, setShootingStars] = useState<ShootingStar[]>([])
 
   useEffect(() => {
-    // Generate a vast field of stars with varying intensities
-    const generatedStars = [...Array(350)].map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      size: Math.random() * 2.5 + 0.5,
-      delay: `${Math.random() * 10}s`,
-      duration: `${3 + Math.random() * 6}s`,
-      opacity: Math.random() * 0.7 + 0.3,
-    }))
+    // Generate a vast, high-fidelity field of stars
+    const generatedStars = [...Array(300)].map((_, i) => {
+      const isGold = Math.random() > 0.8;
+      return {
+        id: i,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        size: Math.random() * 2 + 0.5,
+        delay: `${Math.random() * 8}s`,
+        duration: `${4 + Math.random() * 6}s`,
+        opacity: Math.random() * 0.7 + 0.3,
+        color: isGold ? 'rgba(212, 175, 55, 0.8)' : 'rgba(255, 255, 255, 0.6)',
+      }
+    })
     setStars(generatedStars)
 
-    // Generate frequent shooting stars
+    // Frequent, cinematic shooting stars
     const generateShootingStars = () => {
-      const count = 15;
-      return [...Array(count)].map((_, i) => ({
+      return [...Array(12)].map((_, i) => ({
         id: i,
-        left: `${10 + Math.random() * 90}%`,
-        top: `${Math.random() * 40}%`,
+        left: `${20 + Math.random() * 80}%`,
+        top: `${Math.random() * 30}%`,
         delay: `${Math.random() * 60}s`,
+        duration: `${8 + Math.random() * 5}s`,
       }))
     }
     setShootingStars(generateShootingStars())
@@ -53,40 +59,40 @@ export const MagicalBackground: React.FC = () => {
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#010208]">
-      {/* Deep Space Base */}
+      {/* Deep Celestial Base */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#03051a_0%,_#010208_100%)]" />
 
-      {/* High Fidelity Aurora Borealis */}
-      <div className="absolute inset-0 opacity-40 mix-blend-screen overflow-hidden">
+      {/* Multilayered Aurora Borealis AAA */}
+      <div className="absolute inset-0 opacity-50 mix-blend-screen overflow-hidden">
         <motion.div 
-          className="absolute -top-[30%] -left-[10%] w-[150%] h-[100%] bg-gradient-to-r from-indigo-500/15 via-emerald-500/15 to-transparent blur-[140px] rounded-full" 
+          className="absolute -top-[20%] -left-[10%] w-[140%] h-[90%] bg-gradient-to-r from-indigo-500/10 via-emerald-500/10 to-transparent blur-[160px] rounded-full" 
           animate={{
-            x: [0, 60, 0],
+            x: [0, 80, 0],
+            y: [0, 50, 0],
+            rotate: [0, 5, 0],
+          }}
+          transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute top-[30%] -right-[20%] w-[120%] h-[80%] bg-gradient-to-l from-purple-500/10 via-blue-500/10 to-transparent blur-[180px] rounded-full" 
+          animate={{
+            x: [0, -60, 0],
             y: [0, 40, 0],
             opacity: [0.3, 0.6, 0.3],
           }}
-          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 35, repeat: Infinity, ease: "easeInOut", delay: -10 }}
         />
         <motion.div 
-          className="absolute top-[20%] -right-[30%] w-[130%] h-[90%] bg-gradient-to-l from-purple-500/15 via-blue-500/15 to-transparent blur-[160px] rounded-full" 
+          className="absolute bottom-[10%] left-[15%] w-[70%] h-[50%] bg-gradient-to-t from-teal-500/5 to-transparent blur-[140px] rounded-full" 
           animate={{
-            x: [0, -50, 0],
-            y: [0, 30, 0],
-            opacity: [0.2, 0.5, 0.2],
+            scale: [1, 1.15, 1],
+            opacity: [0.1, 0.4, 0.1],
           }}
-          transition={{ duration: 35, repeat: Infinity, ease: "easeInOut", delay: -8 }}
-        />
-        <motion.div 
-          className="absolute top-[40%] left-[20%] w-[80%] h-[60%] bg-gradient-to-b from-teal-500/10 to-transparent blur-[120px] rounded-full" 
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.1, 0.3, 0.1],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         />
       </div>
 
-      {/* Dynamic Star Field with Luminescence */}
+      {/* Dynamic Scintillating Star Field */}
       {stars.map((star) => (
         <div
           key={star.id}
@@ -96,15 +102,16 @@ export const MagicalBackground: React.FC = () => {
             top: star.top,
             width: `${star.size}px`,
             height: `${star.size}px`,
+            backgroundColor: star.color,
             '--twinkle-duration': star.duration,
             '--twinkle-delay': star.delay,
             '--twinkle-opacity': star.opacity,
-            boxShadow: star.size > 2 ? '0 0 20px rgba(212,175,55,0.7)' : '0 0 10px rgba(255,255,255,0.4)',
+            boxShadow: star.size > 1.5 ? `0 0 15px ${star.color}` : 'none',
           } as React.CSSProperties}
         />
       ))}
 
-      {/* Shooting Stars */}
+      {/* Cinematic Shooting Stars */}
       {shootingStars.map((ss) => (
         <div
           key={ss.id}
@@ -113,16 +120,16 @@ export const MagicalBackground: React.FC = () => {
             left: ss.left,
             top: ss.top,
             animationDelay: ss.delay,
-            animationDuration: '10s',
+            animationDuration: ss.duration,
           }}
         />
       ))}
       
-      {/* Cosmic Texture overlay */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.08] mix-blend-overlay" />
+      {/* Cosmetic Cosmic Texture */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.06] mix-blend-overlay" />
       
-      {/* Heavy Vignette for focus */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(1,2,8,0.95)_100%)]" />
+      {/* Heavy Cinematic Vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_rgba(1,2,8,0.9)_100%)]" />
     </div>
   )
 }
