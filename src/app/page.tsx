@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Navigation } from '@/components/Navigation'
 import { Hero } from '@/components/Hero'
 import { Footer } from '@/components/Footer'
-import { Compass, Book, Shield, Trophy, MessageSquare, Video } from 'lucide-react'
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -16,7 +15,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen bg-transparent">
       <AnimatePresence mode="wait">
         {loading ? (
           <motion.div
@@ -55,7 +54,7 @@ export default function Home() {
               <Hero />
               
               {/* Introduction au Royaume */}
-              <section className="py-48 px-8 max-w-7xl mx-auto text-center bg-transparent">
+              <section className="py-48 px-8 max-w-7xl mx-auto text-center">
                 <motion.div 
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -65,10 +64,10 @@ export default function Home() {
                 >
                   <div className="flex items-center justify-center gap-4 mb-8">
                     <div className="h-[1px] w-12 bg-gold/30" />
-                    <span className="text-gold text-[10px] tracking-[0.5em] uppercase font-bold">Le Projet Asgarm</span>
+                    <span className="text-gold text-[10px] tracking-[0.5em] uppercase font-bold text-glow-gold">Le Projet Asgarm</span>
                     <div className="h-[1px] w-12 bg-gold/30" />
                   </div>
-                  <h2 className="text-5xl font-headline mb-10 text-white uppercase tracking-tighter leading-tight">
+                  <h2 className="text-6xl font-headline mb-10 text-white uppercase tracking-tighter leading-tight">
                     Dominez la Terre <br /> <span className="text-gold italic font-light">D'Asgarm</span>
                   </h2>
                   <p className="text-silver/40 max-w-2xl mx-auto italic text-lg leading-relaxed font-light">
@@ -77,7 +76,7 @@ export default function Home() {
                   </p>
                 </motion.div>
                 
-                {/* Communauté Section */}
+                {/* Communauté Section - SANS LOGOS */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-40 max-w-4xl mx-auto">
                   <motion.a
                     href="#"
@@ -85,14 +84,12 @@ export default function Home() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
-                    className="glass-night p-10 border border-gold/10 flex items-center gap-8 group"
+                    className="glass-night p-12 border border-gold/10 group transition-all duration-500"
                   >
-                    <div className="w-16 h-16 rounded-full bg-gold/5 flex items-center justify-center border border-gold/10 group-hover:border-gold/40 transition-all">
-                      <MessageSquare className="w-8 h-8 text-gold" />
-                    </div>
-                    <div className="text-left">
-                      <h4 className="font-headline text-xl text-white mb-2 group-hover:text-gold transition-colors">Discord Officiel</h4>
-                      <p className="text-[10px] text-silver/40 uppercase tracking-[0.2em]">Rejoindre la Phalange</p>
+                    <div className="text-center">
+                      <h4 className="font-headline text-2xl text-white mb-3 group-hover:text-gold transition-colors tracking-tight">Discord Officiel</h4>
+                      <div className="w-8 h-[1px] bg-gold/20 mx-auto mb-4 group-hover:w-16 transition-all" />
+                      <p className="text-[10px] text-gold/40 uppercase tracking-[0.4em] font-bold">Rejoindre la Phalange</p>
                     </div>
                   </motion.a>
 
@@ -102,25 +99,23 @@ export default function Home() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
-                    className="glass-night p-10 border border-gold/10 flex items-center gap-8 group"
+                    className="glass-night p-12 border border-gold/10 group transition-all duration-500"
                   >
-                    <div className="w-16 h-16 rounded-full bg-gold/5 flex items-center justify-center border border-gold/10 group-hover:border-gold/40 transition-all">
-                      <Video className="w-8 h-8 text-gold" />
-                    </div>
-                    <div className="text-left">
-                      <h4 className="font-headline text-xl text-white mb-2 group-hover:text-gold transition-colors">TikTok Outland</h4>
-                      <p className="text-[10px] text-silver/40 uppercase tracking-[0.2em]">Les Chroniques d'Asgarm</p>
+                    <div className="text-center">
+                      <h4 className="font-headline text-2xl text-white mb-3 group-hover:text-gold transition-colors tracking-tight">TikTok Outland</h4>
+                      <div className="w-8 h-[1px] bg-gold/20 mx-auto mb-4 group-hover:w-16 transition-all" />
+                      <p className="text-[10px] text-gold/40 uppercase tracking-[0.4em] font-bold">Les Chroniques d'Asgarm</p>
                     </div>
                   </motion.a>
                 </div>
                 
-                {/* Navigation Rapide */}
+                {/* Navigation Rapide - SANS LOGOS */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                   {[
-                    { title: "Atlas", desc: "La Map Asgarm", href: "/atlas", icon: Compass },
-                    { title: "Archive", desc: "Savoir Ancien", href: "/archive", icon: Book },
-                    { title: "Reliques", desc: "Trésors Royaux", href: "/reliques", icon: Shield },
-                    { title: "Maîtrise", desc: "Ascension", href: "/maitrise", icon: Trophy }
+                    { title: "Atlas", desc: "La Map Asgarm", href: "/atlas" },
+                    { title: "Archive", desc: "Savoir Ancien", href: "/archive" },
+                    { title: "Reliques", desc: "Trésors Royaux", href: "/reliques" },
+                    { title: "Maîtrise", desc: "Ascension", href: "/maitrise" }
                   ].map((cat, i) => (
                     <motion.a
                       key={cat.title}
@@ -129,13 +124,12 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.1, duration: 0.8 }}
                       whileHover={{ y: -12 }}
-                      className="glass-night p-12 group transition-all duration-500 border border-gold/10 flex flex-col items-center justify-center min-h-[320px] relative overflow-hidden"
+                      className="glass-night p-14 group transition-all duration-500 border border-gold/10 flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden"
                     >
                       <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                      <cat.icon className="w-10 h-10 text-gold/40 mb-10 group-hover:text-gold group-hover:scale-110 transition-all duration-500" />
-                      <h3 className="text-xl font-headline mb-6 group-hover:text-gold transition-colors tracking-[0.3em] uppercase text-white">{cat.title}</h3>
+                      <h3 className="text-2xl font-headline mb-6 group-hover:text-gold transition-colors tracking-[0.2em] uppercase text-white">{cat.title}</h3>
                       <div className="w-12 h-[1px] bg-gold/20 mb-6 group-hover:w-20 transition-all duration-500" />
-                      <p className="text-[9px] tracking-[0.4em] uppercase text-silver/40 font-bold group-hover:text-silver/60">{cat.desc}</p>
+                      <p className="text-[9px] tracking-[0.5em] uppercase text-silver/40 font-bold group-hover:text-silver/60">{cat.desc}</p>
                     </motion.a>
                   ))}
                 </div>

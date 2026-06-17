@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ScrollText } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export const Navigation: React.FC = () => {
@@ -62,8 +62,7 @@ export const Navigation: React.FC = () => {
 
         <div className="flex items-center gap-6">
           <Link href="/reglement">
-            <button className="hidden sm:flex items-center gap-2 px-8 py-2 border border-gold/20 text-gold text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-night transition-all duration-500 bg-night/20">
-              <ScrollText className="w-3 h-3" />
+            <button className="hidden sm:flex items-center px-8 py-2 border border-gold/20 text-gold text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-night transition-all duration-500 bg-night/20">
               Réglement
             </button>
           </Link>
