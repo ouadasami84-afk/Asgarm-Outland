@@ -248,7 +248,7 @@ export default function HistoirePage() {
           position: relative;
         }
         .page-content { 
-          padding: 2.5rem 2.5rem; 
+          padding: 2rem 2rem; 
           height: 100%;
           display: flex;
           flex-direction: column;
