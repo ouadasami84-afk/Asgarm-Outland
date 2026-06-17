@@ -77,7 +77,7 @@ const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: nu
         <div className="page-inner-content flex flex-col h-full">
           {children}
           {number && (
-            <div className="page-footer font-serif italic text-[#4a3721]/30 text-[9px] tracking-[0.4em] mt-auto pt-4 text-center">
+            <div className="page-footer font-serif italic text-[#b48d1d] text-[11px] tracking-[0.4em] mt-auto pt-4 text-center font-bold text-glow-gold">
               — {number} —
             </div>
           )}
@@ -114,17 +114,24 @@ export default function HistoirePage() {
     <main className="relative min-h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
-      <div className="flex-1 flex flex-col items-center justify-center p-4 pt-24 pb-8 relative z-10">
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} className="text-center mb-8">
+      <div className="flex-1 flex flex-col items-center justify-center p-4 pt-28 pb-12 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 1.2 }} 
+          className="text-center mb-10"
+        >
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-[1px] w-12 bg-gold/20" />
             <span className="text-gold text-[9px] tracking-[1em] uppercase font-bold text-glow-gold">Chroniques d'Asgarm</span>
             <div className="h-[1px] w-12 bg-gold/20" />
           </div>
-          <h1 className="text-4xl font-headline uppercase tracking-tighter mb-2 leading-tight shine-text">
+          <h1 className="text-4xl font-headline uppercase tracking-tighter mb-4 leading-tight shine-text">
             Les Annales de la Souveraineté
           </h1>
-          <span className="shine-text text-[10px] tracking-[0.6em] uppercase font-bold opacity-60">Faites glisser les pages pour explorer les annales</span>
+          <p className="shine-text text-[10px] tracking-[0.6em] uppercase font-bold opacity-80">
+            Faites glisser les pages pour explorer les annales
+          </p>
         </motion.div>
 
         <motion.div 
