@@ -103,7 +103,7 @@ export default function GuidePage() {
     <main className="relative h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
-      {/* Header Statistique */}
+      {/* Header Statistique - Ajusté pour libérer l'espace */}
       <section className="relative pt-24 pb-4 px-8 flex-none z-20">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
@@ -122,7 +122,7 @@ export default function GuidePage() {
         </div>
       </section>
 
-      {/* Zone de Contenu Principale */}
+      {/* Zone de Contenu Principale - Ajustée pour maximiser la grille */}
       <div className="flex-1 relative px-8 pb-10 max-w-[1600px] mx-auto w-full overflow-hidden flex flex-col">
         <AnimatePresence mode="wait">
           {!selected ? (
@@ -177,7 +177,7 @@ export default function GuidePage() {
               </button>
 
               <div className="relative z-10 h-full flex flex-col">
-                {/* Header Institution */}
+                {/* Header Institution - Plus compact pour les rôles */}
                 <div className="mb-6 text-center">
                   <span className="text-gold text-[10px] tracking-[1.2em] uppercase font-bold block mb-1">{selected.focus}</span>
                   <h2 className="text-5xl md:text-6xl font-headline text-white uppercase tracking-tighter mb-2 leading-none text-glow-gold">
@@ -188,7 +188,7 @@ export default function GuidePage() {
                   </p>
                 </div>
 
-                {/* Grille des Rôles Panoramique */}
+                {/* Grille des Rôles Panoramique - Optimisée pour le Zero-Scroll */}
                 <div className="flex-1 flex items-center justify-center overflow-hidden">
                   <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full h-full max-h-[62vh]`}>
                     {selected.roles.map((role, i) => (
