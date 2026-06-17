@@ -18,11 +18,11 @@ const institutions = [
       "Choisir librement sa race parmi les 5 lignées majeures",
       "Étudier à l'école tout en exerçant un métier civil",
       "Pratiquer la magie librement avec cohérence Roleplay",
-      "Accéder aux zones publiques des Royaumes"
+      "Rejoindre le Conclave des Ombres dès la 1ère année"
     ],
     prohibitions: [
       "Porter une couleur de peau non-conforme à sa race (voir spécificités)",
-      "Rejoindre un Conclave, un Clan ou la Royauté avant la 5ème année",
+      "Rejoindre le Conclave des Arcanes, un Clan ou la Royauté avant la 5ème année",
       "S'absenter du cursus scolaire sans dispense Staff"
     ],
     roles: [
@@ -39,23 +39,23 @@ const institutions = [
     focus: "FORMATION & SAVOIR",
     icon: Book,
     desc: "L'institution souveraine pour tout étudiant. La scolarité est le socle de votre puissance et de votre légitimité sociale.",
-    mission: "Suivre le cursus obligatoire jusqu'à la 5ème année. Valider l'examen des 100 sorts en 7ème année pour l'excellence.",
+    mission: "Suivre le cursus obligatoire jusqu'à la 5ème année (sauf candidature Staff). Valider l'examen des 100 sorts en 7ème année.",
     rights: [
       "Étudier les arcanes jusqu'à la 8ème année pour les citoyens libres",
-      "Passer l'examen final des 100 sorts lors de la 7ème année",
-      "Accéder aux factions (Conclaves, Clans, Royauté) dès la 5ème année validée",
-      "Utiliser la magie de manière cohérente avec son niveau d'étude"
+      "Passer l'examen final des 100 sorts lors de la 7ème année pour la Maîtrise",
+      "Accéder aux factions majeures (Arcanes, Clans, Royauté) dès la 5ème année validée",
+      "Utiliser la magie librement en restant cohérent avec son Roleplay"
     ],
     prohibitions: [
-      "Quitter l'école avant la 5ème année (sauf profil Staff)",
-      "Poursuivre au-delà de la 5ème année pour les membres de Clans",
-      "Pratique de la magie noire ou du sang au sein de l'institution"
+      "Quitter l'école avant la 5ème année (sauf profil validé par le Staff)",
+      "Poursuivre au-delà de la 5ème année pour les membres de Clans (si école acceptée)",
+      "Pratique de la magie interdite (Noire/Sang) au sein de l'institution"
     ],
     roles: [
-      { title: "CURSUS OBLIGATOIRE", rank: "ANNÉES 1 À 5", function: "Obligatoire pour tous. Seul accès autorisé : Études + Métier Civil." },
-      { title: "CURSUS SUPÉRIEUR", rank: "ANNÉES 6 À 8", function: "Réservé aux citoyens libres et élites. Accès aux hautes fonctions du monde." },
-      { title: "EXAMEN DES 100 SORTS", rank: "7ÈME ANNÉE", function: "Épreuve ultime de maîtrise arcanique pour valider votre rang de Maître." },
-      { title: "SÉLECTION DES CLANS", rank: "LIMITE 5ÈME ANNÉE", function: "Si un chef de clan impose l'école, ses membres s'arrêtent à la 5ème année." }
+      { title: "CURSUS OBLIGATOIRE", rank: "ANNÉES 1 À 5", function: "Socle fondamental. Seule exception : recrutement anticipé par les Ombres ou métier civil." },
+      { title: "CURSUS SUPÉRIEUR", rank: "ANNÉES 6 À 8", function: "Études avancées réservées à l'élite et aux futurs Maîtres du Conclave." },
+      { title: "EXAMEN DES 100 SORTS", rank: "7ÈME ANNÉE", function: "Épreuve magistrale validant l'ensemble du savoir arcanique accumulé." },
+      { title: "SÉLECTION DES CLANS", rank: "LIMITE 5ÈME ANNÉE", function: "Si le Chef de Clan exige l'école, les membres s'arrêtent obligatoirement à la 5ème année." }
     ]
   },
   {
@@ -88,16 +88,17 @@ const institutions = [
     focus: "PUISSANCE & LIBERTÉ",
     icon: History,
     desc: "L'ordre clandestin pour ceux qui refusent les chaînes de la justice conventionnelle et cherchent la souveraineté occulte.",
-    mission: "Étudier les arts interdits et servir les intérêts du Royaume du Mal.",
+    mission: "Étudier les arts interdits et servir les intérêts du Royaume du Mal dès le début du cursus.",
     rights: [
+      "Recruter des membres dès la 1ère année d'étude à Ascarnia",
       "Apprendre et manipuler la magie noire et la magie du sang",
-      "Mener des opérations de sabotage et d'influence politique",
+      "Mener des opérations d'influence au sein des autres institutions",
       "Accéder aux reliques interdites scellées"
     ],
     prohibitions: [
-      "Recruter un citoyen n'ayant pas atteint la 5ème année scolaire",
-      "Trahir le secret de l'Ordre ou l'identité des Maîtres",
-      "Échouer lors d'une mission d'infiltration critique"
+      "Trahir le secret de l'Ordre ou l'identité des Maîtres Sorciers",
+      "Échouer lors d'une mission d'infiltration critique sans retrait tactique",
+      "Utiliser la magie noire publiquement sans autorisation du Grand Sorcier"
     ],
     roles: [
       { title: "GRAND SORCIER DES OMBRES", rank: "SOUVERAINETÉ", function: "Maître absolu des réseaux clandestins et gardien des secrets d'État noirs." },
@@ -114,20 +115,20 @@ const institutions = [
     desc: "Le moteur civil du royaume. Seule activité cumulable avec les premières années d'études à Ascarnia.",
     mission: "Offrir des services d'excellence et stimuler les flux de ressources d'Asgarm.",
     rights: [
-      "Cumuler un métier avec les années 1 à 8 de scolarité",
+      "Cumuler un métier avec les années d'études (1 à 8)",
       "Vendre des marchandises et services à prix libre",
-      "Rédiger des contrats magiques à valeur juridique"
+      "Rédiger des contrats magiques à valeur juridique contraignante"
     ],
     prohibitions: [
-      "Pratiquer un métier sans licence officielle",
+      "Pratiquer un métier sans licence officielle délivrée par le Conclave",
       "Réaliser des arnaques supérieures à 5000 pièces d'or",
-      "Vendre des produits prohibés sans autorisation spéciale"
+      "Vendre des produits prohibés (poisons/reliques) sans autorisation spéciale"
     ],
     roles: [
-      { title: "JOURNAL ASGARM", rank: "INFORMATION", function: "Documenter les faits, rédiger les annales et influencer l'opinion." },
-      { title: "TAVERNE MAGIQUE", rank: "HOSPITALITÉ", function: "Gestion des sanctuaires sociaux et des réseaux d'information." },
-      { title: "BRICOLIFUS", rank: "INGÉNIERIE", function: "Maintenance et optimisation des équipements de vol (Balais)." },
-      { title: "LA MAISON MAGIQUE", rank: "IMMOBILIER", function: "Gestion foncière et sécurisation runique des domaines privés." }
+      { title: "JOURNAL ASGARM", rank: "INFORMATION", function: "Documenter les faits, rédiger les annales et influencer l'opinion publique." },
+      { title: "TAVERNE MAGIQUE", rank: "HOSPITALITÉ", function: "Gestion des sanctuaires sociaux et des réseaux d'information clandestine." },
+      { title: "BRICOLIFUS", rank: "INGÉNIERIE", function: "Maintenance, optimisation et charme de vitesse sur les équipements de vol." },
+      { title: "LA MAISON MAGIQUE", rank: "IMMOBILIER", function: "Gestion foncière, expertises et sécurisation runique des domaines privés." }
     ]
   },
   {
@@ -136,21 +137,21 @@ const institutions = [
     focus: "STRUCTURES SAUVAGES",
     icon: Globe,
     desc: "Pour ceux qui choisissent la vie en dehors des cités. Le chef décide du destin scolaire de ses membres.",
-    mission: "Protéger les territoires sauvages et préserver les rites ancestraux.",
+    mission: "Protéger les territoires sauvages et préserver les rites ancestraux de la meute.",
     rights: [
-      "Régner sur les zones sauvages hors juridiction urbaine",
-      "Décider du cursus scolaire des membres (Arrêt obligatoire à la 5ème année)",
-      "Pratiquer des rituels de magie primordiale"
+      "Régner sur les zones sauvages hors de la juridiction urbaine du Conclave",
+      "Décider si le groupe suit le cursus scolaire (Limité à la 5ème année)",
+      "Pratiquer des rituels de magie primordiale et de lien avec l'éther"
     ],
     prohibitions: [
-      "Intégrer un membre n'ayant pas validé sa 5ème année (si école acceptée)",
-      "Incursion armée dans les capitales sans déclaration de guerre",
-      "Non-respect de la hiérarchie interne (Alpha/Chaman)"
+      "Intégrer un membre n'ayant pas atteint la 5ème année (si école acceptée)",
+      "Incursion armée dans les capitales sans déclaration de guerre formelle",
+      "Non-respect de la hiérarchie interne dictée par l'Alpha ou le Chaman"
     ],
     roles: [
-      { title: "CHEF DE CLAN (ALPHA)", rank: "SOUVERAIN", function: "Commandement stratégique et décision sur l'éducation du groupe." },
-      { title: "CHAMAN ROYAL", rank: "SAGESSE", function: "Lien spirituel avec l'éther pur et préservation des cycles naturels." },
-      { title: "GUERRIER DE MEUTE", rank: "FORCE", function: "Protection active du territoire et exécution des ordres de l'Alpha." }
+      { title: "CHEF DE CLAN (ALPHA)", rank: "SOUVERAIN", function: "Commandement stratégique et décision finale sur l'éducation des membres." },
+      { title: "CHAMAN ROYAL", rank: "SAGESSE", function: "Lien spirituel avec l'éther pur et préservation des cycles naturels du clan." },
+      { title: "GUERRIER DE MEUTE", rank: "FORCE", function: "Protection active du territoire et exécution des ordres souverains." }
     ]
   }
 ]
