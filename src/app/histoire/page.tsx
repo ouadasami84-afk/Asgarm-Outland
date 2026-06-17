@@ -169,27 +169,27 @@ export default function HistoirePage() {
               showPageCorners={true}
               disableFlipByClick={false}
             >
-              {/* Page de Sommaire Épurée */}
+              {/* Page de Sommaire Épurée et Recalibrée */}
               <Page number={1}>
-                <div className="h-full flex flex-col pt-2 px-6">
-                  <h2 className="text-base font-headline text-[#4a3721] uppercase tracking-[0.3em] mb-6 border-b border-[#4a3721]/15 pb-2 w-full text-center">Sommaire des Annales</h2>
-                  <div className="flex flex-col gap-2 w-full">
+                <div className="h-full flex flex-col pt-1 px-4">
+                  <h2 className="text-sm font-headline text-[#4a3721] uppercase tracking-[0.2em] mb-4 border-b border-[#4a3721]/15 pb-1 w-full text-center">Sommaire des Annales</h2>
+                  <div className="flex flex-col gap-1 w-full">
                     {chapters.map((ch, i) => (
                       <div 
                         key={i} 
-                        className="flex items-baseline justify-between group cursor-pointer py-1.5 border-b border-[#4a3721]/5 hover:bg-[#4a3721]/5 transition-all px-2" 
+                        className="flex items-baseline justify-between group cursor-pointer py-1 border-b border-[#4a3721]/5 hover:bg-[#4a3721]/10 transition-all px-2" 
                         onClick={() => bookRef.current.pageFlip().flip(ch.page - 1)}
                       >
-                        <span className="text-[11px] font-serif uppercase tracking-[0.15em] text-[#4a3721]/80 group-hover:text-gold transition-colors">{ch.title}</span>
-                        <div className="flex-1 border-b border-dotted border-[#4a3721]/20 mx-2" />
-                        <span className="text-[11px] font-serif text-[#4a3721]/60">{ch.page}</span>
+                        <span className="text-[10px] font-serif uppercase tracking-[0.1em] text-[#4a3721]/90 group-hover:text-gold transition-colors">{ch.title}</span>
+                        <div className="flex-1 border-b border-dotted border-[#4a3721]/20 mx-1" />
+                        <span className="text-[10px] font-serif text-[#4a3721]/70">{ch.page}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-auto pb-4">
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="h-[1px] w-10 bg-gold/30" />
-                      <p className="text-[#4a3721]/40 text-[8px] uppercase tracking-[0.4em] italic font-bold">Archives Royales d'Asgarm</p>
+                  <div className="mt-auto pb-2">
+                    <div className="flex flex-col items-center gap-1">
+                      <div className="h-[1px] w-8 bg-gold/30" />
+                      <p className="text-[#4a3721]/40 text-[7px] uppercase tracking-[0.3em] italic font-bold">Archives Royales d'Asgarm</p>
                     </div>
                   </div>
                 </div>
@@ -222,7 +222,7 @@ export default function HistoirePage() {
 
               <Page number={6}>
                 <div className="h-full">
-                  <MagicalText title="La Forge des Nains" text="Dans les profondeurs des montagnes, la magie toucha les Nains. Thorgrim Main-de-Pierre, un maître forgeron, sentit la magie vibrer non seulement dans son âme, mais aussi dans la pierre et le métal qu'il travaillait. Appliquant la rigueur et la précision de la forge à ce nouvel art, les Nains devinrent rapidement les plus grands fabricants de baguettes d'Asgarm. Leurs créations, alliant bois robustes, cœurs de créatures magiques et incrustations de métal runique, étaient des chefs-d'œuvre de puissance et de fiabilité. Ils fournirent ces précieuses armes à toute l'Alliance naissante, devenant ainsi l'armurerie indispensable de la résistance." />
+                  <MagicalText title="La Forge des Nains" text="Dans les profondeurs des montagnes, la magie toucha les Nains. Thorgrim Main-de-Pierre, un maître forgeron, sentit la magie vibrer non seulement dans son âme, but aussi dans la pierre et le métal qu'il travaillait. Appliquant la rigueur et la précision de la forge à ce nouvel art, les Nains devinrent rapidement les plus grands fabricants de baguettes d'Asgarm. Leurs créations, alliant bois robustes, cœurs de créatures magiques et incrustations de métal runique, étaient des chefs-d'œuvre de puissance et de fiabilité. Ils fournirent ces précieuses armes à toute l'Alliance naissante, devenant ainsi l'armurerie indispensable de la résistance." />
                 </div>
               </Page>
 
