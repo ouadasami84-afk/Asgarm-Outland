@@ -35,6 +35,8 @@ const regulationSections = [
         title: "II. Mécaniques de Jeu et Abus",
         rules: [
           { name: "2.1 Exploitation de Bugs (Glitch)", desc: "L'utilisation de bugs de script, de collision ou de toute faille technique pour obtenir un avantage est un motif de bannissement immédiat. Tout bug doit être impérativement signalé au staff." },
+          { name: "2.2 Powergaming", desc: "Interdiction de réaliser des actions physiquement impossibles ou de forcer le RP d'un tiers sans lui laisser la possibilité de réagir ou de s'opposer de manière cohérente." },
+          { name: "2.3 Metagaming", desc: "Votre personnage ne connaît que ce qu'il a appris en jeu. La coordination externe via Discord ou tout autre support est strictement interdite lors des scènes." },
           { name: "2.4 Logiciels Tiers et Cheating", desc: "L'usage de cheats, macros, crosshairs externes ou tout logiciel modifiant l'expérience de jeu originale est lourdement sanctionné par une radiation définitive." }
         ]
       }
@@ -51,23 +53,16 @@ const regulationSections = [
     desc: "Recueil des lois d'immersion régissant les interactions, les arcanes et la destinée des citoyens dans le royaume.",
     chapters: [
       {
-        title: "I. Mécaniques du Rôle",
+        title: "I. Combat et Arcanes",
         rules: [
-          { name: "2.2 Powergaming", desc: "Interdiction de réaliser des actions physiquement impossibles ou de forcer le RP d'un tiers sans lui laisser la possibilité de réagir ou de s'opposer de manière cohérente." },
-          { name: "2.3 Metagaming", desc: "Votre personnage ne connaît que ce qu'il a appris en jeu. La coordination externe via Discord ou tout autre support est strictement interdite lors des scènes." }
-        ]
-      },
-      {
-        title: "II. Combat et Arcanes",
-        rules: [
-          { name: "3.1 Fear RP", desc: "Vous devez simuler une peur réelle et proportionnée face à une menace supérieure (ex: encerclement par plusieurs ennemis armés)." },
+          { name: "3.1 Fear RP", desc: "Vous devez simuler une peur réelle et proportionnée face à une menace supérieure (ex: encerclement par plusieurs ennemis armés ou ratio 3 contre 1)." },
           { name: "3.2 Pain RP", desc: "Toute blessure reçue doit être jouée physiquement et verbalement (chutes, gémissements, incapacité temporaire de courir ou de lancer des sorts complexes)." },
           { name: "3.3 Zone de Trêve Académique", desc: "L'école est une zone de paix et de savoir. Aucun combat offensif n'y est toléré sans un événement narratif spécifique validé par le Conclave." },
           { name: "3.4 Sorts Prohibés", desc: "L'usage public de la magie noire ou du sang sans autorisation magistrale entraîne des conséquences administratives et pénales lourdes (Emprisonnement/CK)." }
         ]
       },
       {
-        title: "III. Mort et Fin de Personnage",
+        title: "II. Mort et Fin de Personnage",
         rules: [
           { name: "4.1 État de Coma (K.O.)", desc: "Interdiction totale de parler ou de transmettre des informations une fois au sol. La réanimation par un tiers entraîne l'amnésie partielle de la scène de combat." },
           { name: "4.2 Character Kill (CK)", desc: "La mort définitive du personnage nécessite une validation administrative préalable ou un accord mutuel lors d'un arc narratif majeur et tragique." },
@@ -97,27 +92,27 @@ const regulationSections = [
         ]
       },
       {
-        title: "II. Community Manager (CM)",
+        title: "II. Community Manager",
         rules: [
           { name: "Image de Marque", desc: "Garant de la communication officielle et de la réputation d'Asgarm sur les réseaux et le Discord." },
-          { name: "Médiation", desc: "Analyse des suggestions citoyennes et médiation constante entre les joueurs et l'administration." },
-          { name: "Régulation Discord", desc: "Responsable de la bonne tenue des canaux de discussion hors-jeu et du maintien d'une ambiance saine." }
+          { name: "Lien Communautaire", desc: "Analyse des suggestions citoyennes et médiation constante entre les joueurs et l'administration." },
+          { name: "Marketing & Visibilité", desc: "Gestion des partenariats et de la visibilité du serveur sur les plateformes de référencement." }
         ]
       },
       {
         title: "III. Modération",
         rules: [
-          { name: "Support et Pédagogie", desc: "Gestion des tickets de support. Le dialogue et la pédagogie sont prioritaires avant l'application de toute sanction." },
-          { name: "Surveillance Active", desc: "Vigilance constante sur le respect des règles d'immersion (Fear et Pain RP) lors des scènes de groupe." },
-          { name: "Rapports et Preuves", desc: "Toute sanction appliquée doit être rigoureusement documentée avec des preuves tangibles (vidéos, logs) en interne." }
+          { name: "Support Joueurs", desc: "Gestion des tickets de support. Le dialogue et la pédagogie sont prioritaires avant l'application de toute sanction." },
+          { name: "Surveillance Active", desc: "Patrouilles invisibles pour vérifier le respect des règles d'immersion (Fear et Pain RP) lors des scènes de groupe." },
+          { name: "Rapports & Preuves", desc: "Toute sanction appliquée doit être rigoureusement documentée avec des preuves tangibles (vidéos, logs) en interne." }
         ]
       },
       {
         title: "IV. Animateurs",
         rules: [
-          { name: "Dynamisation du Lore", desc: "Création de scènes narratives vivantes, gestion des PNJs et des créatures magiques pour enrichir l'expérience des citoyens." },
-          { name: "Neutralité Narrative", desc: "Interdiction formelle de favoriser une faction, une race ou un groupe spécifique au détriment des autres." },
-          { name: "Usage des Outils", desc: "Les outils d'animation sont strictement réservés aux événements. Tout usage pour convenance personnelle est motif de radiation." }
+          { name: "Dynamisation Lore", desc: "Création de mini-scènes, gestion des PNJs et des créatures magiques pour enrichir l'expérience des citoyens." },
+          { name: "Usage des Outils", desc: "Les outils d'animation sont strictement réservés aux événements. Tout usage pour convenance personnelle est motif de radiation immédiate." },
+          { name: "Neutralité Narrative", desc: "Interdiction formelle de favoriser une faction, une race ou un groupe spécifique au détriment des autres." }
         ]
       }
     ]

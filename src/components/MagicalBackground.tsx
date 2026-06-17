@@ -42,24 +42,21 @@ export const MagicalBackground: React.FC = () => {
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#010208]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#03051a_0%,_#010208_100%)]" />
 
-      {/* Nébuleuses optimisées */}
       <div className="absolute inset-0 opacity-10 mix-blend-screen">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-indigo-900/20 via-transparent to-emerald-900/10 blur-[120px]" />
       </div>
 
-      {/* Voûte étoilée optimisée */}
       <div className="absolute inset-0">
         {stars.map((star) => (
           <motion.div
             key={star.id}
-            className="absolute rounded-full"
+            className="absolute rounded-full will-change-transform"
             style={{
               left: star.left,
               top: star.top,
               width: star.size,
               height: star.size,
               backgroundColor: star.color,
-              willChange: 'opacity, transform',
             }}
             animate={{
               opacity: [star.opacity, star.opacity * 2, star.opacity],

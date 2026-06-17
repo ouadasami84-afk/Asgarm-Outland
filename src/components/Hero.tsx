@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
         
         <div className="absolute inset-0 flex items-center justify-center scale-110">
           <iframe
-            className="w-[110vw] h-[110vh] max-w-none border-none object-cover will-change-transform pointer-events-none"
+            className="w-[110vw] h-[110vh] max-w-none border-none object-cover will-change-transform pointer-events-none opacity-40"
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&cc_load_policy=0&vq=hd1080&disablekb=1&playsinline=1`}
             allow="autoplay; encrypted-media"
             frameBorder="0"
