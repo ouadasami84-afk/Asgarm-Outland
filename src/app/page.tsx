@@ -54,14 +54,14 @@ export default function Home() {
             <div className="relative z-10">
               <Hero />
               
-              {/* Manifeste de Qualité - Version Ultra Pro */}
-              <section className="py-48 px-8 max-w-7xl mx-auto text-center">
+              {/* Manifeste de Qualité */}
+              <section className="py-32 px-8 max-w-7xl mx-auto text-center">
                 <motion.div 
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1 }}
-                  className="mb-40"
+                  className="mb-32"
                 >
                   <div className="flex items-center justify-center gap-4 mb-8">
                     <div className="h-[1px] w-12 bg-gold/30" />
@@ -73,14 +73,14 @@ export default function Home() {
                   </h2>
                   <p className="text-silver/40 max-w-3xl mx-auto italic text-lg leading-relaxed font-light">
                     "Le projet Outland ne repose sur aucun artifice pré-conçu. Chaque système, chaque ligne de code 
-                    et chaque mécanique de jeu a été intégralement développé par nos ingénieurs. Nous offrons aux 
+                    et chaque mécanique de jeu a été intégralement développé par nos modélisateurs et nos développeurs. Nous offrons aux 
                     citoyens d'Asgarm une plateforme unique, où la stabilité technique rencontre une immersion 
                     totale. Ici, l'innovation est au service de votre ascension."
                   </p>
                 </motion.div>
                 
-                {/* Communauté Section - SANS LOGOS */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-48 max-w-4xl mx-auto">
+                {/* Communauté Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32 max-w-4xl mx-auto">
                   <motion.a
                     href="#"
                     initial={{ opacity: 0, x: -20 }}
@@ -112,27 +112,28 @@ export default function Home() {
                   </motion.a>
                 </div>
 
-                {/* Fin de Page - Licence & Droit d'Auteur */}
+                {/* Fin de Page - Licence & Droit d'Auteur - PLUS GROS & DORÉ */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.2 }}
-                  className="max-w-3xl mx-auto pb-24 border-t border-gold/5 pt-24"
+                  className="max-w-4xl mx-auto pb-24 border-t border-gold/10 pt-24"
                 >
-                  <div className="mb-16">
-                    <span className="text-gold/20 text-[9px] tracking-[0.6em] uppercase font-bold block mb-6">Certification de Licence Propriétaire</span>
-                    <p className="text-silver/30 text-[11px] italic leading-relaxed max-w-xl mx-auto">
-                      L'ensemble des architectures logicielles, scripts dynamiques et systèmes immersifs d'Outland sont protégés 
-                      par les lois internationales sur la propriété intellectuelle. Toute tentative de plagiat ou d'utilisation 
-                      non autorisée du projet Asgarm entraînera des mesures légales immédiates.
+                  <div className="mb-12">
+                    <span className="text-gold/60 text-xs tracking-[0.6em] uppercase font-bold block mb-8">Certification de Licence Propriétaire</span>
+                    <p className="text-silver/50 text-sm italic leading-loose max-w-2xl mx-auto">
+                      L'ensemble des architectures logicielles, scripts dynamiques, modélisations 3D et systèmes immersifs 
+                      d'Outland sont protégés par les lois internationales sur la propriété intellectuelle. 
+                      Toute tentative de plagiat ou d'utilisation non autorisée du projet Asgarm entraînera des 
+                      mesures légales immédiates par notre service juridique.
                     </p>
                   </div>
-                  <div className="flex flex-col items-center gap-6">
-                    <div className="h-16 w-[1px] bg-gradient-to-b from-gold/20 to-transparent" />
+                  <div className="flex flex-col items-center gap-8">
+                    <div className="h-20 w-[1px] bg-gradient-to-b from-gold/40 to-transparent" />
                     <div className="text-center">
-                      <span className="font-headline text-lg text-white/40 tracking-[0.4em] uppercase block mb-2">© 2026 Outland Studios</span>
-                      <span className="text-[8px] text-gold/30 tracking-[0.6em] uppercase font-bold">In Éther Veritas - Asgarm Project</span>
+                      <span className="font-headline text-2xl text-white/60 tracking-[0.4em] uppercase block mb-3">© 2026 Outland Studios</span>
+                      <span className="text-[10px] text-gold/50 tracking-[0.8em] uppercase font-bold">In Éther Veritas - Asgarm Project</span>
                     </div>
                   </div>
                 </motion.div>
