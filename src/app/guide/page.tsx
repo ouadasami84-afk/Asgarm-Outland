@@ -20,16 +20,20 @@ const institutions = [
     name: "Académie d'Asgarm",
     focus: "ÉDUCATION & DISCIPLINE",
     icon: GraduationCap,
-    desc: "L'institution de formation des élites. Ici, l'avenir d'Asgarm est forgé dans la rigueur et la maîtrise des arts occultes.",
+    desc: "L'élite intellectuelle et magique d'Asgarm. Ici, l'avenir du royaume est forgé dans la rigueur et la maîtrise des arts occultes.",
     roles: [
-      { title: "Directeur d'Asgarm", rank: "HAUTE AUTORITÉ", function: "Souveraineté académique totale. Gestion du corps enseignant, validation des accréditations et arbitrage final des sanctions majeures." },
-      { title: "Directeur Adjoint", rank: "COMMANDEMENT", function: "Coordination opérationnelle. Gestion des emplois du temps, supervision des examens et maintien de l'ordre administratif." },
-      { title: "Prof. Défense Arcanique", rank: "DÉFENSE", function: "Enseignement des protections et contre-sorts. Autorisé à organiser des duels et à sanctionner les abus de magie offensive." },
-      { title: "Prof. Créatures Magiques", rank: "BESTIAIRE", function: "Étude des écosystèmes et dressage. Autorisé à manipuler les entités sauvages pour l'éducation sécurisée des apprentis." },
-      { title: "Prof. Sortilèges", rank: "CHARMES", function: "Théorie et pratique des enchantements. Validation des paliers de puissance magique et certification des brevets de sorcellerie." },
-      { title: "Prof. Alchimie & Botanique", rank: "PHARMACOPÉE", function: "Synthèse de potions et étude des plantes. Gestion des laboratoires, des serres royales et de la sécurité chimique." },
-      { title: "Prof. Divination", rank: "PRÉSAGES", function: "Exploration des flux de l'Ether et lecture des signes. Autorisé à guider les élèves dans la compréhension de leur destinée." },
-      { title: "Prof. de Vol", rank: "AÉRONAUTIQUE", function: "Maîtrise du pilotage de balais et montures magiques. Surveillance des périmètres aériens et gestion des tournois de vol." }
+      { title: "Directeur d'Asgarm", rank: "HAUTE AUTORITÉ", function: "Souveraineté totale. Gestion du corps enseignant, validation des accréditations et arbitrage final des sanctions." },
+      { title: "Directeur Adjoint", rank: "COMMANDEMENT", function: "Coordination opérationnelle. Gestion des examens, supervision administrative et maintien de l'ordre général." },
+      { title: "Prof. Contre la Magie Noire", rank: "DÉFENSE", function: "Enseignement des protections. Autorisé à organiser des duels de défense et à sanctionner les abus de magie offensive." },
+      { title: "Prof. Créatures Magiques", rank: "BESTIAIRE", function: "Étude des écosystèmes et dressage. Gestion des entités sauvages et sécurité des expéditions éducatives." },
+      { title: "Prof. Sortilèges", rank: "CHARMES", function: "Théorie et pratique des enchantements. Certification des paliers de puissance magique des citoyens d'Asgarm." },
+      { title: "Prof. Alchimie / Botanique", rank: "PHARMACOPÉE", function: "Synthèse de potions et étude des plantes. Gestion des serres royales et de la sécurité chimique du royaume." },
+      { title: "Prof. Divination", rank: "PRÉSAGES", function: "Exploration des flux de l'Ether. Guidance des élèves dans la compréhension des signes et de leur destinée." },
+      { title: "Prof. de Vol", rank: "AÉRONAUTIQUE", function: "Maîtrise du pilotage de balais et montures. Surveillance des périmètres aériens et gestion des tournois de vol." },
+      { title: "Prof. Histoire de la Magie", rank: "ARCHIVES", function: "Étude des traités anciens et du passé d'Asgarm. Préservation de la chronologie et des racines du royaume." },
+      { title: "Prof. de Morphologie", rank: "TRANSFORMATION", function: "Maîtrise de la théorie du corps magique. Enseignement des métamorphoses physiques et structurelles." },
+      { title: "Prof. Astrologie", rank: "COSMOS", function: "Lecture des constellations et des flux stellaires. Rituels célestes et synchronisation avec les astres." },
+      { title: "Surveillant Asgarm", rank: "ORDRE", function: "Discipline des couloirs et rondes nocturnes. Application immédiate des sanctions et maintien de la paix académique." }
     ]
   },
   {
@@ -53,7 +57,7 @@ const institutions = [
     roles: [
       { title: "Grand Sorcier", rank: "SOUVERAINETÉ", function: "Commandement suprême des réseaux clandestins. Gestion des archives secrètes et des directives d'influence." },
       { title: "Maître des Ombres", rank: "COMMANDEMENT", function: "Planification tactique des opérations de renseignement et coordination des agents de terrain." },
-      { title: "Protecteur", rank: "OPÉRATIONS", function: "Exécution des directives silencieuses, neutralisation des menaces occultes et sécurité des infrastructures sensibles." }
+      { title: "Protecteur", rank: "OPÉRATIONS", function: "Exécution des directives silencieuses, neutralisation des menaces et sécurité des infrastructures sensibles." }
     ]
   },
   {
@@ -75,7 +79,7 @@ const institutions = [
     desc: "Les forces tribales et les traditions ancestrales. La puissance brute de la nature alliée à Asgarm.",
     roles: [
       { title: "Chef / Alpha", rank: "LEADERSHIP", function: "Gestion des territoires sauvages, protection de la meute et maintien des traités de paix avec la Royauté." },
-      { title: "Chaman Royal", rank: "SAGESSE", function: "Lien spirituel avec l'Ether, préservation des rituels anciens et soins magiques par les énergies naturelles." }
+      { title: "Chaman Royal", rank: "SAGESSE", function: "Lien spirituel avec l'Ether, préservation des rituels anciens et soins par les énergies naturelles." }
     ]
   },
   {
@@ -87,7 +91,7 @@ const institutions = [
     roles: [
       { title: "Agent Immobilier", rank: "PATRIMOINE", function: "Administration du parc foncier royal, expertise en transaction et gestion de l'habitat citoyen." },
       { title: "Journaliste", rank: "INFORMATION", function: "Chroniqueur des événements du royaume, investigation sociale et diffusion des annonces officielles." },
-      { title: "Tavernier / Commerçant", rank: "LOGISTIQUE", function: "Gestion des ressources, animation des lieux de vie et approvisionnement des citoyens en biens essentiels." }
+      { title: "Tavernier / Commerçant", rank: "LOGISTIQUE", function: "Gestion des ressources, animation des lieux de vie et approvisionnement des citoyens." }
     ]
   }
 ]
@@ -99,7 +103,6 @@ export default function GuidePage() {
     <main className="relative h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
-      {/* Header Codex Permanent */}
       <section className="relative pt-24 pb-4 px-8 flex-none z-20">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
@@ -118,8 +121,7 @@ export default function GuidePage() {
         </div>
       </section>
 
-      {/* Main Container Full Screen */}
-      <div className="flex-1 relative px-8 pb-12 max-w-[1600px] mx-auto w-full overflow-hidden flex flex-col">
+      <div className="flex-1 relative px-8 pb-10 max-w-[1600px] mx-auto w-full overflow-hidden flex flex-col">
         <AnimatePresence mode="wait">
           {!selected ? (
             <motion.div
@@ -159,12 +161,11 @@ export default function GuidePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
-              className="flex-1 flex flex-col glass-night border border-gold/20 p-12 relative overflow-hidden"
+              className="flex-1 flex flex-col glass-night border border-gold/20 p-10 relative overflow-hidden"
             >
-              {/* Bouton Retour Premium */}
               <button 
                 onClick={() => setSelected(null)}
-                className="absolute top-8 left-8 flex items-center gap-6 text-gold/40 hover:text-gold transition-all group z-30"
+                className="absolute top-6 left-8 flex items-center gap-6 text-gold/40 hover:text-gold transition-all group z-30"
               >
                 <div className="w-10 h-10 rounded-full border border-gold/10 flex items-center justify-center group-hover:border-gold/40 transition-all bg-night/40 backdrop-blur-md">
                   <ChevronLeft className="w-5 h-5" />
@@ -173,37 +174,35 @@ export default function GuidePage() {
               </button>
 
               <div className="relative z-10 h-full flex flex-col">
-                {/* Institution Header Detail */}
-                <div className="mb-10 text-center">
-                  <span className="text-gold text-[10px] tracking-[1.2em] uppercase font-bold block mb-2">{selected.focus}</span>
-                  <h2 className="text-6xl md:text-7xl font-headline text-white uppercase tracking-tighter mb-4 leading-none text-glow-gold">
+                <div className="mb-6 text-center">
+                  <span className="text-gold text-[10px] tracking-[1.2em] uppercase font-bold block mb-1">{selected.focus}</span>
+                  <h2 className="text-5xl md:text-6xl font-headline text-white uppercase tracking-tighter mb-2 leading-none text-glow-gold">
                     {selected.name}
                   </h2>
-                  <p className="text-silver/40 text-lg italic max-w-4xl mx-auto font-light leading-relaxed">
+                  <p className="text-silver/40 text-base italic max-w-4xl mx-auto font-light">
                     "{selected.desc}"
                   </p>
                 </div>
 
-                {/* Grille Panoramique Zero Scroll */}
                 <div className="flex-1 flex items-center justify-center overflow-hidden">
-                  <div className={`grid grid-cols-1 md:grid-cols-2 ${selected.roles.length > 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-' + selected.roles.length} gap-4 w-full h-full max-h-[50vh]`}>
+                  <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full h-full max-h-[62vh]`}>
                     {selected.roles.map((role, i) => (
                       <motion.div
                         key={i}
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: i * 0.08 }}
-                        className="group/role flex flex-col p-6 bg-gold/[0.03] border border-gold/10 hover:border-gold/30 transition-all duration-500 overflow-hidden"
+                        transition={{ delay: i * 0.04 }}
+                        className="group/role flex flex-col p-5 bg-gold/[0.03] border border-gold/10 hover:border-gold/30 transition-all duration-500 overflow-hidden"
                       >
-                        <span className="text-[10px] text-gold font-bold uppercase tracking-[0.4em] mb-4 border-b border-gold/20 pb-2 inline-block w-fit">
+                        <span className="text-[9px] text-gold/50 font-bold uppercase tracking-[0.4em] mb-3 border-b border-gold/10 pb-1 inline-block w-fit">
                           {role.rank}
                         </span>
                         
-                        <h3 className="text-xl md:text-2xl text-white font-headline uppercase mb-4 group-hover/role:text-glow-gold transition-all duration-500">
+                        <h3 className="text-lg md:text-xl text-white font-headline uppercase mb-3 group-hover/role:text-glow-gold transition-all duration-500 leading-tight">
                           {role.title}
                         </h3>
                         
-                        <p className="text-silver/50 text-xs md:text-sm leading-relaxed italic font-light border-l border-gold/10 pl-4">
+                        <p className="text-silver/50 text-[11px] md:text-xs leading-relaxed italic font-light border-l border-gold/10 pl-3">
                           {role.function}
                         </p>
                       </motion.div>
@@ -212,19 +211,17 @@ export default function GuidePage() {
                 </div>
               </div>
 
-              {/* Icone Filigrane Géante */}
-              <div className="absolute bottom-[-10%] right-[-5%] opacity-[0.03] pointer-events-none transition-all duration-1000 group-hover:scale-110">
-                <selected.icon className="w-[500px] h-[500px] text-gold" />
+              <div className="absolute bottom-[-10%] right-[-5%] opacity-[0.02] pointer-events-none transition-all duration-1000">
+                <selected.icon className="w-[450px] h-[450px] text-gold" />
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
 
-      {/* Signature Studio */}
-      <footer className="flex-none pb-6 text-center z-10 opacity-30">
+      <footer className="flex-none pb-4 text-center z-10 opacity-30">
         <span className="text-[9px] text-gold/50 tracking-[0.8em] uppercase font-bold">
-          OUTLAND STUDIOS — ARCHITECTURE ASGARM V2.0.1
+          OUTLAND STUDIOS — ARCHITECTURE ASGARM V2.0.5
         </span>
       </footer>
     </main>
