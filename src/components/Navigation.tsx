@@ -22,7 +22,7 @@ export const Navigation: React.FC = () => {
     { name: 'Guide Arrivant', href: '/guide' },
     { name: 'Histoire', href: '/histoire' },
     { name: 'Conclave', href: '/conclave' },
-    { name: 'Maîtrise', href: '/maitrise' },
+    { name: 'Académie', href: '/academie' },
   ]
 
   return (
