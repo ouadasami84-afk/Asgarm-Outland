@@ -48,20 +48,20 @@ export default function ArcanesPage() {
       <div className="relative z-10 flex-1 flex flex-col pt-32 px-12 pb-12 max-w-7xl mx-auto w-full">
         
         <header className="mb-20">
-          <Link href="/conclave" className="inline-flex items-center gap-2 text-gold/40 hover:text-gold transition-colors mb-8 group">
+          <Link href="/conclave" className="inline-flex items-center gap-2 text-sky-400/40 hover:text-sky-400 transition-colors mb-8 group">
             <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Retour au Conclave</span>
           </Link>
           
           <div className="flex flex-col">
             <div className="flex items-center gap-4 mb-4">
-              <div className="h-[1px] w-12 bg-gold/40" />
-              <span className="text-gold text-[10px] tracking-[1.2em] uppercase font-bold text-glow-gold">L'Ordre de la Justice Magique</span>
+              <div className="h-[1px] w-12 bg-sky-500/40" />
+              <span className="text-sky-400 text-[10px] tracking-[1.2em] uppercase font-bold text-glow-sky">L'Ordre de la Justice Magique</span>
             </div>
-            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8 text-glow-gold">
-              Conclave des <br /> <span className="text-gold italic font-light">Arcanes</span>
+            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8 text-glow-sky">
+              Conclave des <br /> <span className="text-sky-400 italic font-light">Arcanes</span>
             </h1>
-            <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-gold/20 pl-8">
+            <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-sky-500/20 pl-8">
               "Le Conclave des Arcanes incarne la justice de la magie. Fondé après la Grande Guerre par le rassemblement des Rois, il a pour mission de protéger le monde des sorciers d'Asgarm. Nous créons les lois qui régissent l'éther, jugeons, emprisonnons, enquêtons et arrêtons les sorciers déviants pour protéger les citoyens de la magie noire et de la magie du sang. Notre serment est absolu : seule la magie arcanique est autorisée dans le monde d'Asgarm."
             </p>
           </div>
@@ -74,19 +74,19 @@ export default function ArcanesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="group p-10 bg-white/[0.03] border border-gold/10 hover:border-gold/30 hover:bg-white/[0.05] transition-all duration-700 flex flex-col shadow-2xl"
+              className="group p-10 bg-white/[0.03] border border-sky-500/10 hover:border-sky-400/30 hover:bg-white/[0.05] transition-all duration-700 flex flex-col shadow-2xl"
             >
-              <span className="text-[9px] text-gold/60 font-bold uppercase tracking-[0.4em] mb-4">{role.rank}</span>
-              <h3 className="text-2xl font-headline text-white uppercase mb-6 group-hover:text-glow-gold transition-all leading-tight">{role.title}</h3>
-              <div className="h-[1px] w-full bg-gold/10 mb-8" />
+              <span className="text-[9px] text-sky-500/60 font-bold uppercase tracking-[0.4em] mb-4">{role.rank}</span>
+              <h3 className="text-2xl font-headline text-white uppercase mb-6 group-hover:text-glow-sky transition-all leading-tight">{role.title}</h3>
+              <div className="h-[1px] w-full bg-sky-500/10 mb-8" />
               <p className="text-silver/40 text-sm leading-relaxed italic mb-10 flex-1">
                 {role.desc}
               </p>
               <div className="space-y-3">
                 {role.responsibilities.map((resp, j) => (
                   <div key={j} className="flex items-center gap-3">
-                    <div className="w-1 h-1 bg-gold/30 rounded-full" />
-                    <span className="text-[10px] text-gold/40 uppercase tracking-widest">{resp}</span>
+                    <div className="w-1 h-1 bg-sky-500/30 rounded-full" />
+                    <span className="text-[10px] text-sky-400/40 uppercase tracking-widest">{resp}</span>
                   </div>
                 ))}
               </div>
@@ -100,6 +100,11 @@ export default function ArcanesPage() {
           </span>
         </footer>
       </div>
+      <style jsx global>{`
+        .text-glow-sky {
+          text-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+        }
+      `}</style>
     </main>
   )
 }

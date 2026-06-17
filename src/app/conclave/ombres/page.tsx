@@ -48,20 +48,20 @@ export default function OmbresPage() {
       <div className="relative z-10 flex-1 flex flex-col pt-32 px-12 pb-12 max-w-7xl mx-auto w-full">
         
         <header className="mb-20">
-          <Link href="/conclave" className="inline-flex items-center gap-2 text-indigo-400/40 hover:text-indigo-400 transition-colors mb-8 group">
+          <Link href="/conclave" className="inline-flex items-center gap-2 text-red-600/40 hover:text-red-600 transition-colors mb-8 group">
             <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Retour au Conclave</span>
           </Link>
           
           <div className="flex flex-col">
             <div className="flex items-center gap-4 mb-4">
-              <div className="h-[1px] w-12 bg-indigo-500/30" />
-              <span className="text-indigo-400 text-[10px] tracking-[1.2em] uppercase font-bold text-glow-indigo">L'Ordre du Seigneur du Mal</span>
+              <div className="h-[1px] w-12 bg-red-600/30" />
+              <span className="text-red-600 text-[10px] tracking-[1.2em] uppercase font-bold text-glow-red">L'Ordre du Seigneur du Mal</span>
             </div>
-            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8">
-              Conclave des <br /> <span className="text-indigo-400 italic font-light">Ombres</span>
+            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8 text-glow-red">
+              Conclave des <br /> <span className="text-red-600 italic font-light">Ombres</span>
             </h1>
-            <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-indigo-500/20 pl-8">
+            <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-red-600/20 pl-8">
               "Le Conclave des Ombres appartient au Royaume du Mal. Fondé après la Grande Guerre par deux Seigneurs du Mal sous le nom de sorciers de l'ombre, ils ont créé ce royaume ainsi que l'école de magie noire Obscura. Nous appliquons nos propres lois, souvent en confrontation directe avec les Arcanes. Nous jugeons, arrêtons et créons de nouvelles lois, tout en enseignant les arts interdits de l'ombre et du sang. Notre devise : la magie reste de la magie, et chacun a le droit d'utiliser la magie noire et la magie du sang."
             </p>
           </div>
@@ -74,19 +74,19 @@ export default function OmbresPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="group p-10 bg-indigo-950/20 border border-indigo-500/10 hover:border-indigo-400/30 hover:bg-indigo-950/30 transition-all duration-700 flex flex-col shadow-2xl"
+              className="group p-10 bg-red-950/20 border border-red-600/10 hover:border-red-500/30 hover:bg-red-950/30 transition-all duration-700 flex flex-col shadow-2xl"
             >
-              <span className="text-[9px] text-indigo-400/60 font-bold uppercase tracking-[0.4em] mb-4">{role.rank}</span>
-              <h3 className="text-2xl font-headline text-white uppercase mb-6 group-hover:text-indigo-400 transition-all leading-tight">{role.title}</h3>
-              <div className="h-[1px] w-full bg-indigo-500/10 mb-8" />
+              <span className="text-[9px] text-red-600/60 font-bold uppercase tracking-[0.4em] mb-4">{role.rank}</span>
+              <h3 className="text-2xl font-headline text-white uppercase mb-6 group-hover:text-red-600 transition-all leading-tight">{role.title}</h3>
+              <div className="h-[1px] w-full bg-red-600/10 mb-8" />
               <p className="text-silver/40 text-sm leading-relaxed italic mb-10 flex-1">
                 {role.desc}
               </p>
               <div className="space-y-3">
                 {role.responsibilities.map((resp, j) => (
                   <div key={j} className="flex items-center gap-3">
-                    <div className="w-1 h-1 bg-indigo-500/30 rounded-full" />
-                    <span className="text-[10px] text-indigo-400/40 uppercase tracking-widest">{resp}</span>
+                    <div className="w-1 h-1 bg-red-600/30 rounded-full" />
+                    <span className="text-[10px] text-red-600/40 uppercase tracking-widest">{resp}</span>
                   </div>
                 ))}
               </div>
@@ -100,6 +100,11 @@ export default function OmbresPage() {
           </span>
         </footer>
       </div>
+      <style jsx global>{`
+        .text-glow-red {
+          text-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
+        }
+      `}</style>
     </main>
   )
 }
