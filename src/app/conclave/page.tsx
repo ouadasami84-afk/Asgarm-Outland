@@ -20,8 +20,8 @@ export default function ConclavePage() {
           href="/conclave/arcanes"
           onMouseEnter={() => setHoveredSide('arcanes')}
           onMouseLeave={() => setHoveredSide(null)}
-          className={`relative transition-all duration-1000 ease-in-out flex-1 flex flex-col items-center justify-center p-12 overflow-hidden border-r border-sky-500/5 ${
-            hoveredSide === 'ombres' ? 'opacity-20 blur-md scale-95' : 'opacity-100'
+          className={`relative transition-all duration-1000 ease-in-out flex-1 flex flex-col items-center justify-center p-12 overflow-hidden ${
+            hoveredSide === 'ombres' ? 'opacity-40 scale-98' : 'opacity-100'
           }`}
         >
           <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/10 via-transparent to-white/5 pointer-events-none" />
@@ -59,7 +59,7 @@ export default function ConclavePage() {
           onMouseEnter={() => setHoveredSide('ombres')}
           onMouseLeave={() => setHoveredSide(null)}
           className={`relative transition-all duration-1000 ease-in-out flex-1 flex flex-col items-center justify-center p-12 overflow-hidden ${
-            hoveredSide === 'arcanes' ? 'opacity-20 blur-md scale-95' : 'opacity-100'
+            hoveredSide === 'arcanes' ? 'opacity-40 scale-98' : 'opacity-100'
           }`}
         >
           <div className="absolute inset-0 bg-gradient-to-bl from-red-950/20 via-transparent to-black pointer-events-none" />
@@ -93,7 +93,7 @@ export default function ConclavePage() {
 
       </div>
 
-      <footer className="h-12 border-t border-white/5 flex items-center justify-center bg-black/60 relative z-20">
+      <footer className="h-12 flex items-center justify-center bg-black/60 relative z-20">
         <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
           CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
         </span>
