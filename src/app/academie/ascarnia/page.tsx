@@ -9,28 +9,28 @@ import { ChevronLeft, GraduationCap, Users, BookOpen, ShieldCheck } from 'lucide
 
 const houses = [
   {
-    name: "Maison Solari",
-    trait: "LA VOLONTÉ",
-    desc: "Pour ceux dont la détermination brille comme le zénith. Ils sont le fer de lance de la justice arcanique.",
-    color: "from-sky-400 to-blue-600"
+    name: "Maison Roselya",
+    trait: "LA GRÂCE",
+    desc: "Pour ceux dont l'esprit est pur et la volonté élégante. Ils excellent dans les sorts de protection et de cohésion.",
+    color: "from-pink-400 to-rose-600"
   },
   {
-    name: "Maison Lunaris",
-    trait: "LA SAGESSE",
-    desc: "Le refuge des érudits et des contemplatifs. Ils maîtrisent les flux de l'Ether par la réflexion et le calme.",
-    color: "from-sky-200 to-sky-500"
+    name: "Maison Verdantis",
+    trait: "L'HARMONIE",
+    desc: "Le refuge des gardiens de l'équilibre naturel. Ils maîtrisent les flux de l'Ether à travers la croissance et la vie.",
+    color: "from-emerald-400 to-green-600"
   },
   {
-    name: "Maison Astra",
-    trait: "LA VISION",
-    desc: "Ceux qui lisent entre les lignes du destin. Leurs prophéties guident les pas du royaume.",
-    color: "from-blue-400 to-indigo-600"
+    name: "Maison Tenebris",
+    trait: "LA PERSPICACITÉ",
+    desc: "Ceux qui explorent les profondeurs du savoir. Leurs études sur le bleu nuit de l'éther révèlent les secrets du cosmos.",
+    color: "from-indigo-600 to-blue-900"
   },
   {
-    name: "Maison Regalis",
-    trait: "LE COMMANDEMENT",
-    desc: "Le berceau des futurs dirigeants. Ils incarnent l'autorité bienveillante et la stratégie régalienne.",
-    color: "from-sky-500 to-blue-800"
+    name: "Maison Ruberis",
+    trait: "LA PASSION",
+    desc: "Le berceau des esprits ardents. Ils incarnent la force vitale et la détermination nécessaire pour forger le destin.",
+    color: "from-red-500 to-red-800"
   }
 ]
 
@@ -57,7 +57,7 @@ export default function AscarniaPage() {
                 Académie <br /> <span className="text-sky-400 italic font-light">Ascarnia</span>
               </h1>
               <p className="text-silver/50 text-xl italic font-light max-w-2xl leading-relaxed">
-                "Forger l'excellence, protéger l'équilibre. Le cursus suprême de la magie arcanique."
+                "Forger l'excellence, protéger l'équilibre. Le cursus suprême de la magie arcanique fondé par les Rois."
               </p>
             </div>
 
@@ -81,21 +81,21 @@ export default function AscarniaPage() {
             <GraduationCap className="w-8 h-8 text-sky-400 mb-6" />
             <h3 className="text-lg text-white font-headline uppercase mb-4">Excellence Académique</h3>
             <p className="text-silver/40 text-xs leading-relaxed italic">
-              Un cursus rigoureux de 100 sorts fondamentaux, validé par le Conclave des Arcanes.
+              Un cursus rigoureux de 100 sorts fondamentaux arcaniques, validé par le Conclave.
             </p>
           </div>
           <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
             <ShieldCheck className="w-8 h-8 text-sky-400 mb-6" />
-            <h3 className="text-lg text-white font-headline uppercase mb-4">Protection du Royaume</h3>
+            <h3 className="text-lg text-white font-headline uppercase mb-4">Héritage des Rois</h3>
             <p className="text-silver/40 text-xs leading-relaxed italic">
-              Seul diplôme d'État autorisant officiellement l'usage de la magie dans les cités d'Asgarm.
+              Fondée après la Grande Guerre pour protéger le monde des sorciers contre toute déviance.
             </p>
           </div>
           <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
             <BookOpen className="w-8 h-8 text-sky-400 mb-6" />
-            <h3 className="text-lg text-white font-headline uppercase mb-4">Héritage des Rois</h3>
+            <h3 className="text-lg text-white font-headline uppercase mb-4">Équilibre d'Asgarm</h3>
             <p className="text-silver/40 text-xs leading-relaxed italic">
-              Un savoir millénaire transmis par les plus grands maîtres sorciers du Conclave.
+              Un savoir millénaire transmis par les plus grands maîtres sorciers pour préserver la paix.
             </p>
           </div>
         </section>
@@ -103,7 +103,7 @@ export default function AscarniaPage() {
         {/* Section Maisons */}
         <section className="mb-24">
           <div className="flex items-center gap-4 mb-12">
-            <h2 className="text-4xl font-headline text-white uppercase tracking-tight">Les Quatre Maisons</h2>
+            <h2 className="text-4xl font-headline text-white uppercase tracking-tight">Les Quatre Maisons Ancestrales</h2>
             <div className="flex-1 h-[1px] bg-sky-500/10" />
           </div>
 
@@ -123,8 +123,8 @@ export default function AscarniaPage() {
                   {house.desc}
                 </p>
                 <div className="flex items-center gap-2">
-                  <div className="w-1 h-1 rounded-full bg-sky-400/40" />
-                  <span className="text-[8px] text-sky-400/40 uppercase tracking-widest font-bold">Maison de Prestige</span>
+                  <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${house.color}`} />
+                  <span className="text-[8px] text-sky-400/40 uppercase tracking-widest font-bold">Héritage de {house.name.replace('Maison ', '')}</span>
                 </div>
               </motion.div>
             ))}
