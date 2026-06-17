@@ -119,18 +119,18 @@ export default function HistoirePage() {
           initial={{ opacity: 0, y: -10 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 1.2 }} 
-          className="text-center mb-10"
+          className="text-center mb-10 flex flex-col items-center"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-[1px] w-12 bg-gold/20" />
             <span className="text-gold text-[9px] tracking-[1em] uppercase font-bold text-glow-gold">Chroniques d'Asgarm</span>
             <div className="h-[1px] w-12 bg-gold/20" />
           </div>
-          <h1 className="text-4xl font-headline uppercase tracking-tighter mb-4 leading-tight shine-text">
-            Les Annales de la Souveraineté
+          <h1 className="text-4xl font-headline uppercase tracking-tighter mb-4 leading-tight block">
+            <span className="shine-text">Les Annales de la Souveraineté</span>
           </h1>
-          <p className="shine-text text-[10px] tracking-[0.6em] uppercase font-bold opacity-80">
-            Faites glisser les pages pour explorer les annales
+          <p className="text-[10px] tracking-[0.6em] uppercase font-bold opacity-80 block">
+            <span className="shine-text">Faites glisser les pages pour explorer les annales</span>
           </p>
         </motion.div>
 
