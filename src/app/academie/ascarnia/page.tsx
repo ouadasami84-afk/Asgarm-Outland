@@ -35,18 +35,66 @@ const houses = [
 ]
 
 const academicGrades = [
-  "DIRECTEUR D’ASGARM",
-  "DIRECTEUR ADJOINT",
-  "PROFESSEUR CONTRE LA MAGIE NOIRE",
-  "PROFESSEUR DE CRÉATURES MAGIQUES",
-  "PROFESSEUR DE SORTILÈGES",
-  "PROFESSEUR D’ALCHIMIE / BOTANIQUE",
-  "PROFESSEUR DE DIVINATION",
-  "PROFESSEUR DE VOL",
-  "PROFESSEUR HISTOIRE DE LA MAGIE",
-  "PROFESSEUR DE MORPHOLOGIE",
-  "PROFESSEUR ASTROLOGIE",
-  "SURVEILLANT ASGARM"
+  {
+    title: "DIRECTEUR D’ASGARM",
+    desc: "Souveraineté totale sur l'institution. Gestion du corps enseignant, validation des accréditations et arbitrage final des sanctions disciplinaires majeures.",
+    rank: "HAUTE AUTORITÉ"
+  },
+  {
+    title: "DIRECTEUR ADJOINT",
+    desc: "Bras droit du directeur, chargé de la coordination opérationnelle, de la gestion des examens et de la supervision administrative quotidienne.",
+    rank: "COMMANDEMENT"
+  },
+  {
+    title: "PROFESSEUR CONTRE LA MAGIE NOIRE",
+    desc: "Expert en arts défensifs. Enseignement des boucliers, des contre-sorts et de la détection des influences occultes malveillantes.",
+    rank: "DÉFENSE"
+  },
+  {
+    title: "PROFESSEUR DE CRÉATURES MAGIQUES",
+    desc: "Maître du bestiaire d'Asgarm. Étude des écosystèmes, dressage des entités sauvages et sécurité lors des expéditions en zones reculées.",
+    rank: "BESTIAIRE"
+  },
+  {
+    title: "PROFESSEUR DE SORTILÈGES",
+    desc: "Théoricien et praticien des enchantements. Certification des paliers de puissance magique et enseignement des formules fondamentales de l'Ether.",
+    rank: "CHARMES"
+  },
+  {
+    title: "PROFESSEUR D’ALCHIMIE / BOTANIQUE",
+    desc: "Expert en pharmacopée. Synthèse de potions complexes, étude des propriétés végétales et gestion des serres royales de l'académie.",
+    rank: "PHARMACOPÉE"
+  },
+  {
+    title: "PROFESSEUR DE DIVINATION",
+    desc: "Explorateur des flux du temps. Guidance des élèves dans la compréhension des signes, des présages et de la lecture des lignes de l'Ether.",
+    rank: "PRÉSAGES"
+  },
+  {
+    title: "PROFESSEUR DE VOL",
+    desc: "Maître de l'aéronautique magique. Enseignement du pilotage de balais et de montures, et surveillance de l'espace aérien de l'institution.",
+    rank: "AÉRONAUTIQUE"
+  },
+  {
+    title: "PROFESSEUR HISTOIRE DE LA MAGIE",
+    desc: "Gardien des archives. Étude des traités anciens, des généalogies royales et de l'évolution des lois arcaniques à travers les âges.",
+    rank: "ARCHIVES"
+  },
+  {
+    title: "PROFESSEUR DE MORPHOLOGIE",
+    desc: "Spécialiste de la transformation. Maîtrise de la théorie du corps magique et enseignement des métamorphoses physiques et structurelles.",
+    rank: "TRANSFORMATION"
+  },
+  {
+    title: "PROFESSEUR ASTROLOGIE",
+    desc: "Lecteur du cosmos. Étude des constellations, des cycles stellaires et de leur influence directe sur les flux de mana du royaume.",
+    rank: "COSMOS"
+  },
+  {
+    title: "SURVEILLANT ASGARM",
+    desc: "Garant de la discipline et de la sécurité des couloirs. Application immédiate des sanctions et maintien de la paix académique lors des rondes nocturnes.",
+    rank: "ORDRE"
+  }
 ]
 
 export default function AscarniaPage() {
@@ -71,7 +119,7 @@ export default function AscarniaPage() {
               <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-4">
                 Académie <br /> <span className="text-sky-400 italic font-light">Ascarnia</span>
               </h1>
-              <p className="text-silver/50 text-xl italic font-light max-w-2xl leading-relaxed">
+              <p className="text-silver/50 text-xl italic font-light max-w-2xl leading-relaxed border-l border-sky-500/20 pl-8">
                 "Forger l'excellence, protéger l'équilibre. Le cursus suprême de la magie arcanique fondé par les Rois après la Grande Guerre."
               </p>
             </div>
@@ -85,11 +133,6 @@ export default function AscarniaPage() {
               <div className="text-center">
                 <span className="block text-sky-400 text-3xl font-headline mb-1">18+</span>
                 <span className="text-[8px] text-silver/40 uppercase tracking-widest font-bold">Âge Requis</span>
-              </div>
-              <div className="h-12 w-[1px] bg-white/5" />
-              <div className="text-center">
-                <span className="block text-sky-400 text-3xl font-headline mb-1">100</span>
-                <span className="text-[8px] text-silver/40 uppercase tracking-widest font-bold">Sorts Fondamentaux</span>
               </div>
             </div>
           </div>
@@ -133,17 +176,21 @@ export default function AscarniaPage() {
             <div className="flex-1 h-[1px] bg-sky-500/10" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {academicGrades.map((grade, i) => (
               <motion.div
-                key={grade}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
+                key={grade.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className="p-8 bg-sky-950/5 border border-sky-500/10 hover:border-sky-400/30 transition-all group flex flex-col justify-center"
+                className="group p-10 bg-white/[0.03] border border-sky-500/10 hover:border-sky-400/30 hover:bg-white/[0.05] transition-all duration-700 flex flex-col shadow-2xl"
               >
-                <span className="text-[8px] text-sky-500/40 font-bold uppercase tracking-[0.3em] mb-2 block">Grade Officiel</span>
-                <h4 className="text-sm font-headline text-white uppercase tracking-wider group-hover:text-sky-400 transition-colors">{grade}</h4>
+                <span className="text-[9px] text-sky-500/60 font-bold uppercase tracking-[0.4em] mb-4">{grade.rank}</span>
+                <h3 className="text-xl font-headline text-white uppercase mb-6 group-hover:text-sky-400 transition-all leading-tight">{grade.title}</h3>
+                <div className="h-[1px] w-full bg-sky-500/10 mb-8" />
+                <p className="text-silver/40 text-[11px] leading-relaxed italic mb-4 flex-1 font-light">
+                  {grade.desc}
+                </p>
               </motion.div>
             ))}
           </div>
