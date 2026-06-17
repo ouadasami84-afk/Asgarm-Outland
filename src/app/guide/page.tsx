@@ -87,7 +87,7 @@ export default function GuidePage() {
   const activeInst = institutions.find(i => i.id === activeTab) || institutions[0]
 
   return (
-    <main className="relative h-screen flex flex-col overflow-hidden bg-[#010208]">
+    <main className="relative h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
       <div className="flex-1 flex pt-24 pb-4 px-6 gap-6 relative z-10 overflow-hidden">

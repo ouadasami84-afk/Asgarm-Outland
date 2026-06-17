@@ -23,15 +23,7 @@ const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: nu
   ({ children, number }, ref) => (
     <div className="page" ref={ref}>
       <div className="page-content">
-        {/* Ornements de coins de page gravés en or bruni */}
-        <div className="absolute inset-0 pointer-events-none p-8">
-          <div className="absolute top-8 left-8 w-16 h-16 border-t-2 border-l-2 border-[#4a3721]/15 rounded-tl-sm" />
-          <div className="absolute top-8 right-8 w-16 h-16 border-t-2 border-r-2 border-[#4a3721]/15 rounded-tr-sm" />
-          <div className="absolute bottom-8 left-8 w-16 h-16 border-b-2 border-l-2 border-[#4a3721]/15 rounded-bl-sm" />
-          <div className="absolute bottom-8 right-8 w-16 h-16 border-b-2 border-r-2 border-[#4a3721]/15 rounded-br-sm" />
-        </div>
-
-        {/* Contenu avec animation d'apparition magique */}
+        {/* Contenu épuré sans traits blancs superflus */}
         <motion.div 
           initial={{ opacity: 0, y: 10, filter: 'blur(5px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -80,7 +72,7 @@ export default function HistoirePage() {
       <Navigation />
       
       {/* Halo d'Éther Pulsant derrière le Grimoire */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gold/[0.03] blur-[150px] rounded-full pointer-events-none z-0 animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gold/[0.04] blur-[150px] rounded-full pointer-events-none z-0 animate-pulse" />
       
       <div className="flex-1 flex flex-col items-center justify-center p-6 pt-24 pb-12 relative z-10">
         
@@ -125,7 +117,7 @@ export default function HistoirePage() {
             <ChevronRight className="w-14 h-14" />
           </button>
 
-          <div className="flip-book-container relative shadow-[0_60px_120px_rgba(0,0,0,1)] border-[6px] border-[#2a1a0a] rounded-sm overflow-hidden bg-[#2a1a0a]">
+          <div className="flip-book-container relative shadow-[0_60px_120px_rgba(0,0,0,1)] border-[8px] border-[#2a1a0a] rounded-sm overflow-hidden bg-[#2a1a0a]">
             <HTMLFlipBook
               width={550}
               height={750}
@@ -277,7 +269,7 @@ export default function HistoirePage() {
         {/* Aide Navigation */}
         <motion.div 
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.4 }}
+          animate={{ opacity: 0.5 }}
           transition={{ delay: 2 }}
           className="mt-10 flex items-center gap-6"
         >
