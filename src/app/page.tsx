@@ -55,13 +55,13 @@ export default function Home() {
               <Hero />
               
               {/* Manifeste de Qualité */}
-              <section className="py-20 px-8 max-w-7xl mx-auto text-center">
+              <section className="py-24 px-8 max-w-7xl mx-auto text-center border-b border-gold/5">
                 <motion.div 
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1 }}
-                  className="mb-20"
+                  className="mb-32"
                 >
                   <div className="flex items-center justify-center gap-4 mb-8">
                     <div className="h-[1px] w-12 bg-gold/30" />
@@ -78,9 +78,60 @@ export default function Home() {
                     totale. Ici, l'ingénierie est au service de votre légende."
                   </p>
                 </motion.div>
+
+                {/* Section Roadmap / Chronologie */}
+                <div className="max-w-4xl mx-auto mb-40 text-left">
+                  <div className="flex flex-col gap-24 relative">
+                    <div className="absolute left-[7px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-gold/40 via-gold/10 to-transparent hidden md:block" />
+                    
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      className="relative pl-0 md:pl-16"
+                    >
+                      <div className="absolute left-0 top-3 w-4 h-4 rounded-full border border-gold bg-night hidden md:block" />
+                      <span className="text-gold/40 text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">Phase I : Inauguration</span>
+                      <h3 className="text-4xl font-headline text-white mb-4 uppercase tracking-tight">Juillet 2026 — Lancement V1</h3>
+                      <p className="text-silver/40 italic text-lg leading-relaxed max-w-2xl">
+                        Ouverture officielle des portes d'Outland. Déploiement de notre infrastructure initiale et des premiers systèmes de jeu propriétaires.
+                      </p>
+                    </motion.div>
+
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 }}
+                      className="relative pl-0 md:pl-16"
+                    >
+                      <div className="absolute left-0 top-3 w-4 h-4 rounded-full border border-gold/40 bg-night hidden md:block" />
+                      <span className="text-gold/40 text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">Phase II : Évolution Technique</span>
+                      <h3 className="text-4xl font-headline text-white mb-4 uppercase tracking-tight">Ascension V2</h3>
+                      <p className="text-silver/40 italic text-lg leading-relaxed max-w-2xl">
+                        Mise à jour majeure prévue peu après la sortie initiale. Intégration de mécaniques avancées et optimisation de l'expérience utilisateur.
+                      </p>
+                    </motion.div>
+
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.4 }}
+                      className="relative pl-0 md:pl-16"
+                    >
+                      <div className="absolute left-0 top-3 w-4 h-4 rounded-full border border-gold bg-gold/20 hidden md:block" />
+                      <span className="text-gold/60 text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">Phase III : Terre Promise</span>
+                      <h3 className="text-4xl font-headline text-gold mb-4 uppercase tracking-tight text-glow-gold">Map Asgarm Officielle</h3>
+                      <p className="text-silver/40 italic text-lg leading-relaxed max-w-2xl border-l-2 border-gold/20 pl-8 ml-[-34px] md:ml-0 md:pl-0 md:border-none">
+                        La consécration. Sortie de la carte exclusive Asgarm, entièrement modélisée par nos équipes pour offrir un univers à la mesure de notre ambition technique.
+                      </p>
+                    </motion.div>
+                  </div>
+                </div>
                 
                 {/* Communauté Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32 max-w-4xl mx-auto">
                   <motion.a
                     href="#"
                     initial={{ opacity: 0, x: -20 }}
@@ -118,22 +169,22 @@ export default function Home() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.2 }}
-                  className="max-w-5xl mx-auto pb-16 border-t border-gold/20 pt-16"
+                  className="max-w-5xl mx-auto pb-16 border-t border-gold/20 pt-20"
                 >
-                  <div className="mb-12">
-                    <span className="text-gold text-base tracking-[0.6em] uppercase font-bold block mb-8 text-glow-gold">Certification de Licence Propriétaire</span>
-                    <p className="text-silver/60 text-xl italic leading-loose max-w-3xl mx-auto font-light">
+                  <div className="mb-16">
+                    <span className="text-gold text-2xl tracking-[0.6em] uppercase font-bold block mb-10 text-glow-gold">Certification de Licence Propriétaire</span>
+                    <p className="text-white/80 text-2xl italic leading-loose max-w-4xl mx-auto font-light">
                       L'ensemble des architectures logicielles, scripts dynamiques, modélisations 3D et systèmes immersifs 
                       d'Outland sont protégés par les lois internationales sur la propriété intellectuelle. 
                       Toute tentative de plagiat ou d'utilisation non autorisée du projet Asgarm entraînera des 
                       mesures légales immédiates par notre service juridique.
                     </p>
                   </div>
-                  <div className="flex flex-col items-center gap-8">
-                    <div className="h-20 w-[1px] bg-gradient-to-b from-gold/60 to-transparent" />
+                  <div className="flex flex-col items-center gap-10">
+                    <div className="h-24 w-[1px] bg-gradient-to-b from-gold/60 to-transparent" />
                     <div className="text-center">
-                      <span className="font-headline text-4xl text-gold tracking-[0.4em] uppercase block mb-4 text-glow-gold">© 2026 Outland Studios</span>
-                      <span className="text-sm text-gold/50 tracking-[0.8em] uppercase font-bold">L'Excellence d'Asgarm - Projet Outland</span>
+                      <span className="font-headline text-5xl text-gold tracking-[0.4em] uppercase block mb-6 text-glow-gold">© 2026 Outland Studios</span>
+                      <span className="text-base text-gold/50 tracking-[0.8em] uppercase font-bold">L'Excellence d'Asgarm - Projet Outland</span>
                     </div>
                   </div>
                 </motion.div>
