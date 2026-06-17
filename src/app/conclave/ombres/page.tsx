@@ -11,26 +11,26 @@ const roles = [
   {
     title: "Haut Éminence",
     rank: "Souveraineté Occulte",
-    desc: "Maître absolu des réseaux clandestins et gardien des secrets d'État. Il manipule l'influence politique pour assurer la pérennité d'Asgarm.",
+    desc: "Maître absolu des réseaux clandestins et gardien des secrets d'État du Seigneur du Mal. Il manipule l'influence pour assurer la pérennité de l'ombre.",
     responsibilities: ["Renseignement Suprême", "Gestion des Ombres", "Influence Géopolitique"]
   },
   {
     title: "Maître Silencieux",
     rank: "Commandement Tactique",
-    desc: "Stratège des opérations d'infiltration. Il coordonne les agents sur le terrain et assure le silence absolu des directives royales.",
-    responsibilities: ["Planification Clandestine", "Sécurité des Flux", "Logistique Occulte"]
+    desc: "Stratège des opérations d'infiltration. Il enseigne les sorts du mal aux nouveaux sorciers et coordonne les agents dans l'abysse.",
+    responsibilities: ["Planification Clandestine", "Enseignement Noir", "Logistique Occulte"]
   },
   {
     title: "Lame d'Asgarm",
     rank: "Exécuteur d'Élite",
-    desc: "Le bras armé invisible. Spécialiste du sabotage et de la neutralisation des menaces sensibles avant qu'elles ne parviennent à la lumière.",
+    desc: "Le bras armé invisible. Spécialiste de la neutralisation des menaces arcaniques avant qu'elles ne parviennent à entraver nos lois.",
     responsibilities: ["Infiltration", "Neutralisation de Cibles", "Sabotage Tactique"]
   }
 ]
 
 export default function OmbresPage() {
   return (
-    <main className="relative min-h-screen flex flex-col bg-background overflow-hidden">
+    <main className="relative min-h-screen flex flex-col bg-transparent overflow-hidden">
       <Navigation />
       
       {/* Ambiance Visuelle Occulte */}
@@ -51,13 +51,13 @@ export default function OmbresPage() {
           <div className="flex flex-col">
             <div className="flex items-center gap-4 mb-4">
               <div className="h-[1px] w-12 bg-indigo-500/30" />
-              <span className="text-indigo-400 text-[10px] tracking-[1.2em] uppercase font-bold">L'Ordre du Secret</span>
+              <span className="text-indigo-400 text-[10px] tracking-[1.2em] uppercase font-bold">L'Ordre du Seigneur du Mal</span>
             </div>
             <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
               Conclave des <br /> <span className="text-indigo-400 italic font-light">Ombres</span>
             </h1>
             <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-indigo-500/20 pl-8">
-              "Le silence est notre plus grande arme. Le Conclave des Ombres opère dans les recoins oubliés d'Asgarm, protégeant le royaume des menaces que la lumière ne peut voir."
+              "Nous appartenons au royaume du mal. Ici, nous appliquons nos propres lois, défiant constamment les Arcanes. Nous jugeons et créons notre propre destin, enseignant que la magie reste de la magie : tout le monde peut et doit utiliser la magie noire."
             </p>
           </div>
         </header>
@@ -93,7 +93,7 @@ export default function OmbresPage() {
         {/* Charte de Faction */}
         <div className="mt-auto p-12 border border-indigo-500/5 bg-indigo-950/10 text-center mb-8">
           <p className="text-[9px] text-indigo-400/30 uppercase tracking-[1em] font-bold">
-            — LE SALUT DANS L'OBSCURITÉ —
+            — LA LIBERTÉ DANS L'OBSCURITÉ —
           </p>
         </div>
 

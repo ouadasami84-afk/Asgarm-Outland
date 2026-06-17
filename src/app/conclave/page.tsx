@@ -10,7 +10,7 @@ export default function ConclavePage() {
   const [hoveredSide, setHoveredSide] = useState<'arcanes' | 'ombres' | null>(null)
 
   return (
-    <main className="relative h-screen flex flex-col overflow-hidden bg-background">
+    <main className="relative h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
       <div className="flex-1 flex relative z-10 overflow-hidden pt-24">
@@ -37,14 +37,14 @@ export default function ConclavePage() {
             <div className="flex flex-col items-center">
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-[1px] w-12 bg-gold/30" />
-                <span className="text-gold text-[10px] tracking-[1.2em] uppercase font-bold text-glow-gold">Souveraineté Divine</span>
+                <span className="text-gold text-[10px] tracking-[1.2em] uppercase font-bold text-glow-gold">Justice Magique</span>
                 <div className="h-[1px] w-12 bg-gold/30" />
               </div>
               <h1 className="text-7xl font-headline text-white uppercase tracking-tighter mb-8 text-glow-gold leading-none">
-                Les <br /> <span className="text-gold italic font-light">Arcanes</span>
+                Conclave des <br /> <span className="text-gold italic font-light">Arcanes</span>
               </h1>
               <p className="text-silver/40 italic text-lg leading-relaxed mb-12 max-w-md">
-                "La main de fer dans un gant de lumière. Ceux qui dictent les lois et préservent l'équilibre sacré d'Asgarm."
+                "Seule la magie arcanique est autorisée. Nous sommes le rempart contre l'obscurité, les juges du flux sacré."
               </p>
               <div className="px-12 py-4 border border-gold/20 text-gold text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-gold hover:text-night transition-all duration-500">
                 Entrer dans l'Ordre
@@ -79,10 +79,10 @@ export default function ConclavePage() {
                 <div className="h-[1px] w-12 bg-indigo-500/30" />
               </div>
               <h1 className="text-7xl font-headline text-white uppercase tracking-tighter mb-8 leading-none">
-                Les <br /> <span className="text-indigo-400 italic font-light">Ombres</span>
+                Conclave des <br /> <span className="text-indigo-400 italic font-light">Ombres</span>
               </h1>
               <p className="text-silver/40 italic text-lg leading-relaxed mb-12 max-w-md">
-                "Le souffle invisible du trône. Ceux qui manipulent les arcanes interdits pour assurer la survie absolue du royaume."
+                "La magie reste de la magie. Nous embrassons l'abysse pour forger nos propres lois dans le sang et l'ombre."
               </p>
               <div className="px-12 py-4 border border-indigo-500/20 text-indigo-400 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-indigo-400 hover:text-night transition-all duration-500">
                 Invoquer l'Abysse

@@ -30,7 +30,7 @@ const roles = [
 
 export default function ArcanesPage() {
   return (
-    <main className="relative min-h-screen flex flex-col bg-background overflow-hidden">
+    <main className="relative min-h-screen flex flex-col bg-transparent overflow-hidden">
       <Navigation />
       
       {/* Ambiance Visuelle Arcanique */}
@@ -51,13 +51,13 @@ export default function ArcanesPage() {
           <div className="flex flex-col">
             <div className="flex items-center gap-4 mb-4">
               <div className="h-[1px] w-12 bg-gold/40" />
-              <span className="text-gold text-[10px] tracking-[1.2em] uppercase font-bold text-glow-gold">L'Ordre de la Lumière</span>
+              <span className="text-gold text-[10px] tracking-[1.2em] uppercase font-bold text-glow-gold">L'Ordre de la Justice Magique</span>
             </div>
             <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8 text-glow-gold">
               Conclave des <br /> <span className="text-gold italic font-light">Arcanes</span>
             </h1>
             <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-gold/20 pl-8">
-              "L'ordre est le rempart contre le chaos. Le Conclave des Arcanes veille à ce que chaque acte dans Asgarm soit guidé par la justice et la discipline éternelle du trône."
+              "Nous sommes la justice de la magie. Nous créons les lois qui régissent l'éther, enquêtons et arrêtons ceux qui osent manipuler les arts interdits. Notre serment est immuable : seule la magie arcanique est autorisée dans le monde d'Asgarm."
             </p>
           </div>
         </header>
@@ -93,7 +93,7 @@ export default function ArcanesPage() {
         {/* Charte de Faction */}
         <div className="mt-auto p-12 border border-gold/5 bg-white/[0.01] text-center mb-8">
           <p className="text-[9px] text-gold/30 uppercase tracking-[1em] font-bold">
-            — L'ÉQUILIBRE PAR LA LOI —
+            — L'ÉQUILIBRE PAR LA LOI ARCANIQUE —
           </p>
         </div>
 
