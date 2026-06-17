@@ -41,13 +41,13 @@ const MagicalText = ({ text, title }: { text: string; title?: string }) => {
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
-          className="text-[16px] font-headline text-[#4a3721] mb-4 tracking-tight border-b border-[#4a3721]/15 pb-2"
+          className="text-[18px] font-headline text-[#4a3721] mb-6 tracking-tight border-b border-[#4a3721]/15 pb-2"
         >
           {title}
         </motion.h3>
       )}
       <div className="flex-1">
-        <motion.p className="text-[#3d2b19] font-serif leading-[1.7] text-justify text-[11px] italic">
+        <motion.p className="text-[#3d2b19] font-serif leading-[1.8] text-justify text-[13px] italic">
           {words.map((word, i) => (
             <motion.span
               key={i}
