@@ -132,7 +132,7 @@ const institutions = [
 
 export default function GuidePage() {
   return (
-    <main className="relative min-h-screen bg-[#010208]">
+    <main className="relative min-h-screen bg-transparent">
       <Navigation />
       
       {/* Header Compact et Pro */}
