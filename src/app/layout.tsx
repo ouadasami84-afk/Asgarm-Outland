@@ -2,6 +2,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { MagicalBackground } from '@/components/MagicalBackground';
+import { BackgroundMusic } from '@/components/BackgroundMusic';
 
 export const metadata: Metadata = {
   title: 'Outland | Le Royaume d\'Asgarm',
@@ -22,6 +23,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased bg-[#010208] text-[#F8F8F8] overflow-x-hidden">
         <MagicalBackground />
+        <BackgroundMusic />
         <div className="relative z-10">
           {children}
         </div>
