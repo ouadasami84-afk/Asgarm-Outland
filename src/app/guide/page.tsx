@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronRight, Shield, Book, Globe, Briefcase, Castle, History } from 'lucide-react'
+import { ChevronRight, Shield, Book, Globe, Briefcase, History } from 'lucide-react'
 
 const institutions = [
   {
@@ -68,7 +68,7 @@ const institutions = [
     id: "royaute",
     name: "Royauté d'Asgarm",
     focus: "SOUVERAINETÉ SUPRÊME",
-    icon: Castle,
+    icon: Shield,
     desc: "La direction politique et artistique du royaume. Ils décident du destin global d'Asgarm. Le respect envers la couronne est la fondation de votre citoyenneté. Ils valident les grandes orientations et maintiennent l'équilibre entre les peuples.",
     roles: [
       { title: "LE MONARQUE", rank: "SOUVERAIN", function: "Prise de décision géopolitique majeure et incarnation vivante du trône d'Asgarm." },

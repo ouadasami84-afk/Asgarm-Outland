@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Globe, Users, Shield, Castle, Newspaper, Wine, Wrench, House, Briefcase, History, MapPin } from 'lucide-react'
+import { Globe, Users, Shield, Newspaper, Wine, Wrench, House, Briefcase, History, MapPin } from 'lucide-react'
 
 const kingdoms = [
   {
@@ -19,7 +19,7 @@ const kingdoms = [
   {
     name: "Forêt d'Argent",
     race: "Royaume des Elfes & Elfes de Lune",
-    desc: "Au cœur des forêts ancestrales se niche la Forêt d'Argent, le royaume commun des Elfes et des Elfes de Lune. C'est une cité où la nature et la magie ne font qu'un, avec des habitations tissées dans les arbres vivants et des chemins illuminés par la lueur des étoiles. Tandis que les Elfes cultivent la magie de la vie, les Elfes de Lune veillent en secret depuis leurs sanctuaires ombragés, étudiant les arcanes obscurs pour maintenir l'équilibre. Ensemble, ils forment une communauté harmonieuse et sage, gardiens des plus anciens secrets d'Asgarm.",
+    desc: "Au cœur des forêts ancestrales se niche la Forêt d'Argent, le royaume commun des Elfes et des Elfes de Lune. C'est une cité où la nature et la magie ne font qu'un, avec des habitations tissées dans les arbres vivants et des chemins illuminés par la lueur des étoiles. Tandis que les Elfes cultivent la magie de la vie, les Elfes de Lune veillent en secret depuis leurs sanctuaires ombragés, étudiant les arcanes obscurs pour maintenir l'équilibre. Ensemble, they forment une communauté harmonieuse et sage, gardiens des plus anciens secrets d'Asgarm.",
     color: "from-emerald-600/20 to-green-600/5",
     accent: "text-emerald-400",
     glow: "text-glow-green",
@@ -205,7 +205,7 @@ export default function AtlasPage() {
                     initial={{ opacity: 0, x: i % 2 === 0 ? -60 : 60 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-20 group relative overflow-hidden`}
+                    className={`flex flex-col items-stretch gap-20 group relative overflow-hidden`}
                   >
                     <div className="flex-1 relative z-10 flex flex-col justify-center py-16 px-20 bg-black/40 border border-white/5 hover:border-gold/20 transition-all duration-1000 shadow-3xl">
                       <div className={`absolute inset-0 bg-gradient-to-br ${k.color} opacity-0 group-hover:opacity-100 transition-opacity duration-1000`} />
@@ -226,10 +226,6 @@ export default function AtlasPage() {
                           {k.desc}
                         </p>
                       </div>
-                    </div>
-                    
-                    <div className={`hidden lg:flex w-1/4 ${k.border} border-l flex-col items-center justify-center relative overflow-hidden bg-white/[0.01]`}>
-                      <Castle className={`w-12 h-12 ${k.accent} opacity-20 group-hover:scale-110 group-hover:opacity-40 transition-all duration-1000`} />
                     </div>
                   </motion.div>
                 ))}
