@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react'
@@ -11,134 +10,117 @@ const institutions = [
     name: "Académie d'Asgarm",
     focus: "PÔLE ÉDUCATIF & DISCIPLINAIRE",
     roles: [
-      { rank: "Direction", title: "Directeur & Adjoint", function: "Haute Autorité" },
-      { rank: "Enseignants", title: "Professeurs", function: "Pédagogie Arcanique" },
-      { rank: "Discipline", title: "Surveillant Général", function: "Maintien de l'Ordre" },
-      { rank: "Apprentissage", title: "Élève (Apprenti)", function: "Immersion Savoir" }
+      { title: "Directeur & Adjoint", rank: "DIRECTION", function: "Gouvernance de l'institution et validation des cursus arcaniques." },
+      { title: "Professeurs", rank: "ENSEIGNEMENT", function: "Transmission du savoir technique et évaluation des aptitudes magiques." },
+      { title: "Surveillant Général", rank: "DISCIPLINE", function: "Maintien de l'ordre interne et application du règlement scolaire." },
+      { title: "Élève (Apprenti)", rank: "IMMERSION", function: "Apprentissage des mécaniques et progression dans la hiérarchie." }
     ]
   },
   {
     name: "Conclave des Arcanes",
     focus: "JUSTICE & LÉGISLATION",
     roles: [
-      { rank: "Souveraineté", title: "Grand Sorcier", function: "Législation Royale" },
-      { rank: "Administration", title: "Maître Sorcier", function: "Gestion du Royaume" },
-      { rank: "Force Publique", title: "Protecteur des Arcanes", function: "Sécurité Civile" }
+      { title: "Grand Sorcier", rank: "SOUVERAINETÉ", function: "Rédaction des lois du royaume et arbitrage des conflits majeurs." },
+      { title: "Maître Sorcier", rank: "ADMINISTRATION", function: "Gestion des ressources territoriales et coordination civile." },
+      { title: "Protecteur des Arcanes", rank: "SÉCURITÉ", function: "Application de la loi et patrouilles de maintien de la paix." }
     ]
   },
   {
     name: "Conclave des Ombres",
     focus: "ORDRE OCCULTE",
     roles: [
-      { rank: "Souveraineté", title: "Grand Sorcier des Ombres", function: "Commandement" },
-      { rank: "Stratégie", title: "Maître des Ténèbres", function: "Tactiques Occultes" },
-      { rank: "Exécution", title: "Protecteur des Ombres", function: "Assassinat Discret" }
+      { title: "Grand Sorcier des Ombres", rank: "SOUVERAINETÉ", function: "Commandement des opérations clandestines et influence politique." },
+      { title: "Maître des Ténèbres", rank: "STRATÉGIE", function: "Planification des tactiques occultes et gestion du renseignement." },
+      { title: "Protecteur des Ombres", rank: "EXÉCUTION", function: "Protection des secrets du Conclave et interventions chirurgicales." }
     ]
   },
   {
     name: "Royauté d'Asgarm",
     focus: "SOUVERAINETÉ SUPRÊME",
     roles: [
-      { rank: "Le Monarque", title: "Roi ou Reine", function: "Autorité Absolue" },
-      { rank: "Influence", title: "Conseiller du Trône", function: "Conseil Stratégique" }
+      { title: "Le Monarque", rank: "AUTORITÉ", function: "Décision finale sur l'avenir du royaume et diplomatie d'élite." },
+      { title: "Conseiller du Trône", rank: "INFLUENCE", function: "Conseil stratégique et gestion de l'étiquette royale." }
     ]
   },
   {
     name: "Clans et Créatures",
     focus: "STRUCTURES SAUVAGES",
     roles: [
-      { rank: "Leadership", title: "Chef de Clan / Alpha", function: "Protection Territoire" },
-      { rank: "Sagesse", title: "Chaman du Clan", function: "Lien Spirituel" }
+      { title: "Chef de Clan / Alpha", rank: "LEADERSHIP", function: "Protection du territoire et commandement des meutes/clans." },
+      { title: "Chaman du Clan", rank: "SAGESSE", function: "Lien avec l'éther et préservation des traditions ancestrales." }
     ]
   },
   {
     name: "Économie et Services",
     focus: "PÔLE SOCIAL & COMMERCIAL",
     roles: [
-      { rank: "Patrimoine", title: "Agent Immobilier", function: "Gestion Foncière" },
-      { rank: "Information", title: "Journaliste", function: "Chroniqueur Royal" },
-      { rank: "Commerce", title: "Tavernier", function: "Lien Social" }
+      { title: "Agent Immobilier", rank: "PATRIMOINE", function: "Gestion du foncier et transaction des propriétés de luxe." },
+      { title: "Journaliste", rank: "INFORMATION", function: "Chronique des événements et diffusion de la vérité d'Asgarm." },
+      { title: "Tavernier", rank: "COMMERCE", function: "Gestion des lieux de vie et distribution des ressources de bouche." }
     ]
   }
 ]
 
 export default function GuidePage() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  }
-
   return (
     <main className="relative min-h-screen bg-[#010208]">
       <Navigation />
       
-      {/* Header Compact & Imposant */}
       <section className="relative pt-40 pb-12 px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center gap-6 mb-6">
               <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-gold/40" />
               <span className="text-gold text-[10px] tracking-[0.8em] uppercase font-bold text-glow-gold">Codex de Destination</span>
               <div className="h-[1px] w-24 bg-gradient-to-l from-transparent to-gold/40" />
             </div>
-            <h1 className="text-6xl md:text-8xl font-headline mb-4 text-white uppercase tracking-tighter leading-none">
+            <h1 className="text-5xl md:text-7xl font-headline mb-4 text-white uppercase tracking-tighter leading-none">
               GUIDE <span className="text-gold italic font-light">ARRIVANT</span>
             </h1>
-            <p className="text-silver/40 max-w-2xl mx-auto italic text-lg font-light">
-              "Votre place dans l'élite d'Asgarm commence ici. Définissez votre destinée."
+            <p className="text-silver/40 max-w-2xl mx-auto italic text-lg font-light leading-relaxed">
+              "Définissez votre impact. Chaque rôle est une clé maîtresse de l'ingénierie sociale d'Asgarm."
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Grille Tactique des Rôles */}
       <div className="relative z-10 px-8 max-w-7xl mx-auto pb-24">
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {institutions.map((inst) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {institutions.map((inst, idx) => (
             <motion.div
               key={inst.name}
-              variants={itemVariants}
-              className="group relative glass-night border border-gold/10 p-8 hover:border-gold/30 transition-all duration-500 overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1, duration: 0.8 }}
+              className="group glass-night border border-gold/10 p-8 hover:border-gold/30 transition-all duration-500"
             >
-              {/* Effet de scan au survol */}
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-gold/40 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-gold/60 text-[8px] tracking-[0.4em] uppercase font-bold">{inst.focus}</span>
+                <div className="h-[1px] flex-1 bg-gold/10 ml-4" />
+              </div>
+              <h2 className="text-2xl font-headline text-white mb-8 uppercase tracking-tight group-hover:text-gold transition-colors">{inst.name}</h2>
               
-              <span className="text-gold/60 text-[8px] tracking-[0.4em] uppercase font-bold block mb-4">{inst.focus}</span>
-              <h2 className="text-2xl font-headline text-white mb-6 uppercase tracking-tight group-hover:text-gold transition-colors">{inst.name}</h2>
-              
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {inst.roles.map((role, i) => (
-                  <div key={i} className="relative pl-4 border-l border-gold/10">
-                    <div className="flex items-center justify-between mb-1">
+                  <div key={i} className="relative group/role">
+                    <div className="flex items-baseline gap-3 mb-1">
                       <span className="text-[7px] text-gold/40 uppercase tracking-[0.2em] font-bold">{role.rank}</span>
+                      <h3 className="text-sm text-white font-headline tracking-wide uppercase">{role.title}</h3>
                     </div>
-                    <h3 className="text-base text-white font-headline leading-tight">{role.title}</h3>
-                    <p className="text-silver/30 text-[9px] uppercase tracking-[0.1em] mt-1 italic">{role.function}</p>
+                    <p className="text-silver/40 text-[10px] leading-relaxed italic border-l border-gold/10 pl-4 py-1">
+                      {role.function}
+                    </p>
                   </div>
                 ))}
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Certification Technique Compacte */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -150,7 +132,7 @@ export default function GuidePage() {
               L'EXCELLENCE <span className="text-gold">TECHNIQUE</span>
             </h3>
             <p className="text-silver/40 text-sm italic font-light leading-relaxed mb-12">
-              "L'expérience Outland repose sur des systèmes 100% propriétaires développés par nos ingénieurs. Chaque rôle bénéficie de mécaniques exclusives."
+              "Chaque poste bénéficie de mécaniques de jeu exclusives développées par nos ingénieurs. Votre immersion est notre priorité absolue."
             </p>
             <div className="flex flex-col items-center gap-4">
               <div className="h-12 w-[1px] bg-gradient-to-b from-gold/40 to-transparent" />
