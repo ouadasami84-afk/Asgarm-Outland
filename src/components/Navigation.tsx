@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ScrollText } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export const Navigation: React.FC = () => {
@@ -61,9 +61,12 @@ export const Navigation: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-6">
-          <button className="hidden sm:flex items-center gap-2 px-8 py-2 border border-gold/20 text-gold text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-night transition-all duration-500 bg-night/20">
-            REJOINDRE L'ÉLITE
-          </button>
+          <Link href="/reglement">
+            <button className="hidden sm:flex items-center gap-2 px-8 py-2 border border-gold/20 text-gold text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-night transition-all duration-500 bg-night/20">
+              <ScrollText className="w-3 h-3" />
+              Réglement
+            </button>
+          </Link>
           <button 
             className="lg:hidden text-gold p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -103,6 +106,19 @@ export const Navigation: React.FC = () => {
                 </Link>
               </motion.div>
             ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <Link 
+                href="/reglement" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-gold text-lg font-bold tracking-[0.4em] uppercase border-b border-gold/20 pb-2"
+              >
+                Réglement
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
