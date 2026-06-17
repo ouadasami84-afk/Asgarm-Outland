@@ -4,21 +4,21 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Globe, Users, Shield, Castle, ChevronRight, BookOpen, Scroll, Users2 } from 'lucide-react'
+import { Globe, Users, Shield, Castle, Scroll, Users2, Landmark, History } from 'lucide-react'
 
 const kingdoms = [
   {
     name: "Bastion d'Aethel",
     race: "Royaume des Humains",
-    desc: "Bâti sur l'ambition et la résilience, le royaume des Humains est une forteresse de magie et de courage. Après avoir reçu le don de la magie des Elfes, les humains ont érigé des cités majestueuses aux flèches scintillantes, protégées par de puissants enchantements. Leurs armées, combinant la maîtrise de l'acier et des arcanes, sont le premier rempart d'Asgarm contre les ténèbres.",
+    desc: "Bâti sur l'ambition et la résilience, le royaume des Humains, connu sous le nom de Bastion d'Aethel, est une forteresse de magie et de courage. Après avoir reçu le don de la magie des Elfes, les humains ont érigé des cités majestueuses aux flèches scintillantes, protégées par de puissants enchantements. Leurs armées, combinant la maîtrise de l'acier et des arcanes, sont le premier rempart d'Asgarm contre les ténèbres, un symbole d'espoir et de détermination face à l'adversité.",
     color: "from-blue-500/20 to-sky-500/5",
     accent: "text-sky-400",
     glow: "text-glow-blue"
   },
   {
     name: "Forêt d'Argent",
-    race: "Royaume des Elfes",
-    desc: "Au cœur des forêts ancestrales, c'est une cité où la nature et la magie ne font qu'un, avec des habitations tissées dans les arbres vivants et des chemins illuminés par la lueur des étoiles. Tandis que les Elfes cultivent la magie de la vie, les Elfes de Lune veillent en secret depuis leurs sanctuaires ombragés, étudiant les arcanes obscurs pour maintenir l'équilibre.",
+    race: "Royaume des Elfes & Elfes de Lune",
+    desc: "Au cœur des forêts ancestrales se niche la Forêt d'Argent, le royaume commun des Elfes et des Elfes de Lune. C'est une cité où la nature et la magie ne font qu'un, avec des habitations tissées dans les arbres vivants et des chemins illuminés par la lueur des étoiles. Tandis que les Elfes cultivent la magie de la vie, les Elfes de Lune veillent en secret depuis leurs sanctuaires ombragés, étudiant les arcanes obscurs pour maintenir l'équilibre. Ensemble, ils forment une communauté harmonieuse et sage, gardiens des plus anciens secrets d'Asgarm.",
     color: "from-emerald-600/20 to-green-600/5",
     accent: "text-emerald-400",
     glow: "text-glow-green"
@@ -26,7 +26,7 @@ const kingdoms = [
   {
     name: "Citadelle de Fer",
     race: "Royaume des Nains",
-    desc: "Creusée dans les racines des montagnes, c'est un chef-d'œuvre d'ingénierie et d'artisanat où le grondement des forges ne s'arrête jamais. Les Nains ont appris à insuffler le pouvoir des arcanes dans leurs créations, forgeant des armes d'une puissance inégalée. Leurs salles souterraines, éclairées par des veines de mithril, abritent un peuple fier et travailleur.",
+    desc: "Creusée dans les racines des montagnes, la Citadelle de Fer est le cœur vibrant du royaume des Nains. C'est un chef-d'œuvre d'ingénierie et d'artisanat, où le grondement des forges ne s'arrête jamais. Depuis qu'ils ont accepté la magie, les Nains ont appris à insuffler le pouvoir des arcanes dans leurs créations, forgeant des armes et des artefacts d'une puissance inégalée. Leurs vastes salles souterraines, éclairées par des veines de mithril et des cristaux enchantés, abritent un peuple fier et travailleur, pilier de la défense d'Asgarm.",
     color: "from-amber-600/20 to-orange-600/5",
     accent: "text-amber-500",
     glow: "text-glow-amber"
@@ -34,7 +34,7 @@ const kingdoms = [
   {
     name: "Domaine Carmin",
     race: "Royaume des Vampires",
-    desc: "Un château gothique aux tours élancées perçant les nuages. Autrefois lieu de crainte, il est devenu un sanctuaire inattendu de guérison. Grâce à leur maîtrise de la magie du sang, les Vampires ont transformé leur sombre réputation, devenant les plus grands guérisseurs du royaume. Leurs salles élégantes témoignent d'une noblesse ancienne.",
+    desc: "Le Domaine Carmin, un château gothique aux tours élancées perçant les nuages, est le siège du pouvoir des Vampires. Autrefois un lieu de crainte, il est devenu un sanctuaire inattendu de guérison. Grâce à leur maîtrise de la magie du sang, les Vampires ont transformé leur sombre réputation, devenant les plus grands guérisseurs du royaume. Leurs salles élégantes et leurs bibliothèques remplies de savoirs occultes témoignent d'une noblesse ancienne et d'un engagement surprenant à préserver la vie, prouvant que la lumière peut naître même dans les ombres les plus profondes.",
     color: "from-red-600/20 to-black/40",
     accent: "text-red-600",
     glow: "text-glow-red"
@@ -45,55 +45,55 @@ const peoples = [
   {
     name: "Humains",
     trait: "Ambition & Résilience",
-    desc: "Un peuple à la peau beige ou grisée vivant aux côtés des races anciennes. Face à une invasion de sorciers noirs, la reine Melfetys leur fit don de la magie. Poussés par leur capacité d'adaptation, ils apprirent vite. Leur courte espérance de vie les pousse à accomplir de grandes choses, bâtissant des forteresses magiques pour sauver l'avenir d'Asgarm."
+    desc: "Les humains d'Asgarm, un peuple à la peau beige ou grisée et au visage diversifié, vivaient aux côtés des races anciennes. Face à une invasion de sorciers noirs d'un autre monde qui menaçait d'anéantir Asgarm, la reine des Elfes, Melfetys, leur fit don de la magie. Poussés par leur ambition et leur capacité d'adaptation, les humains apprirent vite. Leur courte espérance de vie les pousse à accomplir de grandes choses, et avec la magie désormais canalisée par des baguettes, ils devinrent des défenseurs cruciaux de leur monde."
   },
   {
     name: "Elfes",
     trait: "Créateurs de la Magie",
-    desc: "Une race ancienne et gracieuse à la peau verdoyante, liée à l'essence même de leur monde. Lorsque l'extinction menaça Asgarm, la reine Melfetys partagea le don de la magie, leur enseignant que son pouvoir devait être canalisé par une baguette pour unir les peuples."
+    desc: "Créateurs de la magie, les Elfes d'Asgarm sont une race ancienne et gracieuse à la peau verdoyante, profondément liée à l'essence même de leur monde. Lorsque des sorciers noirs menèrent Asgarm au bord de l'extinction, la reine Melfetys partagea le don de la magie avec les autres races, leur enseignant que son pouvoir devait être canalisé par une baguette pour unir les peuples."
   },
   {
     name: "Elfes de Lune",
-    trait: "Gardiens des Arcanes Sombres",
-    desc: "Branche secrète à la peau bleutée et créateurs de la magie obscure. Eux seuls possédaient la volonté nécessaire pour contenir son pouvoir corrupteur. Agissant comme des gardiens silencieux, leur maîtrise fut un atout paradoxal mais essentiel pour protéger l'équilibre."
+    trait: "Gardiens de l'Ombre",
+    desc: "Les Elfes de Lune, à la peau bleutée, sont une branche secrète de l'espèce elfique et les créateurs de la magie obscure. Eux seuls possédaient la volonté et la sagesse nécessaires pour contenir son pouvoir corrupteur. Agissant comme des gardiens silencieux, leur maîtrise fut un atout paradoxal mais essentiel pour protéger l'équilibre d'Asgarm lors de la grande guerre."
   },
   {
     name: "Nains",
-    trait: "Maîtres des Montagnes",
-    desc: "Peuple à la peau grisée et artisans inégalés. Avec le don de la magie, ils mirent leur savoir-faire au service des arcanes, devenant les plus grands fabricants de baguettes. Leurs créations armèrent l'ensemble de l'Alliance."
+    trait: "Maîtres de la Forge",
+    desc: "Les Nains, peuple à la peau grisée, sont les maîtres des montagnes et des artisans inégalés. Lorsqu'ils acceptèrent le don de la reine Melfetys, ils mirent leur savoir-faire au service de la magie, devenant les plus grands fabricants de baguettes. Leurs créations armèrent l'ensemble de l'Alliance et firent d'eux un rempart inébranlable."
   },
   {
     name: "Vampires",
-    trait: "Guérisseurs de la Nuit",
-    desc: "Créatures à la peau ébène ou rouge sang. Longtemps craints, ils révélèrent une facette inattendue : en canalisant leur maîtrise du sang, ils devinrent les plus grands guérisseurs du champ de bataille, prouvant que le sacrifice peut fleurir dans l'ombre."
+    trait: "Sacrifice & Guérison",
+    desc: "Créatures de la nuit à la peau noire comme l'ébène ou rouge comme le sang, les Vampires furent longtemps craints. En canalisant leur maîtrise innée du sang à travers des baguettes, ils devinrent les plus grands guérisseurs du champ de bataille, soignant les blessures que nulle autre magie ne pouvait refermer."
   }
 ]
 
 const clans = [
   {
     name: "Clan des Lycans",
-    trait: "Instinct & Honneur",
+    trait: "Instinct Sauvage",
     desc: "Descendants d'une ancienne malédiction, les Lycans sont des métamorphes capables de prendre la forme de loups terrifiants. Vivant en meutes soudées dans les forêts profondes, ils vénèrent la lune et suivent un code d'honneur sauvage. Leur force brute en fait des alliés redoutables ou des ennemis mortels."
   },
   {
     name: "Clan des Centaures",
     trait: "Sagesse Stellaire",
-    desc: "Gardiens des plaines sauvages, les Centaures sont mi-hommes, mi-chevaux. Maîtres de l'arc et de la lance, ils lisent l'avenir dans les étoiles. Ils protègent farouchement leur territoire et leurs traditions, considérant les autres races avec une méfiance née de siècles de conflits."
+    desc: "Gardiens des plaines sauvages, les Centaures sont un peuple fier et nomade, mi-hommes, mi-chevaux. Maîtres de l'arc et de la lance, ils sont des astronomes accomplis qui lisent leur avenir dans les étoiles. Ils protègent farouchement leur territoire et leurs traditions séculaires."
   },
   {
     name: "Clan des Ours",
     trait: "Force Primordiale",
-    desc: "Métamorphes capables de prendre la forme d'ours imposants. Gardiens des montagnes, ils tirent leur force de la nature brute. Leur tempérament est sauvage, respectant la puissance de la terre et vivant selon des rites anciens entre humanité et instinct bestial."
+    desc: "Puissants et solitaires, les membres du Clan des Ours sont des métamorphes capables de prendre la forme d'ours imposants. Gardiens des montagnes, ils tirent leur force de la nature brute et vivent selon des rites anciens, respectant la puissance de la terre."
   },
   {
     name: "Clan des Serpents",
     trait: "Secrets & Illusions",
-    desc: "Êtres hybrides, mi-humains, mi-serpents. Maîtres des poisons et des illusions, ils vivent dans des sanctuaires cachés. Leur société est complexe et secrète, crainte autant pour leur magie subtile que pour leur morsure venimeuse."
+    desc: "Insaisissables et énigmatiques, les membres du Clan des Serpents sont des êtres hybrides, mi-humains, mi-serpents. Maîtres des poisons et des illusions, ils vivent dans des sanctuaires cachés. Leur société est complexe et secrète, crainte pour leur magie subtile."
   },
   {
     name: "Clan des Ogres",
     trait: "Puissance Brute",
-    desc: "Force de la nature vivant en petites tribus dans des vallées reculées. Leur force est légendaire et leur appétit insatiable. Bien que primitifs, ils constituent une puissance territoriale majeure, souvent en conflit avec les autres races par manque de subtilité."
+    desc: "Brutaux et territoriaux, les Ogres sont une force de la nature vivant en petites tribus dans des vallées reculées. Leur force est légendaire et leur appétit insatiable. Bien que primitifs, ils constituent une puissance territoriale majeure dans les zones reculées."
   }
 ]
 
@@ -115,7 +115,7 @@ export default function AtlasPage() {
           >
             <div className="flex items-center gap-6 mb-8">
               <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-              <span className="text-gold text-[11px] tracking-[1.5em] uppercase font-bold text-glow-gold">Archives Impériales</span>
+              <span className="text-gold text-[11px] tracking-[1.5em] uppercase font-bold text-glow-gold">Archives Impériales d'Asgarm</span>
               <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
             </div>
             
@@ -124,32 +124,32 @@ export default function AtlasPage() {
               <span className="shine-text italic font-light ml-24 block">Universel</span>
             </h1>
 
-            <p className="text-silver/40 text-2xl italic font-light max-w-3xl leading-relaxed">
-              "Voyagez à travers les fondations d'un monde où chaque pierre, chaque forêt et chaque château raconte l'histoire de notre survie."
+            <p className="text-silver/40 text-2xl italic font-light max-w-3xl leading-relaxed border-l border-gold/10 pl-12 mx-auto">
+              "Voyagez à travers les fondations d'un monde où chaque pierre, chaque forêt et chaque château raconte l'histoire de notre souveraineté."
             </p>
           </motion.div>
         </header>
 
-        {/* Navigation Cinématographique */}
-        <div className="flex justify-center gap-12 mb-32 border-b border-white/5 pb-12">
+        {/* Navigation Cinématographique (Sans Emojis) */}
+        <div className="flex justify-center gap-4 md:gap-12 mb-32 border-b border-white/5 pb-12">
           {[
-            { id: 'kingdoms', label: 'Les Royaumes', icon: Globe },
-            { id: 'peoples', label: 'Les Peuples', icon: Users },
-            { id: 'clans', label: 'Clans & Créatures', icon: Shield }
+            { id: 'kingdoms', label: 'Royaumes', icon: Globe },
+            { id: 'peoples', label: 'Peuples', icon: Users },
+            { id: 'clans', label: 'Clans', icon: Shield }
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`group relative flex items-center gap-6 px-16 py-8 transition-all duration-700 ${
+              className={`group relative flex items-center gap-4 px-10 py-6 transition-all duration-700 ${
                 activeTab === tab.id ? 'text-white' : 'text-silver/30 hover:text-silver/60'
               }`}
             >
-              <tab.icon className={`w-4 h-4 transition-colors ${activeTab === tab.id ? 'text-gold' : 'text-current'}`} />
-              <span className="text-[11px] font-bold uppercase tracking-[0.8em]">{tab.label}</span>
+              <tab.icon className={`w-3 h-3 transition-colors ${activeTab === tab.id ? 'text-gold' : 'text-current'}`} />
+              <span className="text-[10px] font-bold uppercase tracking-[0.8em]">{tab.label}</span>
               {activeTab === tab.id && (
                 <motion.div 
                   layoutId="active-underline"
-                  className="absolute bottom-0 left-0 w-full h-[1px] bg-gold"
+                  className="absolute bottom-0 left-0 w-full h-[1px] bg-gold shadow-[0_0_15px_rgba(212,175,55,0.4)]"
                 />
               )}
             </button>
@@ -218,24 +218,25 @@ export default function AtlasPage() {
 
             {activeTab === 'clans' && (
               <div className="flex flex-col gap-24">
-                {/* Section Procédure */}
-                <section className="p-16 bg-gold/5 border border-gold/10 relative">
+                {/* Section Procédure — Ultra Pro */}
+                <section className="p-16 bg-black/60 border border-gold/10 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
                   <div className="flex items-center gap-6 mb-12">
-                    <Scroll className="w-8 h-8 text-gold" />
+                    <History className="w-6 h-6 text-gold" />
                     <h2 className="text-4xl font-headline text-white uppercase tracking-tight">Procédure de Candidature</h2>
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <div className="flex flex-col gap-4">
-                      <span className="text-gold text-[10px] font-bold uppercase tracking-widest">Étape 01 — Dossier</span>
-                      <p className="text-silver/50 italic text-sm font-light">Un dossier complet doit être rédigé, présentant l'histoire, les objectifs et la structure de votre groupe.</p>
+                    <div className="flex flex-col gap-4 p-8 border border-white/5 hover:border-gold/20 transition-all">
+                      <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em]">Étape 01 — Dossier</span>
+                      <p className="text-silver/50 italic text-sm font-light leading-relaxed">Un dossier complet doit être rédigé, présentant l'histoire, les objectifs et la structure de votre groupe.</p>
                     </div>
-                    <div className="flex flex-col gap-4">
-                      <span className="text-gold text-[10px] font-bold uppercase tracking-widest">Étape 02 — Soumission</span>
-                      <p className="text-silver/50 italic text-sm font-light">Le dossier doit être envoyé par ticket sur notre serveur Discord officiel pour validation.</p>
+                    <div className="flex flex-col gap-4 p-8 border border-white/5 hover:border-gold/20 transition-all">
+                      <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em]">Étape 02 — Soumission</span>
+                      <p className="text-silver/50 italic text-sm font-light leading-relaxed">Ce dossier doit être envoyé par ticket sur notre serveur Discord officiel pour validation magistrale.</p>
                     </div>
-                    <div className="flex flex-col gap-4">
-                      <span className="text-gold text-[10px] font-bold uppercase tracking-widest">Étape 03 — Effectif</span>
-                      <p className="text-silver/50 italic text-sm font-light">Un minimum de 15 joueurs actifs est requis pour que la candidature soit prise en compte.</p>
+                    <div className="flex flex-col gap-4 p-8 border border-white/5 hover:border-gold/20 transition-all">
+                      <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em]">Étape 03 — Effectif</span>
+                      <p className="text-silver/50 italic text-sm font-light leading-relaxed">Un minimum de 15 joueurs actifs est requis pour que la candidature soit prise en compte par le Conclave.</p>
                     </div>
                   </div>
                 </section>
@@ -266,7 +267,7 @@ export default function AtlasPage() {
 
         <footer className="mt-48 h-32 flex flex-col items-center justify-center relative z-20">
           <div className="h-[1px] w-32 bg-gradient-to-r from-transparent via-gold/30 to-transparent mb-12" />
-          <span className="shine-text text-[10px] tracking-[1.2em] uppercase font-bold text-center">
+          <span className="shine-text text-[10px] tracking-[0.8em] uppercase font-bold text-center">
             CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
           </span>
         </footer>
