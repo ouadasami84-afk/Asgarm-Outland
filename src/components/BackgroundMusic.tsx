@@ -1,14 +1,22 @@
 
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Volume2, VolumeX } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export const BackgroundMusic = () => {
   // Activé par défaut selon les directives souveraines
   const [isPlaying, setIsPlaying] = useState(true)
+  const [mounted, setMounted] = useState(false)
   const videoId = "dmlqoxtxeFc"
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Empêche les erreurs d'hydratation en ne rendant rien sur le serveur
+  if (!mounted) return null;
 
   return (
     <div className="fixed bottom-8 right-8 z-[100] flex items-center gap-4">
