@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import Link from 'link'
 
 export default function ConclavePage() {
   const [hoveredSide, setHoveredSide] = useState<'arcanes' | 'ombres' | null>(null)
@@ -94,8 +94,8 @@ export default function ConclavePage() {
       </div>
 
       <footer className="h-12 border-t border-gold/5 flex items-center justify-center bg-black/60 relative z-20">
-        <span className="text-[9px] text-gold/30 tracking-[1em] uppercase font-bold">
-          CONCLAVE SUPRÊME — ARCHITECTURE DE DESTINÉE
+        <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
+          CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
         </span>
       </footer>
     </main>

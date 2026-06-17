@@ -91,11 +91,17 @@ export default function OmbresPage() {
         </section>
 
         {/* Charte de Faction */}
-        <div className="mt-auto p-12 border border-indigo-500/5 bg-indigo-950/10 text-center">
+        <div className="mt-auto p-12 border border-indigo-500/5 bg-indigo-950/10 text-center mb-8">
           <p className="text-[9px] text-indigo-400/30 uppercase tracking-[1em] font-bold">
             — LE SALUT DANS L'OBSCURITÉ —
           </p>
         </div>
+
+        <footer className="h-12 border-t border-indigo-500/5 flex items-center justify-center bg-black/60 relative z-20">
+          <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
+            CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
+          </span>
+        </footer>
       </div>
     </main>
   )

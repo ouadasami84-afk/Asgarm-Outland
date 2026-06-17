@@ -139,7 +139,7 @@ export default function HistoirePage() {
           <h1 className="text-2xl md:text-3xl font-headline uppercase tracking-tighter mb-2 leading-tight shine-text">
             Les Annales de la Souveraineté
           </h1>
-          <p className="shine-text text-[10px] italic font-medium tracking-[0.12em] max-w-xl mx-auto leading-relaxed">
+          <p className="text-[10px] italic font-medium tracking-[0.12em] max-w-xl mx-auto leading-relaxed text-silver/40">
             "Le savoir d'Asgarm est scellé dans ce grimoire éternel. Tournez les pages pour explorer les racines de notre destin."
           </p>
         </motion.div>
@@ -153,7 +153,6 @@ export default function HistoirePage() {
           <div className="absolute inset-[-100px] bg-indigo-950/40 blur-[180px] rounded-full animate-pulse" />
           <div className="absolute inset-[-60px] bg-gold/5 blur-[120px] rounded-full" />
           
-          {/* Conteneur épuré : suppression des bordures et fonds bruns */}
           <div className="flip-book-container relative shadow-[0_40px_120px_rgba(0,0,0,0.95)] overflow-hidden bg-transparent">
             <HTMLFlipBook
               width={750}
@@ -284,6 +283,12 @@ export default function HistoirePage() {
         </motion.div>
       </div>
 
+      <footer className="h-12 border-t border-gold/10 flex items-center justify-center bg-black/60 relative z-20 w-full mt-auto">
+        <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
+          CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
+        </span>
+      </footer>
+
       <style jsx global>{`
         .flip-book { 
           background-color: transparent !important;
@@ -321,20 +326,6 @@ export default function HistoirePage() {
         }
         .custom-scrollbar-light::-webkit-scrollbar-thumb {
           background: rgba(74, 55, 33, 0.1);
-        }
-
-        @keyframes shine {
-          0% { background-position: -200% center; }
-          100% { background-position: 200% center; }
-        }
-
-        .shine-text {
-          background: linear-gradient(90deg, #D4AF37, #FFFFFF, #D4AF37);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shine 6s linear infinite;
-          display: inline-block;
         }
       `}</style>
     </main>

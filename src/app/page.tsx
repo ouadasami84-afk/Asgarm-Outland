@@ -182,7 +182,9 @@ export default function Home() {
                     <div className="h-12 w-[1px] bg-gradient-to-b from-gold/40 to-transparent" />
                     <div className="text-center">
                       <span className="font-headline text-4xl text-gold tracking-[0.3em] uppercase block mb-2 text-glow-gold">© 2026 Outland Studios</span>
-                      <span className="text-xs text-gold/60 tracking-[0.6em] uppercase font-bold">L'Excellence d'Asgarm</span>
+                      <span className="shine-text text-xs tracking-[0.6em] uppercase font-bold">
+                        CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
+                      </span>
                     </div>
                   </div>
                 </motion.div>

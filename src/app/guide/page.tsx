@@ -195,8 +195,8 @@ export default function GuidePage() {
       </div>
 
       <footer className="h-12 border-t border-gold/10 flex items-center justify-center bg-black/60 relative z-20">
-        <span className="text-[9px] text-gold tracking-[0.8em] uppercase font-bold">
-          OUTLAND STUDIOS — PROTOCOLE ASGARM V2.0.9
+        <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
+          CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
         </span>
       </footer>
 
