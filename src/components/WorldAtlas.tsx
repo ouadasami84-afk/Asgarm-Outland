@@ -1,33 +1,33 @@
 "use client"
 
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 
 const locations = [
   {
-    title: "The Grand Library",
-    desc: "Infinite corridors of ancient knowledge floating in the void.",
+    title: "The Silent Scriptorium",
+    desc: "Infinite halls of living parchment that breathe with the knowledge of a thousand fallen empires.",
     img: "https://picsum.photos/seed/library/1200/800",
-    color: "from-blue-900/40"
+    color: "from-indigo-950/60"
   },
   {
-    title: "Whispering Woods",
-    desc: "Trees that hum the melodies of forgotten civilizations.",
+    title: "The Whispering Glade",
+    desc: "Ancient oaks that hum the forgotten melodies of the first wizards, their roots drinking from a river of starlight.",
     img: "https://picsum.photos/seed/enchantedforest/1200/800",
-    color: "from-green-900/40"
+    color: "from-emerald-950/60"
   },
   {
-    title: "Skyward Academy",
-    desc: "Where the elite masters of the arcane study among the clouds.",
+    title: "Aetheria Highspire",
+    desc: "An ivory sanctuary suspended in the clouds, where gravity is but a suggestion to the masters of the arcane.",
     img: "https://picsum.photos/seed/academy/1200/800",
-    color: "from-purple-900/40"
+    color: "from-violet-950/60"
   },
   {
-    title: "Crystal Abyss",
-    desc: "Deep caverns filled with raw magic in its crystalline form.",
+    title: "The Obsidian Abyss",
+    desc: "Deep crystalline caverns where raw magic solidifies into jewels of immense and terrible power.",
     img: "https://picsum.photos/seed/cavern/1200/800",
-    color: "from-cyan-900/40"
+    color: "from-blue-950/60"
   }
 ]
 
@@ -40,31 +40,50 @@ export const WorldAtlas: React.FC = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"])
 
   return (
-    <section id="the-world" ref={targetRef} className="relative h-[400vh] bg-obsidian">
+    <section id="the-world" ref={targetRef} className="relative h-[400vh] bg-[#050505]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <div className="absolute top-20 left-10 z-20">
-          <h2 className="font-headline text-6xl text-glow-gold">World Atlas</h2>
-          <p className="text-silver/40 font-body uppercase tracking-[0.5em] text-xs mt-2">Explore the Biomes</p>
+        <div className="absolute top-24 left-16 z-20">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <h2 className="font-headline text-7xl text-white text-glow-gold">The Great Map</h2>
+            <div className="flex items-center gap-4 mt-4">
+              <div className="h-[1px] w-20 bg-gold/30" />
+              <p className="text-gold font-body uppercase tracking-[0.4em] text-[10px] font-bold">Explore the Biomes of Arcanum</p>
+            </div>
+          </motion.div>
         </div>
         
-        <motion.div style={{ x }} className="flex gap-4 px-20">
+        <motion.div style={{ x }} className="flex gap-12 px-24">
           {locations.map((loc, i) => (
             <div
               key={loc.title}
-              className="group relative h-[70vh] w-[80vw] md:w-[60vw] overflow-hidden rounded-3xl shrink-0"
+              className="group relative h-[75vh] w-[85vw] md:w-[65vw] overflow-hidden rounded-none shrink-0 border border-white/5"
             >
               <Image
                 src={loc.img}
                 alt={loc.title}
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                className="object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-[2000ms] scale-110 group-hover:scale-100 ease-out"
                 data-ai-hint="magical environment"
               />
-              <div className={`absolute inset-0 bg-gradient-to-t ${loc.color} to-transparent opacity-80`} />
-              <div className="absolute bottom-0 left-0 p-12 max-w-xl">
-                <span className="text-gold font-body tracking-widest text-xs uppercase mb-2 block">Region 0{i+1}</span>
-                <h3 className="font-headline text-5xl mb-4">{loc.title}</h3>
-                <p className="text-silver/80 text-lg leading-relaxed">{loc.desc}</p>
+              <div className={`absolute inset-0 bg-gradient-to-t ${loc.color} via-transparent to-transparent opacity-90`} />
+              <div className="absolute bottom-0 left-0 p-16 max-w-2xl bg-gradient-to-t from-black/80 to-transparent w-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <span className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase mb-4 block">Region Protocol 0{i+1}</span>
+                  <h3 className="font-headline text-5xl mb-6 text-white group-hover:text-glow-gold transition-all duration-500">{loc.title}</h3>
+                  <p className="text-silver/60 text-lg leading-relaxed font-light font-body group-hover:text-silver transition-colors">{loc.desc}</p>
+                  
+                  <button className="mt-8 text-gold text-[10px] tracking-[0.4em] uppercase font-bold border-b border-gold/20 pb-2 hover:border-gold transition-all">
+                    Discover Secrets
+                  </button>
+                </motion.div>
               </div>
             </div>
           ))}
