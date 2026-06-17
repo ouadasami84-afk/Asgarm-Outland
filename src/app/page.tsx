@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { useState, useEffect } from 'react'
@@ -53,7 +54,7 @@ export default function Home() {
             <div className="relative z-10">
               <Hero />
               
-              {/* Introduction au Royaume */}
+              {/* Manifeste de Qualité - Version Ultra Pro */}
               <section className="py-48 px-8 max-w-7xl mx-auto text-center">
                 <motion.div 
                   initial={{ opacity: 0, y: 40 }}
@@ -64,15 +65,17 @@ export default function Home() {
                 >
                   <div className="flex items-center justify-center gap-4 mb-8">
                     <div className="h-[1px] w-12 bg-gold/30" />
-                    <span className="text-gold text-[10px] tracking-[0.5em] uppercase font-bold text-glow-gold">Le Projet Asgarm</span>
+                    <span className="text-gold text-[10px] tracking-[0.5em] uppercase font-bold text-glow-gold">Ingénierie Propriétaire</span>
                     <div className="h-[1px] w-12 bg-gold/30" />
                   </div>
                   <h2 className="text-6xl font-headline mb-10 text-white uppercase tracking-tighter leading-tight">
-                    Dominez la Terre <br /> <span className="text-gold italic font-light">D'Asgarm</span>
+                    L'Excellence du <br /> <span className="text-gold italic font-light">Sur-Mesure</span>
                   </h2>
-                  <p className="text-silver/40 max-w-2xl mx-auto italic text-lg leading-relaxed font-light">
-                    "Outland n'est pas qu'un serveur, c'est une ascension. Sur la map d'Asgarm, 
-                    chaque pas est un défi, chaque alliance une nécessité."
+                  <p className="text-silver/40 max-w-3xl mx-auto italic text-lg leading-relaxed font-light">
+                    "Le projet Outland ne repose sur aucun artifice pré-conçu. Chaque système, chaque ligne de code 
+                    et chaque mécanique de jeu a été intégralement développé par nos ingénieurs. Nous offrons aux 
+                    citoyens d'Asgarm une plateforme unique, où la stabilité technique rencontre une immersion 
+                    totale. Ici, l'innovation est au service de votre ascension."
                   </p>
                 </motion.div>
                 
@@ -89,7 +92,7 @@ export default function Home() {
                     <div className="text-center">
                       <h4 className="font-headline text-2xl text-white mb-3 group-hover:text-gold transition-colors tracking-tight">Discord Officiel</h4>
                       <div className="w-8 h-[1px] bg-gold/20 mx-auto mb-4 group-hover:w-16 transition-all" />
-                      <p className="text-[10px] text-gold/40 uppercase tracking-[0.4em] font-bold">Rejoindre la Phalange</p>
+                      <p className="text-[10px] text-gold/40 uppercase tracking-[0.4em] font-bold">Rejoindre le Quartier Général</p>
                     </div>
                   </motion.a>
 
@@ -104,7 +107,7 @@ export default function Home() {
                     <div className="text-center">
                       <h4 className="font-headline text-2xl text-white mb-3 group-hover:text-gold transition-colors tracking-tight">TikTok Outland</h4>
                       <div className="w-8 h-[1px] bg-gold/20 mx-auto mb-4 group-hover:w-16 transition-all" />
-                      <p className="text-[10px] text-gold/40 uppercase tracking-[0.4em] font-bold">Les Chroniques d'Asgarm</p>
+                      <p className="text-[10px] text-gold/40 uppercase tracking-[0.4em] font-bold">Archives Visuelles d'Asgarm</p>
                     </div>
                   </motion.a>
                 </div>
