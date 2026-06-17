@@ -1,9 +1,19 @@
+
 "use client"
 
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, GraduationCap, Gavel, Ghost, Crown, Users, Wallet } from 'lucide-react'
+import { 
+  ChevronLeft, 
+  GraduationCap, 
+  Gavel, 
+  Ghost, 
+  Crown, 
+  Users, 
+  Wallet,
+  ArrowRight
+} from 'lucide-react'
 
 const institutions = [
   {
@@ -16,22 +26,22 @@ const institutions = [
       { 
         title: "Direction (Directeur & Adjoint)", 
         rank: "HAUTE AUTORITÉ", 
-        function: "Pilotage stratégique de l'institution, validation des cursus arcaniques et gestion des accréditations de haut niveau." 
+        function: "Pilotage stratégique de l'institution, validation des cursus arcaniques et gestion des accréditations." 
       },
       { 
         title: "Corps Enseignant (Professeurs)", 
         rank: "PÉDAGOGIE", 
-        function: "Conception pédagogique, transmission des savoirs complexes et évaluation technique des aptitudes magiques." 
+        function: "Conception pédagogique, transmission des savoirs complexes et évaluation technique des aptitudes." 
       },
       { 
         title: "Surveillant Général", 
         rank: "DISCIPLINE", 
-        function: "Garant de l'ordre intérieur, gestion disciplinaire et surveillance des périmètres scolaires sensibles." 
+        function: "Garant de l'ordre intérieur, gestion disciplinaire et surveillance des périmètres sensibles." 
       },
       { 
         title: "Élève (Apprenti)", 
         rank: "IMMERSION", 
-        function: "Apprentissage des mécaniques fondamentales et progression hiérarchique au sein de l'élite académique." 
+        function: "Apprentissage des mécaniques fondamentales et progression hiérarchique au sein de l'élite." 
       }
     ]
   },
@@ -40,22 +50,22 @@ const institutions = [
     name: "Conclave des Arcanes",
     focus: "JUSTICE & LÉGISLATION",
     icon: Gavel,
-    desc: "Le garant de l'ordre public et de la loi régalienne d'Asgarm. Une structure de fer pour un royaume uni sous une seule bannière.",
+    desc: "Le garant de l'ordre public et de la loi régalienne d'Asgarm. Une structure de fer pour un royaume uni.",
     roles: [
       { 
         title: "Grand Sorcier", 
         rank: "LÉGISLATION", 
-        function: "Haute magistrature, rédaction du code législatif régalien et arbitrage des contentieux territoriaux majeurs." 
+        function: "Haute magistrature, rédaction du code législatif régalien et arbitrage des contentieux territoriaux." 
       },
       { 
         title: "Maître Sorcier", 
         rank: "ADMINISTRATION", 
-        function: "Architecture administrative, gestion des ressources publiques et coordination des services civils du royaume." 
+        function: "Architecture administrative, gestion des ressources publiques et coordination des services civils." 
       },
       { 
         title: "Protecteur des Arcanes", 
         rank: "FORCE PUBLIQUE", 
-        function: "Maintien de la paix, application du droit constitutionnel et protection des intérêts vitaux d'Asgarm." 
+        function: "Maintien de la paix, application du droit constitutionnel et protection des intérêts vitaux." 
       }
     ]
   },
@@ -64,22 +74,22 @@ const institutions = [
     name: "Conclave des Ombres",
     focus: "ORDRE OCCULTE",
     icon: Ghost,
-    desc: "La main invisible d'Asgarm. Renseignement, influence et gestion des courants interdits pour la survie éternelle du royaume.",
+    desc: "La main invisible d'Asgarm. Renseignement, influence et gestion des courants interdits pour la survie du royaume.",
     roles: [
       { 
         title: "Grand Sorcier des Ombres", 
         rank: "SOUVERAINETÉ", 
-        function: "Commandement des réseaux clandestins, influence politique occulte et gestion des secrets d'État les plus sensibles." 
+        function: "Commandement des réseaux clandestins, influence politique occulte et gestion des secrets d'État." 
       },
       { 
         title: "Maître des Ténèbres", 
         rank: "COMMANDEMENT", 
-        function: "Stratégie asymétrique, planification des opérations spéciales et coordination du renseignement tactique." 
+        function: "Stratégie asymétrique, planification des opérations spéciales et coordination du renseignement." 
       },
       { 
         title: "Protecteur des Ombres", 
         rank: "ASSASSINAT", 
-        function: "Neutralisation chirurgicale, protection rapprochée des actifs sensibles et exécution des directives secrètes." 
+        function: "Neutralisation chirurgicale, protection rapprochée et exécution des directives secrètes." 
       }
     ]
   },
@@ -93,12 +103,12 @@ const institutions = [
       { 
         title: "Le Monarque (Roi ou Reine)", 
         rank: "SOUVERAINETÉ", 
-        function: "Prise de décision géopolitique, arbitrage final du Conseil et incarnation de l'identité nationale d'Asgarm." 
+        function: "Prise de décision géopolitique, arbitrage final du Conseil et incarnation de l'identité nationale." 
       },
       { 
         title: "Conseiller du Trône", 
         rank: "INFLUENCE", 
-        function: "Expertise diplomatique, conseil en étiquette royale et gestion de l'influence auprès des hautes sphères." 
+        function: "Expertise diplomatique, conseil en étiquette royale et gestion de l'influence politique." 
       }
     ]
   },
@@ -112,12 +122,12 @@ const institutions = [
       { 
         title: "Chef de Clan / Alpha", 
         rank: "LEADERSHIP", 
-        function: "Gestion territoriale des peuples sauvages, protection des meutes et commandement des forces tribales." 
+        function: "Gestion territoriale des peuples sauvages, protection des meutes et commandement des forces." 
       },
       { 
         title: "Chaman du Clan", 
         rank: "SAGESSE", 
-        function: "Lien spirituel avec l'Ether, préservation des traditions ancestrales et médiation avec les forces occultes." 
+        function: "Lien spirituel avec l'Ether, préservation des traditions et médiation avec les forces occultes." 
       }
     ]
   },
@@ -131,17 +141,17 @@ const institutions = [
       { 
         title: "Agent Immobilier", 
         rank: "PATRIMOINE", 
-        function: "Expertise foncière, gestion des transactions de domaines de prestige et administration du patrimoine architectural." 
+        function: "Expertise foncière, gestion des transactions de domaines de prestige et administration du patrimoine." 
       },
       { 
         title: "Journaliste", 
         rank: "INFORMATION", 
-        function: "Chroniqueur des événements régaliens, investigation sociale et diffusion de l'information certifiée d'Asgarm." 
+        function: "Chroniqueur des événements régaliens, investigation sociale et diffusion de l'information." 
       },
       { 
         title: "Tavernier", 
         rank: "COMMERCE", 
-        function: "Logistique sociale, gestion des points de ralliement et administration des ressources de consommation." 
+        function: "Logistique sociale, gestion des points de ralliement et administration des ressources." 
       }
     ]
   }
