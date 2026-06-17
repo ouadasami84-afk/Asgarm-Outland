@@ -51,7 +51,7 @@ export const Hero: React.FC = () => {
           <div className="max-w-2xl mx-auto mb-16">
             <div className="h-[1px] w-24 bg-gold/40 mx-auto mb-8" />
             <p className="font-body text-silver/70 text-sm md:text-base leading-relaxed tracking-[0.4em] uppercase italic">
-              Écrivez votre légende sur les terres sacrées d'<span className="text-gold">Asgarm</span>
+              Écrivez votre légende sur les terres sacrées d_<span className="text-gold">Asgarm</span>
             </p>
           </div>
           
