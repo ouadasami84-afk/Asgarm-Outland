@@ -60,8 +60,7 @@ const institutions = [
       { title: "CHRONIQUEUR ROYAL", rank: "JOURNAL ASGARM", function: "Journaliste d'investigation. Façonne l'opinion, documente les décrets du Conclave et couvre les grands événements." },
       { title: "GRAND TAVERNIER", rank: "TAVERNE MAGIQUE", function: "Gestion des sanctuaires sociaux. Point névralgique des rumeurs, de l'hospitalité et du commerce de proximité." },
       { title: "INGÉNIEUR VOLTIGE", rank: "BRICOLIFUS", function: "Expert en maintenance de balais. Optimise les performances de vol et répare les structures aérodynamiques." },
-      { title: "AGENT PATRIMONIAL", rank: "LA MAISON MAGIQUE", function: "Gestion de l'habitat et des domaines. Trouve et sécurise les foyers protégés par des runes anciennes." },
-      { title: "GRAND NÉGOCIANT", rank: "COMMERCE", function: "Régulation des flux de ressources critiques et approvisionnement des quartiers marchands d'Asgarm." }
+      { title: "AGENT PATRIMONIAL", rank: "LA MAISON MAGIQUE", function: "Gestion de l'habitat et des domaines. Trouve et sécurise les foyers protégés par des runes anciennes." }
     ]
   },
   {
