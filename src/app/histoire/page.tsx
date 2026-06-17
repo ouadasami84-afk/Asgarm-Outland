@@ -49,19 +49,12 @@ const MagicalText = ({ text, title }: { text: string; title?: string }) => {
       <div className="flex-1">
         <motion.p className="text-[#3d2b19] font-serif leading-[1.8] text-justify text-[13px] italic">
           {words.map((word, i) => (
-            <motion.span
+            <span
               key={i}
-              initial={{ opacity: 0, filter: 'blur(8px)', y: 2 }}
-              animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-              transition={{ 
-                duration: 0.6, 
-                delay: i * 0.01,
-                ease: "easeOut"
-              }}
               className={`inline-block mr-1 transition-colors duration-1000 ${getHighlightClass(word)}`}
             >
               {word}
-            </motion.span>
+            </span>
           ))}
         </motion.p>
       </div>
@@ -130,14 +123,14 @@ export default function HistoirePage() {
             <span className="shine-text">Les Annales de la Souveraineté</span>
           </h1>
           <p className="text-[10px] tracking-[0.6em] uppercase font-bold opacity-80 block">
-            <span className="shine-text">Faites glisser les pages pour explorer les annales</span>
+            <span className="shine-text">Explorez le Grimoire pour révéler notre histoire</span>
           </p>
         </motion.div>
 
         <motion.div 
-          initial={{ opacity: 0, scale: 0.98 }} 
+          initial={{ opacity: 0, scale: 0.99 }} 
           animate={{ opacity: 1, scale: 1 }} 
-          transition={{ duration: 1.5, delay: 0.2 }} 
+          transition={{ duration: 1, delay: 0.2 }} 
           className="relative max-w-full"
         >
           <div className="flip-book-container bg-transparent flex justify-center">
@@ -153,8 +146,8 @@ export default function HistoirePage() {
               ref={bookRef} 
               showCover={false} 
               useMouseEvents={true}
-              maxShadowOpacity={0.5}
-              flippingTime={1000}
+              maxShadowOpacity={0.4}
+              flippingTime={800}
               style={{ margin: '0 auto' }}
               startPage={0}
               drawShadow={true}
@@ -197,7 +190,7 @@ export default function HistoirePage() {
               <Page number={5}><div className="h-full px-10 pt-6"><MagicalText title="L'Éveil des Humains" text="Chez les Humains, Alaric canalisa ce flux à travers une branche de chêne, créant la première baguette humaine. Guidés par cet exemple, les humains devinrent une armée redoutable de mages de guerre." /></div></Page>
               <Page number={6}><div className="h-full px-10 pt-6"><MagicalText title="La Forge des Nains" text="Les Nains devinrent les plus grands fabricants de baguettes, alliant bois robustes et métal runique. Ils fournirent l'Alliance naissante, devenant l'armurerie indispensable de la résistance contre l'obscurité." /></div></Page>
               <Page number={7}><div className="h-full px-10 pt-6"><MagicalText title="Le Serment de Sang" text="Les Vampires de Lord Valerius apprirent à manipuler le sang pour restaurer la vie plutôt que de la prendre. Ils devinrent les plus grands guérisseurs de guerre, sauvant d'innombrables vies sur le champ de bataille." /></div></Page>
-              <Page number={8}><div className="h-full px-10 pt-6"><MagicalText title="L'Alliance de la Lumière" text="L'Alliance de la Lumière unit Humains, Nains, Elfes et Vampires. Ensemble, they affrontèrent les Ténèbres. Unis par l'espoir, ces peuples autrefois divisés se battaient comme un seul homme pour la survie d'Asgarm." /></div></Page>
+              <Page number={8}><div className="h-full px-10 pt-6"><MagicalText title="L'Alliance de la Lumière" text="L'Alliance de la Lumière unit Humains, Nains, Elfes et Vampires. Ensemble, ils affrontèrent les Ténèbres. Unis par l'espoir, ces peuples autrefois divisés se battaient comme un seul homme pour la survie d'Asgarm." /></div></Page>
               <Page number={9}><div className="h-full px-10 pt-6"><MagicalText title="Le Crépuscule des Cavaliers" text="La bataille finale eut lieu sur les Plaines Calcinées. Alaric anéantit le Seigneur des Cavaliers. Les Cavaliers étaient vaincus, mais le monde était fracturé et les graines du Chaos étaient semées." /></div></Page>
               <Page number={10}>
                 <div className="h-full px-10 pt-6">
@@ -219,8 +212,6 @@ export default function HistoirePage() {
       <style jsx global>{`
         .page { background-color: #f4ecd8; background-image: url("https://www.transparenttextures.com/patterns/papyrus.png"); width: 450px; height: 600px; }
         .page-content { padding: 1.5rem; height: 100%; }
-        .stf__wrapper { background-color: transparent !important; }
-        .stf__block { background-color: transparent !important; }
         .custom-scrollbar::-webkit-scrollbar { width: 3px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(180, 141, 29, 0.2); border-radius: 10px; }

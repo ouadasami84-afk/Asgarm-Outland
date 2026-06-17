@@ -1,7 +1,7 @@
 
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Volume2, VolumeX } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -37,7 +37,7 @@ export const BackgroundMusic = () => {
         <iframe
           width="1"
           height="1"
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&mute=${isPlaying ? '0' : '1'}&enablejsapi=1`}
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&mute=${isPlaying ? '0' : '1'}&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
           allow="autoplay"
           frameBorder="0"
           className="opacity-0 pointer-events-none"
@@ -61,7 +61,7 @@ export const BackgroundMusic = () => {
             >
               <Volume2 className="w-4 h-4 text-gold text-glow-gold" />
               <motion.div 
-                animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0, 0.3] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="absolute inset-0 bg-gold/20 rounded-full -z-10"
               />

@@ -108,7 +108,7 @@ export default function GuidePage() {
               <button
                 key={inst.id}
                 onClick={() => setActiveTab(inst.id)}
-                className={`group relative flex items-center justify-between p-4 transition-all duration-500 border ${
+                className={`group relative flex items-center justify-between p-4 transition-all duration-300 border ${
                   activeTab === inst.id 
                   ? 'bg-gold/10 border-gold/40' 
                   : 'bg-white/[0.01] border-white/5 hover:border-gold/20'
@@ -133,7 +133,7 @@ export default function GuidePage() {
 
           <div className="mt-auto p-5 border border-gold/10 bg-gold/[0.02]">
             <p className="text-[8px] text-gold uppercase tracking-[0.4em] leading-relaxed font-bold text-center">
-              Sélectionnez une institution pour consulter ses prérogatives et ses grades officiels
+              Sélectionnez une institution pour consulter ses prérogatives
             </p>
           </div>
         </aside>
@@ -143,10 +143,10 @@ export default function GuidePage() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeInst.id}
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.5 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{ duration: 0.3 }}
               className="flex flex-col h-full p-12"
             >
               {/* En-tête de l'Institution */}
@@ -171,7 +171,7 @@ export default function GuidePage() {
                       key={i}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.03 }}
+                      transition={{ delay: i * 0.02 }}
                       className="group/role flex flex-col p-6 bg-gold/[0.01] border border-gold/5 hover:border-gold/30 hover:bg-gold/[0.03] transition-all duration-500"
                     >
                       <div className="flex items-center gap-3 mb-4">
