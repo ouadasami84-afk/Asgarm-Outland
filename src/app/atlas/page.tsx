@@ -19,7 +19,7 @@ const kingdoms = [
   {
     name: "Forêt d'Argent",
     race: "Royaume des Elfes & Elfes de Lune",
-    desc: "Au cœur des forêts ancestrales se niche la Forêt d'Argent, le royaume commun des Elfes et des Elfes de Lune. C'est une cité où la nature et la magie ne font qu'un, avec des habitations tissées dans les arbres vivants et des chemins illuminés par la lueur des étoiles. Tandis que les Elfes cultivent la magie de la vie, les Elfes de Lune veillent en secret depuis leurs sanctuaires ombragés, étudiant les arcanes obscurs pour maintenir l'équilibre. Ensemble, they forment une communauté harmonieuse et sage, gardiens des plus anciens secrets d'Asgarm.",
+    desc: "Au cœur des forêts ancestrales se niche la Forêt d'Argent, le royaume commun des Elfes et des Elfes de Lune. C'est une cité où la nature et la magie ne font qu'un, avec des habitations tissées dans les arbres vivants et des chemins illuminés par la lueur des étoiles. Tandis que les Elfes cultivent la magie de la vie, les Elfes de Lune veillent en secret depuis leurs sanctuaires ombragés, étudiant les arcanes obscurs pour maintenir l'équilibre. Ensemble, ils forment une communauté harmonieuse et sage, gardiens des plus anciens secrets d'Asgarm.",
     color: "from-emerald-600/20 to-green-600/5",
     accent: "text-emerald-400",
     glow: "text-glow-green",
@@ -69,7 +69,7 @@ const peoples = [
   {
     name: "Vampires",
     trait: "Sacrifice & Guérison",
-    desc: "Créatures de la nuit à la peau noire comme l'ébène ou rouge comme le sang, les Vampires furent longtemps craints. En canalisant leur maîtrise innée du sang à travers des baguettes, ils devinrent les plus grands guérisseurs du champ de bataille, soignant les blessures que nulle autre magie ne pouvait refermer."
+    desc: "Créatures de la nuit à la peau noire comme l'ébène ou rouge comme le sang, les Vampires furent longtemps craints. En canalisant leur maîtrise innée du sang à travers des baguettes, they devinrent les plus grands guérisseurs du champ de bataille, soignant les blessures que nulle autre magie ne pouvait refermer."
   }
 ]
 
