@@ -127,7 +127,7 @@ export default function HistoirePage() {
       
       <div className="flex-1 flex flex-col items-center justify-center p-2 pt-24 pb-2 relative z-10">
         
-        {/* Préambule Royal en Or */}
+        {/* Préambule Royal avec animation Or/Blanc */}
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -139,9 +139,13 @@ export default function HistoirePage() {
             <span className="text-gold text-[8px] tracking-[1em] uppercase font-bold text-glow-gold">Chroniques d'Asgarm</span>
             <div className="h-[1px] w-10 bg-gold/20 shadow-[0_0_10px_rgba(212,175,55,0.3)]" />
           </div>
-          <h1 className="text-xl md:text-2xl font-headline text-gold uppercase tracking-tighter mb-1 leading-tight text-glow-gold">
+          <motion.h1 
+            animate={{ color: ["#D4AF37", "#FFFFFF", "#D4AF37"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="text-xl md:text-2xl font-headline uppercase tracking-tighter mb-1 leading-tight text-glow-gold"
+          >
             Les Annales de la Souveraineté
-          </h1>
+          </motion.h1>
           <p className="text-gold/80 text-[9px] italic font-medium tracking-[0.12em] max-w-xl mx-auto leading-relaxed text-glow-gold">
             "Le savoir d'Asgarm est scellé dans ce grimoire éternel. Tournez les pages pour explorer les racines de notre destin."
           </p>
@@ -183,11 +187,11 @@ export default function HistoirePage() {
               showPageCorners={true}
               disableFlipByClick={false}
             >
-              {/* Page de Sommaire Épurée */}
+              {/* Page de Sommaire Épurée (Aucun élément au-dessus de Sommaire des Annales) */}
               <Page number={1}>
-                <div className="h-full flex flex-col pt-2 px-6">
+                <div className="h-full flex flex-col pt-4 px-6">
                   <h2 className="text-sm font-headline text-[#4a3721] uppercase tracking-[0.2em] mb-4 border-b border-[#4a3721]/15 pb-1 w-full text-center">Sommaire des Annales</h2>
-                  <div className="flex flex-col gap-1 w-full">
+                  <div className="flex flex-col gap-1 w-full overflow-y-auto custom-scrollbar-light">
                     {chapters.map((ch, i) => (
                       <div 
                         key={i} 
@@ -266,7 +270,7 @@ export default function HistoirePage() {
           </div>
         </motion.div>
 
-        {/* Aide Navigation Dorée */}
+        {/* Aide Navigation Animée Or/Blanc */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -274,9 +278,13 @@ export default function HistoirePage() {
           className="mt-2 flex items-center gap-6"
         >
           <div className="h-[1px] w-16 bg-gold/20 shadow-[0_0_10px_rgba(212,175,55,0.3)]" />
-          <span className="text-gold text-[9px] tracking-[0.6em] uppercase font-bold text-glow-gold text-center">
+          <motion.span 
+            animate={{ color: ["#D4AF37", "#FFFFFF", "#D4AF37"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="text-[9px] tracking-[0.6em] uppercase font-bold text-glow-gold text-center"
+          >
             Faites glisser les pages pour explorer les annales
-          </span>
+          </motion.span>
           <div className="h-[1px] w-16 bg-gold/20 shadow-[0_0_10px_rgba(212,175,55,0.3)]" />
         </motion.div>
       </div>
@@ -309,6 +317,15 @@ export default function HistoirePage() {
         }
         .stf__wrapper {
           background-color: transparent !important;
+        }
+        .custom-scrollbar-light::-webkit-scrollbar {
+          width: 2px;
+        }
+        .custom-scrollbar-light::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar-light::-webkit-scrollbar-thumb {
+          background: rgba(74, 55, 33, 0.1);
         }
       `}</style>
     </main>
