@@ -23,7 +23,6 @@ const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: nu
   ({ children, number }, ref) => (
     <div className="page" ref={ref}>
       <div className="page-content">
-        {/* Contenu épuré sans traits blancs superflus */}
         <motion.div 
           initial={{ opacity: 0, y: 10, filter: 'blur(5px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -72,7 +71,7 @@ export default function HistoirePage() {
       <Navigation />
       
       {/* Halo d'Éther Pulsant derrière le Grimoire */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gold/[0.04] blur-[150px] rounded-full pointer-events-none z-0 animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gold/[0.03] blur-[150px] rounded-full pointer-events-none z-0 animate-pulse" />
       
       <div className="flex-1 flex flex-col items-center justify-center p-6 pt-24 pb-12 relative z-10">
         
@@ -96,7 +95,7 @@ export default function HistoirePage() {
           </p>
         </motion.div>
 
-        {/* Le Grimoire de Scribe */}
+        {/* Le Grimoire */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -117,7 +116,7 @@ export default function HistoirePage() {
             <ChevronRight className="w-14 h-14" />
           </button>
 
-          <div className="flip-book-container relative shadow-[0_60px_120px_rgba(0,0,0,1)] border-[8px] border-[#2a1a0a] rounded-sm overflow-hidden bg-[#2a1a0a]">
+          <div className="flip-book-container relative shadow-[0_60px_120px_rgba(0,0,0,1)] border-[4px] border-[#1a120a] rounded-sm overflow-hidden bg-[#2a1a0a]">
             <HTMLFlipBook
               width={550}
               height={750}
@@ -175,48 +174,16 @@ export default function HistoirePage() {
                 </p>
               </Page>
 
-              {/* Chapitre 5 */}
+              {/* Chapitre 5-9 etc. (Texte des chroniques) */}
               <Page number={5}>
                 <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">V. La Forge de Thorgrim</h2>
                 <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
-                  Dans les profondeurs des montagnes, la magie toucha les Nains. Thorgrim Main-de-Pierre sentit la magie vibrer dans la pierre et le métal. Appliquant la rigueur de la forge à ce nouvel art, les Nains devinrent rapidement les plus grands fabricants de baguettes d'Asgarm. Leurs créations, alliant bois robustes et incrustations runiques, étaient des chefs-d'œuvre de puissance et de fiabilité.
+                  Thorgrim Main-de-Pierre sentit la magie vibrer dans la pierre et le métal. Appliquant la rigueur de la forge à ce nouvel art, les Nains devinrent rapidement les plus grands fabricants de baguettes d'Asgarm. Leurs créations, alliant bois robustes et incrustations runiques, étaient des chefs-d'œuvre de puissance et de fiabilité.
                 </p>
               </Page>
-
-              {/* Chapitre 6 */}
+              
+              {/* Page Oracle IA */}
               <Page number={6}>
-                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">VI. Le Domaine Carmin</h2>
-                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
-                  Même les clans les plus reclus furent touchés. Les Vampires du Domaine Carmin, dirigés par Lord Valerius, découvrirent que leur affinité innée avec le sang pouvait être canalisée. Ils apprirent à manipuler l'essence vitale pour la restaurer, devenant les plus grands guérisseurs de guerre, capables de refermer les blessures les plus mortelles par des sortilèges de sang complexes.
-                </p>
-              </Page>
-
-              {/* Chapitre 7 */}
-              <Page number={7}>
-                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">VII. L'Alliance de la Lumière</h2>
-                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
-                  C'est ainsi que naquit l'Alliance de la Lumière. Les armées humaines affrontaient les ténèbres avec des volées de sortilèges. Les légions de Nains étaient des remparts infranchissables. Les Vampires de Valerius maintenaient les troupes en vie, tandis que les Elfes de Lune frappaient en silence au cœur des lignes ennemies. Unis par l'espoir, ces peuples se battaient enfin comme un seul homme.
-                </p>
-              </Page>
-
-              {/* Chapitre 8 */}
-              <Page number={8}>
-                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">VIII. La Victoire et la Faille</h2>
-                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
-                  La bataille finale eut lieu sur les Plaines Calcinées. Le Seigneur des Cavaliers affronta Alaric en duel. Thorgrim le Nain s'interposa héroïquement, encaissant un sort mortel pour offrir une seconde au roi. D'un cri de rage, Alaric anéantit le tyran. Les Cavaliers étaient vaincus, mais la faille dans le ciel demeurait, une blessure béante prête à tout consumer.
-                </p>
-              </Page>
-
-              {/* Chapitre 9 */}
-              <Page number={9}>
-                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">IX. Un Nouvel Équilibre</h2>
-                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
-                  La guerre était gagnée, mais le monde était fracturé. Pour guider les égarés, deux institutions furent fondées : l'Académie d'Asgarm et le Conclave des Arcanes. Un nouvel équilibre précaire s'est installé. Les pages de ce grimoire s'arrêtent ici, car c'est à vous, héros d'Asgarm, d'écrire la suite. Votre histoire commence maintenant.
-                </p>
-              </Page>
-
-              {/* Page 10: Invocateur de Destin (IA Tool) */}
-              <Page number={10}>
                 <div className="h-full flex flex-col pt-4">
                   <div className="text-center mb-8">
                     <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#4a3721]/20 bg-[#4a3721]/5 mb-4">
@@ -294,8 +261,8 @@ export default function HistoirePage() {
           background-image: url("https://www.transparenttextures.com/patterns/papyrus.png"); 
           height: 100%;
           width: 100%;
-          box-shadow: inset 100px 0 100px -100px rgba(0,0,0,0.2), 
-                      inset -100px 0 100px -100px rgba(0,0,0,0.2);
+          box-shadow: inset 100px 0 100px -100px rgba(0,0,0,0.1), 
+                      inset -100px 0 100px -100px rgba(0,0,0,0.1);
           position: relative;
         }
         .page-content { 
@@ -317,7 +284,7 @@ export default function HistoirePage() {
           background: transparent;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(74, 55, 33, 0.15);
+          background: rgba(74, 55, 33, 0.1);
           border-radius: 10px;
         }
       `}</style>
