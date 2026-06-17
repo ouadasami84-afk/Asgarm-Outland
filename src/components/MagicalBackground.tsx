@@ -1,12 +1,24 @@
 "use client"
 
-import React, { useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
+interface Star {
+  id: number;
+  left: string;
+  top: string;
+  size: number;
+  delay: number;
+  duration: number;
+  opacity: number;
+}
+
 export const MagicalBackground: React.FC = () => {
-  // Génération des étoiles de manière stable pour éviter les problèmes d'hydratation
-  const stars = useMemo(() => {
-    return [...Array(200)].map((_, i) => ({
+  const [stars, setStars] = useState<Star[]>([])
+
+  useEffect(() => {
+    // Génération des étoiles après le montage pour éviter les erreurs d'hydratation
+    const generatedStars = [...Array(200)].map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
@@ -15,6 +27,7 @@ export const MagicalBackground: React.FC = () => {
       duration: 3 + Math.random() * 7,
       opacity: Math.random() * 0.5 + 0.2,
     }))
+    setStars(generatedStars)
   }, [])
 
   return (
@@ -26,7 +39,7 @@ export const MagicalBackground: React.FC = () => {
         <div className="absolute top-[30%] right-[15%] w-[40%] h-[40%] bg-blue-900/5 blur-[120px] rounded-full" />
       </div>
 
-      {/* Champ d'étoiles avec parallaxe simulée via des vitesses différentes */}
+      {/* Champ d'étoiles avec parallaxe simulée */}
       {stars.map((star) => (
         <motion.div
           key={star.id}

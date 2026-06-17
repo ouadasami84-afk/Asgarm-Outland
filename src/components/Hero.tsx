@@ -9,12 +9,8 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen w-full flex flex-col items-center justify-end overflow-hidden">
-      {/* Vidéo Cinématique Haute Qualité */}
+      {/* Vidéo Cinématique Haute Qualité - Sans aucun filtre gênant */}
       <div className="absolute inset-0 z-0 bg-night-deep">
-        {/* Dégradés de fusion périphériques minimaux */}
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-night-deep to-transparent z-10" />
-        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-night-deep/20 to-transparent z-10" />
-        
         <div className="relative w-full h-full pointer-events-none scale-105">
           <iframe
             className="absolute top-1/2 left-1/2 w-[115vw] h-[115vh] -translate-x-1/2 -translate-y-1/2 object-cover border-none"
@@ -25,8 +21,8 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Interface minimaliste placée au plus bas */}
-      <div className="relative z-20 flex flex-col items-center w-full pb-20 max-w-5xl px-6">
+      {/* Interface minimaliste placée au plus bas pour libérer totalement la vidéo */}
+      <div className="relative z-20 flex flex-col items-center w-full pb-16 max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
