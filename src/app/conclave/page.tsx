@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react'
@@ -15,7 +14,7 @@ export default function ConclavePage() {
       
       <div className="flex-1 flex relative z-10 overflow-hidden pt-24">
         
-        {/* Voie des Arcanes (Le Bien / Ordre) */}
+        {/* Voie des Arcanes (Justice / Ordre) */}
         <Link 
           href="/conclave/arcanes"
           onMouseEnter={() => setHoveredSide('arcanes')}
@@ -44,7 +43,7 @@ export default function ConclavePage() {
                 Conclave des <br /> <span className="text-gold italic font-light">Arcanes</span>
               </h1>
               <p className="text-silver/40 italic text-lg leading-relaxed mb-12 max-w-md">
-                "Seule la magie arcanique est autorisée. Nous sommes le rempart contre l'obscurité, les juges du flux sacré."
+                "Nous combattons la magie noire et la magie du sang. Seule la magie arcanique est autorisée sous notre règne."
               </p>
               <div className="px-12 py-4 border border-gold/20 text-gold text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-gold hover:text-night transition-all duration-500">
                 Accéder au Conclave des Arcanes
@@ -53,7 +52,7 @@ export default function ConclavePage() {
           </div>
         </Link>
 
-        {/* Voie des Ombres (Le Mal / Secret) */}
+        {/* Voie des Ombres (Liberté / Pouvoir) */}
         <Link 
           href="/conclave/ombres"
           onMouseEnter={() => setHoveredSide('ombres')}
@@ -82,7 +81,7 @@ export default function ConclavePage() {
                 Conclave des <br /> <span className="text-indigo-400 italic font-light">Ombres</span>
               </h1>
               <p className="text-silver/40 italic text-lg leading-relaxed mb-12 max-w-md">
-                "La magie reste de la magie. Nous embrassons l'abysse pour forger nos propres lois dans le sang et l'ombre."
+                "La magie reste de la magie. Nous embrassons la magie noire et du sang pour forger notre propre destin."
               </p>
               <div className="px-12 py-4 border border-indigo-500/20 text-indigo-400 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-indigo-400 hover:text-night transition-all duration-500">
                 Accéder au Conclave des Ombres

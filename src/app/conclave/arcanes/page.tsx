@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react'
@@ -50,7 +49,7 @@ export default function ArcanesPage() {
               Conclave des <br /> <span className="text-gold italic font-light">Arcanes</span>
             </h1>
             <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-gold/20 pl-8">
-              "Le Conclave des Arcanes incarne la justice de la magie. Nous créons les lois qui régissent l'éther dans le monde d'Asgarm. Nous jugeons, emprisonnons, enquêtons et arrêtons les sorciers déviants pour protéger les citoyens de la magie noire. Notre serment est absolu : seule la magie arcanique est autorisée dans le monde d'Asgarm."
+              "Le Conclave des Arcanes incarne la justice de la magie. Nous créons les lois qui régissent l'éther dans le monde d'Asgarm. Nous jugeons, emprisonnons, enquêtons et arrêtons les sorciers déviants pour protéger les citoyens de la magie noire et de la magie du sang. Notre serment est absolu : seule la magie arcanique est autorisée dans le monde d'Asgarm."
             </p>
           </div>
         </header>
