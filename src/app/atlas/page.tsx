@@ -130,7 +130,7 @@ export default function AtlasPage() {
           </motion.div>
         </header>
 
-        {/* Navigation Cinématographique (Sans Emojis) */}
+        {/* Navigation Cinématographique */}
         <div className="flex justify-center gap-4 md:gap-12 mb-32 border-b border-white/5 pb-12">
           {[
             { id: 'kingdoms', label: 'Royaumes', icon: Globe },
@@ -218,7 +218,6 @@ export default function AtlasPage() {
 
             {activeTab === 'clans' && (
               <div className="flex flex-col gap-24">
-                {/* Section Procédure — Ultra Pro */}
                 <section className="p-16 bg-black/60 border border-gold/10 relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
                   <div className="flex items-center gap-6 mb-12">
