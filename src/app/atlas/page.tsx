@@ -1,9 +1,7 @@
-
 "use client"
 
 import React from 'react'
 import { Navigation } from '@/components/Navigation'
-import { MagicalBackground } from '@/components/MagicalBackground'
 import { Footer } from '@/components/Footer'
 import { motion } from 'framer-motion'
 import { Compass, MapPin, Sparkles } from 'lucide-react'
@@ -31,8 +29,7 @@ const sectors = [
 
 export default function AtlasPage() {
   return (
-    <main className="relative min-h-screen bg-night-deep">
-      <MagicalBackground />
+    <main className="relative min-h-screen bg-transparent">
       <Navigation />
       
       <div className="relative z-10 pt-48 pb-32 px-8">

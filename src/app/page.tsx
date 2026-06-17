@@ -1,11 +1,9 @@
-
 "use client"
 
 import React, { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Navigation } from '@/components/Navigation'
 import { Hero } from '@/components/Hero'
-import { MagicalBackground } from '@/components/MagicalBackground'
 import { Footer } from '@/components/Footer'
 import { Compass, Book, Shield, Trophy } from 'lucide-react'
 
@@ -18,14 +16,14 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="relative min-h-screen bg-night-deep">
+    <main className="relative min-h-screen">
       <AnimatePresence mode="wait">
         {loading ? (
           <motion.div
             key="loader"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-night-deep flex items-center justify-center"
+            className="fixed inset-0 z-[100] bg-[#010208] flex items-center justify-center"
           >
             <div className="text-center">
               <motion.div
@@ -52,12 +50,11 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
           >
-            <MagicalBackground />
             <Navigation />
             <div className="relative z-10">
               <Hero />
               
-              <section className="py-48 px-8 max-w-7xl mx-auto text-center">
+              <section className="py-48 px-8 max-w-7xl mx-auto text-center bg-transparent">
                 <motion.div 
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
