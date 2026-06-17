@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,6 +30,24 @@ h1, h2, h3, h4 {
 
 .shine-text {
   background: linear-gradient(90deg, #D4AF37, #FFFFFF, #D4AF37);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s linear infinite;
+  display: inline-block;
+}
+
+.shine-text-blue {
+  background: linear-gradient(90deg, #0ea5e9, #FFFFFF, #0ea5e9);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s linear infinite;
+  display: inline-block;
+}
+
+.shine-text-red {
+  background: linear-gradient(90deg, #dc2626, #000000, #dc2626);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react'
@@ -58,8 +57,8 @@ export default function ArcanesPage() {
               <div className="h-[1px] w-12 bg-sky-500/40" />
               <span className="text-sky-400 text-[10px] tracking-[1.2em] uppercase font-bold text-glow-sky">L'Ordre de la Justice Magique</span>
             </div>
-            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8 text-glow-sky">
-              Conclave des <br /> <span className="text-sky-400 italic font-light">Arcanes</span>
+            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8">
+              <span className="shine-text-blue">Conclave des</span> <br /> <span className="shine-text-blue italic font-light">Arcanes</span>
             </h1>
             <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-sky-500/20 pl-8">
               "Le Conclave des Arcanes incarne la justice de la magie. Fondé après la Grande Guerre par le rassemblement des Rois, il a pour mission de protéger le monde des sorciers d'Asgarm. Nous créons les lois qui régissent l'éther, jugeons, emprisonnons, enquêtons et arrêtons les sorciers déviants pour protéger les citoyens de la magie noire et de la magie du sang. Notre serment est absolu : seule la magie arcanique est autorisée dans le monde d'Asgarm."

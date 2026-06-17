@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react'
@@ -50,7 +49,7 @@ export default function ObscuraPage() {
                 <span className="text-red-600 text-[10px] tracking-[1.2em] uppercase font-bold text-glow-red">Bastion du Royaume du Mal</span>
               </div>
               <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-4">
-                Académie <br /> <span className="text-red-600 italic font-light">Obscura</span>
+                <span className="shine-text-red">Académie</span> <br /> <span className="shine-text-red italic font-light">Obscura</span>
               </h1>
               <p className="text-silver/50 text-xl italic font-light max-w-2xl leading-relaxed border-l border-red-600/20 pl-8">
                 "La magie ne connaît pas de limites. Fondée par les deux Seigneurs du Mal pour libérer le véritable potentiel de l'ombre et du sang librement."

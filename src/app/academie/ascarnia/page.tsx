@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react'
@@ -117,7 +116,7 @@ export default function AscarniaPage() {
                 <span className="text-sky-400 text-[10px] tracking-[1.2em] uppercase font-bold text-glow-blue">Institution Royale d'Asgarm</span>
               </div>
               <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-4">
-                Académie <br /> <span className="text-sky-400 italic font-light">Ascarnia</span>
+                <span className="shine-text-blue">Académie</span> <br /> <span className="shine-text-blue italic font-light">Ascarnia</span>
               </h1>
               <p className="text-silver/50 text-xl italic font-light max-w-2xl leading-relaxed border-l border-sky-500/20 pl-8">
                 "Forger l'excellence, protéger l'équilibre. Le cursus suprême de la magie arcanique fondé par les Rois après la Grande Guerre."

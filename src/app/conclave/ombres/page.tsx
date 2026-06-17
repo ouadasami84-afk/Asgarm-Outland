@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react'
@@ -58,8 +57,8 @@ export default function OmbresPage() {
               <div className="h-[1px] w-12 bg-red-600/30" />
               <span className="text-red-600 text-[10px] tracking-[1.2em] uppercase font-bold text-glow-red">L'Ordre du Seigneur du Mal</span>
             </div>
-            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8 text-glow-red">
-              Conclave des <br /> <span className="text-red-600 italic font-light">Ombres</span>
+            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8">
+              <span className="shine-text-red">Conclave des</span> <br /> <span className="shine-text-red italic font-light">Ombres</span>
             </h1>
             <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-red-600/20 pl-8">
               "Le Conclave des Ombres appartient au Royaume du Mal. Fondé après la Grande Guerre par deux Seigneurs du Mal sous le nom de sorciers de l'ombre, ils ont créé ce royaume ainsi que l'école de magie noire Obscura. Nous appliquons nos propres lois, souvent en confrontation directe avec les Arcanes. Nous jugeons, arrêtons et créons de nouvelles lois, tout en enseignant les arts interdits de l'ombre et du sang. Notre devise : la magie reste de la magie, et chacun a le droit d'utiliser la magie noire et la magie du sang."
