@@ -3,17 +3,17 @@
 import React, { forwardRef, useState, useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { Navigation } from '@/components/Navigation'
-import { Loader2, ScrollText, Book as BookIcon, Sparkles } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { generateMagicalLore } from '@/ai/flows/generate-magical-lore-flow'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
-// Importation dynamique de react-pageflip pour le support client-side uniquement
+// Dynamically import react-pageflip for client-side only rendering
 const HTMLFlipBook = dynamic(() => import('react-pageflip'), { 
   ssr: false,
   loading: () => (
     <div className="w-[550px] h-[750px] bg-[#1a0f05] flex flex-col items-center justify-center border border-gold/10 rounded-lg">
-      <Loader2 className="w-10 h-10 animate-spin text-gold/40 mb-4" />
-      <span className="text-gold/20 text-[10px] tracking-[0.5em] uppercase font-bold text-glow-gold">Inspiration des Archives...</span>
+      <Loader2 className="w-10 h-10 animate-spin text-gold/20 mb-4" />
+      <span className="text-gold/10 text-[9px] tracking-[0.6em] uppercase font-bold">Inspiration des Archives...</span>
     </div>
   )
 })
@@ -22,19 +22,19 @@ const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: nu
   ({ children, number, isCover }, ref) => (
     <div className={`page ${isCover ? 'cover' : ''}`} ref={ref}>
       <div className="page-content">
-        {/* Ancient decorative corner ornaments */}
+        {/* Ancient decorative corner ornaments (No emojis/logos) */}
         {!isCover && (
-          <>
-            <div className="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-[#4a3721]/20 rounded-tl-xl pointer-events-none" />
-            <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-[#4a3721]/20 rounded-tr-xl pointer-events-none" />
-            <div className="absolute bottom-16 left-8 w-12 h-12 border-b-2 border-l-2 border-[#4a3721]/20 rounded-bl-xl pointer-events-none" />
-            <div className="absolute bottom-16 right-8 w-12 h-12 border-b-2 border-r-2 border-[#4a3721]/20 rounded-br-xl pointer-events-none" />
-          </>
+          <div className="absolute inset-0 pointer-events-none p-6">
+            <div className="absolute top-6 left-6 w-16 h-16 border-t border-l border-[#4a3721]/15 rounded-tl-2xl" />
+            <div className="absolute top-6 right-6 w-16 h-16 border-t border-r border-[#4a3721]/15 rounded-tr-2xl" />
+            <div className="absolute bottom-12 left-6 w-16 h-16 border-b border-l border-[#4a3721]/15 rounded-bl-2xl" />
+            <div className="absolute bottom-12 right-6 w-16 h-16 border-b border-r border-[#4a3721]/15 rounded-br-2xl" />
+          </div>
         )}
-        <div className="page-inner-content">
+        <div className="page-inner-content relative z-10">
           {children}
           {number && !isCover && (
-            <div className="page-footer">
+            <div className="page-footer font-serif italic text-[#4a3721]/30 text-xs tracking-[0.3em] mt-auto pt-8 text-center">
               — {number} —
             </div>
           )}
@@ -73,14 +73,14 @@ export default function HistoirePage() {
     <main className="relative h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
-      {/* Book Halo & Magical Aura */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gold/5 blur-[150px] rounded-full pointer-events-none z-0 animate-pulse" />
+      {/* Immersive Magical Aura */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gold/[0.03] blur-[180px] rounded-full pointer-events-none z-0 animate-pulse" />
       
       <div className="flex-1 flex flex-col items-center justify-center p-6 pt-24 relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          initial={{ opacity: 0, y: 100, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
           className="relative"
         >
           <HTMLFlipBook
@@ -91,14 +91,14 @@ export default function HistoirePage() {
             maxWidth={1000}
             minHeight={400}
             maxHeight={1533}
-            maxShadowOpacity={0.6}
+            maxShadowOpacity={0.7}
             showCover={true}
             mobileScrollSupport={true}
-            className="flip-book"
+            className="flip-book shadow-[0_50px_100px_rgba(0,0,0,1)]"
             ref={bookRef}
             startPage={0}
             drawShadow={true}
-            flippingTime={1200}
+            flippingTime={1500}
             usePortrait={false}
             startZIndex={0}
             autoSize={true}
@@ -108,138 +108,148 @@ export default function HistoirePage() {
             showPageCorners={true}
             disableFlipByClick={false}
           >
-            {/* Front Cover - AAA Style Leather & Gold */}
+            {/* Front Cover - AAA Style Deep Leather & Engraved Gold */}
             <Page isCover={true}>
-              <div className="h-full flex flex-col items-center justify-center text-center border-[20px] border-double border-[#3a2a18] bg-[#2a1a0a] shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] p-10">
-                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] pointer-events-none" />
+              <div className="h-full flex flex-col items-center justify-center text-center border-[24px] border-double border-[#3a2a18] bg-[#1a1008] relative overflow-hidden">
+                <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#000]/20 to-[#000]/60 pointer-events-none" />
                 
-                <div className="relative mb-16">
-                  <div className="w-24 h-24 border-2 border-gold rotate-45 flex items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.3)]">
-                    <Sparkles className="w-10 h-10 text-gold -rotate-45 animate-pulse" />
+                <div className="relative mb-20">
+                  <div className="w-20 h-20 border border-gold/20 rotate-45 flex items-center justify-center shadow-[0_0_40px_rgba(212,175,55,0.1)]">
+                    <div className="w-12 h-12 border border-gold/40 rotate-12 flex items-center justify-center">
+                       <div className="w-4 h-4 bg-gold animate-pulse" />
+                    </div>
                   </div>
                 </div>
 
-                <h2 className="text-5xl font-headline uppercase tracking-tighter mb-6 text-gold text-glow-gold leading-none">
+                <h2 className="text-5xl font-headline uppercase tracking-tighter mb-8 text-gold text-glow-gold leading-[0.9] px-4">
                   CHRONIQUES<br/>D'ASGARM
                 </h2>
                 
-                <div className="h-[2px] w-32 bg-gradient-to-r from-transparent via-gold to-transparent mb-10" />
+                <div className="h-[1px] w-48 bg-gradient-to-r from-transparent via-gold/40 to-transparent mb-12" />
                 
-                <p className="text-gold/60 italic font-serif text-sm tracking-[0.5em] uppercase">
+                <p className="text-gold/50 italic font-serif text-xs tracking-[0.8em] uppercase">
                   Tome Premier
                 </p>
-                <span className="text-gold/40 text-[9px] tracking-[0.8em] uppercase mt-4 block">
+                <span className="text-gold/20 text-[10px] tracking-[0.6em] uppercase mt-4 block">
                   L'Éther Originel
                 </span>
                 
-                <div className="mt-20 text-gold/20 text-[10px] tracking-widest uppercase animate-pulse">
-                  — Touchez pour Ouvrir —
+                <div className="mt-32 text-gold/10 text-[9px] tracking-[1em] uppercase font-bold animate-pulse">
+                  — OUVREZ LE CODEX —
                 </div>
               </div>
             </Page>
 
-            {/* Page 1: Préface avec Lettrine */}
+            {/* Page 1: Préface Professionnelle */}
             <Page number={1}>
-              <div className="mb-12 flex items-center gap-6">
-                <div className="h-[1px] flex-1 bg-[#4a3721]/30" />
-                <h2 className="text-3xl font-headline text-[#4a3721] uppercase tracking-widest">Préface</h2>
-                <div className="h-[1px] flex-1 bg-[#4a3721]/30" />
+              <div className="mb-16 flex items-center gap-6">
+                <div className="h-[1px] flex-1 bg-[#4a3721]/20" />
+                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.4em]">Préface</h2>
+                <div className="h-[1px] flex-1 bg-[#4a3721]/20" />
               </div>
-              <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none">
-                Depuis l'éveil du premier pilier d'éther, Asgarm se dresse comme le phare immuable de la civilisation magique. Ce grimoire est le témoin de notre ascension, de nos conquêtes et des mystères qui régissent encore notre monde. Chaque mot ici gravé a été dicté par les flux de la conscience universelle.
-              </p>
-              <div className="mt-24 flex justify-center opacity-10">
-                <BookIcon className="w-32 h-32 text-[#4a3721]" />
+              <div className="prose prose-stone">
+                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-[0.8] font-serif leading-loose text-justify text-lg">
+                  Depuis l'éveil du premier pilier d'éther, Asgarm se dresse comme le phare immuable de la civilisation magique. Ce grimoire est le témoin de notre ascension, de nos conquêtes et des mystères qui régissent encore notre monde. Chaque mot ici gravé a été dicté par les flux de la conscience universelle, préservé pour les générations d'élite qui fouleront ces terres promises.
+                </p>
+                <p className="text-[#3d2b19] font-serif leading-loose text-justify text-lg mt-8">
+                  Que celui qui ouvre ce tome comprenne la responsabilité qui lui incombe. La connaissance n'est pas un don, c'est une conquête.
+                </p>
               </div>
             </Page>
 
             {/* Page 2: L'Éveil avec Illustration Asset */}
             <Page number={2}>
-              <h2 className="text-2xl font-headline mb-12 text-[#4a3721] uppercase tracking-widest text-left">L'Éveil</h2>
-              <p className="text-[#3d2b19] mb-8">
-                L'émergence des courants telluriques a permis aux premiers érudits de canaliser l'énergie brute pour ériger les fondations d'Asgarm. Les mages nomades découvrirent alors les premiers nex de puissance.
-              </p>
-              <div className="h-[200px] w-full border border-[#4a3721]/10 bg-[#4a3721]/5 flex items-center justify-center mb-8 relative group overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/asgarm-awakening/600/400')] bg-cover bg-center grayscale opacity-30 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" />
-                <span className="relative z-10 text-[#4a3721] text-[9px] tracking-[0.5em] font-bold uppercase">Illustration d'Époque</span>
+              <h2 className="text-2xl font-headline mb-12 text-[#4a3721] uppercase tracking-[0.2em] border-b border-[#4a3721]/10 pb-6">I. L'Éveil des Flux</h2>
+              <div className="space-y-8">
+                <p className="text-[#3d2b19] font-serif leading-relaxed text-lg italic">
+                  L'émergence des courants telluriques a permis aux premiers érudits de canaliser l'énergie brute pour ériger les fondations d'Asgarm. Les mages nomades découvrirent alors les premiers nexus de puissance pure.
+                </p>
+                <div className="h-[280px] w-full border border-[#4a3721]/15 bg-[#4a3721]/5 relative group overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/asgarm-history-1/600/400')] bg-cover bg-center grayscale contrast-125 opacity-40 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-1000" />
+                  <div className="absolute inset-0 border-[12px] border-[#f4ecd8]/40 pointer-events-none" />
+                </div>
+                <p className="text-[#4a3721]/60 text-xs tracking-widest uppercase text-center font-bold">
+                  Gravure du Nexus Originel
+                </p>
               </div>
-              <p className="text-[#3d2b19] italic border-l-4 border-[#4a3721]/20 pl-8 leading-loose">
-                "C'est dans le silence des premières aubes que la pierre a appris à chanter la gloire des astres."
-              </p>
             </Page>
 
-            {/* Page 3: L'Apogée */}
+            {/* Page 3: L'Apogée Impériale */}
             <Page number={3}>
-              <h2 className="text-2xl font-headline mb-12 text-[#4a3721] uppercase tracking-widest text-right">L'Apogée</h2>
-              <p className="text-[#3d2b19] leading-loose">
-                Une ère de prospérité inégalée où la magie et l'architecture ont fusionné pour créer les merveilles suspendues d'Asgarm. Les académies royales devinrent les centres mondiaux du savoir ésotérique.
-              </p>
-              <p className="text-[#3d2b19] mt-10 leading-loose">
-                Chaque pierre posée était imprégnée de rituels de protection, assurant la pérennité du trône pour les siècles à venir. Le ciel même semblait s'incliner devant notre puissance impériale.
-              </p>
-              <div className="mt-16 pt-8 border-t border-[#4a3721]/10">
-                <p className="text-[#3d2b19] text-sm italic opacity-60 text-right">
-                  — Extrait des Registres de la Tour d'Ivoire
+              <h2 className="text-2xl font-headline mb-12 text-[#4a3721] uppercase tracking-[0.2em] border-b border-[#4a3721]/10 pb-6">II. L'Âge de l'Apogée</h2>
+              <div className="prose prose-stone space-y-8">
+                <p className="text-[#3d2b19] font-serif leading-loose text-justify text-lg">
+                  Une ère de prospérité inégalée où la magie et l'architecture ont fusionné pour créer les merveilles suspendues d'Asgarm. Les académies royales devinrent les centres mondiaux du savoir ésotérique, attirant les esprits les plus brillants des quatre coins de l'éther.
                 </p>
+                <p className="text-[#3d2b19] font-serif leading-loose text-justify text-lg italic border-l-2 border-[#4a3721]/20 pl-8">
+                  "Chaque pierre posée était imprégnée de rituels de protection, assurant la pérennité du trône. Le ciel même semblait s'incliner devant notre puissance impériale, offrant des aurores perpétuelles en hommage à notre souveraineté."
+                </p>
+                <div className="pt-12">
+                   <div className="h-[1px] w-12 bg-[#4a3721]/30 mx-auto" />
+                </div>
               </div>
             </Page>
 
             {/* Page 4: IA Tool - Invoquer l'Histoire avec UI Premium */}
             <Page number={4}>
               <div className="h-full flex flex-col">
-                <h2 className="text-xl font-headline mb-8 text-[#4a3721] uppercase tracking-[0.3em] border-b-2 border-[#4a3721]/10 pb-6 text-center">Invoquer l'Histoire</h2>
+                <div className="mb-10 text-center">
+                  <h2 className="text-xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-4">Invocateur d'Ether</h2>
+                  <div className="h-[1px] w-16 bg-[#4a3721]/20 mx-auto" />
+                </div>
                 
                 {!lore ? (
-                  <div className="flex flex-col gap-8">
-                    <p className="text-[#3d2b19] text-base leading-relaxed italic opacity-80 text-center px-4 font-serif">
+                  <div className="flex flex-col gap-10">
+                    <p className="text-[#4a3721]/70 text-base leading-relaxed italic text-center px-6 font-serif">
                       Énoncez vos intentions pour que les archives révèlent un fragment de passé oublié...
                     </p>
                     <div className="relative">
                       <textarea
-                        className="w-full h-56 bg-white/50 border-2 border-[#4a3721]/10 p-6 text-[#3d2b19] focus:border-[#4a3721]/40 outline-none resize-none font-serif text-lg leading-relaxed shadow-inner"
+                        className="w-full h-64 bg-transparent border-2 border-[#4a3721]/10 p-8 text-[#3d2b19] focus:border-[#4a3721]/30 outline-none resize-none font-serif text-xl leading-relaxed shadow-[inset_0_0_20px_rgba(74,55,33,0.05)] placeholder-[#4a3721]/20"
                         placeholder="Une vision d'Asgarm, un secret des anciens..."
                         value={traits}
                         onChange={(e) => setTraits(e.target.value)}
                       />
-                      <div className="absolute top-2 right-2 opacity-10">
-                        <ScrollText className="w-12 h-12 text-[#4a3721]" />
-                      </div>
                     </div>
                     <button
                       onClick={handleWeave}
                       disabled={loading || !traits.trim()}
-                      className="w-full py-6 bg-[#4a3721] text-[#f4ecd8] font-bold uppercase tracking-[0.5em] text-[11px] flex items-center justify-center gap-4 hover:bg-[#3d2b19] transition-all disabled:opacity-30 group shadow-[0_10px_30px_rgba(74,55,33,0.3)] hover:scale-[1.02] active:scale-95"
+                      className="w-full py-8 bg-[#2a1a0a] text-gold font-bold uppercase tracking-[0.6em] text-[10px] flex items-center justify-center gap-6 hover:bg-[#1a0f05] transition-all duration-500 disabled:opacity-20 shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:scale-[1.01] active:scale-95 border border-gold/10"
                     >
-                      {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />}
-                      {loading ? "COMMUNION..." : "TISSER LE DESTIN"}
+                      {loading ? (
+                        <Loader2 className="w-4 h-4 animate-spin text-gold" />
+                      ) : (
+                        "TISSER LE DESTIN"
+                      )}
                     </button>
                   </div>
                 ) : (
                   <div className="flex flex-col h-full">
-                    <div className="flex-1 overflow-y-auto pr-4 custom-scrollbar mb-6">
-                      <p className="text-[#3d2b19] text-[1.2rem] leading-loose italic font-serif opacity-95 text-justify">
+                    <div className="flex-1 overflow-y-auto pr-6 custom-scrollbar mb-8">
+                      <p className="text-[#3d2b19] text-[1.25rem] leading-loose italic font-serif opacity-90 text-justify">
                         {lore}
                       </p>
                     </div>
                     <button 
                       onClick={() => { setLore(null); setTraits(''); }}
-                      className="mt-auto py-4 text-[#4a3721] text-[10px] uppercase tracking-[0.6em] font-bold border-t-2 border-[#4a3721]/10 pt-6 hover:opacity-60 transition-opacity text-center w-full"
+                      className="mt-auto py-6 text-[#4a3721] text-[9px] uppercase tracking-[0.8em] font-bold border-t border-[#4a3721]/15 pt-8 hover:opacity-40 transition-opacity text-center w-full"
                     >
-                      CONSULTER UN AUTRE FRAGMENT
+                      CONSULTER LES ARCHIVES
                     </button>
                   </div>
                 )}
               </div>
             </Page>
 
-            {/* Back Cover */}
+            {/* Back Cover - AAA Leather */}
             <Page isCover={true}>
-              <div className="h-full flex flex-col items-center justify-center bg-[#2a1a0a] border-[15px] border-double border-[#3a2a18] m-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.8)]">
-                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] pointer-events-none" />
-                <div className="opacity-20 flex flex-col items-center">
-                  <h4 className="text-4xl font-headline text-gold uppercase tracking-[0.8em] mb-4">ASGARM</h4>
-                  <div className="w-20 h-[1px] bg-gold/50 my-10" />
-                  <span className="text-[11px] text-gold tracking-[0.6em] font-bold uppercase">Chroniques Eternelles</span>
+              <div className="h-full flex flex-col items-center justify-center bg-[#1a1008] border-[18px] border-double border-[#3a2a18] m-0 relative">
+                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] pointer-events-none" />
+                <div className="flex flex-col items-center opacity-40">
+                  <h4 className="text-3xl font-headline text-gold uppercase tracking-[1em] mb-6">ASGARM</h4>
+                  <div className="w-16 h-[1px] bg-gold/40 my-10" />
+                  <span className="text-[10px] text-gold tracking-[0.8em] font-bold uppercase">Souveraineté Éternelle</span>
                 </div>
               </div>
             </Page>
@@ -247,34 +257,31 @@ export default function HistoirePage() {
         </motion.div>
       </div>
 
-      <footer className="h-14 border-t border-gold/10 flex items-center justify-center bg-black/60 backdrop-blur-xl relative z-20">
-        <span className="text-[10px] text-gold tracking-[1em] uppercase font-bold text-glow-gold">
+      <footer className="h-16 border-t border-gold/10 flex items-center justify-center bg-black/80 backdrop-blur-2xl relative z-20">
+        <span className="text-[10px] text-gold tracking-[1.2em] uppercase font-bold text-glow-gold">
           OUTLAND STUDIOS — PROTOCOLE ASGARM V2.0.9
         </span>
       </footer>
 
       <style jsx global>{`
         .flip-book { 
-          box-shadow: 0 70px 150px -30px rgba(0, 0, 0, 0.9);
-          border-radius: 8px;
+          border-radius: 4px;
         }
         .page { 
           background-color: #f4ecd8; 
           background-image: url("https://www.transparenttextures.com/patterns/papyrus.png"); 
           height: 100%;
           width: 100%;
-          border-left: 1px solid rgba(0,0,0,0.1);
-          box-shadow: inset 60px 0 60px -60px rgba(0,0,0,0.3);
+          box-shadow: inset 50px 0 50px -50px rgba(0,0,0,0.2);
           position: relative;
         }
         .page.cover {
-          background-color: #2a1a0a;
+          background-color: #1a1008;
           background-image: none;
-          border-left: none;
           box-shadow: none;
         }
         .page-content { 
-          padding: 5rem 4rem; 
+          padding: 6rem 5rem; 
           height: 100%;
           display: flex;
           flex-direction: column;
@@ -284,20 +291,10 @@ export default function HistoirePage() {
           height: 100%;
           display: flex;
           flex-direction: column;
-          z-index: 10;
-        }
-        .page-footer {
-          margin-top: auto;
-          text-align: center;
-          font-family: 'Belleza', sans-serif;
-          font-size: 13px;
-          color: #4a3721;
-          opacity: 0.5;
-          padding-top: 2rem;
-          letter-spacing: 0.3em;
+          z-index: 20;
         }
         .custom-scrollbar::-webkit-scrollbar {
-          width: 4px;
+          width: 3px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
           background: rgba(74, 55, 33, 0.05);
