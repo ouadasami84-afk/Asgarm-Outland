@@ -24,7 +24,7 @@ const MagicalText = ({ text, title }: { text: string; title?: string }) => {
   const getHighlightClass = (word: string) => {
     const cleanWord = word.replace(/[.,;!?]/g, '');
     const goldKeywords = ['Asgarm', 'Elfes', 'Magie', 'Alaric', 'Thorgrim', 'Melfetys', 'Valerius', 'Alliance', 'Lumière', 'Roi-Mage', 'Grimoire', 'Souveraineté', 'Harmonie', 'Arcanique', 'Équilibre', 'Savoir', 'Rois'];
-    const blueKeywords = ['Abysses', 'Cavaliers', 'Apocalypse', 'Mort', 'Ténèbres', 'Chaos', 'Corruption', 'Ombres', 'Obscure', 'Nécromantique', 'Maléfique', 'Invasion', 'Destruction', 'Anéantissement', 'Obscura', 'Mal'];
+    const blueKeywords = ['Abysses', 'Cavaliers', 'Apocalypse', 'Mort', 'Ténèbres', 'Chaos', 'Corruption', 'Ombres', 'Obscure', 'Nécromantique', 'Maléfique', 'Invasion', 'Destruction', 'Anéantissement', 'Obscura', 'Mal', 'Sang'];
 
     if (goldKeywords.some(k => cleanWord.toLowerCase().includes(k.toLowerCase()))) {
       return "text-[#b48d1d] font-bold";
@@ -42,13 +42,13 @@ const MagicalText = ({ text, title }: { text: string; title?: string }) => {
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
-          className="text-[16px] font-headline text-[#4a3721] mb-2 tracking-tight border-b border-[#4a3721]/15 pb-1"
+          className="text-[18px] font-headline text-[#4a3721] mb-4 tracking-tight border-b border-[#4a3721]/15 pb-2"
         >
           {title}
         </motion.h3>
       )}
       <div className="flex-1">
-        <motion.p className="text-[#3d2b19] font-serif leading-[1.5] text-justify text-[12px] italic">
+        <motion.p className="text-[#3d2b19] font-serif leading-[1.6] text-justify text-[12px] italic">
           {words.map((word, i) => (
             <motion.span
               key={i}
@@ -74,12 +74,11 @@ const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: nu
   ({ children, number }, ref) => (
     <div className="page shadow-2xl relative" ref={ref}>
       <div className="absolute inset-2 border-[0.5px] border-[#4a3721]/10 pointer-events-none z-20" />
-      <div className="absolute inset-3 border-[0.2px] border-gold/5 pointer-events-none z-20" />
       <div className="page-content relative z-10">
         <div className="page-inner-content flex flex-col h-full">
           {children}
           {number && (
-            <div className="page-footer font-serif italic text-[#4a3721]/30 text-[10px] tracking-[0.4em] mt-2 text-center">
+            <div className="page-footer font-serif italic text-[#4a3721]/30 text-[10px] tracking-[0.4em] mt-4 text-center">
               — {number} —
             </div>
           )}
@@ -116,56 +115,69 @@ export default function HistoirePage() {
     <main className="relative min-h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
-      <div className="flex-1 flex flex-col items-center justify-center p-2 pt-24 pb-2 relative z-10">
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} className="text-center mb-4">
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="h-[1px] w-12 bg-gold/20" />
-            <span className="text-gold text-[8px] tracking-[1em] uppercase font-bold text-glow-gold">Chroniques d'Asgarm</span>
-            <div className="h-[1px] w-12 bg-gold/20" />
+      <div className="flex-1 flex flex-col items-center justify-center p-4 pt-32 pb-8 relative z-10">
+        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} className="text-center mb-8">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-[1px] w-16 bg-gold/20" />
+            <span className="text-gold text-[10px] tracking-[1em] uppercase font-bold text-glow-gold">Chroniques d'Asgarm</span>
+            <div className="h-[1px] w-16 bg-gold/20" />
           </div>
-          <h1 className="text-2xl md:text-3xl font-headline uppercase tracking-tighter mb-2 leading-tight shine-text">
+          <h1 className="text-4xl md:text-5xl font-headline uppercase tracking-tighter mb-4 leading-tight shine-text">
             Les Annales de la Souveraineté
           </h1>
         </motion.div>
 
         <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.5, delay: 0.2 }} className="relative">
-          <div className="flip-book-container relative overflow-hidden bg-transparent">
-            <HTMLFlipBook width={750} height={1000} size="stretch" className="flip-book" ref={bookRef} showCover={false} useMouseEvents={true}>
+          <div className="flip-book-container relative overflow-hidden bg-transparent rounded-lg">
+            <HTMLFlipBook 
+              width={750} 
+              height={1000} 
+              size="fixed" 
+              className="flip-book" 
+              ref={bookRef} 
+              showCover={false} 
+              useMouseEvents={true}
+              maxShadowOpacity={0.5}
+            >
               <Page number={1}>
-                <div className="h-full flex flex-col pt-4 px-8">
-                  <h2 className="text-[18px] font-headline text-[#b48d1d] uppercase tracking-[0.2em] mb-4 border-b border-[#b48d1d]/20 pb-2 w-full text-center text-glow-gold">
+                <div className="h-full flex flex-col pt-8 px-12">
+                  <h2 className="text-[24px] font-headline text-[#b48d1d] uppercase tracking-[0.2em] mb-8 border-b border-[#b48d1d]/20 pb-4 w-full text-center text-glow-gold">
                     Sommaire des Annales
                   </h2>
-                  <div className="flex flex-col gap-1 w-full overflow-y-auto pr-2">
+                  <div className="flex flex-col gap-2 w-full overflow-y-auto pr-2 custom-scrollbar">
                     {chapters.map((ch, i) => (
-                      <div key={i} className="flex items-baseline justify-between group cursor-pointer py-1.5 border-b border-[#4a3721]/5 hover:bg-[#b48d1d]/5 px-3" onClick={() => bookRef.current.pageFlip().flip(ch.page - 1)}>
-                        <span className="text-[11px] font-serif uppercase text-[#0c1b41] group-hover:text-[#b48d1d]">{ch.title}</span>
+                      <div 
+                        key={i} 
+                        className="flex items-baseline justify-between group cursor-pointer py-2.5 border-b border-[#4a3721]/5 hover:bg-[#b48d1d]/5 px-4 transition-colors" 
+                        onClick={() => bookRef.current.pageFlip().flip(ch.page - 1)}
+                      >
+                        <span className="text-[13px] font-serif uppercase text-[#0c1b41] group-hover:text-[#b48d1d]">{ch.title}</span>
                         <div className="flex-1 border-b border-dotted border-[#b48d1d]/20 mx-2" />
-                        <span className="text-[11px] font-serif text-[#4a3721]/70">{ch.page}</span>
+                        <span className="text-[13px] font-serif text-[#4a3721]/70">{ch.page}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-auto pb-4 flex flex-col items-center">
-                    <div className="h-[1px] w-12 bg-[#b48d1d]/30 mb-2" />
-                    <p className="text-[#b48d1d] text-[11px] uppercase tracking-[0.4em] italic font-bold text-glow-gold">Archives Royales d'Asgarm</p>
+                  <div className="mt-auto pb-8 flex flex-col items-center">
+                    <div className="h-[1px] w-24 bg-[#b48d1d]/30 mb-4" />
+                    <p className="text-[#b48d1d] text-[12px] uppercase tracking-[0.4em] italic font-bold text-glow-gold">Archives Royales d'Asgarm</p>
                   </div>
                 </div>
               </Page>
 
-              <Page number={2}><div className="h-full px-8 pt-4"><MagicalText title="L'Âge d'Harmonie" text="Autrefois, dans un temps que seuls les plus vieux récits murmurent, le monde d'Asgarm respirait en Harmonie. Seuls les Elfes et les Elfes de Lune maniaient la Magie Arcanique et Obscure. Les Nains forgeaient, et les Humains bâtissaient des cités, ignorant tout des arcanes." /></div></Page>
-              <Page number={3}><div className="h-full px-8 pt-4"><MagicalText title="L'Invasion Abyssale" text="Mais cet Équilibre fut pulvérisé. Venus des Abysses, les Cavaliers de l'Apocalypse firent irruption. Leur présence Maléfique déstabilisa l'équilibre fragile, créant des tempêtes d'énergie chaotique qui ravageaient les terres d'Asgarm." /></div></Page>
-              <Page number={4}><div className="h-full px-8 pt-4"><MagicalText title="Le Sacrifice de Melfetys" text="Acculée, la reine Melfetys brisa le serment et libéra l'essence de la Magie pour toutes les races. Une vague de puissance brute déferla sur le monde, donnant une chance aux mortels de se défendre contre l'Anéantissement." /></div></Page>
-              <Page number={5}><div className="h-full px-8 pt-4"><MagicalText title="L'Éveil des Humains" text="Chez les Humains, Alaric canalisa ce flux à travers une branche de chêne, créant la première baguette humaine. Guidés par cet exemple, les humains devinrent une armée redoutable de mages de guerre." /></div></Page>
-              <Page number={6}><div className="h-full px-8 pt-4"><MagicalText title="La Forge des Nains" text="Les Nains devinrent les plus grands fabricants de baguettes, alliant bois robustes et métal runique. Ils fournirent l'Alliance naissante, devenant l'armurerie indispensable de la résistance contre l'obscurité." /></div></Page>
-              <Page number={7}><div className="h-full px-8 pt-4"><MagicalText title="Le Serment de Sang" text="Les Vampires de Lord Valerius apprirent à manipuler le sang pour restaurer la vie plutôt que de la prendre. Ils devinrent les plus grands guérisseurs de guerre, sauvant d'innombrables vies sur le champ de bataille." /></div></Page>
-              <Page number={8}><div className="h-full px-8 pt-4"><MagicalText title="L'Alliance de la Lumière" text="L'Alliance de la Lumière unit Humains, Nains, Elfes et Vampires. Ensemble, ils affrontèrent les Ténèbres. Unis par l'espoir, ces peuples autrefois divisés se battaient comme un seul homme pour la survie d'Asgarm." /></div></Page>
-              <Page number={9}><div className="h-full px-8 pt-4"><MagicalText title="Le Crépuscule des Cavaliers" text="La bataille finale eut lieu sur les Plaines Calcinées. Alaric anéantit le Seigneur des Cavaliers. Les Cavaliers étaient vaincus, mais le monde était fracturé et les graines du Chaos étaient semées." /></div></Page>
+              <Page number={2}><div className="h-full px-12 pt-8"><MagicalText title="L'Âge d'Harmonie" text="Autrefois, dans un temps que seuls les plus vieux récits murmurent, le monde d'Asgarm respirait en Harmonie. Seuls les Elfes et les Elfes de Lune maniaient la Magie Arcanique et Obscure. Les Nains forgeaient, et les Humains bâtissaient des cités, ignorant tout des arcanes." /></div></Page>
+              <Page number={3}><div className="h-full px-12 pt-8"><MagicalText title="L'Invasion Abyssale" text="Mais cet Équilibre fut pulvérisé. Venus des Abysses, les Cavaliers de l'Apocalypse firent irruption. Leur présence Maléfique déstabilisa l'équilibre fragile, créant des tempêtes d'énergie chaotique qui ravageaient les terres d'Asgarm." /></div></Page>
+              <Page number={4}><div className="h-full px-12 pt-8"><MagicalText title="Le Sacrifice de Melfetys" text="Acculée, la reine Melfetys brisa le serment et libéra l'essence de la Magie pour toutes les races. Une vague de puissance brute déferla sur le monde, donnant une chance aux mortels de se défendre contre l'Anéantissement." /></div></Page>
+              <Page number={5}><div className="h-full px-12 pt-8"><MagicalText title="L'Éveil des Humains" text="Chez les Humains, Alaric canalisa ce flux à travers une branche de chêne, créant la première baguette humaine. Guidés par cet exemple, les humains devinrent une armée redoutable de mages de guerre." /></div></Page>
+              <Page number={6}><div className="h-full px-12 pt-8"><MagicalText title="La Forge des Nains" text="Les Nains devinrent les plus grands fabricants de baguettes, alliant bois robustes et métal runique. Ils fournirent l'Alliance naissante, devenant l'armurerie indispensable de la résistance contre l'obscurité." /></div></Page>
+              <Page number={7}><div className="h-full px-12 pt-8"><MagicalText title="Le Serment de Sang" text="Les Vampires de Lord Valerius apprirent à manipuler le sang pour restaurer la vie plutôt que de la prendre. Ils devinrent les plus grands guérisseurs de guerre, sauvant d'innombrables vies sur le champ de bataille." /></div></Page>
+              <Page number={8}><div className="h-full px-12 pt-8"><MagicalText title="L'Alliance de la Lumière" text="L'Alliance de la Lumière unit Humains, Nains, Elfes et Vampires. Ensemble, ils affrontèrent les Ténèbres. Unis par l'espoir, ces peuples autrefois divisés se battaient comme un seul homme pour la survie d'Asgarm." /></div></Page>
+              <Page number={9}><div className="h-full px-12 pt-8"><MagicalText title="Le Crépuscule des Cavaliers" text="La bataille finale eut lieu sur les Plaines Calcinées. Alaric anéantit le Seigneur des Cavaliers. Les Cavaliers étaient vaincus, mais le monde était fracturé et les graines du Chaos étaient semées." /></div></Page>
               
               <Page number={10}>
-                <div className="h-full px-8 pt-4">
+                <div className="h-full px-12 pt-8">
                   <MagicalText 
                     title="Le Nouvel Équilibre" 
-                    text="Après la Grande Guerre, les Rois des royaumes se sont réunis en conseil souverain. Ils ont décidé de créer le Conclave des Arcanes pour protéger le monde des sorciers d'Asgarm. Mais dans l'ombre, deux Seigneurs du Mal ont forgé le Royaume du Mal et le Conclave des Ombres, fondant également l'école de magie noire Obscura. Un équilibre précaire s'est installé entre la loi arcanique et la liberté du sang." 
+                    text="Après la grande guerre, les rois des royaumes se sont réunis en conseil souverain. Ils ont décidé de créer le Conclave des Arcanes qui va protéger le monde de sorcier de Asgarm contre toute menace résiduelle. Mais dans l'ombre du trône, deux seigneurs du mal se sont éveillés. Sous le nom de sorciers du mal, ils ont forgé le Royaume du Mal ainsi que le Conclave des Ombres, fondant également l'école de magie noire Obscura pour enseigner les arts interdits de l'ombre et du sang." 
                   />
                 </div>
               </Page>
@@ -173,20 +185,23 @@ export default function HistoirePage() {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }} className="mt-6 text-center">
-          <span className="shine-text text-[10px] tracking-[0.6em] uppercase font-bold">Faites glisser les pages pour explorer les annales</span>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }} className="mt-12 text-center">
+          <span className="shine-text text-[11px] tracking-[0.6em] uppercase font-bold">Faites glisser les pages pour explorer les annales</span>
         </motion.div>
       </div>
 
-      <footer className="h-12 border-t border-gold/10 flex items-center justify-center bg-black/60 relative z-20 w-full mt-auto">
-        <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1</span>
+      <footer className="h-16 border-t border-gold/10 flex items-center justify-center bg-black/60 relative z-20 w-full mt-auto">
+        <span className="shine-text text-[10px] tracking-[0.8em] uppercase font-bold">CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1</span>
       </footer>
 
       <style jsx global>{`
         .page { background-color: #f4ecd8; background-image: url("https://www.transparenttextures.com/patterns/papyrus.png"); }
-        .page-content { padding: 1.5rem; height: 100%; }
+        .page-content { padding: 2rem; height: 100%; }
         .stf__wrapper { background-color: transparent !important; }
         .stf__block { background-color: transparent !important; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(180, 141, 29, 0.2); border-radius: 10px; }
       `}</style>
     </main>
   )
