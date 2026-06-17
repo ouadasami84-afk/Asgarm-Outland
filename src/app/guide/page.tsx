@@ -13,7 +13,7 @@ const institutions = [
     focus: "IMMERSION & IDENTITÉ",
     icon: Sparkles,
     desc: "Votre réveil dans Asgarm commence par le choix de votre essence. Votre identité physique doit refléter votre lignée pour maintenir l'équilibre visuel du royaume.",
-    mission: "Définir votre race, respecter votre carnation imposée et entamer votre cursus obligatoire à Ascarnia.",
+    mission: "Définir votre race, respecter votre couleur de peau imposée et entamer votre cursus obligatoire à Ascarnia.",
     rights: [
       "Choisir librement sa race parmi les 5 lignées majeures",
       "Étudier à l'école tout en exerçant un métier civil",
@@ -21,16 +21,16 @@ const institutions = [
       "Accéder aux zones publiques des Royaumes"
     ],
     prohibitions: [
-      "Porter une carnation non-conforme à sa race (voir spécificités)",
+      "Porter une couleur de peau non-conforme à sa race (voir spécificités)",
       "Rejoindre un Conclave, un Clan ou la Royauté avant la 5ème année",
       "S'absenter du cursus scolaire sans dispense Staff"
     ],
     roles: [
-      { title: "RACE HUMAINE", rank: "BEIGE OU NOIR", function: "L'ambition et la résilience. Votre peau doit être impérativement de teinte beige ou noire." },
-      { title: "RACE NAINE", rank: "NOIR OU ROUGE", function: "La force de la terre et des forges. Votre peau doit impérativement être de teinte noire ou rouge." },
-      { title: "RACE ELFE", rank: "VERT", function: "L'harmonie et la magie de la vie. Votre peau doit impérativement être de teinte verte." },
-      { title: "RACE ELFE DE LUNE", rank: "BLEU", function: "La sagesse des astres et de l'ombre. Votre peau doit impérativement être de teinte bleue." },
-      { title: "RACE VAMPIRE", rank: "BLANC TRÈS CLAIR", function: "La noblesse éternelle et la magie du sang. Votre peau doit impérativement être d'un blanc très clair." }
+      { title: "RACE HUMAINE", rank: "BEIGE OU NOIR", function: "L'ambition et la résilience. Votre couleur de peau doit être impérativement de teinte beige ou noire." },
+      { title: "RACE NAINE", rank: "NOIR OU ROUGE", function: "La force de la terre et des forges. Votre couleur de peau doit impérativement être de teinte noire ou rouge." },
+      { title: "RACE ELFE", rank: "VERT", function: "L'harmonie et la magie de la vie. Votre couleur de peau doit impérativement être de teinte verte." },
+      { title: "RACE ELFE DE LUNE", rank: "BLEU", function: "La sagesse des astres et de l'ombre. Votre couleur de peau doit impérativement être de teinte bleue." },
+      { title: "RACE VAMPIRE", rank: "BLANC TRÈS CLAIR", function: "La noblesse éternelle et la magie du sang. Votre couleur de peau doit impérativement être d'un blanc très clair." }
     ]
   },
   {
