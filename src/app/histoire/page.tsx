@@ -4,9 +4,8 @@
 import React, { forwardRef, useState, useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { Navigation } from '@/components/Navigation'
-import { Loader2, Sparkles, Book as BookIcon } from 'lucide-react'
-import { generateMagicalLore } from '@/ai/flows/generate-magical-lore-flow'
-import { motion, AnimatePresence } from 'framer-motion'
+import { Loader2, Book as BookIcon } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 // Importation dynamique pour éviter les erreurs SSR
 const HTMLFlipBook = dynamic(() => import('react-pageflip'), { 
@@ -38,26 +37,12 @@ const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: nu
 Page.displayName = 'Page'
 
 export default function HistoirePage() {
-  const [traits, setTraits] = useState('')
-  const [lore, setLore] = useState<string | null>(null)
-  const [loading, setLoading] = useState(false)
   const [isClient, setIsClient] = useState(false)
   const bookRef = useRef<any>(null)
 
   useEffect(() => {
     setIsClient(true)
   }, [])
-
-  const handleWeave = async () => {
-    if (!traits.trim()) return
-    setLoading(true)
-    try {
-      const result = await generateMagicalLore({ themesOrTraits: traits })
-      setLore(result.lore)
-    } finally {
-      setLoading(false)
-    }
-  }
 
   const chapters = [
     { title: "L'Âge d'Harmonie", page: 2 },
@@ -137,7 +122,7 @@ export default function HistoirePage() {
                 <div className="h-full flex flex-col items-center pt-6">
                   <BookIcon className="w-6 h-6 text-[#4a3721]/20 mb-6" />
                   <h2 className="text-base font-headline text-[#4a3721] uppercase tracking-[0.4em] mb-8 border-b border-[#4a3721]/10 pb-4 w-full text-center">Sommaire</h2>
-                  <div className="flex flex-col gap-4 w-full px-6">
+                  <div className="flex flex-col gap-3 w-full px-6">
                     {chapters.map((ch, i) => (
                       <div key={i} className="flex items-baseline justify-between group cursor-pointer" onClick={() => bookRef.current.pageFlip().flip(ch.page - 1)}>
                         <span className="text-[10px] font-serif uppercase tracking-widest text-[#4a3721]/60 group-hover:text-[#4a3721] transition-colors">{ch.title}</span>
@@ -231,54 +216,6 @@ export default function HistoirePage() {
                 <p className="text-[#3d2b19] first-letter:text-4xl first-letter:font-headline first-letter:mr-2 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-relaxed text-justify text-[11px]">
                   La guerre était gagnée, mais le monde était fracturé. Sans la sagesse millénaire des Elfes pour les guider, beaucoup de nouveaux manieurs de magie furent séduits par la puissance brute. De cette ambition naquit le Conclave des Ombres, un véritable royaume du mal cherchant à achever ce que les envahisseurs avaient commencé. Pour contrer cette nouvelle menace, l'Académie d'Asgarm et le Conclave des Arcanes furent fondés. Un nouvel équilibre précaire s'est installé. L'Académie forme une nouvelle génération, espérant qu'ils choisiront la lumière. Les pages de ce grimoire s'arrêtent ici, car c'est à vous d'écrire la suite.
                 </p>
-              </Page>
-              
-              {/* Page Oracle IA */}
-              <Page number={11}>
-                <div className="h-full flex flex-col pt-2">
-                  <div className="text-center mb-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#4a3721]/20 bg-[#4a3721]/5 mb-2">
-                      <Sparkles className="w-3 h-3 text-[#4a3721]/40" />
-                      <span className="text-[8px] font-bold text-[#4a3721]/60 uppercase tracking-[0.2em]">Rituel d'Accès</span>
-                    </div>
-                    <h2 className="text-sm font-headline text-[#4a3721] uppercase tracking-[0.3em]">Oracle d'Éther</h2>
-                  </div>
-                  
-                  {!lore ? (
-                    <div className="flex flex-col gap-4 flex-1">
-                      <p className="text-[#4a3721]/70 text-[10px] leading-relaxed italic text-center px-4 font-serif">
-                        "Énoncez vos intentions pour que les archives révèlent un fragment de votre destinée personnelle..."
-                      </p>
-                      <textarea
-                        className="w-full flex-1 bg-black/[0.01] border border-[#4a3721]/10 p-4 text-[#3d2b19] focus:border-[#4a3721]/20 outline-none resize-none font-serif text-[11px] leading-relaxed placeholder-[#4a3721]/20"
-                        placeholder="Une vision de mon ascension..."
-                        value={traits}
-                        onChange={(e) => setTraits(e.target.value)}
-                      />
-                      <button
-                        onClick={handleWeave}
-                        disabled={loading || !traits.trim()}
-                        className="w-full py-4 bg-[#2a1a0a] text-gold font-bold uppercase tracking-[0.6em] text-[9px] flex items-center justify-center gap-2 hover:bg-[#1a0f05] transition-all disabled:opacity-20 border border-gold/10"
-                      >
-                        {loading ? <Loader2 className="w-3 h-3 animate-spin" /> : "TISSER LE DESTIN"}
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="flex flex-col h-full">
-                      <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar mb-2">
-                        <p className="text-[#3d2b19] text-[11px] leading-relaxed italic font-serif opacity-90 text-justify border-l border-[#4a3721]/10 pl-4">
-                          {lore}
-                        </p>
-                      </div>
-                      <button 
-                        onClick={() => { setLore(null); setTraits(''); }}
-                        className="mt-auto py-3 text-[#4a3721] text-[8px] uppercase tracking-[0.6em] font-bold border-t border-[#4a3721]/10 hover:opacity-50 transition-all text-center w-full"
-                      >
-                        RETOURNER AUX ANNALES
-                      </button>
-                    </div>
-                  )}
-                </div>
               </Page>
             </HTMLFlipBook>
           </div>
