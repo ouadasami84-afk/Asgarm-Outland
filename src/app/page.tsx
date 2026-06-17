@@ -55,13 +55,13 @@ export default function Home() {
               <Hero />
               
               {/* Manifeste de Qualité */}
-              <section className="py-32 px-8 max-w-7xl mx-auto text-center">
+              <section className="py-24 px-8 max-w-7xl mx-auto text-center">
                 <motion.div 
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1 }}
-                  className="mb-32"
+                  className="mb-24"
                 >
                   <div className="flex items-center justify-center gap-4 mb-8">
                     <div className="h-[1px] w-12 bg-gold/30" />
@@ -80,7 +80,7 @@ export default function Home() {
                 </motion.div>
                 
                 {/* Communauté Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24 max-w-4xl mx-auto">
                   <motion.a
                     href="#"
                     initial={{ opacity: 0, x: -20 }}
@@ -112,28 +112,28 @@ export default function Home() {
                   </motion.a>
                 </div>
 
-                {/* Fin de Page - Licence & Droit d'Auteur - PLUS GROS & DORÉ */}
+                {/* Fin de Page - Licence & Droit d'Auteur */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.2 }}
-                  className="max-w-4xl mx-auto pb-24 border-t border-gold/10 pt-24"
+                  className="max-w-4xl mx-auto pb-16 border-t border-gold/10 pt-16"
                 >
-                  <div className="mb-12">
-                    <span className="text-gold/60 text-xs tracking-[0.6em] uppercase font-bold block mb-8">Certification de Licence Propriétaire</span>
-                    <p className="text-silver/50 text-sm italic leading-loose max-w-2xl mx-auto">
+                  <div className="mb-10">
+                    <span className="text-gold text-sm tracking-[0.6em] uppercase font-bold block mb-6">Certification de Licence Propriétaire</span>
+                    <p className="text-silver/60 text-base italic leading-loose max-w-2xl mx-auto font-light">
                       L'ensemble des architectures logicielles, scripts dynamiques, modélisations 3D et systèmes immersifs 
                       d'Outland sont protégés par les lois internationales sur la propriété intellectuelle. 
                       Toute tentative de plagiat ou d'utilisation non autorisée du projet Asgarm entraînera des 
                       mesures légales immédiates par notre service juridique.
                     </p>
                   </div>
-                  <div className="flex flex-col items-center gap-8">
-                    <div className="h-20 w-[1px] bg-gradient-to-b from-gold/40 to-transparent" />
+                  <div className="flex flex-col items-center gap-6">
+                    <div className="h-16 w-[1px] bg-gradient-to-b from-gold/40 to-transparent" />
                     <div className="text-center">
-                      <span className="font-headline text-2xl text-white/60 tracking-[0.4em] uppercase block mb-3">© 2026 Outland Studios</span>
-                      <span className="text-[10px] text-gold/50 tracking-[0.8em] uppercase font-bold">In Éther Veritas - Asgarm Project</span>
+                      <span className="font-headline text-3xl text-gold/80 tracking-[0.4em] uppercase block mb-3">© 2026 Outland Studios</span>
+                      <span className="text-xs text-gold/40 tracking-[0.8em] uppercase font-bold">L'Excellence d'Asgarm - Projet Outland</span>
                     </div>
                   </div>
                 </motion.div>
