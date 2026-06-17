@@ -53,7 +53,8 @@ const institutions = [
     ],
     roles: [
       { title: "DIRECTEUR D’ASGARM", rank: "SOUVERAINETÉ", function: "Gestion totale de l'institution et arbitrage final des sanctions disciplinaires." },
-      { title: "CORPS ENSEIGNANT", rank: "PROFESSEURS", function: "Transmission du savoir (Défense, Sortilèges, Alchimie, Vol) et validation des sorts." },
+      { title: "DIRECTEUR ADJOINT", rank: "COMMANDEMENT", function: "Bras droit du directeur, chargé de la coordination opérationnelle et des examens." },
+      { title: "CORPS ENSEIGNANT", rank: "PROFESSEURS", function: "Transmission du savoir (Défense, Créatures, Sortilèges, Alchimie, Divination, Vol, Histoire, Morphologie, Astrologie)." },
       { title: "SURVEILLANCE", rank: "GARDIENS", function: "Maintien du calme dans les couloirs et application immédiate des retenues." }
     ]
   },
@@ -77,6 +78,8 @@ const institutions = [
     ],
     roles: [
       { title: "GRAND SORCIER", rank: "HAUTE MAGISTRATURE", function: "Architecte des lois et pouvoir d'arbitrage suprême sur Asgarm." },
+      { title: "MAÎTRE SORCIER", rank: "ARCHITECTURE CIVILE", function: "Gestionnaire de l'infrastructure administrative et des services publics." },
+      { title: "CONSEILLER", rank: "DIPLOMATIE", function: "Expert en médiation inter-royaumes et stratégie légale." },
       { title: "PROTECTEUR", rank: "ORDRE PUBLIC", function: "Puissance répressive chargée de la neutralisation des sorciers déviants." },
       { title: "GARDIEN", rank: "VIGILANCE", function: "Sentinelle des frontières et détection des infiltrations occultes." }
     ]
@@ -102,7 +105,9 @@ const institutions = [
     roles: [
       { title: "GRAND SORCIER DES OMBRES", rank: "SOUVERAINETÉ", function: "Maître absolu des réseaux clandestins et gardien des secrets d'État noirs." },
       { title: "MAÎTRE DES TÉNÈBRES", rank: "STRATÈGE", function: "Planification des opérations d'infiltration et enseignement occulte." },
-      { title: "PROTECTEUR DES OMBRES", rank: "EXÉCUTEUR", function: "Neutralisation chirurgicale des cibles gênantes pour l'Ordre." }
+      { title: "CONSEILLER OBSCUR", rank: "MANIPULATION", function: "Architecte de l'influence politique et tissage des toiles de pouvoir." },
+      { title: "PROTECTEUR DES OMBRES", rank: "EXÉCUTEUR", function: "Neutralisation chirurgicale des cibles gênantes pour l'Ordre." },
+      { title: "GARDIEN DES OMBRES", rank: "VEILLEUR", function: "Protecteur des artefacts de sang et des rituels occultes." }
     ]
   },
   {

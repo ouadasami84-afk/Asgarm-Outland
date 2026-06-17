@@ -27,10 +27,10 @@ export const Navigation: React.FC = () => {
   ]
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-700 ease-in-out ${
+    <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-700 ease-in-out border-none outline-none ${
       scrolled ? 'h-16 bg-black/95 backdrop-blur-3xl' : 'h-24 bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto h-full px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto h-full px-8 flex items-center justify-between border-none">
         <Link href="/" className="flex items-center group">
           <div className="flex flex-col">
             <span className="font-headline text-lg tracking-[0.4em] text-white font-bold uppercase leading-none group-hover:text-gold transition-colors duration-500 text-glow-gold">
