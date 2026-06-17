@@ -24,16 +24,16 @@ const institutions = [
     roles: [
       { title: "Directeur d'Asgarm", rank: "HAUTE AUTORITÉ", function: "Souveraineté totale. Gestion du corps enseignant, validation des accréditations et arbitrage final des sanctions." },
       { title: "Directeur Adjoint", rank: "COMMANDEMENT", function: "Coordination opérationnelle. Gestion des examens, supervision administrative et maintien de l'ordre général." },
-      { title: "Magie Noire", rank: "DÉFENSE", function: "Enseignement des protections. Autorisé à organiser des duels de défense et à sanctionner les abus de magie offensive." },
-      { title: "Créatures Magiques", rank: "BESTIAIRE", function: "Étude des écosystèmes et dressage. Gestion des entités sauvages et sécurité des expéditions éducatives." },
-      { title: "Sortilèges", rank: "CHARMES", function: "Théorie et pratique des enchantements. Certification des paliers de puissance magique des citoyens d'Asgarm." },
-      { title: "Alchimie / Botanique", rank: "PHARMACOPÉE", function: "Synthèse de potions et étude des plantes. Gestion des serres royales et de la sécurité chimique du royaume." },
-      { title: "Divination", rank: "PRÉSAGES", function: "Exploration des flux de l'Ether. Guidance des élèves dans la compréhension des signes et de leur destinée." },
-      { title: "Professeur de Vol", rank: "AÉRONAUTIQUE", function: "Maîtrise du pilotage de balais et montures. Surveillance des périmètres aériens et gestion des tournois de vol." },
-      { title: "Histoire de la Magie", rank: "ARCHIVES", function: "Étude des traités anciens et du passé d'Asgarm. Préservation de la chronologie et des racines du royaume." },
-      { title: "Morphologie", rank: "TRANSFORMATION", function: "Maîtrise de la théorie du corps magique. Enseignement des métamorphoses physiques et structurelles." },
-      { title: "Astrologie", rank: "COSMOS", function: "Lecture des constellations et des flux stellaires. Rituels célestes et synchronisation avec les astres." },
-      { title: "Surveillant Asgarm", rank: "ORDRE", function: "Discipline des couloirs et rondes nocturnes. Application immédiate des sanctions et maintien de la paix académique." }
+      { title: "Prof. Magie Noire", rank: "DÉFENSE", function: "Enseignement des protections. Autorisé à organiser des duels de défense et à sanctionner les abus de magie offensive." },
+      { title: "Prof. Créatures", rank: "BESTIAIRE", function: "Étude des écosystèmes et dressage. Gestion des entités sauvages et sécurité des expéditions éducatives." },
+      { title: "Prof. Sortilèges", rank: "CHARMES", function: "Théorie et pratique des enchantements. Certification des paliers de puissance magique des citoyens." },
+      { title: "Prof. Alchimie", rank: "PHARMACOPÉE", function: "Synthèse de potions et étude des plantes. Gestion des serres royales et de la sécurité chimique du royaume." },
+      { title: "Prof. Divination", rank: "PRÉSAGES", function: "Exploration des flux de l'Ether. Guidance des élèves dans la compréhension des signes et de leur destinée." },
+      { title: "Professeur de Vol", rank: "AÉRONAUTIQUE", function: "Maîtrise du pilotage de balais et montures. Surveillance des périmètres aériens et gestion des tournois." },
+      { title: "Prof. Histoire", rank: "ARCHIVES", function: "Étude des traités anciens et du passé d'Asgarm. Préservation de la chronologie et des racines du royaume." },
+      { title: "Prof. Morphologie", rank: "TRANSFORMATION", function: "Maîtrise de la théorie du corps magique. Enseignement des métamorphoses physiques et structurelles." },
+      { title: "Prof. Astrologie", rank: "COSMOS", function: "Lecture des constellations et des flux stellaires. Rituels célestes et synchronisation avec les astres." },
+      { title: "Surveillant Asgarm", rank: "ORDRE", function: "Discipline des couloirs et rondes nocturnes. Application immédiate des sanctions et maintien de la paix." }
     ]
   },
   {
@@ -45,7 +45,7 @@ const institutions = [
     roles: [
       { title: "Grand Sorcier", rank: "LÉGISLATION", function: "Haute magistrature, rédaction du code législatif régalien et arbitrage final des contentieux territoriaux." },
       { title: "Maître Sorcier", rank: "ADMINISTRATION", function: "Architecture administrative, gestion des ressources publiques et coordination des services civils." },
-      { title: "Protecteur des Arcanes", rank: "FORCE PUBLIQUE", function: "Maintien de la paix, application du droit constitutionnel et protection des intérêts vitaux du royaume." }
+      { title: "Protecteur", rank: "FORCE PUBLIQUE", function: "Maintien de la paix, application du droit constitutionnel et protection des intérêts vitaux du royaume." }
     ]
   },
   {
@@ -103,7 +103,7 @@ export default function GuidePage() {
     <main className="relative h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
-      {/* Header Statistique - Ajusté pour libérer l'espace */}
+      {/* Header Codex */}
       <section className="relative pt-24 pb-2 px-8 flex-none z-20">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
@@ -122,8 +122,8 @@ export default function GuidePage() {
         </div>
       </section>
 
-      {/* Zone de Contenu Principale - Ajustée pour maximiser la grille */}
-      <div className="flex-1 relative px-8 pb-6 max-w-[1600px] mx-auto w-full overflow-hidden flex flex-col">
+      {/* Main Content Area */}
+      <div className="flex-1 relative px-8 pb-6 max-w-[1700px] mx-auto w-full overflow-hidden flex flex-col">
         <AnimatePresence mode="wait">
           {!selected ? (
             <motion.div
@@ -165,7 +165,7 @@ export default function GuidePage() {
               exit={{ opacity: 0, y: -20 }}
               className="flex-1 flex flex-col glass-night border border-gold/20 p-8 relative overflow-hidden"
             >
-              {/* Bouton Retour Premium */}
+              {/* Bouton Retour */}
               <button 
                 onClick={() => setSelected(null)}
                 className="absolute top-6 left-8 flex items-center gap-4 text-gold/40 hover:text-gold transition-all group z-30"
@@ -183,14 +183,14 @@ export default function GuidePage() {
                   <h2 className="text-4xl md:text-5xl font-headline text-white uppercase tracking-tighter mb-1 leading-none text-glow-gold">
                     {selected.name}
                   </h2>
-                  <p className="text-silver/40 text-sm italic max-w-3xl mx-auto font-light leading-tight">
+                  <p className="text-silver/40 text-sm italic max-w-4xl mx-auto font-light leading-tight">
                     "{selected.desc}"
                   </p>
                 </div>
 
-                {/* Grille des Rôles Panoramique Fixe (Zero-Scroll) */}
+                {/* Grille des Rôles Panoramique Fixe (Zéro-Scroll) */}
                 <div className="flex-1 flex items-center justify-center overflow-hidden py-2">
-                  <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 w-full h-full`}>
+                  <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 w-full h-full ${selected.roles.length > 8 ? 'lg:grid-rows-3' : 'lg:grid-rows-2'}`}>
                     {selected.roles.map((role, i) => (
                       <motion.div
                         key={i}
@@ -216,7 +216,7 @@ export default function GuidePage() {
                 </div>
               </div>
 
-              {/* Icône Filigrane Géante plus discrète */}
+              {/* Icône Filigrane Géante */}
               <div className="absolute bottom-[-5%] right-[-2%] opacity-[0.02] pointer-events-none transition-all duration-1000">
                 <selected.icon className="w-[350px] h-[350px] text-gold" />
               </div>
