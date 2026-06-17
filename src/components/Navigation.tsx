@@ -18,7 +18,7 @@ export const Navigation: React.FC = () => {
   }, [])
 
   const navItems = [
-    { name: 'Le Monde', href: '/atlas' },
+    { name: 'Guide Arrivant', href: '/guide' },
     { name: 'Archive', href: '/archive' },
     { name: 'Reliques', href: '/reliques' },
     { name: 'Maîtrise', href: '/maitrise' },
