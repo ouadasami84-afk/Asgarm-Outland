@@ -25,7 +25,7 @@ export const MagicalBackground: React.FC = () => {
   const [shootingStars, setShootingStars] = useState<ShootingStar[]>([])
 
   useEffect(() => {
-    // Generate static stars
+    // Generate static stars with varied properties
     const generatedStars = [...Array(250)].map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
@@ -58,19 +58,19 @@ export const MagicalBackground: React.FC = () => {
         <div className="absolute top-1/2 -right-1/4 w-[120%] h-[80%] bg-gradient-to-l from-transparent via-indigo-900/15 to-purple-900/15 blur-[100px] animate-aurora rounded-full" style={{ animationDelay: '-5s' }} />
       </div>
 
-      {/* Twinkling Stars Field */}
+      {/* Twinkling & Drifting Stars Field */}
       {stars.map((star) => (
         <motion.div
           key={star.id}
           initial={{ opacity: star.opacity }}
           animate={{ 
-            opacity: [star.opacity, star.opacity + 0.3, star.opacity],
+            opacity: [star.opacity, star.opacity + 0.3, star.opacity, 0, star.opacity],
             scale: [1, 1.2, 1],
-            x: [0, Math.random() * 2, 0],
-            y: [0, Math.random() * 2, 0]
+            x: [0, Math.random() * 20 - 10, 0],
+            y: [0, Math.random() * 20 - 10, 0]
           }}
           transition={{
-            duration: star.duration,
+            duration: star.duration * 2,
             repeat: Infinity,
             delay: star.delay,
             ease: "easeInOut"
@@ -99,10 +99,10 @@ export const MagicalBackground: React.FC = () => {
         />
       ))}
       
-      {/* Cosmic Dust / Grain */}
+      {/* Cosmic Dust / Grain Texture */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.05] mix-blend-overlay" />
       
-      {/* Vignette Overlay */}
+      {/* Vignette Overlay for Depth */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_20%,_rgba(1,2,8,0.8)_100%)]" />
     </div>
   )

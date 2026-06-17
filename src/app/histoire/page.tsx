@@ -11,9 +11,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 const HTMLFlipBook = dynamic(() => import('react-pageflip'), { 
   ssr: false,
   loading: () => (
-    <div className="w-[550px] h-[750px] bg-[#1a0f05] flex flex-col items-center justify-center border border-gold/10">
+    <div className="w-[550px] h-[750px] bg-[#1a0f05] flex flex-col items-center justify-center border border-gold/10 rounded-lg">
       <Loader2 className="w-10 h-10 animate-spin text-gold/40 mb-4" />
-      <span className="text-gold/20 text-[10px] tracking-[0.5em] uppercase font-bold">Inspiration des Archives...</span>
+      <span className="text-gold/20 text-[10px] tracking-[0.5em] uppercase font-bold text-glow-gold">Inspiration des Archives...</span>
     </div>
   )
 })
@@ -22,6 +22,15 @@ const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: nu
   ({ children, number, isCover }, ref) => (
     <div className={`page ${isCover ? 'cover' : ''}`} ref={ref}>
       <div className="page-content">
+        {/* Ancient decorative corner ornaments */}
+        {!isCover && (
+          <>
+            <div className="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-[#4a3721]/20 rounded-tl-xl pointer-events-none" />
+            <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-[#4a3721]/20 rounded-tr-xl pointer-events-none" />
+            <div className="absolute bottom-16 left-8 w-12 h-12 border-b-2 border-l-2 border-[#4a3721]/20 rounded-bl-xl pointer-events-none" />
+            <div className="absolute bottom-16 right-8 w-12 h-12 border-b-2 border-r-2 border-[#4a3721]/20 rounded-br-xl pointer-events-none" />
+          </>
+        )}
         <div className="page-inner-content">
           {children}
           {number && !isCover && (
@@ -64,7 +73,7 @@ export default function HistoirePage() {
     <main className="relative h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
-      {/* Book Halo & Particles */}
+      {/* Book Halo & Magical Aura */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gold/5 blur-[150px] rounded-full pointer-events-none z-0 animate-pulse" />
       
       <div className="flex-1 flex flex-col items-center justify-center p-6 pt-24 relative z-10">
@@ -74,10 +83,6 @@ export default function HistoirePage() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           className="relative"
         >
-          {/* Decorative Corner Guards */}
-          <div className="absolute -top-10 -left-10 w-20 h-20 border-t-2 border-l-2 border-gold/20 rounded-tl-3xl pointer-events-none" />
-          <div className="absolute -bottom-10 -right-10 w-20 h-20 border-b-2 border-r-2 border-gold/20 rounded-br-3xl pointer-events-none" />
-          
           <HTMLFlipBook
             width={550}
             height={750}
@@ -103,14 +108,14 @@ export default function HistoirePage() {
             showPageCorners={true}
             disableFlipByClick={false}
           >
-            {/* Front Cover - AAA Style */}
+            {/* Front Cover - AAA Style Leather & Gold */}
             <Page isCover={true}>
-              <div className="h-full flex flex-col items-center justify-center text-center border-[15px] border-double border-[#3a2a18] bg-[#2a1a0a] shadow-inner p-10">
-                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] pointer-events-none" />
+              <div className="h-full flex flex-col items-center justify-center text-center border-[20px] border-double border-[#3a2a18] bg-[#2a1a0a] shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] p-10">
+                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] pointer-events-none" />
                 
                 <div className="relative mb-16">
                   <div className="w-24 h-24 border-2 border-gold rotate-45 flex items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.3)]">
-                    <Sparkles className="w-10 h-10 text-gold -rotate-45" />
+                    <Sparkles className="w-10 h-10 text-gold -rotate-45 animate-pulse" />
                   </div>
                 </div>
 
@@ -133,7 +138,7 @@ export default function HistoirePage() {
               </div>
             </Page>
 
-            {/* Page 1: Préface */}
+            {/* Page 1: Préface avec Lettrine */}
             <Page number={1}>
               <div className="mb-12 flex items-center gap-6">
                 <div className="h-[1px] flex-1 bg-[#4a3721]/30" />
@@ -148,7 +153,7 @@ export default function HistoirePage() {
               </div>
             </Page>
 
-            {/* Page 2: L'Éveil */}
+            {/* Page 2: L'Éveil avec Illustration Asset */}
             <Page number={2}>
               <h2 className="text-2xl font-headline mb-12 text-[#4a3721] uppercase tracking-widest text-left">L'Éveil</h2>
               <p className="text-[#3d2b19] mb-8">
@@ -179,14 +184,14 @@ export default function HistoirePage() {
               </div>
             </Page>
 
-            {/* Page 4: IA Tool - Invoquer l'Histoire */}
+            {/* Page 4: IA Tool - Invoquer l'Histoire avec UI Premium */}
             <Page number={4}>
               <div className="h-full flex flex-col">
                 <h2 className="text-xl font-headline mb-8 text-[#4a3721] uppercase tracking-[0.3em] border-b-2 border-[#4a3721]/10 pb-6 text-center">Invoquer l'Histoire</h2>
                 
                 {!lore ? (
                   <div className="flex flex-col gap-8">
-                    <p className="text-[#3d2b19] text-base leading-relaxed italic opacity-80 text-center px-4">
+                    <p className="text-[#3d2b19] text-base leading-relaxed italic opacity-80 text-center px-4 font-serif">
                       Énoncez vos intentions pour que les archives révèlent un fragment de passé oublié...
                     </p>
                     <div className="relative">
@@ -229,7 +234,7 @@ export default function HistoirePage() {
 
             {/* Back Cover */}
             <Page isCover={true}>
-              <div className="h-full flex flex-col items-center justify-center bg-[#2a1a0a] border-[15px] border-double border-[#3a2a18] m-0">
+              <div className="h-full flex flex-col items-center justify-center bg-[#2a1a0a] border-[15px] border-double border-[#3a2a18] m-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.8)]">
                 <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] pointer-events-none" />
                 <div className="opacity-20 flex flex-col items-center">
                   <h4 className="text-4xl font-headline text-gold uppercase tracking-[0.8em] mb-4">ASGARM</h4>
@@ -260,6 +265,7 @@ export default function HistoirePage() {
           width: 100%;
           border-left: 1px solid rgba(0,0,0,0.1);
           box-shadow: inset 60px 0 60px -60px rgba(0,0,0,0.3);
+          position: relative;
         }
         .page.cover {
           background-color: #2a1a0a;
@@ -272,11 +278,13 @@ export default function HistoirePage() {
           height: 100%;
           display: flex;
           flex-direction: column;
+          position: relative;
         }
         .page-inner-content {
           height: 100%;
           display: flex;
           flex-direction: column;
+          z-index: 10;
         }
         .page-footer {
           margin-top: auto;
