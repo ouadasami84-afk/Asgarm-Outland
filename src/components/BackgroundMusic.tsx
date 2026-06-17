@@ -6,7 +6,6 @@ import { Volume2, VolumeX } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export const BackgroundMusic = () => {
-  // Activé par défaut selon les directives souveraines
   const [isPlaying, setIsPlaying] = useState(true)
   const [mounted, setMounted] = useState(false)
   const videoId = "dmlqoxtxeFc"
@@ -15,7 +14,6 @@ export const BackgroundMusic = () => {
     setMounted(true)
   }, [])
 
-  // Empêche les erreurs d'hydratation en ne rendant rien sur le serveur
   if (!mounted) return null;
 
   return (
@@ -81,7 +79,6 @@ export const BackgroundMusic = () => {
           )}
         </AnimatePresence>
         
-        {/* Glow dynamique au rythme de l'immersion */}
         <div className={`absolute inset-0 rounded-full bg-gold/5 blur-xl transition-opacity duration-1000 ${isPlaying ? 'opacity-100' : 'opacity-0'}`} />
       </motion.button>
     </div>

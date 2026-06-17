@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, Gavel, ShieldAlert, Scroll, Users, Zap, EyeOff, Terminal, ShieldCheck, HeartPulse, Scale, BookOpen } from 'lucide-react'
+import { ChevronLeft, Gavel, ShieldAlert, Scroll, Users, Zap, EyeOff, Terminal, ShieldCheck, HeartPulse, Scale, BookOpen, AlertCircle, HardDrive, UserPlus, Fingerprint, Shield } from 'lucide-react'
 import {
   Accordion,
   AccordionContent,
@@ -16,37 +16,40 @@ const regulationSections = [
   {
     id: "hrp",
     title: "Pacte HRP",
-    subtitle: "Hors-Rôle-Play",
+    subtitle: "HORS-RÔLE-PLAY",
     color: "from-sky-500/20 to-blue-600/5",
     accent: "text-sky-400",
     glow: "text-glow-sky",
     shineClass: "shine-text-blue",
-    desc: "Les lois fondamentales régissant l'intégrité de la communauté et la sécurité technique des citoyens d'Asgarm.",
+    desc: "Les lois fondamentales régissant l'intégrité de la communauté, la sécurité technique et les interactions hors-jeu.",
     chapters: [
       {
-        title: "Piliers de la Communauté",
+        title: "Ethique & Comportement Communautaire",
         icon: Users,
         rules: [
-          { name: "Respect Absolu", desc: "Toute forme de harcèlement, discrimination, ou toxicité envers un citoyen ou le royaume est passible d'un bannissement définitif." },
-          { name: "Publicité Interdite", desc: "La promotion de royaumes tiers ou de flux éthérés extérieurs est strictement prohibée sur l'ensemble de nos réseaux." },
-          { name: "Confidentialité", desc: "La diffusion d'informations personnelles (Doxxing) est un crime de haute trahison entraînant une exclusion immédiate." }
+          { name: "Respect et Dignité", desc: "Toute forme de harcèlement, d'insulte, de discrimination (racisme, sexisme, homophobie, etc.) ou de comportement toxique, que ce soit en jeu ou sur les plateformes communautaires, est strictement interdite et passible d'un bannissement définitif." },
+          { name: "Publicité et Recrutement Externe", desc: "La promotion de serveurs tiers, de projets concurrents ou de flux extérieurs non autorisés est une violation grave du pacte de loyauté d'Asgarm." },
+          { name: "Confidentialité et Doxxing", desc: "La divulgation d'informations personnelles (nom, adresse, photos, réseaux sociaux) d'un autre citoyen sans son consentement explicite est un crime de haute trahison." },
+          { name: "Usurpation d'Identité", desc: "Se faire passer pour un membre du staff ou un représentant officiel du projet est une faute éliminatoire." }
         ]
       },
       {
-        title: "Intégrité Technique",
+        title: "Sécurité Technique & Anti-Triche",
         icon: Terminal,
         rules: [
-          { name: "Logiciels Tiers", desc: "L'usage de cheats, macros, auto-clickers ou tout logiciel modifiant les capacités physiques ou magiques est proscrit." },
-          { name: "Exploitation de Failles", desc: "L'utilisation de bugs (Glitch) pour obtenir un avantage est interdite. Tout bug découvert doit être signalé aux Magistrats." },
-          { name: "Sécurité des Accès", desc: "Le partage de compte est strictement interdit. Vous êtes l'unique garant de votre identité au sein d'Asgarm." }
+          { name: "Logiciels de Triche", desc: "L'utilisation de cheats, aimbots, wallhacks, macros complexes, auto-clickers ou tout logiciel tiers modifiant les fichiers du jeu est proscrite. Toute détection entraîne un bannissement immédiat." },
+          { name: "Exploitation de Failles (Glitch)", desc: "L'utilisation délibérée de bugs ou de failles de map pour obtenir un avantage injuste est interdite. Tout bug découvert doit être signalé via le système de tickets." },
+          { name: "Multi-Compte et Partage", desc: "Chaque citoyen possède un compte unique lié à son identité. Le partage de compte ou la création de comptes secondaires pour contourner une sanction est strictement interdit." },
+          { name: "Spam et Flood", desc: "L'inondation des canaux textuels ou vocaux avec des messages répétitifs ou du bruit inutile est sanctionnée." }
         ]
       },
       {
-        title: "Flux Éthérés & Médias",
+        title: "Streaming & Droits Médias",
         icon: EyeOff,
         rules: [
-          { name: "Stream Sniping", desc: "L'utilisation d'informations provenant d'un flux vidéo (Live) pour interagir en jeu est formellement interdite." },
-          { name: "Droit à l'Image", desc: "Tout enregistrement doit respecter la dignité des participants. L'usage malveillant de vidéos est sanctionné." }
+          { name: "Stream Sniping", desc: "L'utilisation d'informations obtenues en regardant le flux vidéo d'un autre joueur pour localiser, attaquer ou influencer son jeu est formellement interdite." },
+          { name: "Droit à l'Image et Enregistrement", desc: "Tout enregistrement à but malveillant ou visant à ridiculiser un citoyen est interdit. Le staff se réserve le droit de demander l'accès à un enregistrement pour arbitrage." },
+          { name: "Promotion d'Outland", desc: "Les créateurs de contenu doivent respecter l'image de marque d'Asgarm. Les comportements nuisant à la réputation du projet en live seront sanctionnés." }
         ]
       }
     ]
@@ -54,47 +57,42 @@ const regulationSections = [
   {
     id: "rp",
     title: "Décrets RP",
-    subtitle: "Immersion & Lore",
+    subtitle: "IMMERSION & LORE",
     color: "from-gold/20 to-amber-600/5",
     accent: "text-gold",
     glow: "text-glow-gold",
     shineClass: "shine-text",
-    desc: "Le recueil des lois d'immersion régissant chaque interaction, chaque race et chaque métier au sein d'Asgarm.",
+    desc: "Le recueil des lois d'immersion régissant chaque interaction, chaque race et chaque métier au sein du royaume d'Asgarm.",
     chapters: [
       {
-        title: "Lois Fondamentales du Rôle",
+        title: "Concepts Fondamentaux du Rôle",
         icon: Gavel,
         rules: [
-          { name: "MetaGaming", desc: "L'usage d'informations obtenues hors-jeu (HRP) pour influencer vos actions en jeu est strictement interdit." },
-          { name: "PowerGaming", desc: "Réaliser des actions impossibles physiquement ou ne laisser aucune chance de réaction à autrui est proscrit." },
-          { name: "FearRP", desc: "Votre personnage doit ressentir la peur face à une menace mortelle. Votre vie est votre bien le plus précieux." },
-          { name: "PainRP", desc: "Toute blessure doit être jouée avec réalisme, impactant vos capacités de mouvement et d'élocution." }
+          { name: "MetaGaming", desc: "L'utilisation en jeu d'informations apprises hors-jeu (Discord, stream, rumeurs HRP) est strictement interdite. Votre personnage ne sait que ce qu'il a vécu en jeu." },
+          { name: "PowerGaming", desc: "Réaliser des actions impossibles physiquement, ne pas laisser de chance de réaction à l'adversaire ou imposer sa volonté de manière scriptée sans interaction mutuelle est proscrit." },
+          { name: "FearRP (Peur de la Mort)", desc: "Votre personnage n'est pas immortel. Face à une menace sérieuse (arme sous la gorge, supériorité numérique écrasante), vous devez agir avec crainte pour votre vie." },
+          { name: "PainRP (Ressenti de la Douleur)", desc: "Toute blessure doit être jouée avec réalisme. Un sort de feu ou une chute impacte vos mouvements, votre voix et nécessite des soins appropriés." },
+          { name: "Mix-RP", desc: "Parler de sujets HRP en étant en personnage (personnes réelles, problèmes techniques, admin) est interdit." }
         ]
       },
       {
-        title: "Institutions & Métiers",
+        title: "Institutions, Métiers & Hiérarchie",
         icon: BookOpen,
         rules: [
-          { name: "L'Académie d'Asgarm", desc: "Les élèves doivent respecter la hiérarchie professorale. Les duels sont interdits hors des zones supervisées." },
-          { name: "Le Conclave des Arcanes", desc: "Les Protecteurs représentent la loi. Toute entrave à leur mission est un crime puni par l'emprisonnement." },
-          { name: "La Royauté", desc: "Le respect des lignées royales est le socle de la stabilité d'Asgarm. Les régicides ont des conséquences permanentes." }
+          { name: "L'Académie Royale d'Asgarm", desc: "Le respect de la hiérarchie professorale est obligatoire. Les élèves doivent suivre les directives et respecter les zones de duels autorisées." },
+          { name: "Le Conclave des Arcanes", desc: "Les Protecteurs représentent la loi suprême. Toute insulte, rébellion ou entrave à leur mission entraîne des sanctions judiciaires lourdes." },
+          { name: "Le Conclave des Ombres", desc: "Leurs lois sont clandestines mais souveraines dans leur domaine. L'adhésion à ce conclave implique des secrets d'Etat inviolables." },
+          { name: "Economie et Commerce", desc: "Le commerce doit suivre les prix du marché royal. Les arnaques massives ruinant l'expérience de jeu sont soumises à arbitrage." }
         ]
       },
       {
-        title: "Physiologie & Races",
-        icon: HeartPulse,
-        rules: [
-          { name: "Héritage Elfique", desc: "Les Elfes doivent agir en harmonie avec la nature. Leur magie est un don sacré qui ne doit pas être dévoyé." },
-          { name: "Nature Vampirique", desc: "Les Vampires doivent gérer leur soif avec discrétion. Leur rôle de guérisseur prime sur leur instinct de prédateur." },
-          { name: "Fierté Naine", desc: "La Citadelle de Fer est souveraine. Les Nains sont les seuls maîtres autorisés de la forge des baguettes." }
-        ]
-      },
-      {
-        title: "Usage des Arcanes",
+        title: "Physiologie, Races & Magie",
         icon: Zap,
         rules: [
-          { name: "Canalisation", desc: "Aucun sort ne peut être lancé sans baguette (sauf race spécifique). La perte de votre baguette vous rend vulnérable." },
-          { name: "Magie Noire & Sang", desc: "Ces arts sont régulés par le Conclave des Ombres. Leur usage public est passible de sanctions par les Arcanes." }
+          { name: "Canalisation Arcanique", desc: "Aucun sort ne peut être lancé sans une baguette (sauf trait de race spécifique). La perte de votre baguette réduit drastiquement votre puissance." },
+          { name: "Spécificités des Races", desc: "Les Elfes, Nains et Vampires doivent respecter leur lore. Un Vampire doit gérer sa soif, un Nain sa fierté pour sa forge, etc." },
+          { name: "Magie Noire et de Sang", desc: "L'usage de ces magies est illégal aux yeux des Arcanes. Leur utilisation publique vous expose à une arrestation immédiate par les Protecteurs." },
+          { name: "Morts et Séquelles", desc: "Un coma (mort RP temporaire) implique une perte de mémoire des 15 dernières minutes précédant l'incident. Le CK (Mort définitive) est soumis à un dossier staff." }
         ]
       }
     ]
@@ -102,29 +100,31 @@ const regulationSections = [
   {
     id: "staff",
     title: "Code du Staff",
-    subtitle: "Haute Magistrature",
+    subtitle: "HAUTE MAGISTRATURE",
     color: "from-red-600/20 to-black/40",
     accent: "text-red-600",
     glow: "text-glow-red",
     shineClass: "shine-text-red",
-    desc: "Les devoirs, obligations et protocoles rigoureux des gardiens et administrateurs d'Outland.",
+    desc: "Les devoirs, obligations et protocoles rigoureux des gardiens et administrateurs du projet Outland.",
     chapters: [
       {
-        title: "Le Serment du Magistrat",
+        title: "Le Serment de Déontologie",
         icon: Scale,
         rules: [
-          { name: "Neutralité Absolue", desc: "Un membre du staff n'a ni ami, ni ennemi lors d'une médiation. L'impartialité est son premier bouclier." },
-          { name: "Devoir de Réserve", desc: "Les secrets du conseil et les dossiers des citoyens sont sacrés. Toute fuite entraîne une révocation immédiate." },
-          { name: "Exemple Souverain", desc: "Le comportement du staff doit être irréprochable. En jeu, ils doivent être des modèles d'immersion." }
+          { name: "Neutralité et Impartialité", desc: "Un membre du staff ne doit jamais favoriser un ami ou une connaissance lors d'un arbitrage. Les faits priment sur les affinités." },
+          { name: "Devoir de Réserve", desc: "Les informations internes au staff (projets futurs, dossiers sanctions, logs privés) ne doivent jamais être divulguées aux joueurs." },
+          { name: "Exemplarité Souveraine", desc: "Le comportement d'un membre du staff doit être irréprochable. Toute faute RP ou HRP de sa part est sanctionnée doublement." },
+          { name: "Non-Abus de Pouvoir", desc: "L'utilisation des commandes administratives (tp, godmode, invisible) à des fins personnelles ou pour influencer une scène RP est un motif de radiation." }
         ]
       },
       {
-        title: "Protocoles d'Intervention",
+        title: "Protocoles de Justice Magistrale",
         icon: ShieldCheck,
         rules: [
-          { name: "Médiation Pédagogique", desc: "La sanction est le dernier recours. L'explication et la pédagogie sont les premiers outils du magistrat." },
-          { name: "Preuves & Justice", desc: "Aucune sanction majeure ne peut être appliquée sans preuves tangibles (logs, vidéos). Le doute profite au citoyen." },
-          { name: "Tickets & Support", desc: "Les demandes doivent être traitées avec respect et célérité via les canaux officiels du royaume." }
+          { name: "Pédagogie et Arbitrage", desc: "La mission première du staff est d'expliquer les erreurs. La sanction ne doit intervenir qu'en cas de récidive ou de faute grave intentionnelle." },
+          { name: "Gestion des Tickets", desc: "Les demandes doivent être traitées avec respect et clarté. Chaque intervention doit être consignée dans les registres du staff." },
+          { name: "Preuves et Verdicts", desc: "Aucune sanction majeure ne peut être appliquée sans preuves tangibles (vidéos, logs système). Le staff doit rester factuel." },
+          { name: "Confidentialité des Sanctions", desc: "Les détails d'une sanction ne concernent que la personne sanctionnée et le staff. La délation publique est proscrite." }
         ]
       }
     ]
@@ -225,7 +225,7 @@ export default function ReglementPage() {
                     <div className={`p-8 bg-black/40 border border-white/5 shadow-2xl relative overflow-hidden`}>
                       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
                       <p className="text-silver/40 text-[10px] uppercase tracking-[0.2em] leading-relaxed italic">
-                        La connaissance de ces lois est impérative. Tout manquement sera arbitré par le Conclave Suprême d'Asgarm.
+                        La connaissance de ces décrets est impérative pour tout citoyen d'Asgarm. Le Conclave Suprême veille à leur application stricte.
                       </p>
                     </div>
                   </div>
