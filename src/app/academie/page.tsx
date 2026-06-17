@@ -41,7 +41,7 @@ export default function AcademiePage() {
                 <div className="h-[1px] w-12 bg-sky-400/30" />
               </div>
               <h1 className="text-7xl font-headline text-white uppercase tracking-tighter mb-8 leading-none">
-                Académie <br /> <span className="text-sky-400 italic font-light">Ascarnia</span>
+                <span className="shine-text-blue">Académie</span> <br /> <span className="shine-text-blue italic font-light">Ascarnia</span>
               </h1>
               <p className="text-silver/40 italic text-lg leading-relaxed mb-12 max-w-md">
                 "Fondée par les Rois des Royaumes pour enseigner l'excellence arcanique. 100 sorts pour protéger l'équilibre."
@@ -79,7 +79,7 @@ export default function AcademiePage() {
                 <div className="h-[1px] w-12 bg-red-600/30" />
               </div>
               <h1 className="text-7xl font-headline text-white uppercase tracking-tighter mb-8 leading-none">
-                Académie <br /> <span className="text-red-600 italic font-light">Obscura</span>
+                <span className="shine-text-red">Académie</span> <br /> <span className="shine-text-red italic font-light">Obscura</span>
               </h1>
               <p className="text-silver/40 italic text-lg leading-relaxed mb-12 max-w-md">
                 "Forgée par les deux Seigneurs du Mal pour libérer la magie noire. 40 sorts réservés à l'élite de l'Ombre."

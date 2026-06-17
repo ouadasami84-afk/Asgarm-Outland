@@ -40,8 +40,8 @@ export default function ConclavePage() {
                 <span className="text-sky-400 text-[10px] tracking-[1.2em] uppercase font-bold text-glow-sky">Justice Magique</span>
                 <div className="h-[1px] w-12 bg-sky-400/30" />
               </div>
-              <h1 className="text-7xl font-headline text-white uppercase tracking-tighter mb-8 text-glow-sky leading-none">
-                Conclave des <br /> <span className="text-sky-400 italic font-light">Arcanes</span>
+              <h1 className="text-7xl font-headline text-white uppercase tracking-tighter mb-8 leading-none">
+                <span className="shine-text-blue">Conclave des</span> <br /> <span className="shine-text-blue italic font-light">Arcanes</span>
               </h1>
               <p className="text-silver/40 italic text-lg leading-relaxed mb-12 max-w-md">
                 "Nous combattons la magie noire et la magie du sang. Seule la magie arcanique est autorisée sous notre règne."
@@ -79,7 +79,7 @@ export default function ConclavePage() {
                 <div className="h-[1px] w-12 bg-red-600/30" />
               </div>
               <h1 className="text-7xl font-headline text-white uppercase tracking-tighter mb-8 leading-none">
-                Conclave des <br /> <span className="text-red-600 italic font-light">Ombres</span>
+                <span className="shine-text-red">Conclave des</span> <br /> <span className="shine-text-red italic font-light">Ombres</span>
               </h1>
               <p className="text-silver/40 italic text-lg leading-relaxed mb-12 max-w-md">
                 "La magie reste de la magie. Nous embrassons la magie noire et du sang pour forger notre propre destin."
