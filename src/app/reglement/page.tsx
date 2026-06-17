@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ShieldAlert, UserCircle, Sword, ShieldCheck, ChevronLeft, Gavel, Scroll, Landmark } from 'lucide-react'
+import { UserCircle, Sword, ShieldCheck, ChevronLeft } from 'lucide-react'
 
 const regulationSections = [
   {
@@ -56,7 +56,9 @@ const regulationSections = [
 
 export default function ReglementPage() {
   const [selectedSection, setSelectedSection] = useState<string | null>(null)
+  
   const currentSection = regulationSections.find(s => s.id === selectedSection)
+  const SectionIcon = currentSection?.icon
 
   return (
     <main className="relative min-h-screen flex flex-col bg-transparent overflow-hidden">
@@ -131,17 +133,17 @@ export default function ReglementPage() {
               <div className="flex flex-col lg:flex-row gap-20 items-start">
                 <div className="lg:w-1/3 sticky top-32">
                   <div className="flex items-center gap-4 mb-6">
-                    <currentSection!.icon className={`w-5 h-5 ${currentSection!.accent}`} />
-                    <span className={`text-[10px] font-bold uppercase tracking-[0.8em] ${currentSection!.accent}`}>{currentSection!.subtitle}</span>
+                    {SectionIcon && <SectionIcon className={`w-5 h-5 ${currentSection?.accent}`} />}
+                    <span className={`text-[10px] font-bold uppercase tracking-[0.8em] ${currentSection?.accent}`}>{currentSection?.subtitle}</span>
                   </div>
                   <h2 className="text-7xl font-headline text-white uppercase tracking-tighter mb-8 leading-none">
-                    {currentSection!.title}
+                    {currentSection?.title}
                   </h2>
                   <p className="text-silver/50 text-xl italic font-light leading-relaxed border-l border-white/10 pl-8 mb-12">
-                    {currentSection!.desc}
+                    {currentSection?.desc}
                   </p>
                   <div className={`p-8 bg-black/40 border border-white/5 shadow-2xl relative overflow-hidden`}>
-                    <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-${selectedSection === 'staff' ? 'red-600' : 'gold'}/40 to-transparent`} />
+                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
                     <p className="text-silver/40 text-[10px] uppercase tracking-[0.2em] leading-relaxed italic">
                       L'application de ces décrets est universelle. Chaque citoyen d'Asgarm s'engage à respecter ce serment dès son arrivée.
                     </p>
@@ -149,7 +151,7 @@ export default function ReglementPage() {
                 </div>
 
                 <div className="flex-1 grid grid-cols-1 gap-6">
-                  {currentSection!.rules.map((rule, i) => (
+                  {currentSection?.rules.map((rule, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, y: 20 }}
