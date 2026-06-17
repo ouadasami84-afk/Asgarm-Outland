@@ -80,7 +80,7 @@ export default function Home() {
                 </motion.div>
                 
                 {/* Communauté Section - SANS LOGOS */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-40 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-48 max-w-4xl mx-auto">
                   <motion.a
                     href="#"
                     initial={{ opacity: 0, x: -20 }}
@@ -111,31 +111,31 @@ export default function Home() {
                     </div>
                   </motion.a>
                 </div>
-                
-                {/* Navigation Rapide - SANS LOGOS */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                  {[
-                    { title: "Atlas", desc: "La Map Asgarm", href: "/atlas" },
-                    { title: "Archive", desc: "Savoir Ancien", href: "/archive" },
-                    { title: "Reliques", desc: "Trésors Royaux", href: "/reliques" },
-                    { title: "Maîtrise", desc: "Ascension", href: "/maitrise" }
-                  ].map((cat, i) => (
-                    <motion.a
-                      key={cat.title}
-                      href={cat.href}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1, duration: 0.8 }}
-                      whileHover={{ y: -12 }}
-                      className="glass-night p-14 group transition-all duration-500 border border-gold/10 flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                      <h3 className="text-2xl font-headline mb-6 group-hover:text-gold transition-colors tracking-[0.2em] uppercase text-white">{cat.title}</h3>
-                      <div className="w-12 h-[1px] bg-gold/20 mb-6 group-hover:w-20 transition-all duration-500" />
-                      <p className="text-[9px] tracking-[0.5em] uppercase text-silver/40 font-bold group-hover:text-silver/60">{cat.desc}</p>
-                    </motion.a>
-                  ))}
-                </div>
+
+                {/* Fin de Page - Licence & Droit d'Auteur */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2 }}
+                  className="max-w-3xl mx-auto pb-24 border-t border-gold/5 pt-24"
+                >
+                  <div className="mb-16">
+                    <span className="text-gold/20 text-[9px] tracking-[0.6em] uppercase font-bold block mb-6">Certification de Licence Propriétaire</span>
+                    <p className="text-silver/30 text-[11px] italic leading-relaxed max-w-xl mx-auto">
+                      L'ensemble des architectures logicielles, scripts dynamiques et systèmes immersifs d'Outland sont protégés 
+                      par les lois internationales sur la propriété intellectuelle. Toute tentative de plagiat ou d'utilisation 
+                      non autorisée du projet Asgarm entraînera des mesures légales immédiates.
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-6">
+                    <div className="h-16 w-[1px] bg-gradient-to-b from-gold/20 to-transparent" />
+                    <div className="text-center">
+                      <span className="font-headline text-lg text-white/40 tracking-[0.4em] uppercase block mb-2">© 2026 Outland Studios</span>
+                      <span className="text-[8px] text-gold/30 tracking-[0.6em] uppercase font-bold">In Éther Veritas - Asgarm Project</span>
+                    </div>
+                  </div>
+                </motion.div>
               </section>
 
               <Footer />
