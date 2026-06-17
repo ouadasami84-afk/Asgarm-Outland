@@ -1,8 +1,8 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import { MagicalBackground } from '@/components/MagicalBackground';
 import { BackgroundMusic } from '@/components/BackgroundMusic';
+import { MagicClickEffect } from '@/components/MagicClickEffect';
 
 export const metadata: Metadata = {
   title: 'Outland | Le Royaume d\'Asgarm',
@@ -24,6 +24,7 @@ export default function RootLayout({
       <body className="font-body antialiased bg-[#010208] text-[#F8F8F8] overflow-x-hidden">
         <MagicalBackground />
         <BackgroundMusic />
+        <MagicClickEffect />
         <div className="relative z-10">
           {children}
         </div>
