@@ -12,25 +12,25 @@ const houses = [
     name: "Maison Roselya",
     trait: "LA GRÂCE",
     desc: "Pour ceux dont l'esprit est pur et la volonté élégante. Ils excellent dans les sorts de protection et de cohésion.",
-    color: "from-yellow-400 to-amber-600"
+    color: "from-yellow-400 to-amber-500"
   },
   {
     name: "Maison Verdantis",
     trait: "L'HARMONIE",
     desc: "Le refuge des gardiens de l'équilibre naturel. Ils maîtrisent les flux de l'Ether à travers la croissance et la vie.",
-    color: "from-emerald-400 to-green-600"
+    color: "from-emerald-500 to-green-600"
   },
   {
     name: "Maison Tenebris",
     trait: "LA PERSPICACITÉ",
     desc: "Ceux qui explorent les profondeurs du savoir. Leurs études sur le bleu nuit de l'éther révèlent les secrets du cosmos.",
-    color: "from-indigo-600 to-blue-900"
+    color: "from-indigo-900 to-blue-900"
   },
   {
     name: "Maison Ruberis",
     trait: "LA PASSION",
     desc: "Le berceau des esprits ardents. Ils incarnent la force vitale et la détermination nécessaire pour forger le destin.",
-    color: "from-red-500 to-red-800"
+    color: "from-red-600 to-red-900"
   }
 ]
 
@@ -86,31 +86,14 @@ export default function AscarniaPage() {
                 <span className="block text-sky-400 text-3xl font-headline mb-1">18+</span>
                 <span className="text-[8px] text-silver/40 uppercase tracking-widest font-bold">Âge Requis</span>
               </div>
+              <div className="h-12 w-[1px] bg-white/5" />
+              <div className="text-center">
+                <span className="block text-sky-400 text-3xl font-headline mb-1">100</span>
+                <span className="text-[8px] text-silver/40 uppercase tracking-widest font-bold">Sorts Fondamentaux</span>
+              </div>
             </div>
           </div>
         </header>
-
-        {/* Section Admissions */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
-            <h3 className="text-lg text-white font-headline uppercase mb-4">Excellence Académique</h3>
-            <p className="text-silver/40 text-xs leading-relaxed italic font-light">
-              Un cursus rigoureux de 100 sorts fondamentaux arcaniques, validé par le Conclave suprême.
-            </p>
-          </div>
-          <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
-            <h3 className="text-lg text-white font-headline uppercase mb-4">Héritage des Rois</h3>
-            <p className="text-silver/40 text-xs leading-relaxed italic font-light">
-              Fondée pour protéger le monde des sorciers contre toute déviance après la Grande Guerre.
-            </p>
-          </div>
-          <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
-            <h3 className="text-lg text-white font-headline uppercase mb-4">Équilibre d'Asgarm</h3>
-            <p className="text-silver/40 text-xs leading-relaxed italic font-light">
-              Un savoir millénaire transmis par les maîtres pour préserver la paix et l'ordre arcanique.
-            </p>
-          </div>
-        </section>
 
         {/* Section Maisons */}
         <section className="mb-24">
@@ -126,7 +109,7 @@ export default function AscarniaPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative p-8 bg-black/40 border border-sky-500/5 hover:border-sky-400/30 transition-all duration-700 overflow-hidden"
+                className="group relative p-10 bg-black/40 border border-sky-500/5 hover:border-sky-400/30 transition-all duration-700 overflow-hidden"
               >
                 <div className={`absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r ${house.color} opacity-30 group-hover:opacity-100 transition-opacity`} />
                 <span className="text-[8px] text-sky-400/60 font-bold uppercase tracking-[0.4em] mb-4 block">{house.trait}</span>
@@ -136,14 +119,14 @@ export default function AscarniaPage() {
                 </p>
                 <div className="flex items-center gap-2">
                   <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${house.color}`} />
-                  <span className="text-[8px] text-sky-400/40 uppercase tracking-widest font-bold">Héritage de {house.name.replace('Maison ', '')}</span>
+                  <span className="text-[8px] text-sky-400/40 uppercase tracking-widest font-bold">Héritage d'Asgarm</span>
                 </div>
               </motion.div>
             ))}
           </div>
         </section>
 
-        {/* Section Corps Enseignant */}
+        {/* Section Hiérarchie */}
         <section className="mb-24">
           <div className="flex items-center gap-4 mb-12">
             <h2 className="text-4xl font-headline text-white uppercase tracking-tight">Hiérarchie Académique</h2>
@@ -157,9 +140,9 @@ export default function AscarniaPage() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className="p-6 bg-sky-950/5 border border-sky-500/10 hover:border-sky-400/30 transition-all group"
+                className="p-8 bg-sky-950/5 border border-sky-500/10 hover:border-sky-400/30 transition-all group flex flex-col justify-center"
               >
-                <span className="text-[8px] text-sky-500/40 font-bold uppercase tracking-[0.3em] mb-2 block">Grade Officiel {i + 1}</span>
+                <span className="text-[8px] text-sky-500/40 font-bold uppercase tracking-[0.3em] mb-2 block">Grade Officiel</span>
                 <h4 className="text-sm font-headline text-white uppercase tracking-wider group-hover:text-sky-400 transition-colors">{grade}</h4>
               </motion.div>
             ))}
