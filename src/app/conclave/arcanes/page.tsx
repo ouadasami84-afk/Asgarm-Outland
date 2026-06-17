@@ -57,7 +57,7 @@ export default function ArcanesPage() {
               Conclave des <br /> <span className="text-gold italic font-light">Arcanes</span>
             </h1>
             <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-gold/20 pl-8">
-              "Nous sommes la justice de la magie. Nous créons les lois qui régissent l'éther, enquêtons et arrêtons ceux qui osent manipuler les arts interdits. Notre serment est immuable : seule la magie arcanique est autorisée dans le monde d'Asgarm."
+              "Le Conclave des Arcanes incarne la justice de la magie. Nous créons les lois qui régissent l'éther dans le monde d'Asgarm. Nous jugeons, emprisonnons, enquêtons et arrêtons les sorciers déviants pour protéger les citoyens de la magie noire. Notre serment est absolu : seule la magie arcanique est autorisée dans le monde d'Asgarm."
             </p>
           </div>
         </header>
@@ -70,7 +70,7 @@ export default function ArcanesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="group p-10 bg-gold/[0.02] border border-gold/10 hover:border-gold/30 hover:bg-gold/[0.04] transition-all duration-700 flex flex-col"
+              className="group p-10 bg-white/[0.03] border border-gold/10 hover:border-gold/30 hover:bg-white/[0.05] transition-all duration-700 flex flex-col shadow-2xl"
             >
               <span className="text-[9px] text-gold/60 font-bold uppercase tracking-[0.4em] mb-4">{role.rank}</span>
               <h3 className="text-3xl font-headline text-white uppercase mb-6 group-hover:text-glow-gold transition-all">{role.title}</h3>
@@ -90,14 +90,7 @@ export default function ArcanesPage() {
           ))}
         </section>
 
-        {/* Charte de Faction */}
-        <div className="mt-auto p-12 border border-gold/5 bg-white/[0.01] text-center mb-8">
-          <p className="text-[9px] text-gold/30 uppercase tracking-[1em] font-bold">
-            — L'ÉQUILIBRE PAR LA LOI ARCANIQUE —
-          </p>
-        </div>
-
-        <footer className="h-12 border-t border-gold/5 flex items-center justify-center bg-black/60 relative z-20">
+        <footer className="mt-auto h-24 flex items-center justify-center relative z-20">
           <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
             CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
           </span>

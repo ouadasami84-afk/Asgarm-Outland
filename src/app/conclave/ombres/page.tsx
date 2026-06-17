@@ -57,7 +57,7 @@ export default function OmbresPage() {
               Conclave des <br /> <span className="text-indigo-400 italic font-light">Ombres</span>
             </h1>
             <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-indigo-500/20 pl-8">
-              "Nous appartenons au royaume du mal. Ici, nous appliquons nos propres lois, défiant constamment les Arcanes. Nous jugeons et créons notre propre destin, enseignant que la magie reste de la magie : tout le monde peut et doit utiliser la magie noire."
+              "Le Conclave des Ombres appartient au royaume du mal et au Seigneur du Mal. Nous appliquons nos propres lois, souvent en confrontation directe avec les Arcanes. Nous jugeons, arrêtons et créons de nouvelles lois, tout en enseignant les arts interdits. Notre devise : la magie reste de la magie, et chacun a le droit d'utiliser la magie noire."
             </p>
           </div>
         </header>
@@ -70,7 +70,7 @@ export default function OmbresPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="group p-10 bg-indigo-950/20 border border-indigo-500/10 hover:border-indigo-400/30 hover:bg-indigo-950/30 transition-all duration-700 flex flex-col"
+              className="group p-10 bg-indigo-950/20 border border-indigo-500/10 hover:border-indigo-400/30 hover:bg-indigo-950/30 transition-all duration-700 flex flex-col shadow-2xl"
             >
               <span className="text-[9px] text-indigo-400/60 font-bold uppercase tracking-[0.4em] mb-4">{role.rank}</span>
               <h3 className="text-3xl font-headline text-white uppercase mb-6 group-hover:text-indigo-400 transition-all">{role.title}</h3>
@@ -90,14 +90,7 @@ export default function OmbresPage() {
           ))}
         </section>
 
-        {/* Charte de Faction */}
-        <div className="mt-auto p-12 border border-indigo-500/5 bg-indigo-950/10 text-center mb-8">
-          <p className="text-[9px] text-indigo-400/30 uppercase tracking-[1em] font-bold">
-            — LA LIBERTÉ DANS L'OBSCURITÉ —
-          </p>
-        </div>
-
-        <footer className="h-12 border-t border-indigo-500/5 flex items-center justify-center bg-black/60 relative z-20">
+        <footer className="mt-auto h-24 flex items-center justify-center relative z-20">
           <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
             CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
           </span>
