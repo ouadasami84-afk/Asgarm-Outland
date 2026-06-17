@@ -2,26 +2,26 @@
 
 import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import Image from 'next/image'
+import { Compass, Sparkles, Wand2 } from 'lucide-react'
 
-const locations = [
+const sectors = [
   {
     title: "Les Plaines d'Asgarm",
-    desc: "Le cœur battant du monde, où la magie résiduelle des anciens dieux fait vibrer chaque brin d'herbe.",
-    img: "https://picsum.photos/seed/asgarm1/1200/800",
-    color: "from-blue-950/60"
+    desc: "Le cœur battant du monde, où la magie résiduelle des anciens dieux fait vibrer chaque brin d'herbe sous un ciel éternellement étoilé.",
+    icon: Compass,
+    accent: "shadow-blue-500/10"
   },
   {
-    title: "Le Scriptorium d'Outland",
-    desc: "Une tour de savoir suspendue entre deux réalités, abritant les parchemins interdits de la création.",
-    img: "https://picsum.photos/seed/asgarm2/1200/800",
-    color: "from-indigo-950/60"
+    title: "Le Scriptorium Royal",
+    desc: "Une tour de savoir suspendue dans l'éther d'Outland, abritant les parchemins interdits qui régissent les lois d'Asgarm.",
+    icon: Wand2,
+    accent: "shadow-purple-500/10"
   },
   {
     title: "Les Grottes d'Ether",
-    desc: "Des cristaux de mana pur illuminent ces profondeurs où seuls les plus braves osent s'aventurer.",
-    img: "https://picsum.photos/seed/asgarm3/1200/800",
-    color: "from-slate-900/60"
+    desc: "Des sanctuaires cristallins où le mana pur coule comme de l'eau, illuminant les ténèbres de reflets dorés.",
+    icon: Sparkles,
+    accent: "shadow-gold/10"
   }
 ]
 
@@ -31,48 +31,47 @@ export const WorldAtlas: React.FC = () => {
     target: targetRef,
   })
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"])
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"])
 
   return (
-    <section id="the-world" ref={targetRef} className="relative h-[300vh] bg-[#03040a]">
+    <section id="the-world" ref={targetRef} className="relative h-[250vh] bg-transparent">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <div className="absolute top-24 left-16 z-20">
+        <div className="absolute top-24 left-24 z-20">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.2 }}
           >
-            <h2 className="font-headline text-6xl text-white text-glow-gold">L'Atlas d'Asgarm</h2>
-            <div className="flex items-center gap-4 mt-4">
-              <div className="h-[1px] w-20 bg-gold/30" />
-              <p className="text-gold font-body uppercase tracking-[0.4em] text-[9px] font-bold italic">Cartographie Interdite</p>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-[1px] w-20 bg-gold/40" />
+              <p className="text-gold font-body uppercase tracking-[0.5em] text-[10px] font-bold">Chroniques d'Asgarm</p>
             </div>
+            <h2 className="font-headline text-7xl text-white text-glow-gold">L'Atlas d'Outland</h2>
           </motion.div>
         </div>
         
-        <motion.div style={{ x }} className="flex gap-16 px-24">
-          {locations.map((loc, i) => (
+        <motion.div style={{ x }} className="flex gap-20 px-32">
+          {sectors.map((loc, i) => (
             <div
               key={loc.title}
-              className="group relative h-[70vh] w-[80vw] md:w-[60vw] overflow-hidden shrink-0 border border-gold/10 hover:border-gold/30 transition-colors duration-700"
+              className={`group relative h-[65vh] w-[75vw] md:w-[50vw] glass-gold shrink-0 p-20 flex flex-col justify-between border border-gold/10 hover:border-gold/30 transition-all duration-1000 ${loc.accent}`}
             >
-              <Image
-                src={loc.img}
-                alt={loc.title}
-                fill
-                className="object-cover brightness-[0.7] group-hover:scale-105 transition-transform duration-[3000ms] ease-out"
-                data-ai-hint="magical location"
-              />
-              <div className={`absolute inset-0 bg-gradient-to-t ${loc.color} via-transparent to-transparent opacity-80`} />
-              <div className="absolute bottom-0 left-0 p-16 max-w-2xl bg-gradient-to-t from-black/90 to-transparent w-full">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                >
-                  <span className="text-gold font-bold tracking-[0.6em] text-[9px] uppercase mb-4 block italic">Secteur 0{i+1}</span>
-                  <h3 className="font-headline text-5xl mb-6 text-white group-hover:text-glow-gold transition-all duration-500">{loc.title}</h3>
-                  <p className="text-silver/60 text-lg leading-relaxed font-light font-body group-hover:text-silver/80 transition-colors">{loc.desc}</p>
-                </motion.div>
+              <div className="absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 transition-opacity">
+                <loc.icon className="w-64 h-64 text-gold" />
+              </div>
+
+              <div className="relative z-10">
+                <span className="text-gold/40 font-bold tracking-[0.8em] text-[10px] uppercase mb-10 block">Archives / Secteur 0{i+1}</span>
+                <h3 className="font-headline text-6xl mb-10 text-white group-hover:text-gold transition-colors duration-700">{loc.title}</h3>
+                <p className="text-silver/50 text-xl leading-relaxed font-light font-body max-w-xl group-hover:text-silver transition-colors duration-700">{loc.desc}</p>
+              </div>
+
+              <div className="relative z-10 flex items-center gap-6">
+                <div className="w-12 h-12 rounded-full border border-gold/20 flex items-center justify-center">
+                  <loc.icon className="w-5 h-5 text-gold/60" />
+                </div>
+                <div className="h-[1px] flex-1 bg-gradient-to-r from-gold/20 to-transparent" />
+                <button className="text-[10px] tracking-[0.4em] uppercase text-gold/60 hover:text-gold transition-colors">Explorer</button>
               </div>
             </div>
           ))}
