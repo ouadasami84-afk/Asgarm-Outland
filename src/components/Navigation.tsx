@@ -64,7 +64,7 @@ export const Navigation: React.FC = () => {
 
         <div className="flex items-center gap-6">
           <Link href="/reglement">
-            <button className="hidden sm:flex items-center px-8 py-2 border border-gold/20 text-gold text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-night transition-all duration-500 bg-black/40">
+            <button className="hidden sm:flex items-center px-8 py-2 border border-gold/20 text-gold text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-black transition-all duration-500 bg-black/40">
               Règlement
             </button>
           </Link>
