@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,49 +7,39 @@
   :root {
     --background: 230 50% 2%;
     --foreground: 210 20% 98%;
-    --card: 230 50% 3%;
-    --card-foreground: 210 20% 98%;
-    --popover: 230 50% 3%;
-    --popover-foreground: 210 20% 98%;
     --primary: 45 65% 52%;
     --primary-foreground: 230 50% 3%;
-    --secondary: 230 40% 5%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 230 40% 8%;
-    --muted-foreground: 215 20% 55%;
-    --accent: 45 65% 52%;
-    --accent-foreground: 230 50% 3%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 45 65% 52% / 0.1;
-    --input: 230 40% 10%;
-    --ring: 45 65% 52%;
     --radius: 0rem;
   }
 }
 
-@layer utilities {
-  .glass-gold {
-    @apply bg-[#020410]/60 backdrop-blur-2xl border border-gold/10;
-  }
-  .text-glow-gold {
-    text-shadow: 0 0 10px rgba(212,175,55,0.3);
-  }
-}
-
 body {
-  @apply selection:bg-gold selection:text-black antialiased;
-  background-color: #010208;
+  @apply antialiased bg-background text-foreground;
   font-family: 'Inter', sans-serif;
-  color: #f8f8f8;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
 }
 
+.glass-night {
+  @apply bg-night/40 backdrop-blur-xl border border-gold/10;
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.gold-gradient-border {
+  position: relative;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+              linear-gradient(to bottom right, rgba(212, 175, 55, 0.3), transparent, rgba(212, 175, 55, 0.3)) border-box;
+  border: 1px solid transparent;
+}
+
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -56,14 +47,5 @@ h1, h2, h3, h4 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.2);
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-  width: 2px;
-}
-
-@keyframes starTwinkle {
-  0%, 100% { opacity: 0.1; transform: scale(0.8); }
-  50% { opacity: 0.8; transform: scale(1.1); }
+  background: rgba(212, 175, 55, 0.3);
 }

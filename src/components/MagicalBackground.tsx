@@ -1,64 +1,53 @@
+
 "use client"
 
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useMemo } from 'react'
+import { motion } from 'framer-motion'
 
 export const MagicalBackground: React.FC = () => {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   const stars = useMemo(() => {
-    return [...Array(120)].map((_, i) => ({
+    return [...Array(150)].map((_, i) => ({
       id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 1.5 + 0.5,
-      duration: 2 + Math.random() * 6,
-      delay: Math.random() * 10,
-      opacity: 0.1 + Math.random() * 0.4
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      size: Math.random() * 2 + 0.5,
+      delay: Math.random() * 5,
+      duration: 3 + Math.random() * 4,
     }))
   }, [])
 
-  if (!mounted) return null
-
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#010208]">
-      {/* Deep Space Foundation */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#050a24_0%,_#010208_100%)]" />
-      
-      {/* Dynamic Star Field */}
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-night-deep">
+      {/* Nébuleuses éthérées */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-30">
+        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-night-ethereal/40 blur-[150px] rounded-full animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-900/10 blur-[150px] rounded-full" />
+      </div>
+
+      {/* Champ d'étoiles */}
       {stars.map((star) => (
-        <div
+        <motion.div
           key={star.id}
-          className="absolute rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+          initial={{ opacity: 0.1 }}
+          animate={{ opacity: [0.1, 0.8, 0.1], scale: [0.8, 1.1, 0.8] }}
+          transition={{
+            duration: star.duration,
+            repeat: Infinity,
+            delay: star.delay,
+            ease: "easeInOut"
+          }}
+          className="absolute bg-white rounded-full shadow-[0_0_5px_rgba(255,255,255,0.8)]"
           style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`,
+            left: star.left,
+            top: star.top,
             width: `${star.size}px`,
             height: `${star.size}px`,
-            opacity: star.opacity,
-            animation: `starTwinkle ${star.duration}s ease-in-out infinite`,
-            animationDelay: `${star.delay}s`
           }}
         />
       ))}
-
-      {/* Atmospheric Nebulas */}
-      <div className="absolute -top-[20%] -left-[10%] w-[80%] h-[80%] bg-blue-950/20 blur-[200px] rounded-full animate-pulse" style={{ animationDuration: '15s' }} />
-      <div className="absolute -bottom-[20%] -right-[10%] w-[70%] h-[70%] bg-indigo-950/20 blur-[200px] rounded-full animate-pulse" style={{ animationDuration: '20s' }} />
-      <div className="absolute top-1/4 left-1/3 w-[50%] h-[50%] bg-gold/[0.04] blur-[250px] rounded-full" />
-
-      {/* Vignette for Cinematic Focus */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_#010208_100%)] opacity-80" />
-
-      <style jsx global>{`
-        @keyframes starTwinkle {
-          0%, 100% { opacity: 0.1; transform: scale(0.8); }
-          50% { opacity: 0.8; transform: scale(1.1); }
-        }
-      `}</style>
+      
+      {/* Vignette sombre */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#010208_90%)]" />
     </div>
   )
 }

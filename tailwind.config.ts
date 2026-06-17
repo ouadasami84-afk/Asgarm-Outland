@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -12,53 +13,39 @@ export default {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Playfair Display', 'serif'],
-        code: ['monospace'],
       },
       colors: {
-        background: '#080808',
+        background: '#010208',
         foreground: '#F8F8F8',
-        obsidian: '#080808',
-        midnight: '#1A1026',
-        arcane: '#5A2D91',
-        mystic: '#23395B',
-        gold: '#D4AF37',
-        silver: '#C8CDD7',
-        primary: {
-          DEFAULT: '#5A2D91',
-          foreground: '#F8F8F8',
-        },
-        secondary: {
-          DEFAULT: '#1A1026',
-          foreground: '#F8F8F8',
-        },
-        accent: {
+        gold: {
           DEFAULT: '#D4AF37',
-          foreground: '#080808',
+          muted: 'rgba(212, 175, 55, 0.4)',
+          glow: 'rgba(212, 175, 55, 0.1)',
         },
-        card: {
-          DEFAULT: 'rgba(26, 16, 38, 0.4)',
-          foreground: '#F8F8F8',
+        night: {
+          DEFAULT: '#020410',
+          deep: '#010208',
+          ethereal: '#050a24',
         },
-        border: 'rgba(212, 175, 55, 0.2)',
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        primary: {
+          DEFAULT: '#D4AF37',
+          foreground: '#010208',
+        },
+        border: 'rgba(212, 175, 55, 0.15)',
       },
       keyframes: {
         'float': {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '50%': { transform: 'translateY(-15px)' },
         },
-        'glow': {
-          '0%, 100%': { opacity: '0.5' },
-          '50%': { opacity: '1' },
+        'star-twinkle': {
+          '0%, 100%': { opacity: '0.2', transform: 'scale(0.8)' },
+          '50%': { opacity: '1', transform: 'scale(1.2)' },
         },
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 4s ease-in-out infinite',
+        'star-twinkle': 'star-twinkle 4s ease-in-out infinite',
       },
     },
   },
