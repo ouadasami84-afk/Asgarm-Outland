@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Globe, Users, Shield, Castle, Scroll, Users2, Landmark, History } from 'lucide-react'
+import { Globe, Users, Shield, Castle, Newspaper, Wine, Wrench, House, Briefcase, History } from 'lucide-react'
 
 const kingdoms = [
   {
@@ -97,8 +97,35 @@ const clans = [
   }
 ]
 
+const jobs = [
+  {
+    name: "Journal Asgarm",
+    trait: "VÉRITÉ & INFORMATION",
+    icon: Newspaper,
+    desc: "Devenez le pouls du monde magique. En tant que journaliste pour le Journal d'Asgarm, vous êtes au cœur de l'information. Enquêtez sur les derniers décrets du Conclave, couvrez les tournois de duel, interviewez les alchimistes renommés et dévoilez les mystères qui se cachent dans les ombres. Votre plume (ou votre dictaphone magique) a le pouvoir de façonner l'opinion publique, de révéler la vérité ou de semer la discorde. Un métier pour les curieux, les audacieux et ceux qui croient que la connaissance est la plus grande des magies."
+  },
+  {
+    name: "Taverne Magique",
+    trait: "HOSPITALITÉ & RÉSEAUX",
+    icon: Wine,
+    desc: "La Taverne Magique est plus qu'un simple lieu pour boire une Bièraubeurre. C'est un carrefour où se croisent aventuriers, érudits, mages noirs repentis et protecteurs du Conclave. En tant que tavernier, vous êtes le gardien de ce sanctuaire. Vous servez des boissons enchantées, écoutez les rumeurs les plus folles, et savez désamorcer une bagarre d'un simple sortilège de nettoyage. C'est un rôle social crucial, où l'hospitalité et la discrétion sont vos meilleurs atouts."
+  },
+  {
+    name: "Bricolifus",
+    trait: "INGÉNIERIE & VOLTIGE",
+    icon: Wrench,
+    desc: "Les balais ne volent pas tout seuls... enfin, pas toujours de manière optimale. Chez Bricolifus, vous êtes un ingénieur de la voltige, un artiste de l'aérodynamisme magique. Vous réparez les balais endommagés, améliorez leurs performances avec des charmes de vitesse, installez des selles en cuir de dragon pour plus de confort, et personnalisez-les avec des peintures qui changent de couleur. Que ce soit pour un cours de vol ou une course clandestine, tous les sorciers comptent sur votre expertise pour fendre les cieux en toute sécurité."
+  },
+  {
+    name: "La Maison Magique",
+    trait: "IMMOBILIER & PATRIMOINE",
+    icon: House,
+    desc: "À Asgarm, une maison n'est pas qu'un tas de briques. C'est un sanctuaire protégé par des runes, une demeure avec des pièces qui changent de place ou un appartement avec vue sur un lac enchanté. En tant qu'agent de La Maison Magique, vous ne vendez pas des propriétés, vous trouvez des foyers. Vous guidez les sorciers à travers des maisons hantées (juste un peu), des appartements cachés derrière des cascades et des manoirs qui n'apparaissent qu'à la pleine lune. Un métier qui demande un sens du commerce, une connaissance des sorts de protection et un talent pour le spectaculaire."
+  }
+]
+
 export default function AtlasPage() {
-  const [activeTab, setActiveTab] = useState<'kingdoms' | 'peoples' | 'clans'>('kingdoms')
+  const [activeTab, setActiveTab] = useState<'kingdoms' | 'peoples' | 'clans' | 'jobs'>('kingdoms')
 
   return (
     <main className="relative min-h-screen flex flex-col bg-transparent overflow-hidden">
@@ -131,16 +158,17 @@ export default function AtlasPage() {
         </header>
 
         {/* Navigation Cinématographique */}
-        <div className="flex justify-center gap-4 md:gap-12 mb-32 border-b border-white/5 pb-12">
+        <div className="flex justify-center gap-4 md:gap-8 mb-32 border-b border-white/5 pb-12 flex-wrap">
           {[
             { id: 'kingdoms', label: 'Royaumes', icon: Globe },
             { id: 'peoples', label: 'Peuples', icon: Users },
-            { id: 'clans', label: 'Clans', icon: Shield }
+            { id: 'clans', label: 'Clans', icon: Shield },
+            { id: 'jobs', label: 'Métiers', icon: Briefcase }
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`group relative flex items-center gap-4 px-10 py-6 transition-all duration-700 ${
+              className={`group relative flex items-center gap-4 px-8 py-6 transition-all duration-700 ${
                 activeTab === tab.id ? 'text-white' : 'text-silver/30 hover:text-silver/60'
               }`}
             >
@@ -249,7 +277,7 @@ export default function AtlasPage() {
                       viewport={{ once: true }}
                       className="group p-12 bg-white/[0.01] border border-white/5 hover:border-gold/40 hover:bg-white/[0.03] transition-all duration-1000 flex flex-col relative overflow-hidden"
                     >
-                      <Users2 className="absolute -top-4 -right-4 w-24 h-24 text-white/[0.02] group-hover:text-gold/[0.05] transition-colors" />
+                      <Users className="absolute -top-4 -right-4 w-24 h-24 text-white/[0.02] group-hover:text-gold/[0.05] transition-colors" />
                       <span className="text-[9px] text-gold/40 font-bold uppercase tracking-[0.5em] mb-6 block">{c.trait}</span>
                       <h3 className="text-4xl font-headline text-white uppercase mb-8 group-hover:text-gold transition-all duration-700">{c.name}</h3>
                       <div className="h-[1px] w-12 bg-gold/20 mb-10 group-hover:w-full transition-all duration-1000" />
@@ -259,6 +287,35 @@ export default function AtlasPage() {
                     </motion.div>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {activeTab === 'jobs' && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {jobs.map((job, i) => (
+                  <motion.div
+                    key={job.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="group p-12 bg-white/[0.02] border border-white/5 hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-1000 flex flex-col relative overflow-hidden"
+                  >
+                    <job.icon className="absolute -top-4 -right-4 w-32 h-32 text-white/[0.02] group-hover:text-gold/[0.05] transition-all duration-1000" />
+                    <div className="relative z-10">
+                      <span className="text-[9px] text-gold/60 font-bold uppercase tracking-[0.5em] mb-6 block bg-gold/5 w-fit px-3 py-1 border border-gold/10">
+                        {job.trait}
+                      </span>
+                      <h3 className="text-5xl font-headline text-white uppercase mb-8 group-hover:text-glow-gold transition-all duration-700">
+                        {job.name}
+                      </h3>
+                      <div className="h-[1px] w-12 bg-gold/20 mb-10 group-hover:w-full transition-all duration-1000" />
+                      <p className="text-silver/50 text-base leading-relaxed italic font-light border-l border-white/5 pl-8">
+                        {job.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             )}
           </motion.div>
