@@ -14,10 +14,10 @@ const institutions = [
     icon: Sparkles,
     desc: "Votre voyage commence ici. En tant que nouveau citoyen d'Asgarm, vous devez comprendre les bases de notre monde avant de solliciter le Conclave. Cette section vous guide de votre apparition initiale jusqu'à votre première maîtrise de l'Ether.",
     roles: [
-      { title: "ARRIVÉE AU BASTION", rank: "IMMIGRATION", function: "Point d'apparition initial. Présentez-vous aux autorités pour valider votre identité et recevoir votre laissez-passer." },
-      { title: "ÉVEIL DE LA BAGUETTE", rank: "ARCANES", function: "Rendez-vous chez le fabricant de baguettes pour découvrir le bois et le cœur qui résonnent avec votre âme." },
-      { title: "CÉRÉMONIE DES MAISONS", rank: "DESTINÉE", function: "L'Académie évaluera votre tempérament pour vous attribuer une Maison. Ce choix définira vos futurs alliés." },
-      { title: "PREMIER SORTILÈGE", rank: "PROFICIENCE", function: "Apprenez le sort de base 'Lux' pour éclairer votre chemin. C'est la preuve de votre éveil magique." }
+      { title: "ARRIVÉE AU BASTION", rank: "IMMIGRATION", function: "Point d'apparition initial. Présentez-vous aux autorités pour valider votre identité et recevoir votre laissez-passer citoyen." },
+      { title: "ÉVEIL DE LA BAGUETTE", rank: "ARCANES", function: "Rendez-vous chez le fabricant de baguettes pour découvrir le bois et le cœur qui résonnent avec votre âme magique." },
+      { title: "CÉRÉMONIE DES MAISONS", rank: "DESTINÉE", function: "L'Académie évaluera votre tempérament pour vous attribuer une Maison. Ce choix définira vos futurs alliés et votre cursus." },
+      { title: "PREMIER SORTILÈGE", rank: "PROFICIENCE", function: "Apprenez le sort de base 'Lux' pour éclairer votre chemin. C'est la preuve irréfutable de votre éveil magique." }
     ]
   },
   {
@@ -25,13 +25,13 @@ const institutions = [
     name: "Académie d'Asgarm",
     focus: "FORMATION & DISCIPLINE",
     icon: Book,
-    desc: "L'institution souveraine pour tout étudiant. Ici, la trêve est absolue : aucun combat offensif n'est toléré. Votre priorité est l'obtention de vos accréditations magiques pour progresser dans la hiérarchie du royaume.",
+    desc: "L'institution souveraine pour tout étudiant. Ici, la trêve est absolue : aucun combat offensif n'est toléré. Votre priorité est l'obtention de vos accréditations magiques pour progresser dans la hiérarchie.",
     roles: [
-      { title: "DIRECTEUR D’ASGARM", rank: "HAUTE AUTORITÉ", function: "Souveraineté totale sur le cursus. Arbitre final des sanctions et gardien de la neutralité pédagogique de l'institution." },
-      { title: "DIRECTEUR ADJOINT", rank: "COMMANDEMENT", function: "Coordination des examens de passage et gestion administrative des dossiers de chaque étudiant." },
-      { title: "PROFESSEUR DE DÉFENSE", rank: "SÉCURITÉ", function: "Expert en boucliers. Seul autorisé à superviser les duels d'entraînement au sein des remparts de l'école." },
+      { title: "DIRECTEUR D’ASGARM", rank: "HAUTE AUTORITÉ", function: "Souveraineté totale sur l'institution. Arbitre final des sanctions et gardien de la neutralité pédagogique de l'académie." },
+      { title: "DIRECTEUR ADJOINT", rank: "COMMANDEMENT", function: "Bras droit du directeur, chargé de la coordination des examens et de la supervision administrative quotidienne." },
+      { title: "PROFESSEUR DE DÉFENSE", rank: "SÉCURITÉ", function: "Expert en contre-sorts et boucliers. Seul autorisé à superviser les duels d'entraînement au sein des remparts." },
       { title: "MAÎTRE DES CRÉATURES", rank: "BESTIAIRE", function: "Étude des écosystèmes magiques. Responsable de la sécurité des élèves lors des expéditions en zones reculées." },
-      { title: "CERTIFICATEUR DE SORTILÈGES", rank: "CHARMES", function: "Valide la puissance magique. Sans son sceau officiel, l'usage de sortilèges avancés est strictement prohibé." },
+      { title: "CERTIFICATEUR DE SORTILÈGES", rank: "CHARMES", function: "Valide la puissance magique des élèves. Sans son sceau officiel, l'usage de sorts avancés est strictement prohibé." },
       { title: "SURVEILLANT GÉNÉRAL", rank: "ORDRE", function: "Garant du calme et de l'assiduité dans les couloirs. Application immédiate des mesures disciplinaires en cas de chahut." }
     ]
   },
@@ -42,11 +42,11 @@ const institutions = [
     icon: Shield,
     desc: "Le garant de l'ordre public et de la justice magique. En tant que citoyen, vous êtes soumis à leurs décrets. Toute pratique de magie noire ou de sang est traquée et lourdement sanctionnée.",
     roles: [
-      { title: "GRAND SORCIER DU CONCLAVE", rank: "LÉGISLATION", function: "Rédacteur du code pénal magique. Possède le pouvoir d'arbitrage suprême sur les litiges territoriaux." },
+      { title: "GRAND SORCIER DU CONCLAVE", rank: "LÉGISLATION", function: "Rédacteur du code pénal magique. Possède le pouvoir d'arbitrage suprême sur les litiges territoriaux majeurs." },
       { title: "MAÎTRE SORCIER", rank: "ADMINISTRATION", function: "Gérant de l'infrastructure civile globale et coordinateur des services publics du royaume d'Asgarm." },
-      { title: "CONSEILLER MAGISTRAL", rank: "DIPLOMATIE", function: "Médiateur officiel entre les royaumes. Assure la pérennité des alliances sacrées entre les peuples." },
-      { title: "PROTECTEUR DU CONCLAVE", rank: "FORCE PUBLIQUE", function: "Incarne la puissance répressive légitime. Chargé des enquêtes criminelles et de l'arrestation des déviants." },
-      { title: "GARDIEN DES FRONTIÈRES", rank: "VIGILANCE", function: "Surveille les flux d'éther pour prévenir toute infiltration d'énergie occulte ou de magie interdite." }
+      { title: "CONSEILLER MAGISTRAL", rank: "DIPLOMATIE", function: "Médiateur officiel entre les royaumes. Assure la pérennité des alliances sacrées entre les peuples alliés." },
+      { title: "PROTECTEUR DU CONCLAVE", rank: "FORCE PUBLIQUE", function: "Incarne la puissance répressive légitime du trône. Chargé des enquêtes criminelles et de l'arrestation des déviants." },
+      { title: "GARDIEN DES FRONTIÈRES", rank: "VIGILANCE", function: "Surveille les flux d'éther pour prévenir toute infiltration d'énergie occulte ou de magie interdite dans les cités." }
     ]
   },
   {
@@ -54,13 +54,13 @@ const institutions = [
     name: "Conclave des Ombres",
     focus: "ORDRE OCCULTE",
     icon: History,
-    desc: "Pour ceux qui refusent les chaînes de la justice conventionnelle. Cette structure clandestine offre la liberté d'étudier les arts interdits, mais au risque de devenir un paria aux yeux de la loi d'Asgarm.",
+    desc: "Pour ceux qui refusent les chaînes de la justice conventionnelle. Cette structure clandestine offre la liberté d'étudier les arts interdits, au risque de devenir un paria aux yeux de la loi d'Asgarm.",
     roles: [
       { title: "GRAND SORCIER DES OMBRES", rank: "SOUVERAINETÉ", function: "Maître des réseaux clandestins et gardien des secrets d'État du Royaume du Mal." },
-      { title: "MAÎTRE DES TÉNÈBRES", rank: "INFILTRATION", function: "Stratège des opérations silencieuses et instructeur en arts magiques prohibés pour les initiés." },
+      { title: "MAÎTRE DES TÉNÈBRES", rank: "INFILTRATION", function: "Stratège des opérations silencieuses et instructeur en arts magiques prohibés pour les initiés de l'ombre." },
       { title: "CONSEILLER OBSCUR", rank: "INFLUENCE", function: "Architecte de la manipulation politique travaillant dans l'ombre pour asseoir la domination de l'Ombre." },
-      { title: "PROTECTEUR DES OMBRES", rank: "EXÉCUTION", function: "Exécuteur d'élite chargé de neutraliser les menaces arcaniques avant qu'elles n'entravent nos plans." },
-      { title: "GARDIEN DES RELIQUES", rank: "SÉCURITÉ", function: "Protecteur des artefacts de sang et des sources de puissance non-arcaniques du royaume." }
+      { title: "PROTECTEUR DES OMBRES", rank: "EXÉCUTION", function: "Exécuteur d'élite chargé de neutraliser les menaces arcaniques avant qu'elles n'entravent nos plans souverains." },
+      { title: "GARDIEN DES RELIQUES", rank: "SÉCURITÉ", function: "Protecteur des artefacts de sang et des sources de puissance non-arcaniques du royaume de l'ombre." }
     ]
   },
   {
@@ -70,9 +70,9 @@ const institutions = [
     icon: Briefcase,
     desc: "Le moteur civil du royaume. Ici, vous construisez votre vie matérielle et sociale. Ces services structurent le quotidien et permettent aux citoyens de s'épanouir hors du champ de bataille.",
     roles: [
-      { title: "CHRONIQUEUR ROYAL", rank: "JOURNAL ASGARM", function: "Journaliste d'investigation. Façonne l'opinion publique et documente les grands événements du royaume." },
+      { title: "CHRONIQUEUR ROYAL", rank: "JOURNAL ASGARM", function: "Journaliste d'investigation. Façonne l'opinion publique et documente les grands événements du royaume d'Asgarm." },
       { title: "GRAND TAVERNIER", rank: "TAVERNE MAGIQUE", function: "Gestion des sanctuaires sociaux. Point névralgique des rumeurs, de l'hospitalité et du commerce de proximité." },
-      { title: "INGÉNIEUR VOLTIGE", rank: "BRICOLIFUS", function: "Expert en maintenance de balais. Optimise les performances de vol et répare les structures aérodynamiques." },
+      { title: "INGÉNIEUR VOLTIGE", rank: "BRICOLIFUS", function: "Expert en maintenance de balais. Optimise les performances de vol et répare les structures aérodynamiques endommagées." },
       { title: "AGENT PATRIMONIAL", rank: "LA MAISON MAGIQUE", function: "Gestion de l'habitat et des domaines. Trouve et sécurise les foyers protégés par des runes anciennes." }
     ]
   },
@@ -81,10 +81,10 @@ const institutions = [
     name: "Royauté d'Asgarm",
     focus: "SOUVERAINETÉ SUPRÊME",
     icon: MapPin,
-    desc: "La direction politique et artistique du royaume. Le respect envers la couronne est la fondation de votre citoyenneté. Ils maintiennent l'équilibre entre les peuples d'Aethel, de Fer et du Domaine Carmin.",
+    desc: "La direction politique et diplomatique du royaume. Le respect envers la couronne est la fondation de votre citoyenneté. Ils maintiennent l'équilibre entre les peuples d'Aethel, de Fer et du Domaine Carmin.",
     roles: [
-      { title: "LE MONARQUE", rank: "SOUVERAIN", function: "Prise de décision géopolitique majeure et incarnation vivante du trône et de l'unité d'Asgarm." },
-      { title: "HAUT CONSEILLER", rank: "INFLUENCE", function: "Expertise diplomatique directe auprès du Trône et gestion administrative des grandes cités fortifiées." }
+      { title: "LE MONARQUE", rank: "SOUVERAIN", function: "Prise de décision géopolitique majeure et incarnation vivante de l'unité et de la puissance d'Asgarm." },
+      { title: "HAUT CONSEILLER", rank: "INFLUENCE", function: "Expertise diplomatique directe auprès du Trône et gestion administrative des grandes cités fortifiées alliées." }
     ]
   },
   {
@@ -94,7 +94,7 @@ const institutions = [
     icon: Globe,
     desc: "Pour les citoyens choisissant la vie en dehors des cités. Une organisation basée sur la force de la meute et le respect des lois de la nature brute, agissant selon leurs propres traditions ancestrales.",
     roles: [
-      { title: "CHEF DE CLAN / ALPHA", rank: "LEADERSHIP", function: "Souveraineté territoriale sur les zones sauvages et garant de la cohésion de son groupe face aux menaces." },
+      { title: "CHEF DE CLAN / ALPHA", rank: "LEADERSHIP", function: "Souveraineté territoriale sur les zones sauvages et garant de la cohésion de son groupe face aux menaces extérieures." },
       { title: "CHAMAN ROYAL", rank: "SAGESSE", function: "Lien spirituel avec l'Ether pur. Préservation des cycles de vie ancestraux et des rituels de la terre mère." }
     ]
   }
@@ -148,8 +148,8 @@ export default function GuidePage() {
             ))}
           </nav>
 
-          <div className="mt-auto p-5 border border-gold/10 bg-gold/[0.02]">
-            <p className="text-[8px] text-gold uppercase tracking-[0.4em] leading-relaxed font-bold text-center">
+          <div className="mt-auto p-5 border border-gold/10 bg-gold/[0.02] text-center">
+            <p className="text-[8px] text-gold uppercase tracking-[0.4em] leading-relaxed font-bold">
               Consultez les prérogatives pour une intégration souveraine
             </p>
           </div>

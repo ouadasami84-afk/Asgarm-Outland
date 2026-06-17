@@ -27,8 +27,8 @@ export const Navigation: React.FC = () => {
   ]
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ease-in-out ${
-      scrolled ? 'h-16 bg-black/95 backdrop-blur-3xl border-b border-white/[0.03]' : 'h-24 bg-transparent'
+    <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-700 ease-in-out ${
+      scrolled ? 'h-16 bg-black/95 backdrop-blur-3xl border-b border-white/5' : 'h-24 bg-transparent border-b border-transparent'
     }`}>
       <div className="max-w-7xl mx-auto h-full px-8 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
@@ -65,7 +65,7 @@ export const Navigation: React.FC = () => {
         <div className="flex items-center gap-6">
           <Link href="/reglement">
             <button className="hidden sm:flex items-center px-8 py-2 border border-gold/20 text-gold text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-night transition-all duration-500 bg-black/40">
-              Réglement
+              Règlement
             </button>
           </Link>
           <button 
@@ -117,7 +117,7 @@ export const Navigation: React.FC = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-gold text-lg font-bold tracking-[0.4em] uppercase border-b border-gold/20 pb-2"
               >
-                Réglement
+                Règlement
               </Link>
             </motion.div>
           </motion.div>
