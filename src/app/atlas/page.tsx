@@ -106,7 +106,7 @@ const jobs = [
     name: "Journal Asgarm",
     trait: "VÉRITÉ & INFORMATION",
     icon: Newspaper,
-    desc: "Devenez le pouls du monde magique. En tant que journaliste pour le Journal d'Asgarm, vous êtes au cœur de l'information. Enquêtez sur les derniers décrets du Conclave, couvrez les tournois de duel, interviewez les alchimistes renommés et dévoilez les mystères qui se cachent dans les ombres. Votre plume (ou votre dictaphone magique) a le pouvoir de façonner l'opinion publique, de révéler la vérité ou de semer la discorde. Un métier pour les curieux, les audacieux et ceux qui croient que la connaissance est la plus grande des magies."
+    desc: "Devenez le pouls du monde magique. En tant que journaliste pour le Journal d'Asgarm, vous êtes au cœur de l'information. Enquêtez sur les derniers décrets du Conclave, couvrez les tournois de duel, interviewez les alchimistes renommés et dévoilez les mystères qui se cachent dans les ombres. Votre plume a le pouvoir de façonner l'opinion publique, de révéler la vérité ou de semer la discorde. Un métier pour les curieux, les audacieux et ceux qui croient que la connaissance est la plus grande des magies."
   },
   {
     name: "Taverne Magique",
@@ -124,7 +124,7 @@ const jobs = [
     name: "La Maison Magique",
     trait: "IMMOBILIER & PATRIMOINE",
     icon: House,
-    desc: "À Asgarm, une maison n'est pas qu'un tas de briques. C'est un sanctuaire protégé par des runes, une demeure avec des pièces qui changent de place ou un appartement avec vue sur un lac enchanté. En tant qu'agent de La Maison Magique, vous ne vendez pas des propriétés, vous trouvez des foyers. Vous guidez les sorciers à travers des maisons hantées (juste un peu), des appartements cachés derrière des cascades et des manoirs qui n'apparaissent qu'à la pleine lune. Un métier qui demande un sens du commerce, une connaissance des sorts de protection et un talent pour le spectaculaire."
+    desc: "À Asgarm, une maison n'est pas qu'un tas de briques. C'est un sanctuaire protégé par des runes, une demeure avec des pièces qui changent de place ou un appartement avec vue sur un lac enchanté. En tant qu'agent de La Maison Magique, vous ne vendez pas des propriétés, vous trouvez des foyers. Vous guidez les sorciers à travers des maisons hantées, des appartements cachés derrière des cascades et des manoirs qui n'apparaissent qu'à la pleine lune. Un métier qui demande un sens du commerce, une connaissance des sorts de protection et un talent pour le spectaculaire."
   }
 ]
 
@@ -161,7 +161,7 @@ export default function AtlasPage() {
           </motion.div>
         </header>
 
-        {/* Navigation Cinématographique */}
+        {/* Navigation */}
         <div className="flex justify-center gap-4 md:gap-8 mb-32 border-b border-white/5 pb-12 flex-wrap">
           {[
             { id: 'kingdoms', label: 'Royaumes', icon: Globe },
@@ -264,19 +264,19 @@ export default function AtlasPage() {
                   <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
                   <div className="flex items-center gap-6 mb-12">
                     <History className="w-6 h-6 text-gold" />
-                    <h2 className="text-4xl font-headline text-white uppercase tracking-tight">Procédure de Candidature</h2>
+                    <h2 className="text-4xl font-headline text-white uppercase tracking-tight">Candidature au Clan</h2>
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     <div className="flex flex-col gap-4 p-8 border border-white/5 hover:border-gold/20 transition-all">
-                      <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em]">Étape 01 — Dossier</span>
+                      <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em]">Etape 01 — Dossier</span>
                       <p className="text-silver/50 italic text-sm font-light leading-relaxed">Un dossier complet doit être rédigé, présentant l'histoire, les objectifs et la structure de votre groupe.</p>
                     </div>
                     <div className="flex flex-col gap-4 p-8 border border-white/5 hover:border-gold/20 transition-all">
-                      <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em]">Étape 02 — Soumission</span>
+                      <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em]">Etape 02 — Soumission</span>
                       <p className="text-silver/50 italic text-sm font-light leading-relaxed">Ce dossier doit être envoyé par ticket sur notre serveur Discord officiel pour validation magistrale.</p>
                     </div>
                     <div className="flex flex-col gap-4 p-8 border border-white/5 hover:border-gold/20 transition-all">
-                      <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em]">Étape 03 — Effectif</span>
+                      <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em]">Etape 03 — Effectif</span>
                       <p className="text-silver/50 italic text-sm font-light leading-relaxed">Un minimum de 15 joueurs actifs est requis pour que la candidature soit prise en compte par le Conclave.</p>
                     </div>
                   </div>
