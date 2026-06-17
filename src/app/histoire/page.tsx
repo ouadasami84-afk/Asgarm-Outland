@@ -187,27 +187,35 @@ export default function HistoirePage() {
               showPageCorners={true}
               disableFlipByClick={false}
             >
-              {/* Page de Sommaire Épurée (Aucun élément au-dessus de Sommaire des Annales) */}
+              {/* Page de Sommaire Épurée avec accents Or/Bleu Nuit */}
               <Page number={1}>
                 <div className="h-full flex flex-col pt-4 px-6">
-                  <h2 className="text-sm font-headline text-[#4a3721] uppercase tracking-[0.2em] mb-4 border-b border-[#4a3721]/15 pb-1 w-full text-center">Sommaire des Annales</h2>
+                  <h2 className="text-sm font-headline text-[#b48d1d] uppercase tracking-[0.2em] mb-4 border-b border-[#b48d1d]/20 pb-1 w-full text-center text-glow-gold">
+                    Sommaire des Annales
+                  </h2>
                   <div className="flex flex-col gap-1 w-full overflow-y-auto custom-scrollbar-light">
                     {chapters.map((ch, i) => (
                       <div 
                         key={i} 
-                        className="flex items-baseline justify-between group cursor-pointer py-1.5 border-b border-[#4a3721]/5 hover:bg-[#4a3721]/10 transition-all px-2" 
+                        className="flex items-baseline justify-between group cursor-pointer py-1.5 border-b border-[#4a3721]/5 hover:bg-[#b48d1d]/5 transition-all px-2" 
                         onClick={() => bookRef.current.pageFlip().flip(ch.page - 1)}
                       >
-                        <span className="text-[10px] font-serif uppercase tracking-[0.1em] text-[#4a3721]/90 group-hover:text-[#b48d1d] transition-colors">{ch.title}</span>
-                        <div className="flex-1 border-b border-dotted border-[#4a3721]/20 mx-1" />
-                        <span className="text-[10px] font-serif text-[#4a3721]/70">{ch.page}</span>
+                        <span className="text-[10px] font-serif uppercase tracking-[0.1em] text-[#0c1b41] group-hover:text-[#b48d1d] transition-colors">
+                          {ch.title}
+                        </span>
+                        <div className="flex-1 border-b border-dotted border-[#b48d1d]/20 mx-1" />
+                        <span className="text-[10px] font-serif text-[#4a3721]/70 group-hover:text-[#b48d1d]">
+                          {ch.page}
+                        </span>
                       </div>
                     ))}
                   </div>
                   <div className="mt-auto pb-4">
                     <div className="flex flex-col items-center gap-1">
-                      <div className="h-[1px] w-8 bg-gold/30" />
-                      <p className="text-[#4a3721]/40 text-[7px] uppercase tracking-[0.3em] italic font-bold">Archives Royales d'Asgarm</p>
+                      <div className="h-[1px] w-8 bg-[#b48d1d]/30" />
+                      <p className="text-[#b48d1d] text-[7px] uppercase tracking-[0.3em] italic font-bold text-glow-gold">
+                        Archives Royales d'Asgarm
+                      </p>
                     </div>
                   </div>
                 </div>
