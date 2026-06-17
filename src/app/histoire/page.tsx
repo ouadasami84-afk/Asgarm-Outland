@@ -43,13 +43,13 @@ const MagicalText = ({ text, title }: { text: string; title?: string }) => {
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
-          className="text-[14px] font-headline text-[#4a3721] mb-2 tracking-tight border-b border-[#4a3721]/15 pb-1"
+          className="text-[16px] font-headline text-[#4a3721] mb-2 tracking-tight border-b border-[#4a3721]/15 pb-1"
         >
           {title}
         </motion.h3>
       )}
       <div className="flex-1">
-        <motion.p className="text-[#3d2b19] font-serif leading-[1.4] text-justify text-[10px] italic">
+        <motion.p className="text-[#3d2b19] font-serif leading-[1.5] text-justify text-[12px] italic">
           {words.map((word, i) => (
             <motion.span
               key={i}
@@ -86,7 +86,7 @@ const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: nu
         <div className="page-inner-content flex flex-col h-full">
           {children}
           {number && (
-            <div className="page-footer font-serif italic text-[#4a3721]/30 text-[8px] tracking-[0.4em] mt-2 text-center">
+            <div className="page-footer font-serif italic text-[#4a3721]/30 text-[10px] tracking-[0.4em] mt-2 text-center">
               — {number} —
             </div>
           )}
@@ -181,7 +181,7 @@ export default function HistoirePage() {
             >
               <Page number={1}>
                 <div className="h-full flex flex-col pt-4 px-8">
-                  <h2 className="text-[16px] font-headline text-[#b48d1d] uppercase tracking-[0.2em] mb-4 border-b border-[#b48d1d]/20 pb-2 w-full text-center text-glow-gold">
+                  <h2 className="text-[18px] font-headline text-[#b48d1d] uppercase tracking-[0.2em] mb-4 border-b border-[#b48d1d]/20 pb-2 w-full text-center text-glow-gold">
                     Sommaire des Annales
                   </h2>
                   <div className="flex flex-col gap-1 w-full overflow-y-auto custom-scrollbar-light pr-2">
@@ -191,11 +191,11 @@ export default function HistoirePage() {
                         className="flex items-baseline justify-between group cursor-pointer py-1.5 border-b border-[#4a3721]/5 hover:bg-[#b48d1d]/5 transition-all px-3 rounded-sm" 
                         onClick={() => bookRef.current.pageFlip().flip(ch.page - 1)}
                       >
-                        <span className="text-[9px] font-serif uppercase tracking-[0.1em] text-[#0c1b41] group-hover:text-[#b48d1d] transition-colors">
+                        <span className="text-[11px] font-serif uppercase tracking-[0.1em] text-[#0c1b41] group-hover:text-[#b48d1d] transition-colors">
                           {ch.title}
                         </span>
                         <div className="flex-1 border-b border-dotted border-[#b48d1d]/20 mx-2" />
-                        <span className="text-[9px] font-serif text-[#4a3721]/70 group-hover:text-[#b48d1d]">
+                        <span className="text-[11px] font-serif text-[#4a3721]/70 group-hover:text-[#b48d1d]">
                           {ch.page}
                         </span>
                       </div>
@@ -204,7 +204,7 @@ export default function HistoirePage() {
                   <div className="mt-auto pb-4">
                     <div className="flex flex-col items-center gap-1">
                       <div className="h-[1px] w-12 bg-[#b48d1d]/30" />
-                      <p className="text-[#b48d1d] text-[9px] uppercase tracking-[0.4em] italic font-bold text-glow-gold">
+                      <p className="text-[#b48d1d] text-[11px] uppercase tracking-[0.4em] italic font-bold text-glow-gold">
                         Archives Royales d'Asgarm
                       </p>
                     </div>
