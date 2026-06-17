@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Map as MapIcon, Users, Shield, ChevronRight, Compass } from 'lucide-react'
+import { Compass, Users, Shield, ChevronRight, MapPin, Search } from 'lucide-react'
 
 const atlasData = {
   royaumes: [
@@ -70,108 +70,191 @@ export default function AtlasPage() {
     <main className="relative min-h-screen flex flex-col bg-transparent overflow-hidden">
       <Navigation />
       
-      <div className="relative z-10 flex-1 flex flex-col pt-32 px-12 pb-12 max-w-7xl mx-auto w-full">
+      {/* Cinematic Background Overlays */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,_rgba(212,175,55,0.05)_0%,_transparent_50%)]" />
+        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_100%_100%,_rgba(14,165,233,0.03)_0%,_transparent_40%)]" />
+      </div>
+
+      <div className="relative z-10 flex-1 flex flex-col pt-36 px-8 md:px-12 pb-12 max-w-[1600px] mx-auto w-full">
         
-        {/* Hero Section Atlas */}
-        <header className="mb-20">
+        {/* Cinematic Header */}
+        <header className="mb-24 relative">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col"
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="flex flex-col items-start"
           >
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-[1px] w-12 bg-gold/40" />
-              <span className="text-gold text-[10px] tracking-[1.2em] uppercase font-bold text-glow-gold">Chroniques Universelles</span>
+            <div className="flex items-center gap-6 mb-6">
+              <div className="h-[1px] w-20 bg-gradient-to-r from-gold/60 to-transparent" />
+              <span className="text-gold text-[11px] tracking-[1.2em] uppercase font-bold text-glow-gold">Chroniques Universelles</span>
             </div>
-            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8">
-              Atlas <br /> <span className="shine-text italic font-light">Impérial</span>
+            
+            <h1 className="text-8xl md:text-9xl font-headline text-white uppercase tracking-tighter leading-none mb-10">
+              Atlas <br /> 
+              <motion.span 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5, duration: 1.5 }}
+                className="shine-text italic font-light ml-20 md:ml-40 block"
+              >
+                Impérial
+              </motion.span>
             </h1>
-            <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-gold/20 pl-8">
-              "Voyagez à travers les fondations de notre monde. Des sommets de la justice aux abysses de l'ombre, chaque entité dessine le visage de l'éternité."
-            </p>
+
+            <div className="max-w-3xl border-l-2 border-gold/10 pl-10 ml-4 py-2">
+              <p className="text-silver/40 text-2xl italic font-light leading-relaxed">
+                "Voyagez à travers les fondations de notre monde. Des sommets de la justice aux abysses de l'ombre, chaque entité dessine le visage de l'éternité."
+              </p>
+            </div>
           </motion.div>
+
+          {/* Floating Element for Atmosphere */}
+          <motion.div 
+            animate={{ 
+              y: [0, -20, 0],
+              opacity: [0.1, 0.2, 0.1]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[120px] rounded-full"
+          />
         </header>
 
-        {/* Navigation Inter-Atlas */}
-        <div className="flex flex-wrap gap-4 mb-16 border-b border-white/5 pb-8">
+        {/* Cinematic Navigation Tabs */}
+        <div className="flex flex-wrap gap-2 mb-20 border-b border-white/5 pb-10">
           {[
             { id: 'royaumes', label: 'Les Royaumes', icon: Compass },
             { id: 'races', label: 'Les Races', icon: Users },
             { id: 'clans', label: 'Les Clans', icon: Shield }
-          ].map((cat) => (
-            <button
+          ].map((cat, idx) => (
+            <motion.button
               key={cat.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 + idx * 0.1 }}
               onClick={() => setActiveCategory(cat.id as any)}
-              className={`flex items-center gap-4 px-10 py-5 transition-all duration-700 border ${
+              className={`group flex items-center gap-6 px-12 py-6 transition-all duration-1000 relative overflow-hidden ${
                 activeCategory === cat.id 
-                ? 'bg-gold/10 border-gold/40 text-white' 
-                : 'bg-white/[0.02] border-white/5 text-silver/40 hover:border-gold/20'
+                ? 'text-white' 
+                : 'text-silver/30 hover:text-silver/60'
               }`}
             >
-              <cat.icon className={`w-4 h-4 ${activeCategory === cat.id ? 'text-gold' : ''}`} />
-              <span className="text-[10px] font-bold uppercase tracking-[0.5em]">{cat.label}</span>
-            </button>
+              {activeCategory === cat.id && (
+                <motion.div 
+                  layoutId="tab-bg"
+                  className="absolute inset-0 bg-white/[0.03] border-t border-gold/20"
+                />
+              )}
+              <cat.icon className={`w-4 h-4 transition-colors duration-700 ${activeCategory === cat.id ? 'text-gold' : 'text-current'}`} />
+              <span className="text-[10px] font-bold uppercase tracking-[0.6em] relative z-10">{cat.label}</span>
+            </motion.button>
           ))}
         </div>
 
-        {/* Zone de Contenu Dynamique */}
-        <div className="flex-1">
+        {/* Cinematic Content Zone */}
+        <div className="flex-1 relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
-              initial={{ opacity: 0, scale: 0.98, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 1.02, y: -10 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+              initial={{ opacity: 0, scale: 0.99, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, scale: 1.01, filter: 'blur(10px)' }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-10"
             >
               {activeCategory === 'royaumes' && atlasData.royaumes.map((r, i) => (
-                <div key={i} className={`group relative p-12 bg-black/40 border ${r.border} overflow-hidden transition-all duration-700 hover:bg-black/60`}>
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  className={`group relative p-16 bg-black/40 border ${r.border} overflow-hidden transition-all duration-1000 hover:bg-black/60 shadow-2xl`}
+                >
                   <div className={`absolute inset-0 bg-gradient-to-br ${r.color} opacity-0 group-hover:opacity-100 transition-opacity duration-1000`} />
-                  <span className="text-[9px] text-gold/60 font-bold uppercase tracking-[0.4em] mb-6 block">{r.focus}</span>
-                  <h3 className={`text-4xl font-headline text-white uppercase mb-8 ${r.glow} group-hover:tracking-wider transition-all`}>
-                    {r.name}
-                  </h3>
-                  <div className="h-[1px] w-full bg-white/5 mb-8" />
-                  <p className="text-silver/40 text-lg leading-relaxed italic font-light relative z-10">
-                    "{r.desc}"
-                  </p>
-                </div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-4 mb-10">
+                      <MapPin className="w-3 h-3 text-gold/40" />
+                      <span className="text-[10px] text-gold/60 font-bold uppercase tracking-[0.5em]">{r.focus}</span>
+                    </div>
+
+                    <h3 className={`text-5xl font-headline text-white uppercase mb-10 ${r.shine} group-hover:tracking-wider transition-all duration-1000 leading-none`}>
+                      {r.name}
+                    </h3>
+                    
+                    <div className="h-[1px] w-full bg-white/5 mb-10" />
+                    
+                    <p className="text-silver/40 text-xl leading-relaxed italic font-light">
+                      "{r.desc}"
+                    </p>
+
+                    <div className="mt-12 flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      <div className="h-[1px] w-12 bg-gold/20" />
+                      <span className="text-[8px] text-gold/40 uppercase tracking-[0.4em] font-bold">Infiltration autorisée</span>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
 
               {activeCategory === 'races' && atlasData.races.map((r, i) => (
-                <div key={i} className="group p-10 bg-white/[0.01] border border-white/5 hover:border-gold/30 hover:bg-white/[0.03] transition-all duration-700 flex flex-col">
-                  <div className="flex items-center justify-between mb-8">
-                    <span className="text-[9px] text-gold/60 font-bold uppercase tracking-[0.4em]">{r.trait}</span>
-                    <ChevronRight className="w-4 h-4 text-gold/20 group-hover:text-gold transition-all" />
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + i * 0.05 }}
+                  className="group p-12 bg-white/[0.01] border border-white/5 hover:border-gold/30 hover:bg-white/[0.03] transition-all duration-1000 flex flex-col relative"
+                >
+                  <div className="flex items-center justify-between mb-10">
+                    <span className="text-[10px] text-gold/60 font-bold uppercase tracking-[0.5em]">{r.trait}</span>
+                    <div className="w-10 h-[1px] bg-gold/10 group-hover:w-20 transition-all duration-1000" />
                   </div>
-                  <h3 className="text-3xl font-headline text-white uppercase mb-6 group-hover:text-glow-gold transition-all">{r.name}</h3>
-                  <p className="text-silver/40 text-base leading-relaxed italic font-light border-l border-gold/10 pl-8">
+                  
+                  <h3 className="text-4xl font-headline text-white uppercase mb-8 group-hover:text-glow-gold transition-all duration-700">{r.name}</h3>
+                  
+                  <p className="text-silver/40 text-lg leading-relaxed italic font-light border-l border-gold/10 pl-10 py-2">
                     {r.desc}
                   </p>
-                </div>
+                </motion.div>
               ))}
 
               {activeCategory === 'clans' && atlasData.clans.map((c, i) => (
-                <div key={i} className="group p-12 bg-black/40 border border-white/5 hover:border-gold/40 transition-all duration-700 relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="flex items-center gap-4 mb-8">
-                    <Shield className="w-5 h-5 text-gold/30 group-hover:text-gold transition-colors" />
-                    <span className="text-[9px] text-gold/60 font-bold uppercase tracking-[0.4em]">{c.trait}</span>
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  className="group p-16 bg-black/40 border border-white/5 hover:border-gold/40 transition-all duration-1000 relative overflow-hidden"
+                >
+                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                  
+                  <div className="flex items-center gap-6 mb-10">
+                    <div className="p-4 rounded-full border border-gold/10 bg-gold/5">
+                      <Shield className="w-5 h-5 text-gold/40 group-hover:text-gold transition-colors duration-700" />
+                    </div>
+                    <span className="text-[10px] text-gold/60 font-bold uppercase tracking-[0.5em]">{c.trait}</span>
                   </div>
-                  <h3 className="text-4xl font-headline text-white uppercase mb-6">{c.name}</h3>
-                  <p className="text-silver/40 text-lg leading-relaxed italic font-light">
+
+                  <h3 className="text-5xl font-headline text-white uppercase mb-10 tracking-tight group-hover:tracking-normal transition-all duration-1000">{c.name}</h3>
+                  
+                  <p className="text-silver/40 text-xl leading-relaxed italic font-light border-l border-gold/5 pl-10">
                     {c.desc}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
           </AnimatePresence>
         </div>
 
-        <footer className="mt-24 h-24 flex flex-col items-center justify-center relative z-20">
-          <div className="h-[1px] w-24 bg-gold/20 mb-6" />
-          <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
+        {/* Global Footer Decoration */}
+        <footer className="mt-32 h-32 flex flex-col items-center justify-center relative z-20">
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: 100 }}
+            viewport={{ once: true }}
+            className="h-[1px] bg-gold/20 mb-10" 
+          />
+          <span className="shine-text text-[10px] tracking-[1em] uppercase font-bold text-center">
             CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
           </span>
         </footer>
@@ -179,13 +262,13 @@ export default function AtlasPage() {
 
       <style jsx global>{`
         .text-glow-blue {
-          text-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+          text-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
         }
         .text-glow-red {
-          text-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
+          text-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
         }
         .text-glow-gold {
-          text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+          text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
       `}</style>
     </main>
