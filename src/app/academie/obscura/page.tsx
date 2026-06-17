@@ -30,7 +30,7 @@ export default function ObscuraPage() {
                 Académie <br /> <span className="text-red-600 italic font-light">Obscura</span>
               </h1>
               <p className="text-silver/50 text-xl italic font-light max-w-2xl leading-relaxed">
-                "La magie ne connaît pas de limites. Fondée par les deux Seigneurs du Mal pour libérer le véritable potentiel de l'ombre et du sang."
+                "La magie ne connaît pas de limites. Fondée par les deux Seigneurs du Mal pour libérer le véritable potentiel de l'ombre et du sang librement."
               </p>
             </div>
 
@@ -54,7 +54,7 @@ export default function ObscuraPage() {
             <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <Skull className="w-8 h-8 text-red-600 mb-6" />
             <h3 className="text-2xl font-headline text-white uppercase mb-4">Liberté Absolue</h3>
-            <p className="text-silver/40 text-sm leading-relaxed italic">
+            <p className="text-silver/40 text-sm leading-relaxed italic font-light">
               À Obscura, nous refusons les chaînes du Conclave. La magie noire et la magie du sang sont enseignées sans filtre pour ceux qui osent les maîtriser.
             </p>
           </div>
@@ -62,8 +62,8 @@ export default function ObscuraPage() {
             <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <Ghost className="w-8 h-8 text-red-600 mb-6" />
             <h3 className="text-2xl font-headline text-white uppercase mb-4">L'Appel du Mal</h3>
-            <p className="text-silver/40 text-sm leading-relaxed italic">
-              Nul ne s'inscrit à Obscura. Vous devez être remarqué par les maîtres ou par le Mal lui-même pour recevoir l'autorisation d'apprendre nos secrets.
+            <p className="text-silver/40 text-sm leading-relaxed italic font-light">
+              Nul ne s'inscrit à Obscura. Vous devez être remarqué par le Mal lui-même pour recevoir l'autorisation d'avoir un maître sorcier et apprendre nos secrets.
             </p>
           </div>
         </section>
@@ -73,10 +73,10 @@ export default function ObscuraPage() {
           <div className="absolute top-0 right-0 p-8 opacity-5">
             <Flame className="w-32 h-32 text-red-600" />
           </div>
-          <h2 className="text-3xl font-headline text-white uppercase mb-8 border-b border-red-600/20 pb-4">L'Héritage des Seigneurs</h2>
+          <h2 className="text-3xl font-headline text-white uppercase mb-8 border-b border-red-600/20 pb-4">L'Héritage des Seigneurs du Mal</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <p className="text-silver/50 text-lg italic leading-relaxed font-light">
-              Après la Grande Guerre, alors que les Rois tentaient de brider la magie sous le joug d'Ascarnia, deux Seigneurs du Mal se sont levés. Sous le nom de Sorciers du Mal, ils ont érigé ce bastion pour préserver les arts anciens de l'ombre.
+              Après la Grande Guerre, les deux Seigneurs du Mal ont décidé de créer cette école pour que les sorciers puissent apprendre la magie noire et du sang librement.
             </p>
             <p className="text-silver/50 text-lg italic leading-relaxed font-light">
               Ici, 40 sorts d'une puissance dévastatrice attendent les élus. Ce n'est pas une simple éducation, c'est une ascension vers la souveraineté occulte, loin des lois restrictives du Conclave.

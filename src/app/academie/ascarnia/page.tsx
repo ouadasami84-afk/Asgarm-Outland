@@ -57,7 +57,7 @@ export default function AscarniaPage() {
                 Académie <br /> <span className="text-sky-400 italic font-light">Ascarnia</span>
               </h1>
               <p className="text-silver/50 text-xl italic font-light max-w-2xl leading-relaxed">
-                "Forger l'excellence, protéger l'équilibre. Le cursus suprême de la magie arcanique fondé par les Rois."
+                "Forger l'excellence, protéger l'équilibre. Le cursus suprême de la magie arcanique fondé par les Rois après la Grande Guerre."
               </p>
             </div>
 
@@ -80,22 +80,22 @@ export default function AscarniaPage() {
           <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
             <GraduationCap className="w-8 h-8 text-sky-400 mb-6" />
             <h3 className="text-lg text-white font-headline uppercase mb-4">Excellence Académique</h3>
-            <p className="text-silver/40 text-xs leading-relaxed italic">
-              Un cursus rigoureux de 100 sorts fondamentaux arcaniques, validé par le Conclave.
+            <p className="text-silver/40 text-xs leading-relaxed italic font-light">
+              Un cursus rigoureux de 100 sorts fondamentaux arcaniques, validé par le Conclave suprême.
             </p>
           </div>
           <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
             <ShieldCheck className="w-8 h-8 text-sky-400 mb-6" />
             <h3 className="text-lg text-white font-headline uppercase mb-4">Héritage des Rois</h3>
-            <p className="text-silver/40 text-xs leading-relaxed italic">
-              Fondée après la Grande Guerre pour protéger le monde des sorciers contre toute déviance.
+            <p className="text-silver/40 text-xs leading-relaxed italic font-light">
+              Fondée pour protéger le monde des sorciers contre toute déviance après la Grande Guerre.
             </p>
           </div>
           <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
             <BookOpen className="w-8 h-8 text-sky-400 mb-6" />
             <h3 className="text-lg text-white font-headline uppercase mb-4">Équilibre d'Asgarm</h3>
-            <p className="text-silver/40 text-xs leading-relaxed italic">
-              Un savoir millénaire transmis par les plus grands maîtres sorciers pour préserver la paix.
+            <p className="text-silver/40 text-xs leading-relaxed italic font-light">
+              Un savoir millénaire transmis par les maîtres pour préserver la paix et l'ordre arcanique.
             </p>
           </div>
         </section>
@@ -119,7 +119,7 @@ export default function AscarniaPage() {
                 <div className={`absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r ${house.color} opacity-30 group-hover:opacity-100 transition-opacity`} />
                 <span className="text-[8px] text-sky-400/60 font-bold uppercase tracking-[0.4em] mb-4 block">{house.trait}</span>
                 <h4 className="text-2xl font-headline text-white uppercase mb-6 group-hover:text-sky-400 transition-colors">{house.name}</h4>
-                <p className="text-silver/40 text-[10px] leading-relaxed italic mb-8">
+                <p className="text-silver/40 text-[10px] leading-relaxed italic mb-8 font-light">
                   {house.desc}
                 </p>
                 <div className="flex items-center gap-2">
@@ -133,7 +133,7 @@ export default function AscarniaPage() {
 
         <footer className="mt-auto h-24 flex flex-col items-center justify-center relative z-20">
           <div className="h-[1px] w-24 bg-sky-500/20 mb-6" />
-          <span className="shine-text-blue text-[9px] tracking-[0.8em] uppercase font-bold">
+          <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
             CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
           </span>
         </footer>
@@ -142,14 +142,6 @@ export default function AscarniaPage() {
       <style jsx global>{`
         .text-glow-blue {
           text-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
-        }
-        .shine-text-blue {
-          background: linear-gradient(90deg, #0ea5e9, #ffffff, #0ea5e9);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shine 6s linear infinite;
-          display: inline-block;
         }
       `}</style>
     </main>
