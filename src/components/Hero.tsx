@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export const Hero: React.FC = () => {
   const videoId = "VbuXGlnUwtY" 
@@ -30,15 +31,17 @@ export const Hero: React.FC = () => {
           transition={{ duration: 1, delay: 0.8 }}
           className="flex items-center justify-center w-full"
         >
-          <button className="group relative px-16 py-6 font-bold text-[10px] tracking-[0.6em] uppercase transition-all hover:scale-105 active:scale-95 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold via-gold/80 to-white/10 backdrop-blur-sm" />
-            <div className="absolute inset-0 border border-gold/30 group-hover:border-gold/60 transition-colors" />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
-            <span className="relative z-10 text-black">
-              Suivre le Guide Arrivant
-            </span>
-            <div className="absolute -inset-1 bg-gold/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-          </button>
+          <Link href="/guide">
+            <button className="group relative px-16 py-6 font-bold text-[10px] tracking-[0.6em] uppercase transition-all hover:scale-105 active:scale-95 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-gold via-gold/80 to-white/10 backdrop-blur-sm" />
+              <div className="absolute inset-0 border border-gold/30 group-hover:border-gold/60 transition-colors" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+              <span className="relative z-10 text-black">
+                Suivre le Guide Arrivant
+              </span>
+              <div className="absolute -inset-1 bg-gold/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            </button>
+          </Link>
         </motion.div>
       </div>
 
