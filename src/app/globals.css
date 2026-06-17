@@ -4,61 +4,67 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 260 40% 5%;
-    --card-foreground: 0 0% 98%;
-    --popover: 260 40% 5%;
-    --popover-foreground: 0 0% 98%;
+    /* Bleu Nuit Profond */
+    --background: 230 50% 3%;
+    --foreground: 210 20% 98%;
+    --card: 230 50% 5%;
+    --card-foreground: 210 20% 98%;
+    --popover: 230 50% 5%;
+    --popover-foreground: 210 20% 98%;
+    /* Or Royal */
     --primary: 45 65% 52%;
-    --primary-foreground: 240 10% 3.9%;
-    --secondary: 260 40% 8%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 260 40% 8%;
-    --muted-foreground: 260 10% 60%;
+    --primary-foreground: 230 50% 3%;
+    --secondary: 230 40% 8%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 230 40% 12%;
+    --muted-foreground: 215 20% 65%;
     --accent: 45 65% 52%;
-    --accent-foreground: 240 10% 3.9%;
+    --accent-foreground: 230 50% 3%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 45 65% 52% / 0.15;
-    --input: 260 40% 15%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 45 65% 52% / 0.2;
+    --input: 230 40% 15%;
     --ring: 45 65% 52%;
-    --radius: 0rem; /* Sharp, elegant corners for a more traditional feel */
+    --radius: 0.15rem;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-black/40 backdrop-blur-2xl border border-white/5;
+    @apply bg-[#060816]/60 backdrop-blur-2xl border border-white/5;
   }
   .glass-gold {
-    @apply bg-[#0c0c0c]/80 backdrop-blur-xl border border-gold/20;
+    @apply bg-[#060816]/90 backdrop-blur-xl border border-gold/30 shadow-[0_0_30px_rgba(212,175,55,0.05)];
   }
   .text-glow-gold {
     text-shadow: 0 0 15px rgba(212, 175, 55, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
   }
-  .text-glow-arcane {
-    text-shadow: 0 0 20px rgba(90, 45, 145, 0.5);
+  .border-magic {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    position: relative;
+  }
+  .border-magic::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    pointer-events: none;
   }
   .magical-gradient {
-    background: radial-gradient(circle at center, #130a1f 0%, #050505 100%);
-  }
-  .parchment-text {
-    @apply font-headline italic tracking-wide text-silver/80;
-  }
-  .cinematic-mask {
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    background: radial-gradient(circle at center, #0a0e24 0%, #03040a 100%);
   }
 }
 
 body {
   @apply selection:bg-gold selection:text-black antialiased;
-  background-color: #050505;
+  background-color: #03040a;
   font-family: 'Inter', sans-serif;
+  color: #f8f8f8;
 }
 
 h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
+  letter-spacing: -0.02em;
 }
 
 ::-webkit-scrollbar {
@@ -66,24 +72,22 @@ h1, h2, h3, h4 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #03040a;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #D4AF37;
-  border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #f1cf6d;
 }
 
-/* Custom animations */
-@keyframes luminescence {
-  0%, 100% { opacity: 0.3; filter: blur(2px); }
-  50% { opacity: 0.8; filter: blur(0px); }
+@keyframes pan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
 }
 
-.animate-luminescence {
-  animation: luminescence 4s ease-in-out infinite;
+.animate-pan {
+  animation: pan 60s linear infinite;
 }

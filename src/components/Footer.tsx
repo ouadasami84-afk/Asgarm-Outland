@@ -1,24 +1,24 @@
 "use client"
 
 import React from 'react'
-import { Sparkles, Instagram, Twitter, Youtube, Github } from 'lucide-react'
+import { Shield, Instagram, Twitter, Youtube, Github, Compass } from 'lucide-react'
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-[#050505] pt-32 pb-20 px-6 border-t border-white/5">
+    <footer className="relative bg-[#020205] pt-32 pb-20 px-6 border-t border-gold/10">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-3 mb-8">
-              <Sparkles className="text-gold w-8 h-8" />
-              <span className="font-headline text-3xl tracking-wider text-white font-bold uppercase">Arcanum Prime</span>
+            <div className="flex items-center gap-4 mb-10">
+              <Shield className="text-gold w-10 h-10" />
+              <span className="font-headline text-4xl tracking-widest text-white font-bold uppercase">OUTLAND</span>
             </div>
-            <p className="text-silver/60 max-w-sm font-body leading-relaxed mb-8">
-              Designed for those who seek more than just play. A portal to another dimension of storytelling and magical immersion.
+            <p className="text-silver/40 max-w-sm font-body leading-relaxed mb-10 italic">
+              "Dans l'immensité d'Asgarm, seuls ceux qui osent Outland trouveront la vérité."
             </p>
-            <div className="flex gap-6">
+            <div className="flex gap-8">
               {[Twitter, Instagram, Youtube, Github].map((Icon, i) => (
-                <a key={i} href="#" className="text-silver/40 hover:text-gold transition-colors">
+                <a key={i} href="#" className="text-silver/20 hover:text-gold transition-colors duration-500">
                   <Icon className="w-5 h-5" />
                 </a>
               ))}
@@ -26,33 +26,32 @@ export const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="text-white font-headline text-lg mb-6 uppercase tracking-widest">Navigation</h4>
-            <ul className="space-y-4 font-body text-sm text-silver/40">
-              <li><a href="#" className="hover:text-gold transition-colors">Loreweaver</a></li>
-              <li><a href="#" className="hover:text-gold transition-colors">Artifacts</a></li>
-              <li><a href="#" className="hover:text-gold transition-colors">World Atlas</a></li>
-              <li><a href="#" className="hover:text-gold transition-colors">Community</a></li>
+            <h4 className="text-gold/80 font-headline text-sm mb-8 uppercase tracking-[0.4em] font-bold">Navigation</h4>
+            <ul className="space-y-5 font-body text-[11px] text-silver/40 uppercase tracking-widest">
+              <li><a href="#" className="hover:text-gold transition-colors">L'Archive</a></li>
+              <li><a href="#" className="hover:text-gold transition-colors">Les Reliques</a></li>
+              <li><a href="#" className="hover:text-gold transition-colors">Carte d'Asgarm</a></li>
+              <li><a href="#" className="hover:text-gold transition-colors">Rejoindre</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-headline text-lg mb-6 uppercase tracking-widest">Company</h4>
-            <ul className="space-y-4 font-body text-sm text-silver/40">
-              <li><a href="#" className="hover:text-gold transition-colors">Legal Arcanum</a></li>
-              <li><a href="#" className="hover:text-gold transition-colors">Privacy Scrolls</a></li>
-              <li><a href="#" className="hover:text-gold transition-colors">Press Office</a></li>
-              <li><a href="#" className="hover:text-gold transition-colors">Support Portal</a></li>
+            <h4 className="text-gold/80 font-headline text-sm mb-8 uppercase tracking-[0.4em] font-bold">Législation</h4>
+            <ul className="space-y-5 font-body text-[11px] text-silver/40 uppercase tracking-widest">
+              <li><a href="#" className="hover:text-gold transition-colors">Charte Outland</a></li>
+              <li><a href="#" className="hover:text-gold transition-colors">Vie Privée</a></li>
+              <li><a href="#" className="hover:text-gold transition-colors">Support Royal</a></li>
             </ul>
           </div>
         </div>
         
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 border-t border-white/5 pt-10">
-          <p className="text-silver/20 text-xs tracking-[0.2em] uppercase">
-            © 2026 Arcanum Prime Studios. All Rights Reserved.
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 border-t border-white/5 pt-12">
+          <p className="text-silver/20 text-[9px] tracking-[0.5em] uppercase font-bold">
+            © 2026 OUTLAND STUDIOS. TOUS DROITS RÉSERVÉS. ASGARM PROJECT.
           </p>
-          <div className="flex gap-8 text-[10px] tracking-[0.3em] uppercase text-silver/20 font-bold">
-            <span className="hover:text-silver/40 cursor-pointer transition-colors">TERMS OF MAGIC</span>
-            <span className="hover:text-silver/40 cursor-pointer transition-colors">ETHEREAL PRIVACY</span>
+          <div className="flex items-center gap-2">
+            <Compass className="w-3 h-3 text-gold/20" />
+            <span className="text-[9px] tracking-[0.5em] text-gold/20 font-bold uppercase">Vers l'Infini</span>
           </div>
         </div>
       </div>
