@@ -29,21 +29,30 @@ export const Hero: React.FC = () => {
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent z-[15]" />
       </div>
 
-      {/* Interface utilisateur - Placée au plus bas */}
-      <div className="relative z-20 flex flex-col items-center w-full pb-12 max-w-5xl px-6">
+      {/* Interface utilisateur - Bouton Unique Dégradé */}
+      <div className="relative z-20 flex flex-col items-center w-full pb-16 max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-8"
+          className="flex items-center justify-center w-full"
         >
-          <Link href="/reglement">
-            <button className="group relative px-14 py-5 bg-gold text-night font-bold text-[10px] tracking-[0.6em] uppercase transition-all hover:scale-105 shadow-[0_0_40px_rgba(212,175,55,0.2)] border border-gold/30">
-              RÉGLEMENT
-            </button>
-          </Link>
-          <button className="group px-14 py-5 border border-white/10 backdrop-blur-md bg-white/5 text-white/80 font-bold text-[10px] tracking-[0.6em] uppercase hover:bg-white/10 transition-all">
-            VOIR LE TRAILER
+          <button className="group relative px-16 py-6 font-bold text-[10px] tracking-[0.6em] uppercase transition-all hover:scale-105 active:scale-95 overflow-hidden">
+            {/* Background avec dégradé fusionné */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gold via-gold/80 to-white/10 backdrop-blur-sm" />
+            
+            {/* Bordure lumineuse */}
+            <div className="absolute inset-0 border border-gold/30 group-hover:border-gold/60 transition-colors" />
+            
+            {/* Effet de brillance au survol */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+            
+            <span className="relative z-10 text-night group-hover:text-black transition-colors">
+              SUIVRE LE TUTO GUIDE ARRIVANT
+            </span>
+            
+            {/* Ombre portée dorée */}
+            <div className="absolute -inset-1 bg-gold/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
         </motion.div>
       </div>
