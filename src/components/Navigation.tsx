@@ -1,10 +1,9 @@
-
 "use client"
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Shield, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export const Navigation: React.FC = () => {
@@ -30,10 +29,9 @@ export const Navigation: React.FC = () => {
       scrolled ? 'h-16 bg-night-deep/95 backdrop-blur-xl border-b border-gold/10' : 'h-24 bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto h-full px-8 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-4 group">
-          <Shield className="text-gold w-6 h-6 group-hover:rotate-12 transition-transform duration-500" />
+        <Link href="/" className="flex items-center group">
           <div className="flex flex-col">
-            <span className="font-headline text-lg tracking-[0.4em] text-white font-bold uppercase leading-none">
+            <span className="font-headline text-lg tracking-[0.4em] text-white font-bold uppercase leading-none group-hover:text-gold transition-colors duration-500">
               OUTLAND
             </span>
             <span className="text-gold/60 text-[8px] tracking-[0.6em] uppercase font-medium mt-1">
