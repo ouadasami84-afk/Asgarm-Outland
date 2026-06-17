@@ -21,7 +21,7 @@ export const Navigation: React.FC = () => {
   const navItems = [
     { name: 'Guide Arrivant', href: '/guide' },
     { name: 'Histoire', href: '/histoire' },
-    { name: 'Reliques', href: '/reliques' },
+    { name: 'Conclave', href: '/conclave' },
     { name: 'Maîtrise', href: '/maitrise' },
   ]
 
