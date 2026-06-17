@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { useState, useEffect } from 'react'
@@ -25,50 +26,59 @@ export const MagicalBackground: React.FC = () => {
   const [shootingStars, setShootingStars] = useState<ShootingStar[]>([])
 
   useEffect(() => {
-    // Generate a vast field of stars
-    const generatedStars = [...Array(350)].map((_, i) => ({
+    // Generate a vast field of stars with varying intensities
+    const generatedStars = [...Array(400)].map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
-      size: Math.random() * 2 + 0.5,
+      size: Math.random() * 2.5 + 0.5,
       delay: `${Math.random() * 10}s`,
-      duration: `${3 + Math.random() * 7}s`,
-      opacity: Math.random() * 0.4 + 0.1,
+      duration: `${2 + Math.random() * 5}s`,
+      opacity: Math.random() * 0.6 + 0.2,
     }))
     setStars(generatedStars)
 
-    // Generate occasional shooting stars
-    const generatedShootingStars = [...Array(8)].map((_, i) => ({
-      id: i,
-      left: `${40 + Math.random() * 60}%`,
-      top: `${Math.random() * 40}%`,
-      delay: `${Math.random() * 30}s`,
-    }))
-    setShootingStars(generatedShootingStars)
+    // Frequent shooting stars
+    const generateShootingStars = () => {
+      const count = 12;
+      return [...Array(count)].map((_, i) => ({
+        id: i,
+        left: `${20 + Math.random() * 80}%`,
+        top: `${Math.random() * 40}%`,
+        delay: `${Math.random() * 40}s`,
+      }))
+    }
+    setShootingStars(generateShootingStars())
   }, [])
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#010208]">
-      {/* Deep Space Gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#020412_0%,_#010208_100%)]" />
+      {/* Deep Space Base */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#03051a_0%,_#010208_100%)]" />
 
-      {/* Layered Aurora Borealis */}
-      <div className="absolute inset-0 opacity-30 mix-blend-screen">
-        <div 
-          className="absolute -top-[20%] -left-[10%] w-[120%] h-[80%] bg-gradient-to-r from-indigo-900/20 via-blue-800/10 to-transparent blur-[120px] animate-aurora rounded-full" 
-          style={{ animationDuration: '35s' }}
+      {/* High Fidelity Aurora Borealis */}
+      <div className="absolute inset-0 opacity-40 mix-blend-screen">
+        <motion.div 
+          className="absolute -top-[30%] -left-[10%] w-[140%] h-[90%] bg-gradient-to-r from-indigo-500/10 via-emerald-500/10 to-transparent blur-[120px] rounded-full" 
+          animate={{
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
         />
-        <div 
-          className="absolute top-[40%] -right-[10%] w-[100%] h-[70%] bg-gradient-to-l from-emerald-900/15 via-purple-900/10 to-transparent blur-[140px] animate-aurora rounded-full" 
-          style={{ animationDuration: '28s', animationDelay: '-12s' }}
-        />
-        <div 
-          className="absolute -bottom-[10%] left-[20%] w-[80%] h-[50%] bg-gradient-to-t from-blue-900/10 via-transparent to-transparent blur-[100px] animate-aurora" 
-          style={{ animationDuration: '40s', animationDelay: '-5s' }}
+        <motion.div 
+          className="absolute top-[30%] -right-[20%] w-[120%] h-[80%] bg-gradient-to-l from-purple-500/10 via-blue-500/10 to-transparent blur-[140px] rounded-full" 
+          animate={{
+            x: [0, -40, 0],
+            y: [0, 20, 0],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut", delay: -5 }}
         />
       </div>
 
-      {/* Dynamic Star Field */}
+      {/* Dynamic Star Field with Luminescence */}
       {stars.map((star) => (
         <div
           key={star.id}
@@ -81,12 +91,12 @@ export const MagicalBackground: React.FC = () => {
             '--twinkle-duration': star.duration,
             '--twinkle-delay': star.delay,
             '--twinkle-opacity': star.opacity,
-            boxShadow: star.size > 1.5 ? '0 0 10px rgba(255,255,255,0.4)' : 'none',
+            boxShadow: star.size > 2 ? '0 0 15px rgba(212,175,55,0.6)' : '0 0 8px rgba(255,255,255,0.3)',
           } as React.CSSProperties}
         />
       ))}
 
-      {/* Shooting Stars (Comets) */}
+      {/* Shooting Stars */}
       {shootingStars.map((ss) => (
         <div
           key={ss.id}
@@ -95,15 +105,16 @@ export const MagicalBackground: React.FC = () => {
             left: ss.left,
             top: ss.top,
             animationDelay: ss.delay,
+            animationDuration: '8s',
           }}
         />
       ))}
       
-      {/* Cosmic Dust Texture */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.04] mix-blend-overlay" />
+      {/* Cosmic Texture */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.06] mix-blend-overlay" />
       
-      {/* Global Vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_rgba(1,2,8,0.95)_100%)]" />
+      {/* Vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(1,2,8,0.9)_100%)]" />
     </div>
   )
 }
