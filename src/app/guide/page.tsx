@@ -103,6 +103,7 @@ export default function GuidePage() {
     <main className="relative h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
+      {/* Header Statistique */}
       <section className="relative pt-24 pb-4 px-8 flex-none z-20">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
@@ -121,6 +122,7 @@ export default function GuidePage() {
         </div>
       </section>
 
+      {/* Zone de Contenu Principale */}
       <div className="flex-1 relative px-8 pb-10 max-w-[1600px] mx-auto w-full overflow-hidden flex flex-col">
         <AnimatePresence mode="wait">
           {!selected ? (
@@ -163,6 +165,7 @@ export default function GuidePage() {
               exit={{ opacity: 0, y: -30 }}
               className="flex-1 flex flex-col glass-night border border-gold/20 p-10 relative overflow-hidden"
             >
+              {/* Bouton Retour Premium */}
               <button 
                 onClick={() => setSelected(null)}
                 className="absolute top-6 left-8 flex items-center gap-6 text-gold/40 hover:text-gold transition-all group z-30"
@@ -174,6 +177,7 @@ export default function GuidePage() {
               </button>
 
               <div className="relative z-10 h-full flex flex-col">
+                {/* Header Institution */}
                 <div className="mb-6 text-center">
                   <span className="text-gold text-[10px] tracking-[1.2em] uppercase font-bold block mb-1">{selected.focus}</span>
                   <h2 className="text-5xl md:text-6xl font-headline text-white uppercase tracking-tighter mb-2 leading-none text-glow-gold">
@@ -184,6 +188,7 @@ export default function GuidePage() {
                   </p>
                 </div>
 
+                {/* Grille des Rôles Panoramique */}
                 <div className="flex-1 flex items-center justify-center overflow-hidden">
                   <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full h-full max-h-[62vh]`}>
                     {selected.roles.map((role, i) => (
@@ -211,6 +216,7 @@ export default function GuidePage() {
                 </div>
               </div>
 
+              {/* Icône Filigrane Géante */}
               <div className="absolute bottom-[-10%] right-[-5%] opacity-[0.02] pointer-events-none transition-all duration-1000">
                 <selected.icon className="w-[450px] h-[450px] text-gold" />
               </div>
@@ -219,6 +225,7 @@ export default function GuidePage() {
         </AnimatePresence>
       </div>
 
+      {/* Footer Minimaliste Fixe */}
       <footer className="flex-none pb-4 text-center z-10 opacity-30">
         <span className="text-[9px] text-gold/50 tracking-[0.8em] uppercase font-bold">
           OUTLAND STUDIOS — ARCHITECTURE ASGARM V2.0.5
