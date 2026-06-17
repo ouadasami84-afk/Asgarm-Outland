@@ -1,7 +1,6 @@
-
 "use client"
 
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 interface Star {
@@ -16,10 +15,13 @@ interface Star {
 }
 
 export const MagicalBackground: React.FC = () => {
-  const stars = useMemo(() => {
-    return [...Array(150)].map((_, i) => {
+  const [stars, setStars] = useState<Star[]>([])
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    const generatedStars = [...Array(100)].map((_, i) => {
       const isGold = Math.random() > 0.85;
-      const driftScale = 30; 
+      const driftScale = 20; 
       return {
         id: i,
         left: `${Math.random() * 100}%`,
@@ -31,7 +33,11 @@ export const MagicalBackground: React.FC = () => {
         driftY: (Math.random() - 0.5) * driftScale,
       }
     })
+    setStars(generatedStars)
+    setMounted(true)
   }, [])
+
+  if (!mounted) return <div className="fixed inset-0 z-0 bg-[#010208]" />;
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#010208]">
