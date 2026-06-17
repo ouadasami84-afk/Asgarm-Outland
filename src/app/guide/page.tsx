@@ -10,78 +10,71 @@ const institutions = [
   {
     id: "academie",
     name: "Académie d'Asgarm",
-    focus: "ÉDUCATION & DISCIPLINE",
-    desc: "L'élite intellectuelle et magique d'Asgarm. Ici, l'avenir du royaume est forgé dans la rigueur et la maîtrise des arts occultes.",
+    focus: "FORMATION & DISCIPLINE",
+    desc: "Le point d'entrée obligatoire pour tout nouveau citoyen. Ici, vous apprenez à canaliser l'Ether. La zone est strictement protégée : aucun combat offensif n'est autorisé. Votre priorité est l'obtention de votre première accréditation magique.",
     roles: [
-      { title: "DIRECTEUR D’ASGARM", rank: "HAUTE AUTORITÉ", function: "Souveraineté totale. Gestion du corps enseignant, validation des accréditations et arbitrage final des sanctions." },
-      { title: "DIRECTEUR ADJOINT", rank: "COMMANDEMENT", function: "Coordination opérationnelle. Gestion des examens, supervision administrative et maintien de l'ordre général." },
-      { title: "PROFESSEUR CONTRE LA MAGIE NOIRE", rank: "DÉFENSE", function: "Enseignement des protections. Autorisé à organiser des duels de défense et à sanctionner les abus de magie offensive." },
-      { title: "PROFESSEUR DE CRÉATURES MAGIQUES", rank: "BESTIAIRE", function: "Étude des écosystèmes et dressage. Gestion des entités sauvages et sécurité des expéditions éducatives." },
-      { title: "PROFESSEUR DE SORTILÈGES", rank: "CHARMES", function: "Théorie et pratique des enchantements. Certification des paliers de puissance magique des citoyens d'Asgarm." },
-      { title: "PROFESSEUR D’ALCHIMIE / BOTANIQUE", rank: "PHARMACOPÉE", function: "Synthèse de potions et étude des plantes. Gestion des serres royales et de la sécurité chimique du royaume." },
-      { title: "PROFESSEUR DE DIVINATION", rank: "PRÉSAGES", function: "Exploration des flux de l'Ether. Guidance des élèves dans la compréhension des signes et de leur destinée." },
-      { title: "PROFESSEUR DE VOL", rank: "AÉRONAUTIQUE", function: "Maîtrise du pilotage de balais et montures. Surveillance des périmètres aériens et gestion des tournois de vol." },
-      { title: "PROFESSEUR HISTOIRE DE LA MAGIE", rank: "ARCHIVES", function: "Étude des traités anciens et du passé d'Asgarm. Préservation de la chronologie et des racines du royaume." },
-      { title: "PROFESSEUR DE MORPHOLOGIE", rank: "TRANSFORMATION", function: "Maîtrise de la théorie du corps magique. Enseignement des métamorphoses physiques et structurelles." },
-      { title: "PROFESSEUR ASTROLOGIE", rank: "COSMOS", function: "Lecture des constellations et des flux stellaires. Rituels célestes et synchronisation avec les astres." },
-      { title: "SURVEILLANT ASGARM", rank: "ORDRE", function: "Discipline des couloirs et rondes nocturnes. Application immédiate des sanctions et maintien de la paix académique." }
+      { title: "DIRECTEUR D’ASGARM", rank: "HAUTE AUTORITÉ", function: "Souveraineté totale sur le cursus. Arbitre final des sanctions et gardien de la neutralité pédagogique." },
+      { title: "DIRECTEUR ADJOINT", rank: "COMMANDEMENT", function: "Coordination des examens et gestion administrative des nouveaux arrivants." },
+      { title: "PROFESSEUR DE DÉFENSE", rank: "SÉCURITÉ", function: "Enseignement des boucliers. Seul autorisé à superviser des duels d'entraînement au sein de l'école." },
+      { title: "MAÎTRE DES CRÉATURES", rank: "BESTIAIRE", function: "Étude des écosystèmes. Responsable de la sécurité lors des expéditions en zone sauvage." },
+      { title: "CERTIFICATEUR DE SORTILÈGES", rank: "CHARMES", function: "Valide la puissance magique des citoyens. Sans son sceau, l'usage de sorts avancés est prohibé." },
+      { title: "SURVEILLANT GÉNÉRAL", rank: "ORDRE", function: "Garant du calme et de l'assiduité. Application immédiate des mesures disciplinaires en cas de chahut." }
     ]
   },
   {
     id: "arcanes",
     name: "Conclave des Arcanes",
     focus: "JUSTICE & LÉGISLATION",
-    desc: "Le garant de l'ordre public et de la loi régalienne d'Asgarm. Une structure de fer pour un royaume uni.",
+    desc: "Le garant de l'ordre public. En tant que citoyen, vous êtes soumis à leurs décrets. Toute pratique de magie noire ou de sang est traquée et sanctionnée par l'emprisonnement ou l'exil définitif.",
     roles: [
-      { title: "GRAND SORCIER DU CONCLAVE", rank: "LÉGISLATION", function: "Haute magistrature, rédaction du code législatif régalien et arbitrage des contentieux territoriaux." },
-      { title: "MAÎTRE SORCIER DU CONCLAVE", rank: "ADMINISTRATION", function: "Architecture administrative, gestion des ressources publiques et coordination des services civils." },
-      { title: "CONSEILLER DU CONCLAVE", rank: "DIPLOMATIE", function: "Expertise en médiation et stratégie légale inter-royaumes." },
-      { title: "PROTECTEUR DU CONCLAVE", rank: "FORCE PUBLIQUE", function: "Maintien de la paix, application du droit constitutionnel et protection des intérêts vitaux." },
-      { title: "GARDIEN DU CONCLAVE", rank: "VIGILANCE", function: "Sentinelle des frontières éthérées et surveillance des flux de magie." }
+      { title: "GRAND SORCIER DU CONCLAVE", rank: "LÉGISLATION", function: "Rédacteur du code pénal magique. Pouvoir d'arbitrage sur les litiges territoriaux." },
+      { title: "CONSEILLER MAGISTRAL", rank: "DIPLOMATIE", function: "Médiateur entre les royaumes. Assure la pérennité des alliances sacrées." },
+      { title: "PROTECTEUR DU CONCLAVE", rank: "FORCE PUBLIQUE", function: "Incarne la puissance répressive. Chargé des enquêtes et de l'arrestation des mages déviants." },
+      { title: "GARDIEN DES FRONTIÈRES", rank: "VIGILANCE", function: "Surveille les flux d'éther pour prévenir toute infiltration d'énergie occulte." }
     ]
   },
   {
     id: "ombres",
     name: "Conclave des Ombres",
     focus: "ORDRE OCCULTE",
-    desc: "La main invisible d'Asgarm. Renseignement, influence et protection absolue des secrets d'État du Trône.",
+    desc: "Pour ceux qui refusent les chaînes de la justice conventionnelle. Une structure clandestine offrant la liberté d'étudier les arts interdits, mais au risque de devenir un paria aux yeux de la loi d'Asgarm.",
     roles: [
-      { title: "GRAND SORCIER DES OMBRES", rank: "SOUVERAINETÉ", function: "Commandement suprême des réseaux clandestins. Gestion des archives secrètes et de l'influence politique." },
-      { title: "MAÎTRE DES TÉNÈBRES", rank: "COMMANDEMENT", function: "Planification tactique des opérations d'infiltration et enseignement des arts interdits." },
-      { title: "CONSEILLER OBSCUR", rank: "INFLUENCE", function: "Architecte de la manipulation politique et tissage des toiles de pouvoir." },
-      { title: "PROTECTEUR DES OMBRES", rank: "OPÉRATIONS", function: "Exécution des directives royales silencieuses et neutralisation des menaces." },
-      { title: "GARDIEN DES OMBRES", rank: "SÉCURITÉ", function: "Protecteur des artefacts de sang et des rituels occultes du royaume." }
+      { title: "GRAND SORCIER DES OMBRES", rank: "SOUVERAINETÉ", function: "Commandement des réseaux d'influence. Gardien des secrets d'État du Royaume du Mal." },
+      { title: "MAÎTRE DES TÉNÈBRES", rank: "INFILTRATION", function: "Stratège des opérations silencieuses et instructeur en arts magiques prohibés." },
+      { title: "GARDIEN DES RELIQUES", rank: "SÉCURITÉ", function: "Protecteur des artefacts de sang et des sources de puissance non-arcaniques." }
     ]
   },
   {
     id: "royaute",
     name: "Royauté d'Asgarm",
     focus: "SOUVERAINETÉ SUPRÊME",
-    desc: "Les architectes de la destinée. Ils règnent sur l'éther et la terre pour la grandeur et l'éternité d'Asgarm.",
+    desc: "La direction politique et artistique du royaume. Ils décident du destin global d'Outland. Le respect envers la couronne est la fondation de votre citoyenneté.",
     roles: [
-      { title: "Le Monarque", rank: "SOUVERAIN", function: "Prise de décision géopolitique, arbitrage final du Conseil et incarnation vivante du trône d'Asgarm." },
-      { title: "Haut Conseiller", rank: "INFLUENCE", function: "Expertise diplomatique, conseil stratégique direct et gestion des relations avec les grandes cités." }
-    ]
-  },
-  {
-    id: "clans",
-    name: "Clans & Créatures",
-    focus: "STRUCTURES SAUVAGES",
-    desc: "Les forces tribales et les traditions ancestrales. La puissance brute de la nature alliée à la couronne d'Asgarm.",
-    roles: [
-      { title: "Chef de Clan / Alpha", rank: "LEADERSHIP", function: "Souveraineté territoriale sur les zones sauvages et maintien des traités de paix avec le trône." },
-      { title: "Chaman Royal", rank: "SAGESSE", function: "Lien spirituel avec l'Ether pur et préservation des rituels naturels et des cycles de vie anciens." }
+      { title: "Le Monarque", rank: "SOUVERAIN", function: "Prise de décision géopolitique majeure et incarnation vivante du trône d'Asgarm." },
+      { title: "Haut Conseiller", rank: "INFLUENCE", function: "Expertise diplomatique directe auprès du Trône et gestion des grandes cités." }
     ]
   },
   {
     id: "economie",
     name: "Économie & Services",
     focus: "PÔLE SOCIAL & COMMERCE",
-    desc: "Le cœur battant du commerce citoyen. Ceux qui font vivre la cité et prospérer le patrimoine financier d'Asgarm.",
+    desc: "Le moteur civil du royaume. Ici, vous construisez votre vie matérielle. De la gestion de votre demeure à l'information publique, ces services structurent le quotidien des citoyens d'Asgarm.",
     roles: [
-      { title: "Agent Patrimonial", rank: "FONCIER", function: "Administration du parc foncier royal, gestion de l'habitat citoyen et régularisation des baux." },
-      { title: "Chroniqueur Royal", rank: "INFORMATION", function: "Investigation et diffusion des événements majeurs. Garantie de la vérité et de l'histoire citoyenne." },
-      { title: "Grand Négociant", rank: "COMMERCE", function: "Gestion des flux de ressources critiques et approvisionnement des quartiers marchands d'Asgarm." }
+      { title: "CHRONIQUEUR ROYAL", rank: "INFORMATION", function: "Journalisme d'investigation (Journal Asgarm). Façonne l'opinion et documente les tournois et décrets." },
+      { title: "GRAND TAVERNIER", rank: "HOSPITALITÉ", function: "Gestion des sanctuaires sociaux (Taverne Magique). Point névralgique des rumeurs et du commerce de proximité." },
+      { title: "INGÉNIEUR VOLTIGE", rank: "INGÉNIERIE", function: "Maintenance et optimisation des balais (Bricolifus). Expert en aérodynamisme et charmes de vitesse." },
+      { title: "AGENT PATRIMONIAL", rank: "FONCIER", function: "Gestion de l'habitat et des domaines (La Maison Magique). Trouve et sécurise les foyers protégés par runes." },
+      { title: "GRAND NÉGOCIANT", rank: "COMMERCE", function: "Régulation des flux de ressources critiques et approvisionnement des quartiers marchands." }
+    ]
+  },
+  {
+    id: "clans",
+    name: "Clans & Créatures",
+    focus: "STRUCTURES SAUVAGES",
+    desc: "Pour les citoyens choisissant la vie en dehors des cités fortifiées. Une organisation basée sur la force de la meute et le respect des lois de la nature brute.",
+    roles: [
+      { title: "Chef de Clan / Alpha", rank: "LEADERSHIP", function: "Souveraineté territoriale sur les zones sauvages et maintien des traités avec la couronne." },
+      { title: "Chaman Royal", rank: "SAGESSE", function: "Lien spirituel avec l'Ether pur. Préservation des cycles de vie ancestraux." }
     ]
   }
 ]
