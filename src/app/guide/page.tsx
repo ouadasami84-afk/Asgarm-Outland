@@ -5,24 +5,59 @@ import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { motion } from 'framer-motion'
 
-const roles = [
+const institutions = [
   {
-    title: "Citoyen d'Outland",
-    focus: "Souveraineté & Économie",
-    desc: "En tant que citoyen, vous êtes le pilier de la société d'Asgarm. Participez à l'essor commercial, forgez des alliances et développez votre influence au sein des cités.",
-    actions: ["Commerce sur-mesure", "Gestion de domaines", "Vie sociale immersive"]
+    name: "Académie d'Asgarm",
+    focus: "Pôle Éducatif & Disciplinaire",
+    roles: [
+      { rank: "Direction", title: "Directeur et Adjoint", desc: "Haute Autorité du savoir." },
+      { rank: "Corps Enseignant", title: "Professeurs", desc: "Pédagogie et transmission des arts." },
+      { rank: "Surveillant Général", title: "Discipline", desc: "Garant de l'ordre académique." },
+      { rank: "Élève", title: "Apprenti", desc: "Cycle d'apprentissage initial." }
+    ]
   },
   {
-    title: "Gardien de l'Éther",
-    focus: "Protection & Justice",
-    desc: "Bras armé du royaume, le Gardien assure la stabilité. Maîtrisez les systèmes de combat exclusifs pour protéger les terres sacrées contre les menaces extérieures.",
-    actions: ["Patrouille de secteur", "Défense de zone", "Application du Codex"]
+    name: "Conclave des Arcanes",
+    focus: "Justice & Législation Suprême",
+    roles: [
+      { rank: "Grand Sorcier", title: "Législation", desc: "Architecte des lois du royaume." },
+      { rank: "Maître Sorcier", title: "Administration", desc: "Gestion des affaires courantes." },
+      { rank: "Protecteur des Arcanes", title: "Force Publique", desc: "Application du Codex de justice." }
+    ]
   },
   {
-    title: "Érudit des Plaines",
-    focus: "Mystères & Savoir",
-    desc: "Explorez les recoins cachés de la map Asgarm. Votre rôle est de décoder les anciens parchemins et de découvrir les secrets technologiques enfouis par nos modélisateurs.",
-    actions: ["Recherche archéologique", "Cartographie avancée", "Maîtrise des runes"]
+    name: "Conclave des Ombres",
+    focus: "Ordre Occulte & Courants Interdits",
+    roles: [
+      { rank: "Grand Sorcier des Ombres", title: "Souveraineté", desc: "Maître des arcanes ténébreuses." },
+      { rank: "Maître des Ténèbres", title: "Commandement", desc: "Stratège des opérations occultes." },
+      { rank: "Protecteur des Ombres", title: "Assassinat", desc: "Exécuteur des volontés de l'ombre." }
+    ]
+  },
+  {
+    name: "Royauté d'Asgarm",
+    focus: "Souveraineté & Territoires",
+    roles: [
+      { rank: "Le Monarque", title: "Roi ou Reine", desc: "Incarne la souveraineté d'Asgarm." },
+      { rank: "Conseiller du Trône", title: "Influence", desc: "Éminence grise de la couronne." }
+    ]
+  },
+  {
+    name: "Clans et Créatures",
+    focus: "Peuples Sauvages & Sagesse",
+    roles: [
+      { rank: "Chef de Clan / Alpha", title: "Leadership", desc: "Autorité tribale et force brute." },
+      { rank: "Chaman du Clan", title: "Sagesse", desc: "Gardien des rituels et des esprits." }
+    ]
+  },
+  {
+    name: "Économie et Services",
+    focus: "Commerce & Vie Sociale",
+    roles: [
+      { rank: "Agent Immobilier", title: "Patrimoine", desc: "Gestion des domaines et résidences." },
+      { rank: "Journaliste", title: "Information", desc: "Chroniqueur des exploits d'Asgarm." },
+      { rank: "Tavernier", title: "Commerce", desc: "Cœur battant de la vie sociale." }
+    ]
   }
 ]
 
@@ -33,7 +68,7 @@ export default function GuidePage() {
       
       <div className="relative z-10 pt-48 pb-32 px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Header de la page Guide */}
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,56 +76,59 @@ export default function GuidePage() {
           >
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="h-[1px] w-8 bg-gold/30" />
-              <span className="text-gold text-[9px] tracking-[0.5em] uppercase font-bold text-glow-gold">Protocole d'Intégration</span>
+              <span className="text-gold text-[9px] tracking-[0.5em] uppercase font-bold text-glow-gold">Hiérarchie Officielle</span>
               <div className="h-[1px] w-8 bg-gold/30" />
             </div>
             <h1 className="text-6xl font-headline mb-8 text-glow-gold uppercase tracking-tighter leading-tight">
-              Guide d'Arrivée <br /> <span className="text-gold italic font-light">Sur Asgarm</span>
+              Guide des Voies <br /> <span className="text-gold italic font-light">Sur Asgarm</span>
             </h1>
             <p className="text-silver/40 max-w-2xl mx-auto italic text-lg leading-relaxed font-light">
-              "Chaque citoyen d'Outland est l'architecte de sa propre légende. Voici les clés pour comprendre votre place dans le royaume."
+              "Chaque citoyen est une pièce maîtresse de l'architecture d'Outland. Choisissez votre destinée parmi les piliers du royaume."
             </p>
           </motion.div>
 
-          {/* Section des Rôles */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-32">
-            {roles.map((role, i) => (
+          {/* Institutions Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32">
+            {institutions.map((inst, i) => (
               <motion.div
-                key={role.title}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.2 }}
-                className="glass-night p-16 relative overflow-hidden group hover:border-gold/30 transition-all border-gold/10"
+                key={inst.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.8 }}
+                className="glass-night p-12 border-gold/10 hover:border-gold/30 transition-all group"
               >
-                <div className="relative z-10">
-                  <span className="text-gold/40 text-[9px] tracking-[0.4em] uppercase font-bold block mb-4">{role.focus}</span>
-                  <h2 className="text-4xl font-headline mb-8 text-white group-hover:text-gold transition-colors">{role.title}</h2>
-                  <p className="text-silver/40 text-base italic leading-relaxed mb-12">"{role.desc}"</p>
-                  
-                  <div className="space-y-4">
-                    <span className="text-[8px] text-gold/60 uppercase tracking-[0.3em] font-bold block mb-4">Capacités Déployées :</span>
-                    {role.actions.map((action, j) => (
-                      <div key={j} className="flex items-center gap-3">
-                        <div className="h-[1px] w-3 bg-gold/40" />
-                        <span className="text-white/60 text-xs italic">{action}</span>
+                <div className="mb-10">
+                  <span className="text-gold/40 text-[9px] tracking-[0.4em] uppercase font-bold block mb-2">{inst.focus}</span>
+                  <h2 className="text-4xl font-headline text-white group-hover:text-gold transition-colors">{inst.name}</h2>
+                </div>
+
+                <div className="space-y-8">
+                  {inst.roles.map((role, j) => (
+                    <div key={j} className="relative pl-8 border-l border-gold/10">
+                      <div className="absolute left-0 top-0 w-[1px] h-4 bg-gold/40" />
+                      <div className="flex flex-col gap-1">
+                        <span className="text-[10px] text-gold/60 uppercase tracking-[0.2em] font-bold">{role.rank}</span>
+                        <h3 className="text-lg text-white font-headline">{role.title}</h3>
+                        <p className="text-silver/40 text-sm italic font-light leading-relaxed">"{role.desc}"</p>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Mécaniques Propriétaires */}
+          {/* Section Souveraineté */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-night p-16 border-gold/10 text-center max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto text-center py-20 border-t border-gold/10"
           >
-            <h3 className="text-gold text-[10px] tracking-[0.6em] uppercase font-bold mb-8">Souveraineté Technique</h3>
+            <h3 className="text-gold text-[10px] tracking-[0.6em] uppercase font-bold mb-8">Ingénierie de Rôle</h3>
             <p className="text-white/80 text-xl italic leading-relaxed font-light mb-12">
-              Le serveur Outland utilise des systèmes de jeu intégralement conçus par nos équipes. De la récolte de ressources au système de combat, chaque interaction a été pensée pour une fluidité et une immersion d'élite sur la map Asgarm.
+              Chaque métier bénéficie de scripts exclusifs développés par nos ingénieurs. Que vous soyez Enseignant à l'Académie ou Souverain du Trône, vos capacités ont été modélisées pour une immersion d'élite unique sur Asgarm.
             </p>
             <div className="h-[1px] w-24 bg-gold/30 mx-auto" />
           </motion.div>
