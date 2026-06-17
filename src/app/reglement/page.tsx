@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, Gavel, ShieldAlert, Scroll, Users, Zap, EyeOff, Terminal, ShieldCheck, HeartPulse, Scale, BookOpen, AlertCircle, HardDrive, UserPlus, Fingerprint, Shield, Info, LifeBuoy } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
 import {
   Accordion,
   AccordionContent,
@@ -24,7 +24,7 @@ const regulationSections = [
     desc: "Lois fondamentales régissant le comportement communautaire et l'intégrité technique.",
     chapters: [
       {
-        title: "Comportement et Éthique",
+        title: "I. Comportement et Éthique",
         rules: [
           { name: "1.1 Respect et Toxicité", desc: "Tout propos injurieux, raciste, sexiste ou homophobe, sur n'importe quel support (jeu, Discord, MP), entraîne un bannissement définitif immédiat." },
           { name: "1.2 Publicité et Démarchage", desc: "La promotion de projets externes ou le détournement de communauté est strictement interdit (Ban permanent)." },
@@ -33,7 +33,7 @@ const regulationSections = [
         ]
       },
       {
-        title: "Mécaniques de Jeu et Abus",
+        title: "II. Mécaniques de Jeu et Abus",
         rules: [
           { name: "2.1 Exploitation de Bugs (Glitch)", desc: "L'utilisation de bugs de script ou de collision pour un avantage est un motif de bannissement. Tout bug doit être signalé." },
           { name: "2.4 Logiciels Tiers", desc: "L'usage de cheats, macros ou crosshairs externes est lourdement sanctionné." }
@@ -52,14 +52,14 @@ const regulationSections = [
     desc: "Recueil des lois d'immersion régissant les interactions et les arcanes du royaume.",
     chapters: [
       {
-        title: "Mécaniques du Rôle",
+        title: "I. Mécaniques du Rôle",
         rules: [
           { name: "2.2 Powergaming", desc: "Interdiction de réaliser des actions physiquement impossibles ou de forcer le RP d'un tiers sans réaction possible." },
           { name: "2.3 Metagaming", desc: "Votre personnage ne connaît que ce qu'il a appris en jeu. Coordination externe interdite." }
         ]
       },
       {
-        title: "Combat et Arcanes",
+        title: "II. Combat et Arcanes",
         rules: [
           { name: "3.1 Fear RP", desc: "Vous devez simuler une peur réelle face à une menace supérieure (ex: 3 contre 1)." },
           { name: "3.2 Pain RP", desc: "Toute blessure reçue doit être jouée physiquement (chute, incapacité temporaire)." },
@@ -68,7 +68,7 @@ const regulationSections = [
         ]
       },
       {
-        title: "Mort et Fin de Personnage",
+        title: "III. Mort et Fin de Personnage",
         rules: [
           { name: "4.1 État de Coma (K.O.)", desc: "Interdiction de parler ou donner des infos une fois au sol. La réanimation entraîne l'amnésie de la scène." },
           { name: "4.2 Character Kill (CK)", desc: "La mort définitive nécessite une validation administrative ou un accord mutuel lors d'un arc narratif majeur." },
@@ -89,7 +89,7 @@ const regulationSections = [
     desc: "Protocoles et devoirs de la direction et de la modération d'Outland.",
     chapters: [
       {
-        title: "Haute Administration",
+        title: "I. Haute Administration",
         rules: [
           { name: "Gestion Stratégique", desc: "Prise de décisions techniques, financières et direction générale du projet." },
           { name: "Validation Majeure", desc: "Étude et validation des dossiers de clans, entreprises et arcs narratifs globaux." },
@@ -98,7 +98,7 @@ const regulationSections = [
         ]
       },
       {
-        title: "Community Manager (CM)",
+        title: "II. Community Manager (CM)",
         rules: [
           { name: "Image de Marque", desc: "Responsable de la communication officielle sur les réseaux et le Discord." },
           { name: "Lien Communautaire", desc: "Analyse des suggestions et médiation entre les joueurs et l'administration." },
@@ -107,7 +107,7 @@ const regulationSections = [
         ]
       },
       {
-        title: "Modération",
+        title: "III. Modération",
         rules: [
           { name: "Support Joueurs", desc: "Gestion des tickets. Dialogue et pédagogie prioritaires avant la sanction." },
           { name: "Surveillance Active", desc: "Patrouilles invisibles pour vérifier le respect du Fear et Pain RP." },
@@ -116,7 +116,7 @@ const regulationSections = [
         ]
       },
       {
-        title: "Animateurs",
+        title: "IV. Animateurs",
         rules: [
           { name: "Dynamisation Lore", desc: "Création de mini-scènes, gestion de PNJs et de créatures pour enrichir le monde." },
           { name: "Usage des Outils", desc: "Le menu de spawn est réservé à l'animation. Tout usage personnel est banni." },
@@ -147,7 +147,7 @@ export default function ReglementPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.8 }}
               className="flex-1 flex h-full"
             >
               {regulationSections.map((section) => (
@@ -156,7 +156,7 @@ export default function ReglementPage() {
                   onMouseEnter={() => setHoveredSection(section.id)}
                   onMouseLeave={() => setHoveredSection(null)}
                   onClick={() => setSelectedSection(section.id)}
-                  className={`relative flex-1 flex flex-col items-center justify-center p-12 transition-all duration-1000 ease-in-out border-r border-white/5 last:border-0 ${
+                  className={`relative flex-1 flex flex-col items-center justify-center p-12 transition-all duration-700 ease-in-out border-r border-white/5 last:border-0 ${
                     hoveredSection && hoveredSection !== section.id ? 'opacity-40 scale-95' : 'opacity-100'
                   }`}
                 >
@@ -195,7 +195,7 @@ export default function ReglementPage() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               className="flex-1 flex flex-col px-12 pb-12 overflow-y-auto custom-scrollbar"
             >
               <div className="max-w-[1600px] mx-auto w-full pt-12">
@@ -245,7 +245,7 @@ export default function ReglementPage() {
                               {chapter.rules.map((rule, j) => (
                                 <div key={j} className="p-6 bg-black/40 border border-white/5 group hover:border-white/20 transition-all duration-500">
                                   <div className="flex items-center gap-4 mb-3">
-                                    <div className={`w-1 h-1 rounded-full bg-current ${currentSection.accent}`} />
+                                    <div className={`w-1 h-1 rounded-full bg-current ${currentSection?.accent}`} />
                                     <h4 className="text-sm font-bold text-white uppercase tracking-widest">{rule.name}</h4>
                                   </div>
                                   <p className="text-silver/40 text-sm italic font-light leading-relaxed pl-5">

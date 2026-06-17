@@ -17,7 +17,7 @@ export const BackgroundMusic = () => {
   if (!mounted) return null;
 
   return (
-    <div className="fixed bottom-8 right-8 z-[100] flex items-center gap-4">
+    <div className="fixed bottom-8 right-8 z-[100] flex items-center gap-4 pointer-events-none">
       <AnimatePresence>
         {!isPlaying && (
           <motion.div
@@ -33,23 +33,22 @@ export const BackgroundMusic = () => {
         )}
       </AnimatePresence>
 
-      <div className="absolute inset-0 pointer-events-none overflow-hidden w-0 h-0">
-        {isPlaying && (
-          <iframe
-            width="1"
-            height="1"
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&mute=0&enablejsapi=1`}
-            allow="autoplay"
-            frameBorder="0"
-          />
-        )}
+      <div className="absolute inset-0 overflow-hidden w-0 h-0">
+        <iframe
+          width="1"
+          height="1"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&mute=${isPlaying ? '0' : '1'}&enablejsapi=1&vq=small`}
+          allow="autoplay"
+          frameBorder="0"
+          className="opacity-0 pointer-events-none"
+        />
       </div>
 
       <motion.button
         onClick={() => setIsPlaying(!isPlaying)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="group relative w-14 h-14 flex items-center justify-center bg-black/80 border border-gold/20 backdrop-blur-xl rounded-full shadow-[0_0_30px_rgba(212,175,55,0.1)] hover:border-gold/50 transition-all duration-700"
+        className="pointer-events-auto group relative w-14 h-14 flex items-center justify-center bg-black/80 border border-gold/20 backdrop-blur-xl rounded-full shadow-[0_0_30px_rgba(212,175,55,0.1)] hover:border-gold/50 transition-all duration-700"
       >
         <AnimatePresence mode="wait">
           {isPlaying ? (

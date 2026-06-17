@@ -1,3 +1,4 @@
+
 "use client"
 
 import React from 'react'
@@ -10,15 +11,15 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen w-full flex flex-col items-center justify-end overflow-hidden bg-background">
-      {/* Conteneur Vidéo Ultra Pro */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* Conteneur Vidéo Ultra Pro Optimisé */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Bouclier d'interaction absolu : capture tout pour empêcher l'UI YouTube */}
-        <div className="absolute inset-0 z-10 bg-transparent cursor-default pointer-events-auto select-none" />
+        <div className="absolute inset-0 z-10 bg-transparent cursor-default select-none" />
         
         {/* Iframe recadrée pour masquer les bordures et l'interface YT */}
-        <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center scale-110">
           <iframe
-            className="w-[115vw] h-[115vh] max-w-none border-none object-cover"
+            className="w-[110vw] h-[110vh] max-w-none border-none object-cover will-change-transform"
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&cc_load_policy=0&vq=hd1080&disablekb=1&playsinline=1`}
             allow="autoplay; encrypted-media"
             frameBorder="0"
@@ -26,7 +27,7 @@ export const Hero: React.FC = () => {
         </div>
         
         {/* Dégradé de finition pour une intégration douce */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent z-[15]" />
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-background via-background/40 to-transparent z-[15]" />
       </div>
 
       {/* Interface utilisateur - Bouton Unique Dégradé */}
