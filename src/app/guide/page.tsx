@@ -150,8 +150,8 @@ export default function GuidePage() {
           </nav>
 
           <div className="mt-auto p-4 border border-gold/5 bg-gold/[0.02]">
-            <p className="text-[8px] text-gold/30 uppercase tracking-[0.4em] leading-relaxed">
-              Sélectionnez une institution pour consulter ses prérogatives et ses grades officiels.
+            <p className="text-[8px] text-gold uppercase tracking-[0.4em] leading-relaxed font-bold">
+              Sélectionnez une institution pour consulter ses prérogatives et ses grades officiels
             </p>
           </div>
         </aside>
@@ -224,7 +224,7 @@ export default function GuidePage() {
 
       {/* Footer Minimaliste */}
       <footer className="h-10 border-t border-white/5 flex items-center justify-center bg-black/40 relative z-20">
-        <span className="text-[8px] text-gold/30 tracking-[1em] uppercase font-bold">
+        <span className="text-[8px] text-gold tracking-[1em] uppercase font-bold">
           OUTLAND STUDIOS — PROTOCOLE ASGARM V2.0.9
         </span>
       </footer>
