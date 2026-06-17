@@ -12,25 +12,26 @@ const institutions = [
     name: "Premiers Pas",
     focus: "IMMERSION & IDENTITÉ",
     icon: Sparkles,
-    desc: "Votre réveil dans Asgarm commence par le choix de votre essence. Votre identité physique doit refléter votre lignée pour maintenir l'équilibre visuel du royaume.",
-    mission: "Définir votre race, respecter votre couleur de peau imposée et entamer votre cursus obligatoire à Ascarnia.",
+    desc: "Votre réveil dans Asgarm commence par le choix de votre essence. L'institution royale impose une cohérence visuelle absolue pour préserver l'immersion du royaume.",
+    mission: "Définir votre race, respecter votre couleur de peau imposée et entamer votre cursus obligatoire à Ascarnia. Respectez scrupuleusement les zones de sécurité.",
     rights: [
       "Choisir librement sa race parmi les 5 lignées majeures",
-      "Étudier à l'école tout en exerçant un métier civil",
-      "Pratiquer la magie librement avec cohérence Roleplay",
-      "Rejoindre le Conclave des Ombres dès la 1ère année"
+      "Étudier à l'école tout en exerçant un métier civil (Années 1 à 8)",
+      "Pratiquer la magie librement avec une cohérence Roleplay totale",
+      "Rejoindre le Conclave des Ombres dès la 1ère année d'étude"
     ],
     prohibitions: [
       "Porter une couleur de peau non-conforme à sa race (voir spécificités)",
+      "S'aventurer seul dans la Forêt Obscure avant la 3ème année (accompagnement requis par un 3ème année+ ou adulte)",
       "Rejoindre le Conclave des Arcanes, un Clan ou la Royauté avant la 5ème année",
-      "S'absenter du cursus scolaire sans dispense Staff"
+      "S'absenter du cursus scolaire sans dispense officielle du Staff"
     ],
     roles: [
-      { title: "RACE HUMAINE", rank: "BEIGE OU NOIR", function: "L'ambition et la résilience. Votre couleur de peau doit être impérativement de teinte beige ou noire." },
-      { title: "RACE NAINE", rank: "NOIR OU ROUGE", function: "La force de la terre et des forges. Votre couleur de peau doit impérativement être de teinte noire ou rouge." },
-      { title: "RACE ELFE", rank: "VERT", function: "L'harmonie et la magie de la vie. Votre couleur de peau doit impérativement être de teinte verte." },
-      { title: "RACE ELFE DE LUNE", rank: "BLEU", function: "La sagesse des astres et de l'ombre. Votre couleur de peau doit impérativement être de teinte bleue." },
-      { title: "RACE VAMPIRE", rank: "BLANC TRÈS CLAIR", function: "La noblesse éternelle et la magie du sang. Votre couleur de peau doit impérativement être d'un blanc très clair." }
+      { title: "RACE HUMAINE", rank: "COULEUR DE PEAU", function: "L'ambition et la résilience. Votre couleur de peau doit être impérativement de teinte beige ou noire." },
+      { title: "RACE NAINE", rank: "COULEUR DE PEAU", function: "La force de la terre et des forges. Votre couleur de peau doit impérativement être de teinte noire ou rouge." },
+      { title: "RACE ELFE", rank: "COULEUR DE PEAU", function: "L'harmonie et la magie de la vie. Votre couleur de peau doit impérativement être de teinte verte." },
+      { title: "RACE ELFE DE LUNE", rank: "COULEUR DE PEAU", function: "La sagesse des astres et de l'ombre. Votre couleur de peau doit impérativement être de teinte bleue." },
+      { title: "RACE VAMPIRE", rank: "COULEUR DE PEAU", function: "La noblesse éternelle et la magie du sang. Votre couleur de peau doit impérativement être d'un blanc très clair." }
     ]
   },
   {
@@ -38,24 +39,24 @@ const institutions = [
     name: "Académie d'Asgarm",
     focus: "FORMATION & SAVOIR",
     icon: Book,
-    desc: "L'institution souveraine pour tout étudiant. La scolarité est le socle de votre puissance et de votre légitimité sociale.",
-    mission: "Suivre le cursus obligatoire jusqu'à la 5ème année (sauf candidature Staff). Valider l'examen des 100 sorts en 7ème année.",
+    desc: "L'institution souveraine pour tout étudiant. La scolarité est le socle de votre puissance et de votre légitimité sociale dans le monde d'Asgarm.",
+    mission: "Suivre le cursus obligatoire jusqu'à la 5ème année (sauf exception Staff). Valider l'Examen Magistral des 100 sorts lors de la 7ème année.",
     rights: [
-      "Étudier les arcanes jusqu'à la 8ème année pour les citoyens libres",
-      "Passer l'examen final des 100 sorts lors de la 7ème année pour la Maîtrise",
+      "Étudier les arcanes jusqu'à la 8ème année pour l'excellence",
+      "Passer l'examen final des 100 sorts en 7ème année pour la Maîtrise",
       "Accéder aux factions majeures (Arcanes, Clans, Royauté) dès la 5ème année validée",
       "Utiliser la magie librement en restant cohérent avec son Roleplay"
     ],
     prohibitions: [
       "Quitter l'école avant la 5ème année (sauf profil validé par le Staff)",
-      "Poursuivre au-delà de la 5ème année pour les membres de Clans (si école acceptée)",
-      "Pratique de la magie interdite (Noire/Sang) au sein de l'institution"
+      "S'aventurer sans escorte en zones dangereuses pour les novices",
+      "Pratiquer la magie de l'ombre ou du sang au sein des couloirs de l'institution"
     ],
     roles: [
-      { title: "CURSUS OBLIGATOIRE", rank: "ANNÉES 1 À 5", function: "Socle fondamental. Seule exception : recrutement anticipé par les Ombres ou métier civil." },
-      { title: "CURSUS SUPÉRIEUR", rank: "ANNÉES 6 À 8", function: "Études avancées réservées à l'élite et aux futurs Maîtres du Conclave." },
-      { title: "EXAMEN DES 100 SORTS", rank: "7ÈME ANNÉE", function: "Épreuve magistrale validant l'ensemble du savoir arcanique accumulé." },
-      { title: "SÉLECTION DES CLANS", rank: "LIMITE 5ÈME ANNÉE", function: "Si le Chef de Clan exige l'école, les membres s'arrêtent obligatoirement à la 5ème année." }
+      { title: "DIRECTEUR / ADJOINT", rank: "HAUTE AUTORITÉ", function: "Souveraineté totale sur l'institution et validation des accréditations." },
+      { title: "PROFESSEURS", rank: "CORPS ENSEIGNANT", function: "Experts en défense, créatures, sortilèges, alchimie ou divination." },
+      { title: "CURSUS OBLIGATOIRE", rank: "ANNÉES 1 À 5", function: "Socle fondamental nécessaire pour intégrer la vie politique ou sauvage." },
+      { title: "EXAMEN DES 100 SORTS", rank: "7ÈME ANNÉE", function: "Épreuve majeure validant l'ensemble du savoir arcanique accumulé." }
     ]
   },
   {
@@ -63,8 +64,8 @@ const institutions = [
     name: "Conclave des Arcanes",
     focus: "JUSTICE & ÉQUILIBRE",
     icon: Shield,
-    desc: "Le garant de l'ordre public d'Asgarm. Cette institution n'est accessible qu'aux sorciers ayant prouvé leur valeur.",
-    mission: "Faire respecter les décrets royaux et protéger les citoyens des déviances magiques.",
+    desc: "Le garant de l'ordre public d'Asgarm. Cette institution n'est accessible qu'aux sorciers ayant prouvé leur valeur et leur loyauté.",
+    mission: "Faire respecter les décrets royaux, juger les criminels et protéger les citoyens des déviances magiques (Magie Noire/Sang).",
     rights: [
       "Procéder à des arrestations pour usage de magie prohibée",
       "Rendre des jugements lors de contentieux territoriaux",
@@ -73,11 +74,10 @@ const institutions = [
     prohibitions: [
       "Recruter un citoyen n'ayant pas atteint la 5ème année scolaire",
       "Abus de pouvoir ou corruption financière",
-      "Pratiquer la magie de l'ombre ou du sang"
+      "Pratiquer ou tolérer la magie de l'ombre ou du sang"
     ],
     roles: [
       { title: "GRAND SORCIER", rank: "HAUTE MAGISTRATURE", function: "Architecte des lois et pouvoir d'arbitrage suprême sur Asgarm." },
-      { title: "MAÎTRE SORCIER", rank: "ARCHITECTURE CIVILE", function: "Gestionnaire de l'infrastructure administrative et des services publics." },
       { title: "PROTECTEUR", rank: "ORDRE PUBLIC", function: "Puissance répressive chargée de la neutralisation des sorciers déviants." },
       { title: "GARDIEN", rank: "VIGILANCE", function: "Sentinelle des frontières et détection des infiltrations occultes." }
     ]
@@ -87,24 +87,22 @@ const institutions = [
     name: "Conclave des Ombres",
     focus: "PUISSANCE & LIBERTÉ",
     icon: History,
-    desc: "L'ordre clandestin pour ceux qui refusent les chaînes de la justice conventionnelle et cherchent la souveraineté occulte.",
-    mission: "Étudier les arts interdits et servir les intérêts du Royaume du Mal dès le début du cursus.",
+    desc: "L'ordre clandestin pour ceux qui refusent les chaînes de la justice conventionnelle et cherchent la souveraineté occulte absolue.",
+    mission: "Étudier les arts interdits et servir les intérêts du Royaume du Mal. Recrutement actif dès le début de votre éveil.",
     rights: [
-      "Recruter des membres dès la 1ère année d'étude à Ascarnia",
+      "Recruter des membres dès la 1ère année d'étude à l'académie",
       "Apprendre et manipuler la magie noire et la magie du sang",
-      "Mener des opérations d'influence au sein des autres institutions",
-      "Accéder aux reliques interdites scellées"
+      "Mener des opérations d'influence au sein des autres institutions"
     ],
     prohibitions: [
       "Trahir le secret de l'Ordre ou l'identité des Maîtres Sorciers",
-      "Échouer lors d'une mission d'infiltration critique sans retrait tactique",
-      "Utiliser la magie noire publiquement sans autorisation du Grand Sorcier"
+      "Utiliser la magie noire publiquement sans ordre spécifique",
+      "Échouer lors d'une mission d'infiltration critique"
     ],
     roles: [
       { title: "GRAND SORCIER DES OMBRES", rank: "SOUVERAINETÉ", function: "Maître absolu des réseaux clandestins et gardien des secrets d'État noirs." },
       { title: "MAÎTRE DES TÉNÈBRES", rank: "STRATÈGE", function: "Planification des opérations d'infiltration et enseignement occulte." },
-      { title: "PROTECTEUR DES OMBRES", rank: "EXÉCUTEUR", function: "Neutralisation chirurgicale des cibles gênantes pour l'Ordre." },
-      { title: "GARDIEN DES OMBRES", rank: "VEILLEUR", function: "Protecteur des artefacts de sang et des rituels occultes." }
+      { title: "PROTECTEUR DES OMBRES", rank: "EXÉCUTEUR", function: "Neutralisation chirurgicale des cibles gênantes pour l'Ordre." }
     ]
   },
   {
@@ -113,22 +111,22 @@ const institutions = [
     focus: "SOCIAL & COMMERCE",
     icon: Briefcase,
     desc: "Le moteur civil du royaume. Seule activité cumulable avec les premières années d'études à Ascarnia.",
-    mission: "Offrir des services d'excellence et stimuler les flux de ressources d'Asgarm.",
+    mission: "Offrir des services d'excellence (journalisme, taverne, ingénierie, immobilier) et stimuler les flux de ressources d'Asgarm.",
     rights: [
-      "Cumuler un métier avec les années d'études (1 à 8)",
+      "Cumuler un métier avec toutes les années d'études (1 à 8)",
       "Vendre des marchandises et services à prix libre",
-      "Rédiger des contrats magiques à valeur juridique contraignante"
+      "Rédiger des contrats magiques à valeur juridique"
     ],
     prohibitions: [
-      "Pratiquer un métier sans licence officielle délivrée par le Conclave",
+      "Pratiquer un métier sans licence officielle du Conclave",
       "Réaliser des arnaques supérieures à 5000 pièces d'or",
-      "Vendre des produits prohibés (poisons/reliques) sans autorisation spéciale"
+      "Vendre des produits prohibés (poisons/reliques) sans autorisation"
     ],
     roles: [
       { title: "JOURNAL ASGARM", rank: "INFORMATION", function: "Documenter les faits, rédiger les annales et influencer l'opinion publique." },
-      { title: "TAVERNE MAGIQUE", rank: "HOSPITALITÉ", function: "Gestion des sanctuaires sociaux et des réseaux d'information clandestine." },
-      { title: "BRICOLIFUS", rank: "INGÉNIERIE", function: "Maintenance, optimisation et charme de vitesse sur les équipements de vol." },
-      { title: "LA MAISON MAGIQUE", rank: "IMMOBILIER", function: "Gestion foncière, expertises et sécurisation runique des domaines privés." }
+      { title: "TAVERNE MAGIQUE", rank: "HOSPITALITÉ", function: "Gestion des sanctuaires sociaux et des réseaux d'information." },
+      { title: "BRICOLIFUS", rank: "INGÉNIERIE", function: "Maintenance et optimisation des équipements de vol (balais)." },
+      { title: "LA MAISON MAGIQUE", rank: "IMMOBILIER", function: "Gestion foncière et sécurisation runique des domaines privés." }
     ]
   },
   {
@@ -136,22 +134,22 @@ const institutions = [
     name: "Clans & Territoires",
     focus: "STRUCTURES SAUVAGES",
     icon: Globe,
-    desc: "Pour ceux qui choisissent la vie en dehors des cités. Le chef décide du destin scolaire de ses membres.",
-    mission: "Protéger les territoires sauvages et préserver les rites ancestraux de la meute.",
+    desc: "Pour ceux qui choisissent la vie en dehors des cités. Le chef de clan décide souverainement du destin de ses membres.",
+    mission: "Protéger les territoires sauvages et préserver les rites ancestraux. Option de suivre ou non le cursus scolaire.",
     rights: [
-      "Régner sur les zones sauvages hors de la juridiction urbaine du Conclave",
-      "Décider si le groupe suit le cursus scolaire (Limité à la 5ème année)",
-      "Pratiquer des rituels de magie primordiale et de lien avec l'éther"
+      "Régner sur les zones sauvages hors juridiction urbaine",
+      "Décider si le clan suit le cursus scolaire (limité à la 5ème année)",
+      "Pratiquer des rituels de magie primordiale"
     ],
     prohibitions: [
-      "Intégrer un membre n'ayant pas atteint la 5ème année (si école acceptée)",
-      "Incursion armée dans les capitales sans déclaration de guerre formelle",
-      "Non-respect de la hiérarchie interne dictée par l'Alpha ou le Chaman"
+      "Intégrer un membre de moins de 5ème année (si école acceptée)",
+      "Incursion armée dans les capitales sans déclaration formelle",
+      "Non-respect de la hiérarchie interne dictée par l'Alpha"
     ],
     roles: [
-      { title: "CHEF DE CLAN (ALPHA)", rank: "SOUVERAIN", function: "Commandement stratégique et décision finale sur l'éducation des membres." },
-      { title: "CHAMAN ROYAL", rank: "SAGESSE", function: "Lien spirituel avec l'éther pur et préservation des cycles naturels du clan." },
-      { title: "GUERRIER DE MEUTE", rank: "FORCE", function: "Protection active du territoire et exécution des ordres souverains." }
+      { title: "CHEF DE CLAN (ALPHA)", rank: "SOUVERAIN", function: "Commandement stratégique et décision finale sur l'éducation." },
+      { title: "CHAMAN ROYAL", rank: "SAGESSE", function: "Lien spirituel avec l'éther pur et préservation des cycles." },
+      { title: "GUERRIER DE MEUTE", rank: "FORCE", function: "Protection active du territoire et exécution des ordres." }
     ]
   }
 ]
@@ -166,7 +164,6 @@ export default function GuidePage() {
       
       <div className="flex-1 flex pt-24 pb-4 px-6 gap-6 relative z-10 overflow-hidden">
         
-        {/* Barre Latérale */}
         <aside className="w-80 flex flex-col gap-2 flex-none">
           <div className="mb-6 pl-4">
             <span className="text-gold text-[9px] tracking-[0.8em] uppercase font-bold block mb-1">Codex Arrivant</span>
@@ -205,7 +202,6 @@ export default function GuidePage() {
           </nav>
         </aside>
 
-        {/* Zone de Contenu */}
         <section className="flex-1 flex flex-col glass-night border border-gold/20 relative overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
@@ -216,7 +212,6 @@ export default function GuidePage() {
               transition={{ duration: 0.3 }}
               className="flex flex-col h-full p-12 overflow-y-auto custom-scrollbar"
             >
-              {/* En-tête */}
               <div className="mb-12 flex flex-col">
                 <span className="text-gold text-[10px] tracking-[1em] uppercase font-bold mb-3">{activeInst.focus}</span>
                 <h2 className="text-6xl font-headline text-white uppercase tracking-tighter leading-none mb-6 text-glow-gold">
@@ -232,7 +227,6 @@ export default function GuidePage() {
                 </div>
               </div>
 
-              {/* Droits & Interdits */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-emerald-500 mb-6">
@@ -261,7 +255,6 @@ export default function GuidePage() {
                 </div>
               </div>
 
-              {/* Grades */}
               <div className="mb-10">
                 <h3 className="text-2xl font-headline text-white uppercase tracking-tight mb-8">Hiérarchie & Spécificités</h3>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
