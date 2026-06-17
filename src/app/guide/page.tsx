@@ -17,7 +17,7 @@ const institutions = [
       "Choisir librement sa race parmi les 5 lignées majeures",
       "Étudier à l'école tout en exerçant un métier civil (Années 1 à 8)",
       "Pratiquer la magie librement avec une cohérence Roleplay totale",
-      "Rejoindre le Conclave des Ombres dès la 1ère année d'étude"
+      "Étudier au Conclave des Ombres dès la 1ère année d'étude"
     ],
     prohibitions: [
       "Porter une couleur de peau non-conforme à sa race (voir spécificités)",
@@ -89,7 +89,7 @@ const institutions = [
     desc: "L'ordre clandestin pour ceux qui refusent les chaînes de la justice conventionnelle et cherchent la souveraineté occulte absolue.",
     mission: "Étudier les arts interdits et servir les intérêts du Royaume du Mal. Recrutement actif dès le début de votre éveil.",
     rights: [
-      "Recruter des membres dès la 1ère année d'étude à l'académie",
+      "Étudier au sein de l'Ordre dès la 1ère année d'étude à l'académie",
       "Apprendre et manipuler la magie noire et la magie du sang",
       "Mener des opérations d'influence au sein des autres institutions"
     ],
