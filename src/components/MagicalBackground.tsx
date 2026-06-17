@@ -13,40 +13,61 @@ interface Star {
   opacity: number;
 }
 
+interface ShootingStar {
+  id: number;
+  left: string;
+  top: string;
+  delay: number;
+}
+
 export const MagicalBackground: React.FC = () => {
   const [stars, setStars] = useState<Star[]>([])
+  const [shootingStars, setShootingStars] = useState<ShootingStar[]>([])
 
   useEffect(() => {
-    // Génération des étoiles après le montage pour éviter les erreurs d'hydratation
-    const generatedStars = [...Array(200)].map((_, i) => ({
+    // Generate static stars
+    const generatedStars = [...Array(250)].map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
-      size: Math.random() * 1.5 + 0.5,
+      size: Math.random() * 1.8 + 0.4,
       delay: Math.random() * 5,
-      duration: 3 + Math.random() * 7,
-      opacity: Math.random() * 0.5 + 0.2,
+      duration: 3 + Math.random() * 8,
+      opacity: Math.random() * 0.6 + 0.1,
     }))
     setStars(generatedStars)
+
+    // Generate shooting stars with varied timing
+    const generatedShootingStars = [...Array(4)].map((_, i) => ({
+      id: i,
+      left: `${50 + Math.random() * 50}%`,
+      top: `${Math.random() * 40}%`,
+      delay: Math.random() * 15,
+    }))
+    setShootingStars(generatedShootingStars)
   }, [])
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#010208]">
-      {/* Nébuleuses éthérées - Profondeur spatiale */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-[#050a24] blur-[180px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-[#020410] blur-[150px] rounded-full" />
-        <div className="absolute top-[30%] right-[15%] w-[40%] h-[40%] bg-blue-900/5 blur-[120px] rounded-full" />
+      {/* Deep Space Base */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#020410_0%,_#010208_100%)]" />
+
+      {/* Aurora Borealis Layers */}
+      <div className="absolute inset-0 overflow-hidden opacity-30 mix-blend-screen">
+        <div className="absolute -top-1/4 -left-1/4 w-[150%] h-[100%] bg-gradient-to-r from-transparent via-blue-900/20 to-emerald-900/20 blur-[120px] animate-aurora rounded-full" />
+        <div className="absolute top-1/2 -right-1/4 w-[120%] h-[80%] bg-gradient-to-l from-transparent via-indigo-900/15 to-purple-900/15 blur-[100px] animate-aurora rounded-full" style={{ animationDelay: '-5s' }} />
       </div>
 
-      {/* Champ d'étoiles avec parallaxe simulée */}
+      {/* Twinkling Stars Field */}
       {stars.map((star) => (
         <motion.div
           key={star.id}
           initial={{ opacity: star.opacity }}
           animate={{ 
-            opacity: [star.opacity, star.opacity + 0.4, star.opacity],
-            scale: [1, 1.2, 1]
+            opacity: [star.opacity, star.opacity + 0.3, star.opacity],
+            scale: [1, 1.2, 1],
+            x: [0, Math.random() * 2, 0],
+            y: [0, Math.random() * 2, 0]
           }}
           transition={{
             duration: star.duration,
@@ -54,21 +75,35 @@ export const MagicalBackground: React.FC = () => {
             delay: star.delay,
             ease: "easeInOut"
           }}
-          className="absolute bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.4)]"
+          className="absolute bg-white rounded-full"
           style={{
             left: star.left,
             top: star.top,
             width: `${star.size}px`,
             height: `${star.size}px`,
+            boxShadow: star.size > 1.2 ? `0 0 10px rgba(255,255,255,0.4)` : 'none',
+          }}
+        />
+      ))}
+
+      {/* Shooting Stars */}
+      {shootingStars.map((ss) => (
+        <div
+          key={ss.id}
+          className="shooting-star"
+          style={{
+            left: ss.left,
+            top: ss.top,
+            animationDelay: `${ss.delay}s`,
           }}
         />
       ))}
       
-      {/* Grain de poussière cosmique discret */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.03] mix-blend-overlay" />
+      {/* Cosmic Dust / Grain */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.05] mix-blend-overlay" />
       
-      {/* Vignette sombre pour focaliser le regard */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#010208_100%)]" />
+      {/* Vignette Overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_20%,_rgba(1,2,8,0.8)_100%)]" />
     </div>
   )
 }
