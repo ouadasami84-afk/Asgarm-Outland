@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { forwardRef, useState, useEffect, useRef } from 'react'
@@ -19,26 +18,38 @@ const HTMLFlipBook = dynamic(() => import('react-pageflip'), {
 })
 
 // Composant pour l'apparition magique des mots (Effet Harry Potter / AAA)
-const MagicalText = ({ text }: { text: string }) => {
+const MagicalText = ({ text, title }: { text: string; title?: string }) => {
   const words = text.split(' ');
   return (
-    <motion.p className="text-[#3d2b19] font-serif leading-relaxed text-justify text-[11px] italic">
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          initial={{ opacity: 0, filter: 'blur(4px)', y: 2 }}
-          animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-          transition={{ 
-            duration: 0.8, 
-            delay: i * 0.02,
-            ease: "easeOut"
-          }}
-          className="inline-block mr-1"
+    <div className="flex flex-col gap-4">
+      {title && (
+        <motion.h3 
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-sm font-headline text-[#4a3721] mb-2 tracking-tight border-b border-[#4a3721]/10 pb-2"
         >
-          {word}
-        </motion.span>
-      ))}
-    </motion.p>
+          {title}
+        </motion.h3>
+      )}
+      <motion.p className="text-[#3d2b19] font-serif leading-relaxed text-justify text-[11px] italic">
+        {words.map((word, i) => (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0, filter: 'blur(8px)', y: 3 }}
+            animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+            transition={{ 
+              duration: 0.8, 
+              delay: i * 0.015,
+              ease: "easeOut"
+            }}
+            className="inline-block mr-1"
+          >
+            {word}
+          </motion.span>
+        ))}
+      </motion.p>
+    </div>
   );
 };
 
@@ -98,7 +109,7 @@ export default function HistoirePage() {
       
       <div className="flex-1 flex flex-col items-center justify-center p-4 pt-32 pb-8 relative z-10">
         
-        {/* Préambule Royal */}
+        {/* Préambule Royal en Or */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -125,8 +136,8 @@ export default function HistoirePage() {
           transition={{ duration: 1.5, delay: 0.3 }}
           className="relative"
         >
-          {/* Lueur d'arrière-plan magique bleu nuit */}
-          <div className="absolute inset-0 bg-indigo-900/10 blur-[120px] rounded-full animate-pulse" />
+          {/* Lueur d'arrière-plan magique bleu nuit profonde */}
+          <div className="absolute inset-0 bg-indigo-900/20 blur-[120px] rounded-full animate-pulse" />
           <div className="absolute inset-0 bg-gold/5 blur-[80px] rounded-full" />
           
           <div className="flip-book-container relative shadow-[0_40px_100px_rgba(0,0,0,0.9)] border-[2px] border-[#1a120a] rounded-sm overflow-hidden bg-[#2a1a0a] ring-1 ring-gold/10">
@@ -155,9 +166,9 @@ export default function HistoirePage() {
               showPageCorners={true}
               disableFlipByClick={false}
             >
-              {/* Page de Sommaire */}
+              {/* Page de Sommaire Épurée */}
               <Page number={1}>
-                <div className="h-full flex flex-col items-center pt-8 px-10">
+                <div className="h-full flex flex-col items-center pt-4 px-10">
                   <h2 className="text-xs font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-8 border-b border-[#4a3721]/10 pb-3 w-full text-center">Sommaire des Annales</h2>
                   <div className="flex flex-col gap-2.5 w-full">
                     {chapters.map((ch, i) => (
@@ -177,74 +188,65 @@ export default function HistoirePage() {
                 </div>
               </Page>
 
-              {/* Chapitres - Calibrés en 11px pour visibilité totale */}
+              {/* Chapitres Calibrés sans en-têtes redondants */}
               <Page number={2}>
                 <div className="px-8 pt-6">
-                  <h3 className="text-sm font-headline text-[#4a3721] mb-6 tracking-tight border-b border-[#4a3721]/10 pb-2">L'Âge d'Harmonie</h3>
-                  <MagicalText text="Autrefois, dans un temps que seuls les plus vieux récits murmurent, le monde d'Asgarm respirait en harmonie. C'était l'Âge d'Harmonie, un équilibre parfait maintenu par une règle immuable : seuls les Elfes à la peau verdoyante et leurs cousins reclus, les Elfes de Lune à la peau bleutée, pouvaient manier la magie. Les Elfes, avec leur grâce infinie, maîtrisaient la magie arcanique, une force pure et ordonnée, canalisée à travers des baguettes sculptées dans le bois ancestral. Les Elfes de Lune, eux, veillaient en secret sur la magie obscure, une énergie chaotique qu'ils contenaient avec une volonté de fer. Pendant ce temps, dans les montagnes, les Nains à la peau grisée forgeaient des merveilles de métal, et dans les plaines, les Humains à la peau beige ou blanche, jeunes et ambitieux, bâtissaient des cités prospères, ignorant tout des arcanes. La vie était simple, et la paix semblait éternelle." />
+                  <MagicalText title="L'Âge d'Harmonie" text="Autrefois, dans un temps que seuls les plus vieux récits murmurent, le monde d'Asgarm respirait en harmonie. C'était l'Âge d'Harmonie, un équilibre parfait maintenu par une règle immuable : seuls les Elfes à la peau verdoyante et leurs cousins reclus, les Elfes de Lune à la peau bleutée, pouvaient manier la magie. Les Elfes, avec leur grâce infinie, maîtrisaient la magie arcanique, une force pure et ordonnée, canalisée à travers des baguettes sculptées dans le bois ancestral. Les Elfes de Lune, eux, veillaient en secret sur la magie obscure, une énergie chaotique qu'ils contenaient avec une volonté de fer. Pendant ce temps, dans les montagnes, les Nains à la peau grisée forgeaient des merveilles de métal, et dans les plaines, les Humains à la peau beige ou blanche, jeunes et ambitieux, bâtissaient des cités prospères, ignorant tout des arcanes. La vie était simple, et la paix semblait éternelle." />
                 </div>
               </Page>
 
               <Page number={3}>
                 <div className="px-8 pt-6">
-                  <h3 className="text-sm font-headline text-[#4a3721] mb-6 tracking-tight border-b border-[#4a3721]/10 pb-2">L'Invasion Abyssale</h3>
-                  <MagicalText text="Mais cet équilibre millénaire fut pulvérisé. Venus des abysses, les Cavaliers de l'Apocalypse, de terrifiants sorciers de la mort, firent irruption à Asgarm. Leur arrivée ne fut pas qu'une simple invasion ; leur seule présence maléfique déstabilisa l'équilibre fragile entre la magie arcanique des Elfes et la magie obscure des Elfes de Lune, créant des tempêtes d'énergie chaotique qui ravageaient les terres. Les armées d'Asgarm, valeureuses mais impuissantes face à une sorcellerie nécromantique inconnue qui relevait leurs propres morts contre eux, furent balayées. Les cités tombaient les unes après les autres, la terre elle-même semblait mourir sous les pas des envahisseurs. Le désespoir s'installa alors qu'Asgarm était au bord de l'anéantissement total." />
+                  <MagicalText title="L'Invasion Abyssale" text="Mais cet équilibre millénaire fut pulvérisé. Venus des abysses, les Cavaliers de l'Apocalypse, de terrifiants sorciers de la mort, firent irruption à Asgarm. Leur arrivée ne fut pas qu'une simple invasion ; leur seule présence maléfique déstabilisa l'équilibre fragile entre la magie arcanique des Elfes et la magie obscure des Elfes de Lune, créant des tempêtes d'énergie chaotique qui ravageaient les terres. Les armées d'Asgarm, valeureuses mais impuissantes face à une sorcellerie nécromantique inconnue qui relevait leurs propres morts contre eux, furent balayées. Les cités tombaient les unes après les autres, la terre elle-même semblait mourir sous les pas des envahisseurs. Le désespoir s'installa alors qu'Asgarm était au bord de l'anéantissement total." />
                 </div>
               </Page>
 
               <Page number={4}>
                 <div className="px-8 pt-6">
-                  <h3 className="text-sm font-headline text-[#4a3721] mb-6 tracking-tight border-b border-[#4a3721]/10 pb-2">Le Sacrifice de Melfetys</h3>
-                  <MagicalText text="Acculée, la reine des Elfes, Melfetys, accomplit alors l'impensable, un sacrifice qui allait changer le monde à jamais. Le cœur brisé, elle brisa le serment millénaire de son peuple et libéra l'essence de la magie, l'offrant à toutes les races d'Asgarm. Une vague de puissance brute déferla sur le monde, un acte désespéré pour donner une chance aux mortels de se défendre. Mais ce don, si salvateur soit-il, créa un nouveau et profond déséquilibre. La magie, autrefois maîtrisée par quelques élus sages, était désormais entre les mains de tous, pour le meilleur... et surtout pour le pire. La boîte de Pandore était ouverte, libérant un pouvoir aussi merveilleux que destructeur." />
+                  <MagicalText title="Le Sacrifice de Melfetys" text="Acculée, la reine des Elfes, Melfetys, accomplit alors l'impensable, un sacrifice qui allait changer le monde à jamais. Le cœur brisé, elle brisa le serment millénaire de son peuple et libéra l'essence de la magie, l'offrant à toutes les races d'Asgarm. Une vague de puissance brute déferla sur le monde, un acte désespéré pour donner une chance aux mortels de se défendre. Mais ce don, si salvateur soit-il, créa un nouveau et profond déséquilibre. La magie, autrefois maîtrisée par quelques élus sages, était désormais entre les mains de tous, pour le meilleur... et surtout pour le pire. La boîte de Pandore était ouverte, libérant un pouvoir aussi merveilleux que destructeur." />
                 </div>
               </Page>
 
               <Page number={5}>
                 <div className="px-8 pt-6">
-                  <h3 className="text-sm font-headline text-[#4a3721] mb-6 tracking-tight border-b border-[#4a3721]/10 pb-2">L'Éveil des Humains</h3>
-                  <MagicalText text="Chez les Humains, ce don se manifesta comme une force brute, une tempête intérieure. Un capitaine de la garde, Alaric, sentit cette puissance s'éveiller en lui. D'abord incapable de la contrôler, il comprit par instinct qu'il lui fallait un catalyseur pour ne pas être consumé. Saisissant une branche de chêne brisée sur le champ de bataille, il tenta de canaliser le flux. La branche crépita, s'illumina, et devint la toute première baguette humaine, projetant un torrent de flammes purificatrices sur ses ennemis. Guidés par son exemple héroïque, les humains se mirent à fabriquer leurs propres baguettes, transformant leurs légions décimées en une armée redoutable de mages de guerre, prêts à reconquérir leur foyer." />
+                  <MagicalText title="L'Éveil des Humains" text="Chez les Humains, ce don se manifesta comme une force brute, une tempête intérieure. Un capitaine de la garde, Alaric, sentit cette puissance s'éveiller en lui. D'abord incapable de la contrôler, il comprit par instinct qu'il lui fallait un catalyseur pour ne pas être consumé. Saisissant une branche de chêne brisée sur le champ de bataille, il tenta de canaliser le flux. La branche crépita, s'illumina, et devint la toute première baguette humaine, projetant un torrent de flammes purificatrices sur ses ennemis. Guidés par son exemple héroïque, les humains se mirent à fabriquer leurs propres baguettes, transformant leurs légions décimées en une armée redoutable de mages de guerre, prêts à reconquérir leur foyer." />
                 </div>
               </Page>
 
               <Page number={6}>
                 <div className="px-8 pt-6">
-                  <h3 className="text-sm font-headline text-[#4a3721] mb-6 tracking-tight border-b border-[#4a3721]/10 pb-2">La Forge des Nains</h3>
-                  <MagicalText text="Dans les profondeurs des montagnes, la magie toucha les Nains. Thorgrim Main-de-Pierre, un maître forgeron, sentit la magie vibrer non seulement dans son âme, mais aussi dans la pierre et le métal qu'il travaillait. Appliquant la rigueur et la précision de la forge à ce nouvel art, les Nains devinrent rapidement les plus grands fabricants de baguettes d'Asgarm. Leurs créations, alliant bois robustes, cœurs de créatures magiques et incrustations de métal runique, étaient des chefs-d'œuvre de puissance et de fiabilité. Ils fournirent ces précieuses armes à toute l'Alliance naissante, devenant ainsi l'armurerie indispensable de la résistance." />
+                  <MagicalText title="La Forge des Nains" text="Dans les profondeurs des montagnes, la magie toucha les Nains. Thorgrim Main-de-Pierre, un maître forgeron, sentit la magie vibrer non seulement dans son âme, mais aussi dans la pierre et le métal qu'il travaillait. Appliquant la rigueur et la précision de la forge à ce nouvel art, les Nains devinrent rapidement les plus grands fabricants de baguettes d'Asgarm. Leurs créations, alliant bois robustes, cœurs de créatures magiques et incrustations de métal runique, étaient des chefs-d'œuvre de puissance et de fiabilité. Ils fournirent ces précieuses armes à toute l'Alliance naissante, devenant ainsi l'armurerie indispensable de la résistance." />
                 </div>
               </Page>
 
               <Page number={7}>
                 <div className="px-8 pt-6">
-                  <h3 className="text-sm font-headline text-[#4a3721] mb-6 tracking-tight border-b border-[#4a3721]/10 pb-2">Le Serment de Sang</h3>
-                  <MagicalText text="Même les clans les plus reclus furent touchés. Les Vampires du Domaine Carmin, à la peau sombre comme la nuit ou rouge comme le sang, dirigés par le noble et énigmatique Lord Valerius, découvrirent que leur affinité innée avec le sang pouvait être canalisée à travers des baguettes. Au lieu de prendre la vie, ils apprirent à la manipuler pour la restaurer. Ils devinrent les plus grands guérisseurs de guerre, capables de refermer les blessures les plus mortelles par des sortilèges de sang complexes, des anges improbables sur un champ de bataille infernal. Leur intervention changea le cours de nombreuses batailles, sauvant d'innombrables vies et forgeant leur nouvelle réputation de sauveurs inattendus." />
+                  <MagicalText title="Le Serment de Sang" text="Même les clans les plus reclus furent touchés. Les Vampires du Domaine Carmin, à la peau sombre comme la nuit ou rouge comme le sang, dirigés par le noble et énigmatique Lord Valerius, découvrirent que leur affinité innée avec le sang pouvait être canalisée à travers des baguettes. Au lieu de prendre la vie, ils apprirent à la manipuler pour la restaurer. Ils devinrent les plus grands guérisseurs de guerre, capables de refermer les blessures les plus mortelles par des sortilèges de sang complexes, des anges improbables sur un champ de bataille infernal. Leur intervention changea le cours de nombreuses batailles, sauvant d'innombrables vies et forgeant leur nouvelle réputation de sauveurs inattendus." />
                 </div>
               </Page>
 
               <Page number={8}>
                 <div className="px-8 pt-6">
-                  <h3 className="text-sm font-headline text-[#4a3721] mb-6 tracking-tight border-b border-[#4a3721]/10 pb-2">L'Alliance de la Lumière</h3>
-                  <MagicalText text="C'est ainsi que naquit l'Alliance de la Lumière. Les armées humaines, menées par le désormais Roi-Mage Alaric, affrontaient les ténèbres avec des volées de sortilèges. Les légions de Nains, équipées des puissantes baguettes de Thorgrim, étaient des remparts infranchissables. Les Vampires de Valerius maintenaient les troupes en vie, tandis que les Elfes de Lune, maîtres de la magie de l'ombre, utilisaient leurs propres baguettes pour frapper en silence au cœur des lignes ennemies. Unis par le désespoir et l'espoir, ces peuples autrefois divisés se battaient enfin comme un seul homme pour la survie d'Asgarm, une fraternité forgée dans le feu du combat." />
+                  <MagicalText title="L'Alliance de la Lumière" text="C'est ainsi que naquit l'Alliance de la Lumière. Les armées humaines, menées par le désormais Roi-Mage Alaric, affrontaient les ténèbres avec des volées de sortilèges. Les légions de Nains, équipées des puissantes baguettes de Thorgrim, étaient des remparts infranchissables. Les Vampires de Valerius maintenaient les troupes en vie, tandis que les Elfes de Lune, maîtres de la magie de l'ombre, utilisaient leurs propres baguettes pour frapper en silence au cœur des lignes ennemies. Unis par le désespoir et l'espoir, ces peuples autrefois divisés se battaient enfin comme un seul homme pour la survie d'Asgarm, une fraternité forgée dans le feu du combat." />
                 </div>
               </Page>
 
               <Page number={9}>
                 <div className="px-8 pt-6">
-                  <h3 className="text-sm font-headline text-[#4a3721] mb-6 tracking-tight border-b border-[#4a3721]/10 pb-2">Le Crépuscule des Cavaliers</h3>
-                  <MagicalText text="La guerre changea de visage. L'avancée des Cavaliers fut stoppée dans le sang et la cendre. La bataille finale eut lieu sur les Plaines Calcinées. Le Seigneur des Cavaliers, une entité d'une puissance colossale, affronta Alaric en duel. Alors que le roi humain était sur le point de succomber, Thorgrim le Nain s'interposa, son corps et sa volonté de fer encaissant un sort mortel destiné à Alaric. Ce sacrifice héroïque offrit au roi une précieuse seconde. D'un cri de rage, il canalisa toute sa puissance dans sa baguette de chêne et déchaîna un sort qui anéantit le tyran. Les Cavaliers étaient vaincus, mais la faille dans le ciel demeurait, une blessure béante prête à tout consumer." />
+                  <MagicalText title="Le Crépuscule des Cavaliers" text="La guerre changea de visage. L'avancée des Cavaliers fut stoppée dans le sang et la cendre. La bataille finale eut lieu sur les Plaines Calcinées. Le Seigneur des Cavaliers, une entité d'une puissance colossale, affronta Alaric en duel. Alors que le roi humain était sur le point de succomber, Thorgrim le Nain s'interposa, son corps et sa volonté de fer encaissant un sort mortel destiné à Alaric. Ce sacrifice héroïque offrit au roi une précieuse seconde. D'un cri de rage, il canalisa toute sa puissance dans sa baguette de chêne et déchaîna un sort qui anéantit le tyran. Les Cavaliers étaient vaincus, mais la faille dans le ciel demeurait, une blessure béante prête à tout consumer." />
                 </div>
               </Page>
 
               <Page number={10}>
                 <div className="px-8 pt-6">
-                  <h3 className="text-sm font-headline text-[#4a3721] mb-6 tracking-tight border-b border-[#4a3721]/10 pb-2">Le Nouvel Équilibre</h3>
-                  <MagicalText text="La guerre était gagnée, mais le monde était fracturé. Le don de Melfetys avait sauvé Asgarm, mais il avait aussi semé les graines du chaos. Sans la sagesse millénaire des Elfes pour les guider, beaucoup de nouveaux manieurs de magie furent séduits par la puissance brute et la corruption. Fascinés par le pouvoir des Cavaliers de la mort, ils se tournèrent vers les arts les plus sombres. De cette ambition naquit le Conclave des Ombres, un véritable royaume du mal cherchant à achever ce que les envahisseurs avaient commencé. Pour contrer cette nouvelle menace et guider les égarés, deux institutions furent fondées : l'Académie d'Asgarm et le Conclave des Arcanes, une pour enseigner, l'autre pour faire respecter la loi. Un nouvel équilibre précaire s'est installé. Le Conclave des Arcanes lutte pour la paix, tandis que celui des Ombres étend son influence. L'Académie forme une nouvelle génération, espérant qu'ils choisiront la lumière. Les pages de ce grimoire s'arrêtent ici, car c'est à vous, héros d'Asgarm, d'écrire la suite. Votre histoire commence maintenant." />
+                  <MagicalText title="Le Nouvel Équilibre" text="La guerre était gagnée, mais le monde était fracturé. Le don de Melfetys avait sauvé Asgarm, mais il avait aussi semé les graines du chaos. Sans la sagesse millénaire des Elfes pour les guider, beaucoup de nouveaux manieurs de magie furent séduits par la puissance brute et la corruption. Fascinés par le pouvoir des Cavaliers de la mort, ils se tournèrent vers les arts les plus sombres. De cette ambition naquit le Conclave des Ombres, un véritable royaume du mal cherchant à achever ce que les envahisseurs avaient commencé. Pour contrer cette nouvelle menace et guider les égarés, deux institutions furent fondées : l'Académie d'Asgarm et le Conclave des Arcanes, une pour enseigner, l'autre pour faire respecter la loi. Un nouvel équilibre précaire s'est installé. Les pages de ce grimoire s'arrêtent ici, car c'est à vous, héros d'Asgarm, d'écrire la suite." />
                 </div>
               </Page>
             </HTMLFlipBook>
           </div>
         </motion.div>
 
-        {/* Aide Navigation Dorée */}
+        {/* Aide Navigation Dorée Éclatante */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -271,7 +273,7 @@ export default function HistoirePage() {
           position: relative;
         }
         .page-content { 
-          padding: 1.5rem 1.5rem; 
+          padding: 1rem 1.5rem; 
           height: 100%;
           display: flex;
           flex-direction: column;
