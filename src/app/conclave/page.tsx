@@ -82,7 +82,7 @@ export default function ConclavePage() {
                 <span className="shine-text-red">Conclave des</span> <br /> <span className="shine-text-red italic font-light">Ombres</span>
               </h1>
               <p className="text-silver/40 italic text-lg leading-relaxed mb-12 max-w-md">
-                "La magie reste de la magie. Nous embrassons la magie noire et du sang pour forger notre propre destin."
+                "La magie reste de la magie. Nous embrassons la magie noire et du sang pour forger our propre destin."
               </p>
               <div className="px-12 py-4 border border-red-600/20 text-red-600 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-red-600 hover:text-white transition-all duration-500">
                 Accéder au Conclave des Ombres
