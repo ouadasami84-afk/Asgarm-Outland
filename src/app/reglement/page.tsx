@@ -4,14 +4,13 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { UserCircle, Sword, ShieldCheck, ChevronLeft } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
 
 const regulationSections = [
   {
     id: "hrp",
     title: "Pacte HRP",
     subtitle: "Hors-Rôle-Play",
-    icon: UserCircle,
     color: "from-sky-500/20 to-blue-600/5",
     accent: "text-sky-400",
     glow: "text-glow-sky",
@@ -28,7 +27,6 @@ const regulationSections = [
     id: "rp",
     title: "Décrets RP",
     subtitle: "Immersion & Lore",
-    icon: Sword,
     color: "from-gold/20 to-amber-600/5",
     accent: "text-gold",
     glow: "text-glow-gold",
@@ -45,7 +43,6 @@ const regulationSections = [
     id: "staff",
     title: "Code du Staff",
     subtitle: "Haute Magistrature",
-    icon: ShieldCheck,
     color: "from-red-600/20 to-black/40",
     accent: "text-red-600",
     glow: "text-glow-red",
@@ -65,7 +62,6 @@ export default function ReglementPage() {
   const [hoveredSection, setHoveredSection] = useState<string | null>(null)
   
   const currentSection = regulationSections.find(s => s.id === selectedSection)
-  const SectionIcon = currentSection?.icon
 
   return (
     <main className="relative min-h-screen flex flex-col bg-transparent overflow-hidden">
@@ -104,16 +100,15 @@ export default function ReglementPage() {
                   />
 
                   <div className="relative z-20 text-center max-w-md w-full">
-                    <section.icon className={`w-12 h-12 mb-8 mx-auto ${section.accent} opacity-40`} />
                     <div className="flex items-center justify-center gap-4 mb-6">
                       <div className="h-[1px] w-8 bg-white/10" />
-                      <span className={`${section.accent} text-[9px] tracking-[0.8em] uppercase font-bold`}>{section.subtitle}</span>
+                      <span className={`${section.accent} text-[10px] tracking-[0.8em] uppercase font-bold`}>{section.subtitle}</span>
                       <div className="h-[1px] w-8 bg-white/10" />
                     </div>
                     <h2 className={`text-6xl font-headline uppercase tracking-tighter mb-8 leading-none ${section.shineClass}`}>
                       {section.title}
                     </h2>
-                    <p className="text-silver/40 italic text-sm leading-relaxed mb-12 opacity-0 lg:opacity-100 transition-opacity">
+                    <p className="text-silver/40 italic text-base leading-relaxed mb-12 opacity-0 lg:opacity-100 transition-opacity">
                       {section.desc}
                     </p>
                     <div className={`inline-block px-10 py-4 border border-white/10 text-white text-[9px] font-bold uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all duration-500`}>
@@ -142,9 +137,9 @@ export default function ReglementPage() {
                 </button>
 
                 <div className="flex flex-col lg:flex-row gap-20 items-start">
-                  <div className="lg:w-1/3 sticky top-0">
+                  <div className="lg:w-1/3 sticky top-32">
                     <div className="flex items-center gap-4 mb-6">
-                      {SectionIcon && <SectionIcon className={`w-5 h-5 ${currentSection?.accent}`} />}
+                      <div className="h-[1px] w-8 bg-white/10" />
                       <span className={`text-[10px] font-bold uppercase tracking-[0.8em] ${currentSection?.accent}`}>{currentSection?.subtitle}</span>
                     </div>
                     <h2 className={`text-7xl font-headline uppercase tracking-tighter mb-8 leading-none ${currentSection?.shineClass}`}>
