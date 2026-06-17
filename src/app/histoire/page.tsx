@@ -135,13 +135,13 @@ export default function HistoirePage() {
         >
           <div className="flip-book-container bg-transparent flex justify-center">
             <HTMLFlipBook 
-              width={500} 
-              height={650} 
+              width={450} 
+              height={600} 
               size="fixed" 
               minWidth={250}
-              maxWidth={500}
-              minHeight={325}
-              maxHeight={650}
+              maxWidth={450}
+              minHeight={300}
+              maxHeight={600}
               className="flip-book" 
               ref={bookRef} 
               showCover={false} 
@@ -210,7 +210,7 @@ export default function HistoirePage() {
       </footer>
 
       <style jsx global>{`
-        .page { background-color: #f4ecd8; background-image: url("https://www.transparenttextures.com/patterns/papyrus.png"); width: 500px; height: 650px; }
+        .page { background-color: #f4ecd8; background-image: url("https://www.transparenttextures.com/patterns/papyrus.png"); width: 450px; height: 600px; }
         .page-content { padding: 1.5rem; height: 100%; }
         .stf__wrapper { background-color: transparent !important; }
         .stf__block { background-color: transparent !important; }
