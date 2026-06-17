@@ -94,7 +94,7 @@ export default function HistoirePage() {
           <h1 className="text-3xl md:text-4xl font-headline text-white uppercase tracking-tighter mb-4 leading-tight">
             Les Annales de la Souveraineté
           </h1>
-          <p className="text-gold/30 text-xs italic font-light tracking-widest max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gold/80 text-xs italic font-medium tracking-[0.15em] max-w-2xl mx-auto leading-relaxed text-glow-gold">
             "Le savoir d'Asgarm est scellé dans ce grimoire éternel. Tournez les pages pour explorer les racines de notre destin."
           </p>
         </motion.div>
@@ -287,13 +287,15 @@ export default function HistoirePage() {
         {/* Aide Navigation */}
         <motion.div 
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
           className="mt-12 flex items-center gap-6"
         >
-          <div className="h-[1px] w-12 bg-gold/20" />
-          <span className="text-gold text-[8px] tracking-[0.6em] uppercase font-bold">Faites glisser les pages pour explorer les annales</span>
-          <div className="h-[1px] w-12 bg-gold/20" />
+          <div className="h-[1px] w-12 bg-gold/40" />
+          <span className="text-gold text-[10px] tracking-[0.6em] uppercase font-bold text-glow-gold">
+            Faites glisser les pages pour explorer les annales
+          </span>
+          <div className="h-[1px] w-12 bg-gold/40" />
         </motion.div>
       </div>
 
