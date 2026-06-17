@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion } from 'framer-motion'
-import Link from 'link'
+import Link from 'next/link'
 
 export default function ConclavePage() {
   const [hoveredSide, setHoveredSide] = useState<'arcanes' | 'ombres' | null>(null)
