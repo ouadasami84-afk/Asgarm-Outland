@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { useState } from 'react'
@@ -26,27 +27,34 @@ const regulationSections = [
         title: "I. Comportement et Éthique",
         rules: [
           { name: "1.1 Respect et Toxicité", desc: "Tout propos injurieux, raciste, sexiste ou homophobe, sur n'importe quel support (jeu, Discord, MP), entraîne un bannissement définitif immédiat sans préavis." },
-          { name: "1.2 Publicité et Démarchage", desc: "La promotion de projets externes ou le détournement de communauté est strictement interdit et lourdement sanctionné par un bannissement permanent." },
-          { name: "1.3 Qualité de l'Immersion", desc: "Un matériel audio correct et fonctionnel est exigé. Le joueur doit rester cohérent avec l'univers d'Asgarm en toute circonstance, y compris dans ses interactions hors-jeu liées au serveur." },
-          { name: "1.4 Streamstalking et Meta", desc: "L'utilisation d'informations obtenues via des diffusions en direct ou des canaux externes pour influencer vos actions RP est formellement interdite." }
+          { name: "1.2 Publicité et Démarchage", desc: "La promotion de projets externes ou le détournement de communauté est strictement interdit et lourdement sanctionné." },
+          { name: "1.3 Harcèlement", desc: "Le harcèlement moral ou sexuel, qu'il soit commis en jeu ou en dehors, est sanctionné par une radiation permanente." },
+          { name: "1.4 Image du Serveur", desc: "Les joueurs se doivent de maintenir une attitude digne sur les réseaux sociaux. Tout comportement nuisant gravement à la réputation d'Outland est sanctionnable." }
         ]
       },
       {
-        title: "II. Mécaniques de Jeu et Abus",
+        title: "II. Intégrité Technique",
         rules: [
-          { name: "2.1 Exploitation de Bugs (Glitch)", desc: "L'utilisation de bugs de script, de collision ou de toute faille technique pour obtenir un avantage est un motif de bannissement immédiat. Tout bug doit être impérativement signalé au staff." },
-          { name: "2.2 Powergaming", desc: "Interdiction de réaliser des actions physiquement impossibles ou de forcer le RP d'un tiers sans lui laisser la possibilité de réagir ou de s'opposer de manière cohérente." },
-          { name: "2.3 Metagaming", desc: "Votre personnage ne connaît que ce qu'il a appris en jeu. La coordination externe via Discord ou tout autre support est strictement interdite lors des scènes." },
-          { name: "2.4 Logiciels Tiers et Cheating", desc: "L'usage de cheats, macros, crosshairs externes ou tout logiciel modifiant l'expérience de jeu originale est lourdement sanctionné par une radiation définitive." }
+          { name: "2.1 Exploitation de Bugs", desc: "L'utilisation intentionnelle de failles, glitches de collision ou de script pour obtenir un avantage est un motif de bannissement permanent." },
+          { name: "2.2 Logiciels Tiers", desc: "L'usage de cheats, macros, crosshairs externes ou tout logiciel modifiant les données du jeu est formellement interdit." },
+          { name: "2.3 Double Compte et VPN", desc: "L'usage de plusieurs comptes ou l'utilisation de VPN pour contourner une sanction ou masquer son identité est prohibé." },
+          { name: "2.4 Échanges HRP", desc: "La vente ou l'achat d'objets, de monnaie ou de comptes contre de l'argent réel est strictement interdite." }
         ]
       },
       {
-        title: "III. Diffusion et Contenu (Lives/Vidéos/Pub)",
+        title: "III. Meta-Gaming & Stream",
         rules: [
-          { name: "3.1 Responsabilité du Diffuseur", desc: "Tout streamer ou créateur de contenu est considéré comme un ambassadeur d'Outland. Une conduite exemplaire et une immersion sans faille sont exigées devant son audience. Tout manquement à l'image du serveur peut entraîner des sanctions administratives." },
-          { name: "3.2 Meta-Gaming en Live", desc: "L'interaction avec le chat (donations, messages) ne doit jamais influencer les décisions du personnage en jeu. Le streamer doit ignorer toute information provenant de son audience qui pourrait briser le RP ou donner un avantage tactique." },
-          { name: "3.3 Promotion et Publicité Inter-Serveurs", desc: "La promotion d'autres serveurs ou projets concurrents sur nos plateformes ou lors de diffusions liées à Asgarm est strictement interdite. Le recrutement sauvage vers d'autres communautés entraîne un bannissement permanent immédiat." },
-          { name: "3.4 Utilisation de l'Identité Visuelle", desc: "L'usage du nom 'Outland', des logos ou des créations originales du serveur à des fins lucratives ou publicitaires sans l'accord écrit de la Haute Administration est formellement proscrit." }
+          { name: "3.1 Mix-RP", desc: "Il est strictement interdit de mélanger des informations Hors-RP avec vos actions en jeu. Votre personnage ne sait que ce qu'il a appris en immersion." },
+          { name: "3.2 Streamstalking", desc: "L'utilisation des flux de diffusion en direct pour localiser ou influencer un joueur est sanctionnée par un bannissement immédiat." },
+          { name: "3.3 Meta-Gaming en Live", desc: "L'interaction avec le chat (dons, messages) ne doit jamais influencer vos décisions RP. Le streamer doit ignorer les informations avantageuses venant de son audience." }
+        ]
+      },
+      {
+        title: "IV. Identité & Cohérence",
+        rules: [
+          { name: "4.1 Noms de Personnages", desc: "Le nom doit être réaliste et cohérent avec le lore d'Asgarm. Les jeux de mots, noms de célébrités ou pseudonymes sont interdits." },
+          { name: "4.2 Apparence (Skins)", desc: "Votre tenue doit correspondre à votre statut social et à votre race. L'usage de skins 'troll' ou non-immersifs est prohibé." },
+          { name: "4.3 Background", desc: "Chaque citoyen doit posséder une histoire cohérente validée par les services d'immigration si nécessaire." }
         ]
       }
     ]
@@ -62,21 +70,38 @@ const regulationSections = [
     desc: "Recueil des lois d'immersion régissant les interactions, les arcanes et la destinée des citoyens dans le royaume.",
     chapters: [
       {
-        title: "I. Combat et Arcanes",
+        title: "I. Fondamentaux de l'Immersion",
         rules: [
-          { name: "3.1 Fear RP", desc: "Vous devez simuler une peur réelle et proportionnée face à une menace supérieure (ex: encerclement par plusieurs ennemis armés ou ratio 3 contre 1)." },
-          { name: "3.2 Pain RP", desc: "Toute blessure reçue doit être jouée physiquement et verbalement (chutes, gémissements, incapacité temporaire de courir ou de lancer des sorts complexes)." },
-          { name: "3.3 Zone de Trêve Académique", desc: "L'école est une zone de paix et de savoir. Aucun combat offensif n'y est toléré sans un événement narratif spécifique validé par le Conclave." },
-          { name: "3.4 Sorts Prohibés", desc: "L'usage public de la magie noire ou du sang sans autorisation magistrale entraîne des conséquences administratives et pénales lourdes (Emprisonnement/CK)." }
+          { name: "1.1 Fear RP", desc: "Simulez une peur réelle face à une menace sérieuse. On ne provoque pas un sorcier du Conclave lorsqu'on est seul et désarmé." },
+          { name: "1.2 Pain RP", desc: "Jouez vos blessures. Une chute de balai ou un impact de sort nécessite une réaction physique (gémissements, boitements)." },
+          { name: "1.3 Win RP & Fair-play", desc: "Le but n'est pas de gagner mais de créer une scène de qualité. Accepter la défaite fait partie de l'expérience." },
+          { name: "1.4 Power-Gaming", desc: "Interdiction de réaliser des actions impossibles (ex: lancer un sort complexe en courant ou porter une armure de 50kg sans effort)." }
         ]
       },
       {
-        title: "II. Mort et Fin de Personnage",
+        title: "II. L'Art des Arcanes",
         rules: [
-          { name: "4.1 État de Coma (K.O.)", desc: "Interdiction totale de parler ou de transmettre des informations une fois au sol. La réanimation par un tiers entraîne l'amnésie partielle de la scène de combat." },
-          { name: "4.2 Character Kill (CK)", desc: "La mort définitive du personnage nécessite une validation administrative préalable ou un accord mutuel lors d'un arc narratif majeur et tragique." },
-          { name: "4.3 Revenge Kill", desc: "Interdiction formelle de revenir sur une scène où vous avez été mis K.O. pour tenter de vous venger de vos agresseurs." },
-          { name: "4.4 Spam de Réanimation", desc: "Abuser des systèmes de soins pour revenir immédiatement au combat sans respecter un temps de convalescence est proscrit." }
+          { name: "2.1 Temps d'Incantation", desc: "Chaque sort majeur nécessite un temps de concentration. Le spam de sorts sans RP verbal ou gestuel est interdit." },
+          { name: "2.2 Effets de Sortilèges", desc: "Si vous recevez un sort d'aveuglement ou d'immobilisation, vous devez impérativement jouer l'effet subi sans exception." },
+          { name: "2.3 Magie Prohibée", desc: "L'usage de la magie noire ou du sang est un crime capital. Son utilisation en public entraîne des conséquences RP majeures (Emprisonnement/CK)." },
+          { name: "2.4 Zones de Paix", desc: "L'Académie est un sanctuaire. Aucun combat offensif n'y est toléré, sauf événement narratif encadré." }
+        ]
+      },
+      {
+        title: "III. Justice & Destinée",
+        rules: [
+          { name: "3.1 Braquages & Vols", desc: "Limités à deux par jour et par groupe. Le vol d'objets uniques nécessite une scène construite et motivée." },
+          { name: "3.2 Enlèvements (Kidnapping)", desc: "Durée maximale de 2 heures. Le but doit être une négociation ou un échange d'information, pas le harcèlement du joueur." },
+          { name: "3.3 État de Coma (K.O.)", desc: "Interdiction de parler une fois au sol. Vous ne vous souvenez pas de la scène si vous êtes réanimé par des soins externes." },
+          { name: "3.4 Character Kill (CK)", desc: "La mort définitive nécessite un dossier solide et une validation de la Haute Administration." }
+        ]
+      },
+      {
+        title: "IV. Vie Sociale & Économique",
+        rules: [
+          { name: "4.1 Arnaques (Scams)", desc: "Les arnaques financières sont limitées à 5000 pièces d'or. Les arnaques sur les objets de boutique ou les reliques sont interdites." },
+          { name: "4.2 Emplois Civils", desc: "Tout citoyen doit avoir une source de revenus cohérente. Le travail au noir pour des clans est traqué par le Conclave." },
+          { name: "4.3 Contrats de Travail", desc: "Les contrats signés en jeu ont une valeur juridique RP. Le non-respect peut entraîner des saisies par les Arcanes." }
         ]
       }
     ]
@@ -92,36 +117,27 @@ const regulationSections = [
     desc: "Protocoles, devoirs de réserve et obligations déontologiques de la haute direction et de la modération d'Asgarm.",
     chapters: [
       {
-        title: "I. Haute Administration",
+        title: "I. Déontologie",
         rules: [
-          { name: "Gestion Stratégique", desc: "Responsabilité des décisions techniques, financières et de la direction artistique globale du projet Outland." },
-          { name: "Validation Majeure", desc: "Étude et validation exclusive des dossiers de clans, des entreprises et des grands arcs narratifs impactant le royaume." },
-          { name: "Audit et Éthique", desc: "Surveillance constante du comportement du staff. Neutralité absolue exigée : aucun avantage en jeu n'est toléré pour leurs personnages." },
-          { name: "Justice Suprême", desc: "Arbitrage final des litiges complexes et validation des bannissements définitifs." }
+          { name: "1.1 Neutralité Absolue", desc: "Le staff ne doit jamais favoriser un groupe ou un ami. Aucune commande admin ne doit servir au profit personnel du personnage." },
+          { name: "1.2 Devoir de Réserve", desc: "Les informations confidentielles (prochains events, dossiers de joueurs, logs) ne doivent jamais être divulguées." },
+          { name: "1.3 Exemplarité", desc: "Un membre du staff doit avoir un RP irréprochable. Toute erreur de sa part est sanctionnée plus lourdement." }
         ]
       },
       {
-        title: "II. Community Manager",
+        title: "II. Protocole de Sanction",
         rules: [
-          { name: "Image de Marque", desc: "Garant de la communication officielle et de la réputation d'Asgarm sur les réseaux et le Discord." },
-          { name: "Lien Communautaire", desc: "Analyse des suggestions citoyennes et médiation constante entre les joueurs et l'administration." },
-          { name: "Marketing & Visibilité", desc: "Gestion des partenariats et de la visibilité du serveur sur les plateformes de référencement." }
+          { name: "2.1 Pédagogie d'abord", desc: "Sauf faute grave, la discussion et l'explication des règles priment sur la sanction immédiate." },
+          { name: "2.2 Preuves Obligatoires", desc: "Toute sanction doit être justifiée par des logs, vidéos ou témoignages concordants archivés en interne." },
+          { name: "2.3 Ticket de Support", desc: "Le staff doit répondre avec courtoisie et professionnalisme. Aucun favoritisme n'est toléré dans le traitement des demandes." }
         ]
       },
       {
-        title: "III. Modération",
+        title: "III. Animation & Lore",
         rules: [
-          { name: "Support Joueurs", desc: "Gestion des tickets de support. Le dialogue et la pédagogie sont prioritaires avant l'application de toute sanction." },
-          { name: "Surveillance Active", desc: "Patrouilles invisibles pour vérifier le respect des règles d'immersion (Fear et Pain RP) lors des scènes de groupe." },
-          { name: "Rapports & Preuves", desc: "Toute sanction appliquée doit être rigoureusement documentée avec des preuves tangibles (vidéos, logs) en interne." }
-        ]
-      },
-      {
-        title: "IV. Animateurs",
-        rules: [
-          { name: "Dynamisation Lore", desc: "Création de mini-scènes, gestion des PNJs et des créatures magiques pour enrichir l'expérience des citoyens." },
-          { name: "Usage des Outils", desc: "Les outils d'animation sont strictement réservés aux événements. Tout usage pour convenance personnelle est motif de radiation immédiate." },
-          { name: "Neutralité Narrative", desc: "Interdiction formelle de favoriser une faction, une race ou un groupe spécifique au détriment des autres." }
+          { name: "3.1 Cohérence Narrative", desc: "Les animateurs garantissent que chaque événement respecte l'histoire et les fondements d'Asgarm." },
+          { name: "3.2 Gestion des PNJs", desc: "Les personnages non-joueurs doivent être utilisés pour enrichir le monde, pas pour bloquer le RP des citoyens." },
+          { name: "3.3 Équilibre des Events", desc: "Les récompenses d'événements ne doivent jamais briser l'économie globale du royaume." }
         ]
       }
     ]
