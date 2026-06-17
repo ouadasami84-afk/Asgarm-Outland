@@ -49,3 +49,12 @@ h1, h2, h3, h4 {
 ::-webkit-scrollbar-thumb {
   background: rgba(212, 175, 55, 0.3);
 }
+
+/* PageFlip specific overrides if needed */
+.stf__wrapper {
+  background-color: transparent !important;
+}
+
+.stf__block {
+  background-color: transparent !important;
+}
