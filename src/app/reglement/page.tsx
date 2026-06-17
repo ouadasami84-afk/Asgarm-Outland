@@ -20,7 +20,7 @@ const regulationSections = [
     accent: "text-sky-400",
     glow: "text-glow-sky",
     shineClass: "shine-text-blue",
-    desc: "Lois fondamentales régissant le comportement communautaire et l'intégrité technique absolue d'Asgarm.",
+    desc: "Lois fondamentales régissant le comportement communautaire, l'intégrité technique et la diffusion du contenu d'Asgarm.",
     chapters: [
       {
         title: "I. Comportement et Éthique",
@@ -38,6 +38,15 @@ const regulationSections = [
           { name: "2.2 Powergaming", desc: "Interdiction de réaliser des actions physiquement impossibles ou de forcer le RP d'un tiers sans lui laisser la possibilité de réagir ou de s'opposer de manière cohérente." },
           { name: "2.3 Metagaming", desc: "Votre personnage ne connaît que ce qu'il a appris en jeu. La coordination externe via Discord ou tout autre support est strictement interdite lors des scènes." },
           { name: "2.4 Logiciels Tiers et Cheating", desc: "L'usage de cheats, macros, crosshairs externes ou tout logiciel modifiant l'expérience de jeu originale est lourdement sanctionné par une radiation définitive." }
+        ]
+      },
+      {
+        title: "III. Diffusion et Contenu (Lives/Vidéos/Pub)",
+        rules: [
+          { name: "3.1 Responsabilité du Diffuseur", desc: "Tout streamer ou créateur de contenu est considéré comme un ambassadeur d'Outland. Une conduite exemplaire et une immersion sans faille sont exigées devant son audience. Tout manquement à l'image du serveur peut entraîner des sanctions administratives." },
+          { name: "3.2 Meta-Gaming en Live", desc: "L'interaction avec le chat (donations, messages) ne doit jamais influencer les décisions du personnage en jeu. Le streamer doit ignorer toute information provenant de son audience qui pourrait briser le RP ou donner un avantage tactique." },
+          { name: "3.3 Promotion et Publicité Inter-Serveurs", desc: "La promotion d'autres serveurs ou projets concurrents sur nos plateformes ou lors de diffusions liées à Asgarm est strictement interdite. Le recrutement sauvage vers d'autres communautés entraîne un bannissement permanent immédiat." },
+          { name: "3.4 Utilisation de l'Identité Visuelle", desc: "L'usage du nom 'Outland', des logos ou des créations originales du serveur à des fins lucratives ou publicitaires sans l'accord écrit de la Haute Administration est formellement proscrit." }
         ]
       }
     ]
