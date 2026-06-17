@@ -139,7 +139,7 @@ export default function HistoirePage() {
           <h1 className="text-2xl md:text-3xl font-headline uppercase tracking-tighter mb-2 leading-tight shine-text">
             Les Annales de la Souveraineté
           </h1>
-          <p className="text-gold/80 text-[10px] italic font-medium tracking-[0.12em] max-w-xl mx-auto leading-relaxed text-glow-gold">
+          <p className="shine-text text-[10px] italic font-medium tracking-[0.12em] max-w-xl mx-auto leading-relaxed">
             "Le savoir d'Asgarm est scellé dans ce grimoire éternel. Tournez les pages pour explorer les racines de notre destin."
           </p>
         </motion.div>
@@ -153,7 +153,8 @@ export default function HistoirePage() {
           <div className="absolute inset-[-100px] bg-indigo-950/40 blur-[180px] rounded-full animate-pulse" />
           <div className="absolute inset-[-60px] bg-gold/5 blur-[120px] rounded-full" />
           
-          <div className="flip-book-container relative shadow-[0_40px_120px_rgba(0,0,0,0.98)] border-[2px] border-[#1a120a] rounded-sm overflow-hidden bg-[#2a1a0a] ring-1 ring-gold/20">
+          {/* Conteneur épuré : suppression des bordures et fonds bruns */}
+          <div className="flip-book-container relative shadow-[0_40px_120px_rgba(0,0,0,0.95)] overflow-hidden bg-transparent">
             <HTMLFlipBook
               width={750}
               height={1000}
@@ -162,7 +163,7 @@ export default function HistoirePage() {
               maxWidth={1500}
               minHeight={500}
               maxHeight={2000}
-              maxShadowOpacity={0.7}
+              maxShadowOpacity={0.6}
               showCover={false}
               mobileScrollSupport={true}
               className="flip-book"
@@ -276,7 +277,7 @@ export default function HistoirePage() {
           className="mt-6 flex items-center gap-8"
         >
           <div className="h-[1px] w-24 bg-gold/20 shadow-[0_0_10px_rgba(212,175,55,0.3)]" />
-          <span className="text-[10px] tracking-[0.6em] uppercase font-bold text-center shine-text">
+          <span className="shine-text text-[10px] tracking-[0.6em] uppercase font-bold text-center">
             Faites glisser les pages pour explorer les annales
           </span>
           <div className="h-[1px] w-24 bg-gold/20 shadow-[0_0_10px_rgba(212,175,55,0.3)]" />
