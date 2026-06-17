@@ -11,8 +11,7 @@ import {
   Ghost, 
   Crown, 
   Users, 
-  Wallet,
-  ArrowRight
+  Wallet
 } from 'lucide-react'
 
 const institutions = [
@@ -164,7 +163,7 @@ export default function GuidePage() {
     <main className="relative h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
-      {/* Header Permanent - Minimaliste et Haut de Gamme */}
+      {/* Header Permanent - Fixé en haut */}
       <section className="relative pt-24 pb-4 px-8 flex-none z-20">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
@@ -184,7 +183,8 @@ export default function GuidePage() {
         </div>
       </section>
 
-      <div className="flex-1 relative px-8 pb-12 max-w-[1500px] mx-auto w-full overflow-hidden">
+      {/* Zone de contenu principale - Prend tout l'espace restant sans scroller */}
+      <div className="flex-1 relative px-8 pb-12 max-w-[1500px] mx-auto w-full overflow-hidden flex flex-col">
         <AnimatePresence mode="wait">
           {!selected ? (
             <motion.div
@@ -193,7 +193,7 @@ export default function GuidePage() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 1.02 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full p-4"
+              className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 h-full"
             >
               {institutions.map((inst, idx) => (
                 <motion.button
@@ -204,16 +204,17 @@ export default function GuidePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="group relative flex flex-col justify-end p-10 glass-night border border-gold/10 text-left hover:border-gold/40 transition-all overflow-hidden"
+                  className="group relative flex flex-col justify-center items-center p-8 glass-night border border-gold/10 text-center hover:border-gold/40 transition-all overflow-hidden h-full"
                 >
-                  <div className="absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <inst.icon className="w-32 h-32 text-gold" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity">
+                    <inst.icon className="w-48 h-48 text-gold" />
                   </div>
-                  <div className="relative z-10">
-                    <span className="text-gold/60 text-[11px] tracking-[0.4em] uppercase font-bold mb-4 block">{inst.focus}</span>
-                    <h2 className="text-3xl font-headline text-white mb-4 uppercase group-hover:text-glow-gold transition-all">{inst.name}</h2>
-                    <p className="text-silver/40 text-sm italic line-clamp-2 max-w-xs">{inst.desc}</p>
-                    <div className="mt-8 h-[1px] w-12 bg-gold/30 group-hover:w-full transition-all duration-700" />
+                  <div className="relative z-10 flex flex-col items-center">
+                    <span className="text-gold/60 text-[10px] tracking-[0.4em] uppercase font-bold mb-4 block">{inst.focus}</span>
+                    <h2 className="text-3xl md:text-4xl font-headline text-white uppercase group-hover:text-glow-gold transition-all leading-tight">
+                      {inst.name}
+                    </h2>
+                    <div className="mt-8 h-[1px] w-12 bg-gold/30 group-hover:w-24 transition-all duration-700" />
                   </div>
                 </motion.button>
               ))}
@@ -225,7 +226,7 @@ export default function GuidePage() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ type: "spring", damping: 25, stiffness: 120 }}
-              className="h-full flex flex-col glass-night border border-gold/20 p-16 relative overflow-hidden"
+              className="flex-1 flex flex-col glass-night border border-gold/20 p-12 md:p-16 relative overflow-hidden h-full"
             >
               {/* Filigrane Icone Géant */}
               <div className="absolute top-1/2 right-0 -translate-y-1/2 opacity-[0.03] pointer-events-none">
@@ -235,49 +236,51 @@ export default function GuidePage() {
               {/* Bouton Retour Premium */}
               <button 
                 onClick={() => setSelected(null)}
-                className="absolute top-12 left-12 flex items-center gap-4 text-gold/40 hover:text-gold transition-all group z-30"
+                className="absolute top-8 left-8 flex items-center gap-4 text-gold/40 hover:text-gold transition-all group z-30"
               >
-                <div className="w-12 h-12 rounded-full border border-gold/10 flex items-center justify-center group-hover:border-gold/40 group-hover:bg-gold/5 transition-all">
-                  <ChevronLeft className="w-6 h-6" />
+                <div className="w-10 h-10 rounded-full border border-gold/10 flex items-center justify-center group-hover:border-gold/40 group-hover:bg-gold/5 transition-all">
+                  <ChevronLeft className="w-5 h-5" />
                 </div>
-                <span className="text-[11px] font-bold uppercase tracking-[0.4em]">Retour au Codex</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Retour au Codex</span>
               </button>
 
-              <div className="relative z-10 h-full flex flex-col pt-12">
+              <div className="relative z-10 h-full flex flex-col">
                 {/* Header Detail Monumental */}
-                <div className="mb-16">
-                  <div className="flex items-center gap-4 mb-4">
+                <div className="mb-12">
+                  <div className="flex items-center gap-4 mb-3">
                      <div className="w-2 h-2 bg-gold animate-pulse" />
-                     <span className="text-gold text-[14px] tracking-[0.8em] uppercase font-bold block">{selected.focus}</span>
+                     <span className="text-gold text-[12px] tracking-[0.8em] uppercase font-bold block">{selected.focus}</span>
                   </div>
-                  <h2 className="text-7xl md:text-8xl font-headline text-white uppercase tracking-tighter mb-8 leading-none">{selected.name}</h2>
-                  <p className="text-silver/60 text-2xl italic max-w-4xl border-l-2 border-gold/20 pl-12 leading-relaxed">
+                  <h2 className="text-6xl md:text-7xl lg:text-8xl font-headline text-white uppercase tracking-tighter mb-6 leading-none">
+                    {selected.name}
+                  </h2>
+                  <p className="text-silver/60 text-xl md:text-2xl italic max-w-4xl border-l-2 border-gold/20 pl-8 leading-relaxed line-clamp-2">
                     {selected.desc}
                   </p>
                 </div>
 
-                {/* Grille des Rôles Spécifiques - Haut de Gamme */}
-                <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16 overflow-y-auto pr-12 custom-scrollbar pb-16">
+                {/* Grille des Rôles - Défilement interne uniquement si nécessaire */}
+                <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 overflow-y-auto pr-8 custom-scrollbar pb-12">
                   {selected.roles.map((role, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.1 + 0.3 }}
-                      className="group/role flex flex-col gap-6"
+                      className="group/role flex flex-col gap-4"
                     >
-                      <div className="flex items-center gap-6">
-                        <span className="text-[12px] text-gold font-bold uppercase tracking-[0.4em] bg-gold/5 px-4 py-1.5 border border-gold/20">
+                      <div className="flex items-center gap-4">
+                        <span className="text-[11px] text-gold font-bold uppercase tracking-[0.4em] bg-gold/5 px-3 py-1 border border-gold/20">
                           {role.rank}
                         </span>
                         <div className="h-[1px] flex-1 bg-gradient-to-r from-gold/20 to-transparent" />
                       </div>
                       
-                      <h3 className="text-4xl text-white font-headline uppercase tracking-tight group-hover/role:text-glow-gold group-hover/role:translate-x-2 transition-all duration-500">
+                      <h3 className="text-3xl md:text-4xl text-white font-headline uppercase tracking-tight group-hover/role:text-glow-gold transition-all duration-500">
                         {role.title}
                       </h3>
                       
-                      <p className="text-silver/50 text-xl leading-relaxed italic font-light max-w-2xl border-l border-gold/10 pl-6 group-hover/role:border-gold/40 transition-colors">
+                      <p className="text-silver/50 text-lg leading-relaxed italic font-light max-w-2xl border-l border-gold/10 pl-6 group-hover/role:border-gold/40 transition-colors">
                         {role.function}
                       </p>
                     </motion.div>
@@ -290,7 +293,7 @@ export default function GuidePage() {
       </div>
 
       {/* Certification Footer Technique */}
-      <footer className="flex-none pb-8 text-center z-10">
+      <footer className="flex-none pb-6 text-center z-10">
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-2 opacity-30">
            <div className="h-[1px] w-32 bg-gold/20 mb-2" />
            <span className="text-[9px] text-gold/40 tracking-[0.8em] uppercase font-bold">
