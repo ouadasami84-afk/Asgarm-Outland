@@ -184,7 +184,7 @@ export default function GuidePage() {
       </section>
 
       {/* Zone de contenu principale - Prend tout l'espace restant sans scroller */}
-      <div className="flex-1 relative px-8 pb-12 max-w-[1500px] mx-auto w-full overflow-hidden flex flex-col">
+      <div className="flex-1 relative px-8 pb-4 max-w-[1500px] mx-auto w-full overflow-hidden flex flex-col">
         <AnimatePresence mode="wait">
           {!selected ? (
             <motion.div
@@ -245,46 +245,48 @@ export default function GuidePage() {
               </button>
 
               <div className="relative z-10 h-full flex flex-col">
-                {/* Header Detail Monumental */}
-                <div className="mb-12">
-                  <div className="flex items-center gap-4 mb-3">
+                {/* Header Detail Monumental - Espace réduit pour éviter la coupure */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-4 mb-2">
                      <div className="w-2 h-2 bg-gold animate-pulse" />
                      <span className="text-gold text-[12px] tracking-[0.8em] uppercase font-bold block">{selected.focus}</span>
                   </div>
-                  <h2 className="text-6xl md:text-7xl lg:text-8xl font-headline text-white uppercase tracking-tighter mb-6 leading-none">
+                  <h2 className="text-5xl md:text-6xl lg:text-7xl font-headline text-white uppercase tracking-tighter mb-4 leading-none">
                     {selected.name}
                   </h2>
-                  <p className="text-silver/60 text-xl md:text-2xl italic max-w-4xl border-l-2 border-gold/20 pl-8 leading-relaxed line-clamp-2">
+                  <p className="text-silver/60 text-lg md:text-xl italic max-w-4xl border-l-2 border-gold/20 pl-8 leading-relaxed line-clamp-2">
                     {selected.desc}
                   </p>
                 </div>
 
-                {/* Grille des Rôles - Défilement interne uniquement si nécessaire */}
-                <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 overflow-y-auto pr-8 custom-scrollbar pb-12">
-                  {selected.roles.map((role, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 + 0.3 }}
-                      className="group/role flex flex-col gap-4"
-                    >
-                      <div className="flex items-center gap-4">
-                        <span className="text-[11px] text-gold font-bold uppercase tracking-[0.4em] bg-gold/5 px-3 py-1 border border-gold/20">
-                          {role.rank}
-                        </span>
-                        <div className="h-[1px] flex-1 bg-gradient-to-r from-gold/20 to-transparent" />
-                      </div>
-                      
-                      <h3 className="text-3xl md:text-4xl text-white font-headline uppercase tracking-tight group-hover/role:text-glow-gold transition-all duration-500">
-                        {role.title}
-                      </h3>
-                      
-                      <p className="text-silver/50 text-lg leading-relaxed italic font-light max-w-2xl border-l border-gold/10 pl-6 group-hover/role:border-gold/40 transition-colors">
-                        {role.function}
-                      </p>
-                    </motion.div>
-                  ))}
+                {/* Grille des Rôles - Défilement interne avec padding de sécurité en bas */}
+                <div className="flex-1 overflow-y-auto pr-8 custom-scrollbar">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 pb-24">
+                    {selected.roles.map((role, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.1 + 0.3 }}
+                        className="group/role flex flex-col gap-4"
+                      >
+                        <div className="flex items-center gap-4">
+                          <span className="text-[11px] text-gold font-bold uppercase tracking-[0.4em] bg-gold/5 px-3 py-1 border border-gold/20">
+                            {role.rank}
+                          </span>
+                          <div className="h-[1px] flex-1 bg-gradient-to-r from-gold/20 to-transparent" />
+                        </div>
+                        
+                        <h3 className="text-3xl md:text-4xl text-white font-headline uppercase tracking-tight group-hover/role:text-glow-gold transition-all duration-500">
+                          {role.title}
+                        </h3>
+                        
+                        <p className="text-silver/50 text-lg leading-relaxed italic font-light max-w-2xl border-l border-gold/10 pl-6 group-hover/role:border-gold/40 transition-colors">
+                          {role.function}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
