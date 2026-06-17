@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Globe, Users, Shield, Castle, Newspaper, Wine, Wrench, House, Briefcase, History } from 'lucide-react'
+import { Globe, Users, Shield, Castle, Newspaper, Wine, Wrench, House, Briefcase, History, MapPin } from 'lucide-react'
 
 const kingdoms = [
   {
@@ -13,7 +13,8 @@ const kingdoms = [
     desc: "Bâti sur l'ambition et la résilience, le royaume des Humains, connu sous le nom de Bastion d'Aethel, est une forteresse de magie et de courage. Après avoir reçu le don de la magie des Elfes, les humains ont érigé des cités majestueuses aux flèches scintillantes, protégées par de puissants enchantements. Leurs armées, combinant la maîtrise de l'acier et des arcanes, sont le premier rempart d'Asgarm contre les ténèbres, un symbole d'espoir et de détermination face à l'adversité.",
     color: "from-blue-500/20 to-sky-500/5",
     accent: "text-sky-400",
-    glow: "text-glow-blue"
+    glow: "text-glow-blue",
+    border: "border-sky-500/20"
   },
   {
     name: "Forêt d'Argent",
@@ -21,7 +22,8 @@ const kingdoms = [
     desc: "Au cœur des forêts ancestrales se niche la Forêt d'Argent, le royaume commun des Elfes et des Elfes de Lune. C'est une cité où la nature et la magie ne font qu'un, avec des habitations tissées dans les arbres vivants et des chemins illuminés par la lueur des étoiles. Tandis que les Elfes cultivent la magie de la vie, les Elfes de Lune veillent en secret depuis leurs sanctuaires ombragés, étudiant les arcanes obscurs pour maintenir l'équilibre. Ensemble, ils forment une communauté harmonieuse et sage, gardiens des plus anciens secrets d'Asgarm.",
     color: "from-emerald-600/20 to-green-600/5",
     accent: "text-emerald-400",
-    glow: "text-glow-green"
+    glow: "text-glow-green",
+    border: "border-emerald-500/20"
   },
   {
     name: "Citadelle de Fer",
@@ -29,7 +31,8 @@ const kingdoms = [
     desc: "Creusée dans les racines des montagnes, la Citadelle de Fer est le cœur vibrant du royaume des Nains. C'est un chef-d'œuvre d'ingénierie et d'artisanat, où le grondement des forges ne s'arrête jamais. Depuis qu'ils ont accepté la magie, les Nains ont appris à insuffler le pouvoir des arcanes dans leurs créations, forgeant des armes et des artefacts d'une puissance inégalée. Leurs vastes salles souterraines, éclairées par des veines de mithril et des cristaux enchantés, abritent un peuple fier et travailleur, pilier de la défense d'Asgarm.",
     color: "from-amber-600/20 to-orange-600/5",
     accent: "text-amber-500",
-    glow: "text-glow-amber"
+    glow: "text-glow-amber",
+    border: "border-amber-500/20"
   },
   {
     name: "Domaine Carmin",
@@ -37,7 +40,8 @@ const kingdoms = [
     desc: "Le Domaine Carmin, un château gothique aux tours élancées perçant les nuages, est le siège du pouvoir des Vampires. Autrefois un lieu de crainte, il est devenu un sanctuaire inattendu de guérison. Grâce à leur maîtrise de la magie du sang, les Vampires ont transformé leur sombre réputation, devenant les plus grands guérisseurs du royaume. Leurs salles élégantes et leurs bibliothèques remplies de savoirs occultes témoignent d'une noblesse ancienne et d'un engagement surprenant à préserver la vie, prouvant que la lumière peut naître même dans les ombres les plus profondes.",
     color: "from-red-600/20 to-black/40",
     accent: "text-red-600",
-    glow: "text-glow-red"
+    glow: "text-glow-red",
+    border: "border-red-900/40"
   }
 ]
 
@@ -73,7 +77,7 @@ const clans = [
   {
     name: "Clan des Lycans",
     trait: "Instinct Sauvage",
-    desc: "Descendants d'une ancienne malédiction, les Lycans sont des métamorphes capables de prendre la forme de loups terrifiants. Vivant en meutes soudées dans les forêts profondes, ils vénèrent la lune et suivent un code d'honneur sauvage. Leur force brute en fait des alliés redoutables ou des ennemis mortels."
+    desc: "Descendants d'une ancienne malédiction, les Lycans sont des métamorphes capables de prendre la forme de loups terrifiants. Vivant en meutes soudées dans les forêts profonde, ils vénèrent la lune et suivent un code d'honneur sauvage. Leur force brute en fait des alliés redoutables ou des ennemis mortels."
   },
   {
     name: "Clan des Centaures",
@@ -135,7 +139,7 @@ export default function AtlasPage() {
         
         <header className="mb-32 relative text-center flex flex-col items-center">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5 }}
             className="flex flex-col items-center"
@@ -194,28 +198,38 @@ export default function AtlasPage() {
             className="flex-1"
           >
             {activeTab === 'kingdoms' && (
-              <div className="grid grid-cols-1 gap-24">
+              <div className="grid grid-cols-1 gap-32">
                 {kingdoms.map((k, i) => (
                   <motion.div
                     key={k.name}
                     initial={{ opacity: 0, x: i % 2 === 0 ? -60 : 60 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-20 p-20 bg-black/40 border border-white/5 hover:border-gold/20 transition-all duration-1000 group relative overflow-hidden shadow-3xl`}
+                    className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-20 group relative overflow-hidden`}
                   >
-                    <div className={`absolute inset-0 bg-gradient-to-br ${k.color} opacity-0 group-hover:opacity-100 transition-opacity duration-1000`} />
-                    <div className="flex-1 relative z-10">
-                      <div className="flex items-center gap-4 mb-8">
-                        <Castle className={`w-3 h-3 ${k.accent}`} />
-                        <span className={`text-[10px] font-bold uppercase tracking-[0.6em] ${k.accent}`}>{k.race}</span>
+                    <div className="flex-1 relative z-10 flex flex-col justify-center py-16 px-20 bg-black/40 border border-white/5 hover:border-gold/20 transition-all duration-1000 shadow-3xl">
+                      <div className={`absolute inset-0 bg-gradient-to-br ${k.color} opacity-0 group-hover:opacity-100 transition-opacity duration-1000`} />
+                      
+                      <div className="relative z-20">
+                        <div className="flex items-center gap-4 mb-10">
+                          <MapPin className={`w-3 h-3 ${k.accent}`} />
+                          <span className={`text-[10px] font-bold uppercase tracking-[0.6em] ${k.accent}`}>{k.race}</span>
+                        </div>
+                        
+                        <h3 className={`text-8xl font-headline text-white uppercase mb-12 leading-none ${k.glow}`}>
+                          {k.name}
+                        </h3>
+                        
+                        <div className={`h-[1px] w-24 bg-white/10 mb-12 group-hover:w-full transition-all duration-1000`} />
+                        
+                        <p className="text-silver/50 text-xl leading-relaxed italic font-light border-l border-white/5 pl-12 max-w-4xl">
+                          {k.desc}
+                        </p>
                       </div>
-                      <h3 className={`text-7xl font-headline text-white uppercase mb-10 leading-none ${k.glow}`}>
-                        {k.name}
-                      </h3>
-                      <div className="h-[1px] w-24 bg-white/10 mb-10 group-hover:w-full transition-all duration-1000" />
-                      <p className="text-silver/50 text-xl leading-relaxed italic font-light border-l border-white/5 pl-12">
-                        {k.desc}
-                      </p>
+                    </div>
+                    
+                    <div className={`hidden lg:flex w-1/4 ${k.border} border-l flex-col items-center justify-center relative overflow-hidden bg-white/[0.01]`}>
+                      <Castle className={`w-12 h-12 ${k.accent} opacity-20 group-hover:scale-110 group-hover:opacity-40 transition-all duration-1000`} />
                     </div>
                   </motion.div>
                 ))}
