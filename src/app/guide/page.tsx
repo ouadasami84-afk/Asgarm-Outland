@@ -12,7 +12,7 @@ const institutions = [
     name: "Académie d'Asgarm",
     focus: "PÔLE ÉDUCATIF & DISCIPLINAIRE",
     icon: GraduationCap,
-    desc: "L'institution de formation des élites. Ici commence votre ascension.",
+    desc: "L'institution de formation des élites. Ici commence votre ascension vers la maîtrise des arts arcaniques.",
     roles: [
       { 
         title: "Direction (Directeur & Adjoint)", 
@@ -41,7 +41,7 @@ const institutions = [
     name: "Conclave des Arcanes",
     focus: "JUSTICE & LÉGISLATION",
     icon: Gavel,
-    desc: "Le garant de l'ordre public et de la loi régalienne d'Asgarm.",
+    desc: "Le garant de l'ordre public et de la loi régalienne d'Asgarm. Une structure de fer pour un royaume uni.",
     roles: [
       { 
         title: "Grand Sorcier", 
@@ -65,7 +65,7 @@ const institutions = [
     name: "Conclave des Ombres",
     focus: "ORDRE OCCULTE",
     icon: Ghost,
-    desc: "Les courants interdits et le renseignement secret du royaume.",
+    desc: "La main invisible d'Asgarm. Renseignement, influence et gestion des courants interdits pour la survie du royaume.",
     roles: [
       { 
         title: "Grand Sorcier des Ombres", 
@@ -89,7 +89,7 @@ const institutions = [
     name: "Royauté d'Asgarm",
     focus: "SOUVERAINETÉ SUPRÊME",
     icon: Crown,
-    desc: "Le sommet de la hiérarchie sociale et politique.",
+    desc: "Le sommet de la hiérarchie sociale et politique. Les architectes de la destinée d'Asgarm.",
     roles: [
       { 
         title: "Le Monarque (Roi ou Reine)", 
@@ -108,7 +108,7 @@ const institutions = [
     name: "Clans et Créatures",
     focus: "STRUCTURES SAUVAGES",
     icon: Users,
-    desc: "Les forces tribales et les traditions ancestrales du territoire.",
+    desc: "Les forces tribales et les traditions ancestrales. La puissance brute de la terre d'Asgarm.",
     roles: [
       { 
         title: "Chef de Clan / Alpha", 
@@ -127,7 +127,7 @@ const institutions = [
     name: "Économie et Services",
     focus: "PÔLE SOCIAL & COMMERCIAL",
     icon: Wallet,
-    desc: "Le coeur battant du commerce et de l'information.",
+    desc: "Le cœur battant du commerce et de l'information. La vie quotidienne au service de la grandeur.",
     roles: [
       { 
         title: "Agent Immobilier", 
@@ -155,7 +155,7 @@ export default function GuidePage() {
     <main className="relative h-screen flex flex-col overflow-hidden bg-transparent">
       <Navigation />
       
-      {/* Header Permanent */}
+      {/* Header Permanent - Optimisé pour l'espace */}
       <section className="relative pt-24 pb-4 px-8 flex-none z-20">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
