@@ -4,7 +4,7 @@
 import React, { forwardRef, useState, useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { Navigation } from '@/components/Navigation'
-import { Loader2, Book as BookIcon } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 // Importation dynamique pour éviter les erreurs SSR
@@ -18,7 +18,7 @@ const HTMLFlipBook = dynamic(() => import('react-pageflip'), {
   )
 })
 
-// Composant pour l'apparition magique des mots
+// Composant pour l'apparition magique des mots (Effet Harry Potter / AAA)
 const MagicalText = ({ text }: { text: string }) => {
   const words = text.split(' ');
   return (
