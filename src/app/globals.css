@@ -23,7 +23,7 @@ h1, h2, h3, h4 {
 }
 
 .glass-night {
-  @apply bg-night/40 backdrop-blur-xl border border-gold/10;
+  @apply bg-black/40 backdrop-blur-xl border border-gold/10;
 }
 
 .text-glow-gold {
@@ -58,31 +58,46 @@ h1, h2, h3, h4 {
   background-color: transparent !important;
 }
 
-/* Aurora Animation */
-@keyframes aurora {
-  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-  33% { transform: translate(5%, 5%) scale(1.1); opacity: 0.5; }
-  66% { transform: translate(-5%, 2%) scale(0.95); opacity: 0.4; }
-  100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+/* Aurora Animation Refined */
+@keyframes aurora-wave {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.1; }
+  33% { transform: translate(2%, 3%) scale(1.05); opacity: 0.25; }
+  66% { transform: translate(-2%, 1%) scale(0.98); opacity: 0.15; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.1; }
 }
 
 .animate-aurora {
-  animation: aurora 20s ease-in-out infinite;
+  animation: aurora-wave 25s ease-in-out infinite;
 }
 
-/* Shooting Star Animation */
-@keyframes shooting-star {
+/* Shooting Star Animation Refined */
+@keyframes shooting-star-anim {
   0% { transform: translateX(0) translateY(0) rotate(-45deg) scale(0); opacity: 0; }
-  10% { opacity: 1; scale: 1; }
-  20% { transform: translateX(-500px) translateY(500px) rotate(-45deg) scale(0); opacity: 0; }
-  100% { transform: translateX(-500px) translateY(500px) rotate(-45deg) scale(0); opacity: 0; }
+  2% { opacity: 1; scale: 1; }
+  6% { transform: translateX(-700px) translateY(700px) rotate(-45deg) scale(0); opacity: 0; }
+  100% { transform: translateX(-700px) translateY(700px) rotate(-45deg) scale(0); opacity: 0; }
 }
 
 .shooting-star {
   position: absolute;
-  width: 2px;
-  height: 150px;
-  background: linear-gradient(to bottom, rgba(212, 175, 55, 1), transparent);
-  animation: shooting-star 6s linear infinite;
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), transparent);
+  animation: shooting-star-anim 10s linear infinite;
   pointer-events: none;
+  filter: blur(1px);
+}
+
+/* Star Twinkle */
+@keyframes star-twinkle {
+  0%, 100% { opacity: var(--twinkle-opacity); transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: star-twinkle var(--twinkle-duration) ease-in-out infinite;
+  animation-delay: var(--twinkle-delay);
 }
