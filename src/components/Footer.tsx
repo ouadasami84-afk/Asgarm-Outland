@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { Instagram, Twitter, Youtube, Github, Compass } from 'lucide-react'
+import { Instagram, Twitter, Youtube, Github, Compass, MessageSquare, Video } from 'lucide-react'
 
 export const Footer: React.FC = () => {
   return (
@@ -17,21 +17,28 @@ export const Footer: React.FC = () => {
               "Dans l'immensité d'Asgarm, seuls ceux qui osent Outland trouveront la vérité."
             </p>
             <div className="flex gap-8">
-              {[Twitter, Instagram, Youtube, Github].map((Icon, i) => (
-                <a key={i} href="#" className="text-silver/20 hover:text-gold transition-colors duration-500">
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a href="#" className="text-silver/20 hover:text-gold transition-colors duration-500" title="Discord">
+                <MessageSquare className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-silver/20 hover:text-gold transition-colors duration-500" title="TikTok">
+                <Video className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-silver/20 hover:text-gold transition-colors duration-500" title="Youtube">
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-silver/20 hover:text-gold transition-colors duration-500" title="Instagram">
+                <Instagram className="w-5 h-5" />
+              </a>
             </div>
           </div>
           
           <div>
-            <h4 className="text-gold/80 font-headline text-sm mb-8 uppercase tracking-[0.4em] font-bold">Navigation</h4>
+            <h4 className="text-gold/80 font-headline text-sm mb-8 uppercase tracking-[0.4em] font-bold">L'Univers</h4>
             <ul className="space-y-5 font-body text-[11px] text-silver/40 uppercase tracking-widest">
+              <li><a href="/atlas" className="hover:text-gold transition-colors">La Map Asgarm</a></li>
               <li><a href="/archive" className="hover:text-gold transition-colors">L'Archive</a></li>
               <li><a href="/reliques" className="hover:text-gold transition-colors">Les Reliques</a></li>
-              <li><a href="/atlas" className="hover:text-gold transition-colors">Carte d'Asgarm</a></li>
-              <li><a href="#" className="hover:text-gold transition-colors">Rejoindre</a></li>
+              <li><a href="/maitrise" className="hover:text-gold transition-colors">Maîtrise</a></li>
             </ul>
           </div>
 
@@ -51,7 +58,7 @@ export const Footer: React.FC = () => {
           </p>
           <div className="flex items-center gap-2">
             <Compass className="w-3 h-3 text-gold/20" />
-            <span className="text-[9px] tracking-[0.5em] text-gold/20 font-bold uppercase">Vers l'Infini</span>
+            <span className="text-[9px] tracking-[0.5em] text-gold/20 font-bold uppercase">Vers l'Infini d'Asgarm</span>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Navigation } from '@/components/Navigation'
 import { Hero } from '@/components/Hero'
 import { Footer } from '@/components/Footer'
-import { Compass, Book, Shield, Trophy } from 'lucide-react'
+import { Compass, Book, Shield, Trophy, MessageSquare, Video } from 'lucide-react'
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -54,6 +54,7 @@ export default function Home() {
             <div className="relative z-10">
               <Hero />
               
+              {/* Introduction au Royaume */}
               <section className="py-48 px-8 max-w-7xl mx-auto text-center bg-transparent">
                 <motion.div 
                   initial={{ opacity: 0, y: 40 }}
@@ -64,20 +65,59 @@ export default function Home() {
                 >
                   <div className="flex items-center justify-center gap-4 mb-8">
                     <div className="h-[1px] w-12 bg-gold/30" />
-                    <span className="text-gold text-[10px] tracking-[0.5em] uppercase font-bold">L'Éveil</span>
+                    <span className="text-gold text-[10px] tracking-[0.5em] uppercase font-bold">Le Projet Asgarm</span>
                     <div className="h-[1px] w-12 bg-gold/30" />
                   </div>
                   <h2 className="text-5xl font-headline mb-10 text-white uppercase tracking-tighter leading-tight">
-                    Une Nouvelle Ère <br /> <span className="text-gold italic font-light">Sur Asgarm</span>
+                    Dominez la Terre <br /> <span className="text-gold italic font-light">D'Asgarm</span>
                   </h2>
                   <p className="text-silver/40 max-w-2xl mx-auto italic text-lg leading-relaxed font-light">
-                    "La magie ne se contente pas d'exister sur Outland. Elle forge le destin de ceux qui osent franchir les portes du royaume sacré."
+                    "Outland n'est pas qu'un serveur, c'est une ascension. Sur la map d'Asgarm, 
+                    chaque pas est un défi, chaque alliance une nécessité."
                   </p>
                 </motion.div>
                 
+                {/* Communauté Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-40 max-w-4xl mx-auto">
+                  <motion.a
+                    href="#"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.02 }}
+                    className="glass-night p-10 border border-gold/10 flex items-center gap-8 group"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-gold/5 flex items-center justify-center border border-gold/10 group-hover:border-gold/40 transition-all">
+                      <MessageSquare className="w-8 h-8 text-gold" />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="font-headline text-xl text-white mb-2 group-hover:text-gold transition-colors">Discord Officiel</h4>
+                      <p className="text-[10px] text-silver/40 uppercase tracking-[0.2em]">Rejoindre la Phalange</p>
+                    </div>
+                  </motion.a>
+
+                  <motion.a
+                    href="#"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.02 }}
+                    className="glass-night p-10 border border-gold/10 flex items-center gap-8 group"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-gold/5 flex items-center justify-center border border-gold/10 group-hover:border-gold/40 transition-all">
+                      <Video className="w-8 h-8 text-gold" />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="font-headline text-xl text-white mb-2 group-hover:text-gold transition-colors">TikTok Outland</h4>
+                      <p className="text-[10px] text-silver/40 uppercase tracking-[0.2em]">Les Chroniques d'Asgarm</p>
+                    </div>
+                  </motion.a>
+                </div>
+                
+                {/* Navigation Rapide */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                   {[
-                    { title: "Atlas", desc: "Explorer Asgarm", href: "/atlas", icon: Compass },
+                    { title: "Atlas", desc: "La Map Asgarm", href: "/atlas", icon: Compass },
                     { title: "Archive", desc: "Savoir Ancien", href: "/archive", icon: Book },
                     { title: "Reliques", desc: "Trésors Royaux", href: "/reliques", icon: Shield },
                     { title: "Maîtrise", desc: "Ascension", href: "/maitrise", icon: Trophy }
