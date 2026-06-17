@@ -23,6 +23,7 @@ export const Navigation: React.FC = () => {
     { name: 'Histoire', href: '/histoire' },
     { name: 'Conclave', href: '/conclave' },
     { name: 'Académie', href: '/academie' },
+    { name: 'Atlas', href: '/atlas' },
   ]
 
   return (
@@ -109,7 +110,7 @@ export const Navigation: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.6 }}
             >
               <Link 
                 href="/reglement" 
