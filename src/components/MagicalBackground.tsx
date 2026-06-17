@@ -21,19 +21,19 @@ export const MagicalBackground: React.FC = () => {
   const [stars, setStars] = useState<Star[]>([])
 
   useEffect(() => {
-    // Generate a high-fidelity field of stars with drift components
-    const generatedStars = [...Array(300)].map((_, i) => {
-      const isGold = Math.random() > 0.85;
-      const driftScale = 60; 
+    // High-fidelity field of stars with refined drift and twinkle
+    const generatedStars = [...Array(350)].map((_, i) => {
+      const isGold = Math.random() > 0.8;
+      const driftScale = 70; 
       return {
         id: i,
         left: `${Math.random() * 100}%`,
         top: `${Math.random() * 100}%`,
-        size: Math.random() * 2 + 0.3,
+        size: Math.random() * 2 + 0.4,
         delay: `${Math.random() * 5}s`,
         duration: `${4 + Math.random() * 6}s`,
-        opacity: Math.random() * 0.7 + 0.2,
-        color: isGold ? 'rgba(212, 175, 55, 0.9)' : 'rgba(255, 255, 255, 0.7)',
+        opacity: Math.random() * 0.8 + 0.2,
+        color: isGold ? 'rgba(212, 175, 55, 0.9)' : 'rgba(255, 255, 255, 0.8)',
         driftX: (Math.random() - 0.5) * driftScale,
         driftY: (Math.random() - 0.5) * driftScale,
       }
@@ -49,21 +49,21 @@ export const MagicalBackground: React.FC = () => {
       {/* Multilayered Aurora Borealis AAA */}
       <div className="absolute inset-0 opacity-40 mix-blend-screen overflow-hidden">
         <motion.div 
-          className="absolute -top-[20%] -left-[10%] w-[140%] h-[100%] bg-gradient-to-r from-indigo-500/15 via-emerald-500/10 to-transparent blur-[160px] rounded-full" 
+          className="absolute -top-[20%] -left-[10%] w-[140%] h-[100%] bg-gradient-to-r from-indigo-500/20 via-emerald-500/15 to-transparent blur-[160px] rounded-full" 
           animate={{
             x: [0, 60, 0],
             y: [0, 40, 0],
           }}
-          transition={{ duration: 45, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute top-[30%] -right-[20%] w-[120%] h-[90%] bg-gradient-to-l from-purple-500/15 via-blue-500/15 to-transparent blur-[180px] rounded-full" 
+          className="absolute top-[30%] -right-[20%] w-[120%] h-[90%] bg-gradient-to-l from-purple-500/20 via-blue-500/20 to-transparent blur-[180px] rounded-full" 
           animate={{
             x: [0, -50, 0],
             y: [0, 30, 0],
-            opacity: [0.3, 0.6, 0.3],
+            opacity: [0.3, 0.7, 0.3],
           }}
-          transition={{ duration: 40, repeat: Infinity, ease: "easeInOut", delay: -5 }}
+          transition={{ duration: 35, repeat: Infinity, ease: "easeInOut", delay: -5 }}
         />
       </div>
 
@@ -84,7 +84,7 @@ export const MagicalBackground: React.FC = () => {
               width: `${star.size}px`,
               height: `${star.size}px`,
               backgroundColor: star.color,
-              boxShadow: star.size > 1.5 ? `0 0 10px ${star.color}` : 'none',
+              boxShadow: star.size > 1.8 ? `0 0 12px ${star.color}` : 'none',
               position: 'absolute',
               borderRadius: '50%',
             } as React.CSSProperties}
@@ -92,10 +92,10 @@ export const MagicalBackground: React.FC = () => {
               x: [0, star.driftX],
               y: [0, star.driftY],
               opacity: [star.opacity, 0.1, star.opacity],
-              scale: [1, 1.3, 1],
+              scale: [1, 1.4, 1],
             }}
             transition={{
-              duration: 50,
+              duration: 45,
               repeat: Infinity,
               repeatType: "reverse",
               ease: "linear",
@@ -105,7 +105,7 @@ export const MagicalBackground: React.FC = () => {
       </motion.div>
       
       {/* Heavy Cinematic Vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_60%,_rgba(1,2,8,1)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_65%,_rgba(1,2,8,1)_100%)]" />
     </div>
   )
 }
