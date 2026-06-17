@@ -49,7 +49,7 @@ const MagicalText = ({ text, title }: { text: string; title?: string }) => {
         </motion.h3>
       )}
       <div className="flex-1">
-        <motion.p className="text-[#3d2b19] font-serif leading-[1.5] text-justify text-[12px] italic">
+        <motion.p className="text-[#3d2b19] font-serif leading-[1.5] text-justify text-[11px] italic">
           {words.map((word, i) => (
             <motion.span
               key={i}
