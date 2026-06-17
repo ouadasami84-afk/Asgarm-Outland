@@ -4,7 +4,7 @@
 import React, { forwardRef, useState, useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { Navigation } from '@/components/Navigation'
-import { Loader2, ChevronRight, ChevronLeft, Sparkles } from 'lucide-react'
+import { Loader2, Sparkles } from 'lucide-react'
 import { generateMagicalLore } from '@/ai/flows/generate-magical-lore-flow'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -102,20 +102,6 @@ export default function HistoirePage() {
           transition={{ duration: 1.5, delay: 0.3 }}
           className="relative group flex items-center justify-center"
         >
-          {/* Navigation Subtile */}
-          <button 
-            onClick={() => bookRef.current.pageFlip().flipPrev()}
-            className="absolute -left-20 top-1/2 -translate-y-1/2 p-4 text-gold/10 hover:text-gold transition-all hidden xl:block z-30"
-          >
-            <ChevronLeft className="w-12 h-12" />
-          </button>
-          <button 
-            onClick={() => bookRef.current.pageFlip().flipNext()}
-            className="absolute -right-20 top-1/2 -translate-y-1/2 p-4 text-gold/10 hover:text-gold transition-all hidden xl:block z-30"
-          >
-            <ChevronRight className="w-12 h-12" />
-          </button>
-
           <div className="flip-book-container relative shadow-[0_60px_120px_rgba(0,0,0,1)] border-[2px] border-[#1a120a] rounded-sm overflow-hidden bg-[#2a1a0a]">
             <HTMLFlipBook
               width={550}
@@ -273,7 +259,7 @@ export default function HistoirePage() {
           className="mt-10 flex items-center gap-6"
         >
           <div className="h-[1px] w-12 bg-gold/20" />
-          <span className="text-gold text-[8px] tracking-[0.6em] uppercase font-bold">Utilisez les flèches ou faites glisser les pages</span>
+          <span className="text-gold text-[8px] tracking-[0.6em] uppercase font-bold">Faites glisser les pages pour explorer les annales</span>
           <div className="h-[1px] w-12 bg-gold/20" />
         </motion.div>
       </div>
