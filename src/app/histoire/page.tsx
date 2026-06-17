@@ -100,7 +100,7 @@ export default function HistoirePage() {
             Les Chroniques d'Asgarm
           </h1>
           <p className="text-gold/40 text-sm italic font-light tracking-widest max-w-2xl mx-auto leading-relaxed">
-            "Ce grimoire contient l'essence même de notre royaume. Parcourez les siècles et découvrez les secrets de notre ascension éternelle."
+            "Le savoir d'Asgarm est scellé dans ce grimoire éternel. Tournez les pages pour découvrir les racines de notre destin."
           </p>
         </motion.div>
 
@@ -151,79 +151,80 @@ export default function HistoirePage() {
               showPageCorners={true}
               disableFlipByClick={false}
             >
-              {/* Page 1: L'Origine */}
+              {/* Chapitre 1 */}
               <Page number={1}>
-                <div className="flex flex-col h-full">
-                  <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">I. La Fondation</h2>
-                  <div className="prose">
-                    <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg mb-8">
-                      D'après les textes sacrés de l'Ether, Asgarm ne fut pas simplement bâtie sur la pierre, elle fut extraite du néant par la volonté des premiers Scribes de l'Aube. Un royaume de pure énergie, flottant entre le rêve et la réalité.
-                    </p>
-                    <div className="p-8 border-l-2 border-[#4a3721]/15 bg-[#4a3721]/5 my-8">
-                      <p className="text-[#3d2b19] font-serif italic leading-relaxed text-justify text-md">
-                        "Nous avons planté les racines de la souveraineté dans le terreau de l'éternité."
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">I. L'Âge d'Harmonie</h2>
+                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
+                  Autrefois, dans un temps que seuls les plus vieux récits murmurent, le monde d'Asgarm respirait en harmonie. C'était l'Âge d'Harmonie, un équilibre parfait maintenu par une règle immuable : seuls les Elfes à la peau verdoyante et leurs cousins reclus, les Elfes de Lune à la peau bleutée, pouvaient manier la magie. Les Elfes, avec leur grâce infinie, maîtrisaient la magie arcanique, une force pure et ordonnée, canalisée à travers des baguettes sculptées dans le bois ancestral.
+                </p>
               </Page>
 
-              {/* Page 2: Gravure Antique */}
+              {/* Chapitre 2 */}
               <Page number={2}>
-                <div className="flex flex-col h-full items-center justify-center space-y-8">
-                  <div className="h-full w-full border border-[#4a3721]/20 bg-[#4a3721]/5 relative group overflow-hidden shadow-inner">
-                    <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/asgarm-history-foundation/800/600')] bg-cover bg-center grayscale contrast-125 opacity-40 group-hover:opacity-60 transition-all duration-1000" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#f4ecd8]/40" />
-                  </div>
-                  <span className="text-[#4a3721]/40 text-[9px] tracking-[0.6em] uppercase font-bold italic">
-                    — Représentation du Premier Pilier —
-                  </span>
-                </div>
+                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">II. L'Invasion des Cavaliers</h2>
+                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
+                  Mais cet équilibre millénaire fut pulvérisé. Venus des abysses, les Cavaliers de l'Apocalypse, de terrifiants sorciers de la mort, firent irruption à Asgarm. Leur arrivée ne fut pas qu'une simple invasion ; leur seule présence maléfique déstabilisa l'équilibre fragile entre la magie arcanique des Elfes et la magie obscure des Elfes de Lune, créant des tempêtes d'énergie chaotique qui ravageaient les terres.
+                </p>
               </Page>
 
-              {/* Page 3: L'Âge de la Lumière */}
+              {/* Chapitre 3 */}
               <Page number={3}>
-                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">II. L'Éveil de l'Ether</h2>
-                <div className="space-y-8">
-                  <p className="text-[#3d2b19] font-serif leading-loose text-justify text-lg">
-                    L'Âge d'Or vit la création des Grandes Académies. C'est durant cette période que la maîtrise de l'éther devint une science exacte, permettant aux cités de s'élever au-delà des nuages, défiant les lois terrestres.
-                  </p>
-                  <p className="text-[#3d2b19] font-serif leading-loose text-justify text-lg">
-                    Les Archivistes rapportent que le ciel lui-même semblait répondre aux chants des mages, se teintant d'aurores boréales permanentes, signe de l'équilibre parfait entre l'homme et la magie.
-                  </p>
-                </div>
+                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">III. Le Sacrifice de Melfetys</h2>
+                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
+                  Acculée, la reine des Elfes, Melfetys, accomplit alors l'impensable, un sacrifice qui allait changer le monde à jamais. Le cœur brisé, elle brisa le serment millénaire de son peuple et libéra l'essence de la magie, l'offrant à toutes les races d'Asgarm. Une vague de puissance brute déferla sur le monde, un acte désespéré pour donner une chance aux mortels de se défendre.
+                </p>
               </Page>
 
-              {/* Page 4: La Fracture */}
+              {/* Chapitre 4 */}
               <Page number={4}>
-                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">III. Le Cataclysme</h2>
-                <div className="space-y-8">
-                  <p className="text-[#3d2b19] font-serif leading-loose text-justify text-lg">
-                    Tout empire connaît son hiver. Une soif de pouvoir interdite brisa le Sceau du Vide, libérant des ombres que l'on pensait disparues. Le Grand Cataclysme faillit anéantir Asgarm.
-                  </p>
-                  <div className="relative py-8 px-6 bg-[#2a1a0a]/5 border-y border-[#4a3721]/10">
-                    <p className="text-[#4a3721] font-serif italic text-lg leading-relaxed text-center font-bold">
-                      "Dans l'obscurité la plus totale, nous avons redécouvert l'étincelle de notre unité."
-                    </p>
-                  </div>
-                </div>
+                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">IV. L'Éveil d'Alaric</h2>
+                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
+                  Chez les Humains, ce don se manifesta comme une force brute, une tempête intérieure. Un capitaine de la garde, Alaric, sentit cette puissance s'éveiller en lui. Saisissant une branche de chêne brisée sur le champ de bataille, il tenta de canaliser le flux. La branche crépita, s'illumina, et devint la toute première baguette humaine, projetant un torrent de flammes purificatrices sur ses ennemis.
+                </p>
               </Page>
 
-              {/* Page 5: La Renaissance */}
+              {/* Chapitre 5 */}
               <Page number={5}>
-                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">IV. L'Ère d'Outland</h2>
-                <div className="space-y-8">
-                  <p className="text-[#3d2b19] font-serif leading-loose text-justify text-lg">
-                    Des cendres du Cataclysme naquit Outland. Une nouvelle vision, où la technologie ancestrale et la sagesse éternelle fusionnent. Le royaume fut reconstruit non pas sur le passé, mais pour l'avenir.
-                  </p>
-                  <div className="h-[250px] w-full border border-[#4a3721]/20 bg-[#4a3721]/5 relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/asgarm-modern/800/600')] bg-cover bg-center grayscale opacity-30 group-hover:opacity-50 transition-all duration-700" />
-                  </div>
-                </div>
+                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">V. La Forge de Thorgrim</h2>
+                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
+                  Dans les profondeurs des montagnes, la magie toucha les Nains. Thorgrim Main-de-Pierre sentit la magie vibrer dans la pierre et le métal. Appliquant la rigueur de la forge à ce nouvel art, les Nains devinrent rapidement les plus grands fabricants de baguettes d'Asgarm. Leurs créations, alliant bois robustes et incrustations runiques, étaient des chefs-d'œuvre de puissance et de fiabilité.
+                </p>
               </Page>
 
-              {/* Page 6: Invocateur de Destin (IA Tool) */}
+              {/* Chapitre 6 */}
               <Page number={6}>
+                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">VI. Le Domaine Carmin</h2>
+                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
+                  Même les clans les plus reclus furent touchés. Les Vampires du Domaine Carmin, dirigés par Lord Valerius, découvrirent que leur affinité innée avec le sang pouvait être canalisée. Ils apprirent à manipuler l'essence vitale pour la restaurer, devenant les plus grands guérisseurs de guerre, capables de refermer les blessures les plus mortelles par des sortilèges de sang complexes.
+                </p>
+              </Page>
+
+              {/* Chapitre 7 */}
+              <Page number={7}>
+                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">VII. L'Alliance de la Lumière</h2>
+                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
+                  C'est ainsi que naquit l'Alliance de la Lumière. Les armées humaines affrontaient les ténèbres avec des volées de sortilèges. Les légions de Nains étaient des remparts infranchissables. Les Vampires de Valerius maintenaient les troupes en vie, tandis que les Elfes de Lune frappaient en silence au cœur des lignes ennemies. Unis par l'espoir, ces peuples se battaient enfin comme un seul homme.
+                </p>
+              </Page>
+
+              {/* Chapitre 8 */}
+              <Page number={8}>
+                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">VIII. La Victoire et la Faille</h2>
+                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
+                  La bataille finale eut lieu sur les Plaines Calcinées. Le Seigneur des Cavaliers affronta Alaric en duel. Thorgrim le Nain s'interposa héroïquement, encaissant un sort mortel pour offrir une seconde au roi. D'un cri de rage, Alaric anéantit le tyran. Les Cavaliers étaient vaincus, mais la faille dans le ciel demeurait, une blessure béante prête à tout consumer.
+                </p>
+              </Page>
+
+              {/* Chapitre 9 */}
+              <Page number={9}>
+                <h2 className="text-2xl font-headline text-[#4a3721] uppercase tracking-[0.5em] mb-12 text-center border-b border-[#4a3721]/10 pb-6">IX. Un Nouvel Équilibre</h2>
+                <p className="text-[#3d2b19] first-letter:text-7xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-loose text-justify text-lg">
+                  La guerre était gagnée, mais le monde était fracturé. Pour guider les égarés, deux institutions furent fondées : l'Académie d'Asgarm et le Conclave des Arcanes. Un nouvel équilibre précaire s'est installé. Les pages de ce grimoire s'arrêtent ici, car c'est à vous, héros d'Asgarm, d'écrire la suite. Votre histoire commence maintenant.
+                </p>
+              </Page>
+
+              {/* Page 10: Invocateur de Destin (IA Tool) */}
+              <Page number={10}>
                 <div className="h-full flex flex-col pt-4">
                   <div className="text-center mb-8">
                     <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#4a3721]/20 bg-[#4a3721]/5 mb-4">
