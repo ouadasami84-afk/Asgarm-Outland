@@ -4,159 +4,154 @@
 import React, { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronRight, Shield, Book, Globe, Briefcase, History, Sparkles, MapPin, CheckCircle2, AlertCircle } from 'lucide-react'
+import { ChevronRight, Shield, Book, Globe, Briefcase, History, Sparkles, MapPin, CheckCircle2, AlertCircle, UserCircle } from 'lucide-react'
 
 const institutions = [
   {
     id: "premiers-pas",
     name: "Premiers Pas",
-    focus: "IMMERSION INITIALE",
+    focus: "IMMERSION & IDENTITÉ",
     icon: Sparkles,
-    desc: "Votre voyage commence ici. Avant de solliciter le Conclave, vous devez comprendre les bases de votre éveil magique.",
-    mission: "S'intégrer dans le tissu social d'Asgarm et obtenir ses outils fondamentaux.",
+    desc: "Votre réveil dans Asgarm commence par le choix de votre essence. Votre identité physique doit refléter votre lignée pour maintenir l'équilibre visuel du royaume.",
+    mission: "Définir votre race, respecter votre carnation imposée et obtenir votre premier artefact de canalisation.",
     rights: [
-      "Obtenir une baguette magique personnalisée",
-      "Être réparti dans l'une des quatre Maisons",
-      "Utiliser les sorts de base (Lumière, Déplacement mineur)",
-      "Accéder aux quartiers publics du Bastion"
+      "Choisir librement sa race parmi les 5 lignées majeures",
+      "Recevoir une baguette magique d'initiation personnalisée",
+      "Accéder aux zones publiques du Bastion d'Aethel",
+      "Pratiquer les sorts de confort et de lumière"
     ],
     prohibitions: [
-      "Lancer des sorts offensifs sur des civils",
-      "Pénétrer dans les zones restreintes du Conclave sans escorte",
-      "Pratiquer la magie sans baguette en public"
+      "Porter une carnation (couleur de peau) non-conforme à sa race",
+      "Utiliser des sorts offensifs sans provocation légitime",
+      "Pratiquer la magie sans baguette devant des représentants officiels"
     ],
     roles: [
-      { title: "ARRIVÉE AU BASTION", rank: "IMMIGRANT", function: "Point d'apparition. Validation de l'identité et réception du laissez-passer citoyen." },
-      { title: "ÉVEIL DE LA BAGUETTE", rank: "CITOYEN ÉVEILLÉ", function: "Rencontre avec le fabricant de baguettes pour lier son âme à l'éther." },
-      { title: "CÉRÉMONIE DES MAISONS", rank: "NOVICE", function: "Évaluation du tempérament pour l'attribution d'une Maison ancestrale." }
+      { title: "RACE HUMAINE", rank: "BEIGE OU NOIR", function: "L'ambition et la résilience. Votre peau doit être impérativement de teinte beige ou noire." },
+      { title: "RACE NAINE", rank: "NOIR OU ROUGE", function: "La force de la terre et des forges. Votre peau doit impérativement être de teinte noire ou rouge." },
+      { title: "RACE ELFE", rank: "VERT", function: "L'harmonie et la magie de la vie. Votre peau doit impérativement être de teinte verte." },
+      { title: "RACE ELFE DE LUNE", rank: "BLEU", function: "La sagesse des astres et de l'ombre. Votre peau doit impérativement être de teinte bleue." },
+      { title: "RACE VAMPIRE", rank: "BLANC TRÈS CLAIR", function: "La noblesse éternelle et la magie du sang. Votre peau doit impérativement être d'un blanc très clair." }
     ]
   },
   {
     id: "academie",
     name: "Académie d'Asgarm",
-    focus: "FORMATION & DISCIPLINE",
+    focus: "FORMATION & SAVOIR",
     icon: Book,
-    desc: "L'institution souveraine pour tout étudiant. Ici, la trêve est absolue pour favoriser le savoir.",
-    mission: "Apprendre la théorie magique, réussir ses examens et progresser dans la hiérarchie académique.",
+    desc: "L'institution souveraine pour tout étudiant. Ici, la trêve est absolue pour favoriser l'apprentissage des arcanes.",
+    mission: "Maîtriser la théorie magique, progresser dans les grades académiques et respecter le corps enseignant.",
     rights: [
-      "Étudier les grimoires de la bibliothèque royale",
+      "Étudier les grimoires restreints de la bibliothèque royale",
       "Participer aux duels d'entraînement supervisés",
-      "Solliciter l'aide d'un Professeur pour l'apprentissage d'un sort",
-      "Accéder aux serres d'alchimie"
+      "Passer les examens pour monter en grade hiérarchique",
+      "Accéder aux laboratoires d'alchimie avancés"
     ],
     prohibitions: [
-      "Combats offensifs non autorisés dans l'enceinte",
       "Usage de la magie noire ou du sang (Exclusion immédiate)",
-      "Disrespect envers le corps enseignant",
-      "Sortie des dortoirs après le couvre-feu"
+      "Violence physique ou verbale envers un Professeur",
+      "Sortie non-autorisée des dortoirs pendant le couvre-feu"
     ],
     roles: [
-      { title: "DIRECTEUR D’ASGARM", rank: "HAUTE AUTORITÉ", function: "Souveraineté totale sur l'institution et arbitrage final des sanctions." },
-      { title: "DIRECTEUR ADJOINT", rank: "COMMANDEMENT", function: "Coordination des examens et supervision administrative." },
-      { title: "PROFESSEUR DE DÉFENSE", rank: "SÉCURITÉ", function: "Expert en contre-sorts et boucliers." },
-      { title: "MAÎTRE DES CRÉATURES", rank: "BESTIAIRE", function: "Étude et sécurité lors des expéditions en zones reculées." },
-      { title: "SURVEILLANT GÉNÉRAL", rank: "ORDRE", function: "Garant du calme et de l'assiduité dans les couloirs." }
+      { title: "DIRECTEUR D’ASGARM", rank: "SOUVERAINETÉ", function: "Gestion totale de l'institution et arbitrage final des sanctions disciplinaires." },
+      { title: "CORPS ENSEIGNANT", rank: "PROFESSEURS", function: "Transmission du savoir (Défense, Sortilèges, Alchimie, Vol) et validation des sorts." },
+      { title: "SURVEILLANCE", rank: "GARDIENS", function: "Maintien du calme dans les couloirs et application immédiate des retenues." }
     ]
   },
   {
     id: "arcanes",
     name: "Conclave des Arcanes",
-    focus: "JUSTICE & LÉGISLATION",
+    focus: "JUSTICE & ÉQUILIBRE",
     icon: Shield,
-    desc: "Le garant de l'ordre public. Toute pratique déviante est traquée et sanctionnée.",
-    mission: "Faire respecter les décrets royaux, protéger les citoyens et éradiquer la corruption magique.",
+    desc: "Le garant de l'ordre public d'Asgarm. Toute pratique magique déviante est traquée, jugée et sanctionnée.",
+    mission: "Faire respecter les décrets royaux, traquer les mages noirs et protéger les citoyens des menaces occultes.",
     rights: [
-      "Procéder à des arrestations pour usage de magie interdite",
-      "Rendre des jugements lors des contentieux territoriaux",
-      "Réquisitionner des ressources pour la sécurité du royaume",
-      "Surveiller les flux d'éther"
+      "Procéder à des arrestations pour usage de magie prohibée",
+      "Rendre des jugements lors de contentieux territoriaux",
+      "Réquisitionner des ressources pour la sécurité du trône",
+      "Surveiller les flux d'éther pour prévenir les failles"
     ],
     prohibitions: [
-      "Abus de pouvoir ou corruption",
-      "Violence gratuite lors des interrogatoires",
-      "Ignorer un appel à l'aide citoyen",
-      "Pratiquer soi-même la magie de l'ombre"
+      "Abus de pouvoir ou corruption financière",
+      "Violence gratuite lors des interrogatoires officiels",
+      "Pratiquer soi-même la magie de l'ombre ou du sang"
     ],
     roles: [
-      { title: "GRAND SORCIER", rank: "HAUTE MAGISTRATURE", function: "Architecte du Code Législatif et pouvoir d'arbitrage final." },
-      { title: "MAÎTRE SORCIER", rank: "ARCHITECTURE CIVILE", function: "Gestion de l'infrastructure et des ressources éthérées." },
-      { title: "CONSEILLER", rank: "DIPLOMATIE", function: "Expert en médiation et stratégie légale inter-royaumes." },
-      { title: "PROTECTEUR", rank: "ORDRE PUBLIC", function: "Puissance répressive légitime chargée de la neutralisation des déviants." },
-      { title: "GARDIEN", rank: "VIGILANCE", function: "Sentinelle des frontières et détection des influences occultes." }
+      { title: "GRAND SORCIER", rank: "HAUTE MAGISTRATURE", function: "Architecte des lois et pouvoir d'arbitrage suprême sur Asgarm." },
+      { title: "PROTECTEUR", rank: "ORDRE PUBLIC", function: "Puissance répressive chargée de la neutralisation des sorciers déviants." },
+      { title: "GARDIEN", rank: "VIGILANCE", function: "Sentinelle des frontières et détection des infiltrations occultes." }
     ]
   },
   {
     id: "ombres",
     name: "Conclave des Ombres",
-    focus: "ORDRE OCCULTE",
+    focus: "PUISSANCE & LIBERTÉ",
     icon: History,
-    desc: "Pour ceux qui refusent les chaînes de la justice conventionnelle et cherchent la puissance absolue.",
-    mission: "Étudier les arts interdits, infiltrer les institutions et servir le Royaume du Mal.",
+    desc: "L'ordre clandestin pour ceux qui refusent les chaînes de la justice conventionnelle et cherchent la souveraineté occulte.",
+    mission: "Étudier les arts interdits, infiltrer les institutions de lumière et servir le Royaume du Mal.",
     rights: [
-      "Apprendre et utiliser la magie noire et du sang",
-      "Mener des opérations clandestines",
-      "Manipuler l'influence politique dans l'ombre",
-      "Accéder aux reliques interdites"
+      "Apprendre et manipuler la magie noire et la magie du sang",
+      "Mener des opérations de sabotage et d'influence politique",
+      "Accéder aux reliques interdites scellées par les Arcanes",
+      "Répartir l'influence de l'ombre dans les royaumes"
     ],
     prohibitions: [
-      "Trahir le secret de l'Ordre (Mort RP)",
-      "Échouer lors d'une mission d'infiltration majeure",
-      "S'allier ouvertement avec les Arcanes"
+      "Trahir le secret de l'Ordre ou révéler l'identité des maîtres",
+      "Échouer lors d'une mission d'infiltration critique",
+      "S'allier officiellement avec les Protecteurs des Arcanes"
     ],
     roles: [
-      { title: "GRAND SORCIER DES OMBRES", rank: "SOUVERAINETÉ", function: "Maître des réseaux clandestins et gardien des secrets d'État." },
-      { title: "MAÎTRE DES TÉNÈBRES", rank: "COMMANDEMENT", function: "Stratège des opérations d'infiltration et instructeur occulte." },
-      { title: "CONSEILLER OBSCUR", rank: "INFLUENCE", function: "Architecte de la manipulation politique pour la domination de l'ombre." },
-      { title: "PROTECTEUR DES OMBRES", rank: "EXÉCUTION", function: "Exécuteur d'élite chargé de neutraliser les menaces arcaniques." },
-      { title: "GARDIEN DES RELIQUES", rank: "SÉCURITÉ", function: "Protecteur des artefacts de sang et des sources de mana noir." }
+      { title: "GRAND SORCIER DES OMBRES", rank: "SOUVERAINETÉ", function: "Maître absolu des réseaux clandestins et gardien des secrets d'État noirs." },
+      { title: "MAÎTRE DES TÉNÈBRES", rank: "STRATÈGE", function: "Planification des opérations d'infiltration et enseignement occulte." },
+      { title: "PROTECTEUR DES OMBRES", rank: "EXÉCUTEUR", function: "Neutralisation chirurgicale des cibles gênantes pour l'Ordre." }
     ]
   },
   {
     id: "economie",
     name: "Économie & Métiers",
-    focus: "PÔLE SOCIAL & COMMERCE",
+    focus: "SOCIAL & COMMERCE",
     icon: Briefcase,
-    desc: "Le moteur civil. C'est ici que vous construisez votre influence matérielle.",
-    mission: "Offrir des services de qualité, stimuler le commerce et enrichir la vie sociale d'Asgarm.",
+    desc: "Le moteur civil du royaume. C'est ici que vous construisez votre influence matérielle et votre réseau social.",
+    mission: "Offrir des services d'excellence, stimuler les flux de ressources et enrichir la vie quotidienne d'Asgarm.",
     rights: [
       "Vendre des marchandises et services à prix libre",
-      "Rédiger des contrats magiques contraignants",
-      "Ouvrir un établissement commercial (Taverne, Boutique)",
-      "Mener des enquêtes journalistiques"
+      "Rédiger des contrats magiques à valeur juridique",
+      "Ouvrir un établissement commercial de prestige",
+      "Mener des enquêtes journalistiques d'envergure"
     ],
     prohibitions: [
-      "Arnaques financières supérieures à 5000 pièces d'or",
-      "Vente de produits illégaux (Poisons, Magie noire) sans licence",
-      "Travail dissimulé pour des organisations criminelles"
+      "Réaliser des arnaques financières supérieures à 5000 pièces d'or",
+      "Vendre des produits prohibés (Poisons, Reliques noires) sans licence",
+      "Travailler clandestinement pour des organisations criminelles"
     ],
     roles: [
-      { title: "JOURNAL ASGARM", rank: "CHRONIQUEUR", function: "Documenter les événements et façonner l'opinion publique." },
-      { title: "TAVERNE MAGIQUE", rank: "HOSPITALITÉ", function: "Gestion des sanctuaires sociaux et des réseaux d'information." },
-      { title: "BRICOLIFUS", rank: "INGÉNIERIE", function: "Maintenance et optimisation des balais et équipements de vol." },
-      { title: "LA MAISON MAGIQUE", rank: "PATRIMOINE", function: "Gestion foncière et sécurisation des domaines runiques." }
+      { title: "JOURNAL ASGARM", rank: "INFORMATION", function: "Documenter les faits, rédiger les annales et influencer l'opinion publique." },
+      { title: "TAVERNE MAGIQUE", rank: "HOSPITALITÉ", function: "Gestion des sanctuaires sociaux et des réseaux d'information discrets." },
+      { title: "BRICOLIFUS", rank: "INGÉNIERIE", function: "Maintenance et optimisation des équipements de vol (Balais, Montures)." },
+      { title: "LA MAISON MAGIQUE", rank: "IMMOBILIER", function: "Gestion foncière et sécurisation runique des domaines privés." }
     ]
   },
   {
     id: "clans",
-    name: "Clans & Créatures",
+    name: "Clans & Territoires",
     focus: "STRUCTURES SAUVAGES",
     icon: Globe,
-    desc: "Pour ceux qui choisissent la vie en dehors des cités, régie par l'instinct et l'honneur.",
-    mission: "Protéger le territoire sauvage, préserver les rites ancestraux et assurer la survie de la meute.",
+    desc: "Pour ceux qui choisissent la vie en dehors des cités, régie par l'instinct de meute et l'honneur du sang.",
+    mission: "Protéger les territoires sauvages, préserver les rites ancestraux et assurer la survie de la lignée.",
     rights: [
       "Régner sur les zones sauvages hors juridiction urbaine",
-      "Pratiquer des rituels de magie primordiale",
       "Mener des chasses et expéditions territoriales",
-      "Défendre l'honneur du clan par la force"
+      "Défendre l'honneur du clan par la force si nécessaire",
+      "Pratiquer des rituels de magie primordiale"
     ],
     prohibitions: [
-      "Incursion armée dans les capitales sans motif de guerre",
-      "Massacre gratuit de créatures protégées",
-      "Non-respect des traditions hiérarchiques internes"
+      "Incursion armée dans les capitales sans déclaration de guerre",
+      "Massacre inutile de créatures protégées par le Conclave",
+      "Non-respect de la hiérarchie interne (Alpha/Chaman)"
     ],
     roles: [
-      { title: "CHEF DE CLAN / ALPHA", rank: "SOUVERAIN SAUVAGE", function: "Leadership territorial et garant de la cohésion du groupe." },
-      { title: "CHAMAN ROYAL", rank: "SAGESSE", function: "Lien spirituel avec l'éther pur et préservation des cycles naturels." }
+      { title: "CHEF DE CLAN (ALPHA)", rank: "SOUVERAIN", function: "Commandement stratégique et garant de la cohésion du groupe sauvage." },
+      { title: "CHAMAN ROYAL", rank: "SAGESSE", function: "Lien spirituel avec l'éther pur et préservation des cycles naturels." },
+      { title: "GUERRIER DE MEUTE", rank: "FORCE", function: "Protection active du territoire et exécution des ordres de l'Alpha." }
     ]
   }
 ]
@@ -268,7 +263,7 @@ export default function GuidePage() {
 
               {/* Grades */}
               <div className="mb-10">
-                <h3 className="text-2xl font-headline text-white uppercase tracking-tight mb-8">Hiérarchie Institutionnelle</h3>
+                <h3 className="text-2xl font-headline text-white uppercase tracking-tight mb-8">Hiérarchie & Spécificités</h3>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {activeInst.roles.map((role, i) => (
                     <motion.div
