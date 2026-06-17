@@ -96,7 +96,7 @@ export default function OmbresPage() {
 
         <footer className="mt-auto h-24 flex items-center justify-center relative z-20">
           <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
-            CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
+            CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM
           </span>
         </footer>
       </div>

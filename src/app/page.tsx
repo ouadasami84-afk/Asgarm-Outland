@@ -183,7 +183,7 @@ export default function Home() {
                     <div className="text-center">
                       <span className="font-headline text-4xl text-gold tracking-[0.3em] uppercase block mb-2 text-glow-gold">© 2026 Outland Studios</span>
                       <span className="shine-text text-xs tracking-[0.6em] uppercase font-bold">
-                        CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
+                        CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM
                       </span>
                     </div>
                   </div>

@@ -279,7 +279,7 @@ export default function ReglementPage() {
         <footer className="mt-auto h-24 flex flex-col items-center justify-center relative z-20 border-t border-white/5 bg-black/40">
           <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-gold/10 to-transparent mb-4" />
           <span className="shine-text text-[10px] tracking-[0.8em] uppercase font-bold text-center">
-            CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
+            CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM
           </span>
         </footer>
       </div>

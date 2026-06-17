@@ -267,7 +267,7 @@ export default function AtlasPage() {
         <footer className="mt-48 h-32 flex flex-col items-center justify-center relative z-20">
           <div className="h-[1px] w-32 bg-gradient-to-r from-transparent via-gold/30 to-transparent mb-12" />
           <span className="shine-text text-[10px] tracking-[0.8em] uppercase font-bold text-center">
-            CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
+            CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM
           </span>
         </footer>
       </div>

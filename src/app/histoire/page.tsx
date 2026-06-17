@@ -197,7 +197,7 @@ export default function HistoirePage() {
               <Page number={5}><div className="h-full px-10 pt-6"><MagicalText title="L'Éveil des Humains" text="Chez les Humains, Alaric canalisa ce flux à travers une branche de chêne, créant la première baguette humaine. Guidés par cet exemple, les humains devinrent une armée redoutable de mages de guerre." /></div></Page>
               <Page number={6}><div className="h-full px-10 pt-6"><MagicalText title="La Forge des Nains" text="Les Nains devinrent les plus grands fabricants de baguettes, alliant bois robustes et métal runique. Ils fournirent l'Alliance naissante, devenant l'armurerie indispensable de la résistance contre l'obscurité." /></div></Page>
               <Page number={7}><div className="h-full px-10 pt-6"><MagicalText title="Le Serment de Sang" text="Les Vampires de Lord Valerius apprirent à manipuler le sang pour restaurer la vie plutôt que de la prendre. Ils devinrent les plus grands guérisseurs de guerre, sauvant d'innombrables vies sur le champ de bataille." /></div></Page>
-              <Page number={8}><div className="h-full px-10 pt-6"><MagicalText title="L'Alliance de la Lumière" text="L'Alliance de la Lumière unit Humains, Nains, Elfes et Vampires. Ensemble, ils affrontèrent les Ténèbres. Unis par l'espoir, ces peuples autrefois divisés se battaient comme un seul homme pour la survie d'Asgarm." /></div></Page>
+              <Page number={8}><div className="h-full px-10 pt-6"><MagicalText title="L'Alliance de la Lumière" text="L'Alliance de la Lumière unit Humains, Nains, Elfes et Vampires. Ensemble, they affrontèrent les Ténèbres. Unis par l'espoir, ces peuples autrefois divisés se battaient comme un seul homme pour la survie d'Asgarm." /></div></Page>
               <Page number={9}><div className="h-full px-10 pt-6"><MagicalText title="Le Crépuscule des Cavaliers" text="La bataille finale eut lieu sur les Plaines Calcinées. Alaric anéantit le Seigneur des Cavaliers. Les Cavaliers étaient vaincus, mais le monde était fracturé et les graines du Chaos étaient semées." /></div></Page>
               <Page number={10}>
                 <div className="h-full px-10 pt-6">
@@ -213,7 +213,7 @@ export default function HistoirePage() {
       </div>
 
       <footer className="h-16 border-t border-gold/10 flex items-center justify-center bg-black/60 relative z-20 w-full mt-auto">
-        <span className="shine-text text-[10px] tracking-[0.8em] uppercase font-bold">CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1</span>
+        <span className="shine-text text-[10px] tracking-[0.8em] uppercase font-bold">CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM</span>
       </footer>
 
       <style jsx global>{`

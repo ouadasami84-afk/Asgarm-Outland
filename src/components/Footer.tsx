@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-6">
         <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-gold/10 to-transparent" />
         <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold text-center">
-          CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
+          CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM
         </span>
       </div>
     </footer>

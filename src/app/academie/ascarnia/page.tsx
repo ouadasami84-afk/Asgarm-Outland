@@ -199,7 +199,7 @@ export default function AscarniaPage() {
         <footer className="mt-auto h-24 flex flex-col items-center justify-center relative z-20">
           <div className="h-[1px] w-24 bg-sky-500/20 mb-6" />
           <span className="shine-text text-[9px] tracking-[0.8em] uppercase font-bold">
-            CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
+            CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM
           </span>
         </footer>
       </div>
