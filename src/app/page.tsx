@@ -72,7 +72,7 @@ export default function Home() {
                     L'Excellence du <br /> <span className="text-gold italic font-light">Sur-Mesure</span>
                   </h2>
                   <p className="text-silver/40 max-w-2xl mx-auto italic text-lg leading-relaxed font-light">
-                    "Outland repose sur une architecture logicielle exclusive. Chaque système et chaque mécanique de jeu a été intégralement conçu par nos modélisateurs et nos développeurs. Nous offrons aux citoyens d'Asgarm une plateforme unique, où la souveraineté technique rencontre une immersion totale."
+                    "Outland repose sur une architecture exclusive. Chaque système et chaque mécanique de jeu a été intégralement conçu par nos modélisateurs et nos développeurs. Nous offrons aux citoyens d'Asgarm une plateforme unique, où la souveraineté technique rencontre une immersion totale."
                   </p>
                 </motion.div>
 
@@ -129,7 +129,9 @@ export default function Home() {
                 {/* Communauté Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
                   <motion.a
-                    href="#"
+                    href="https://discord.gg/ztvJVZU5FK"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -144,7 +146,9 @@ export default function Home() {
                   </motion.a>
 
                   <motion.a
-                    href="#"
+                    href="https://www.tiktok.com/@outland_fonda"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
