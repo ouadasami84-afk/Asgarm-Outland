@@ -54,41 +54,42 @@ export default function AcademiePage() {
         </Link>
 
         {/* Obscura — École de Magie Noire */}
-        <div 
+        <Link 
+          href="/academie/obscura"
           onMouseEnter={() => setHoveredSchool('obscura')}
           onMouseLeave={() => setHoveredSchool(null)}
           className={`relative transition-all duration-1000 ease-in-out flex-1 flex flex-col items-center justify-center p-12 overflow-hidden ${
             hoveredSchool === 'ascarnia' ? 'opacity-20 blur-md scale-95' : 'opacity-100'
           }`}
         >
-          <div className="absolute inset-0 bg-gradient-to-bl from-indigo-950/20 via-transparent to-purple-950/10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-bl from-red-950/20 via-transparent to-black pointer-events-none" />
           <motion.div 
             animate={{ 
               opacity: hoveredSchool === 'obscura' ? 0.2 : 0.03,
               scale: hoveredSchool === 'obscura' ? 1.1 : 1
             }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/20 blur-[150px] rounded-full pointer-events-none" 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-600/20 blur-[150px] rounded-full pointer-events-none" 
           />
 
           <div className="relative z-20 text-center max-w-xl">
             <div className="flex flex-col items-center">
               <div className="flex items-center gap-4 mb-6">
-                <div className="h-[1px] w-12 bg-indigo-500/30" />
-                <span className="text-indigo-400 text-[10px] tracking-[1.2em] uppercase font-bold">Arts Interdits</span>
-                <div className="h-[1px] w-12 bg-indigo-500/30" />
+                <div className="h-[1px] w-12 bg-red-600/30" />
+                <span className="text-red-600 text-[10px] tracking-[1.2em] uppercase font-bold text-glow-red">Arts Interdits</span>
+                <div className="h-[1px] w-12 bg-red-600/30" />
               </div>
               <h1 className="text-7xl font-headline text-white uppercase tracking-tighter mb-8 leading-none">
-                Académie <br /> <span className="text-indigo-400 italic font-light">Obscura</span>
+                Académie <br /> <span className="text-red-600 italic font-light">Obscura</span>
               </h1>
               <p className="text-silver/40 italic text-lg leading-relaxed mb-12 max-w-md">
                 "Forgée par les deux Seigneurs du Mal pour libérer la magie noire. 40 sorts réservés à l'élite de l'Ombre."
               </p>
-              <div className="px-12 py-4 border border-indigo-500/20 text-indigo-400 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-indigo-400 hover:text-white transition-all duration-500">
+              <div className="px-12 py-4 border border-red-600/20 text-red-600 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-red-600 hover:text-white transition-all duration-500">
                 Solliciter un Maître
               </div>
             </div>
           </div>
-        </div>
+        </Link>
 
       </div>
 
@@ -97,6 +98,12 @@ export default function AcademiePage() {
           CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
         </span>
       </footer>
+
+      <style jsx global>{`
+        .text-glow-red {
+          text-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
+        }
+      `}</style>
     </main>
   )
 }
