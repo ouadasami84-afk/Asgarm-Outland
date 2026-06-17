@@ -15,6 +15,7 @@ const regulationSections = [
     color: "from-sky-500/20 to-blue-600/5",
     accent: "text-sky-400",
     glow: "text-glow-sky",
+    shineClass: "shine-text-blue",
     desc: "Les lois fondamentales régissant la communauté et la sécurité des citoyens d'Asgarm.",
     rules: [
       { title: "Respect et Intégrité", text: "Le respect mutuel est le socle d'Outland. Toute forme de harcèlement, de toxicité ou de discrimination entraînera une exclusion immédiate et définitive." },
@@ -31,6 +32,7 @@ const regulationSections = [
     color: "from-gold/20 to-amber-600/5",
     accent: "text-gold",
     glow: "text-glow-gold",
+    shineClass: "shine-text",
     desc: "Les règles de conduite en jeu pour préserver l'immersion et la cohérence de l'univers d'Asgarm.",
     rules: [
       { title: "Souveraineté de l'Immersion", text: "Le MetaGaming et le PowerGaming sont formellement interdits pour préserver le réalisme de chaque interaction." },
@@ -47,6 +49,7 @@ const regulationSections = [
     color: "from-red-600/20 to-black/40",
     accent: "text-red-600",
     glow: "text-glow-red",
+    shineClass: "shine-text-red",
     desc: "Les devoirs et obligations des gardiens et administrateurs d'Outland.",
     rules: [
       { title: "Neutralité Absolue", text: "Les membres du staff doivent faire preuve d'une impartialité totale. Aucun favoritisme ne sera toléré dans l'exercice de la justice." },
@@ -78,7 +81,7 @@ export default function ReglementPage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 1 }}
-              className="flex-1 flex"
+              className="flex-1 flex h-full"
             >
               {regulationSections.map((section, i) => (
                 <button
@@ -87,7 +90,7 @@ export default function ReglementPage() {
                   onMouseLeave={() => setHoveredSection(null)}
                   onClick={() => setSelectedSection(section.id)}
                   className={`relative flex-1 flex flex-col items-center justify-center p-12 transition-all duration-1000 ease-in-out border-r border-white/5 last:border-0 ${
-                    hoveredSection && hoveredSection !== section.id ? 'opacity-30 scale-95' : 'opacity-100'
+                    hoveredSection && hoveredSection !== section.id ? 'opacity-40 scale-95' : 'opacity-100'
                   }`}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-b ${section.color} opacity-0 group-hover:opacity-10 pointer-events-none transition-opacity duration-1000`} />
@@ -100,20 +103,20 @@ export default function ReglementPage() {
                     className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/10 blur-[120px] rounded-full pointer-events-none`} 
                   />
 
-                  <div className="relative z-20 text-center max-w-md">
+                  <div className="relative z-20 text-center max-w-md w-full">
                     <section.icon className={`w-12 h-12 mb-8 mx-auto ${section.accent} opacity-40`} />
                     <div className="flex items-center justify-center gap-4 mb-6">
                       <div className="h-[1px] w-8 bg-white/10" />
                       <span className={`${section.accent} text-[9px] tracking-[0.8em] uppercase font-bold`}>{section.subtitle}</span>
                       <div className="h-[1px] w-8 bg-white/10" />
                     </div>
-                    <h2 className={`text-6xl font-headline text-white uppercase tracking-tighter mb-8 leading-none ${section.glow}`}>
+                    <h2 className={`text-6xl font-headline uppercase tracking-tighter mb-8 leading-none ${section.shineClass}`}>
                       {section.title}
                     </h2>
                     <p className="text-silver/40 italic text-sm leading-relaxed mb-12 opacity-0 lg:opacity-100 transition-opacity">
                       {section.desc}
                     </p>
-                    <div className={`px-10 py-4 border border-white/10 text-white text-[9px] font-bold uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all duration-500`}>
+                    <div className={`inline-block px-10 py-4 border border-white/10 text-white text-[9px] font-bold uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all duration-500`}>
                       Consulter les Décrets
                     </div>
                   </div>
@@ -144,7 +147,7 @@ export default function ReglementPage() {
                       {SectionIcon && <SectionIcon className={`w-5 h-5 ${currentSection?.accent}`} />}
                       <span className={`text-[10px] font-bold uppercase tracking-[0.8em] ${currentSection?.accent}`}>{currentSection?.subtitle}</span>
                     </div>
-                    <h2 className="text-7xl font-headline text-white uppercase tracking-tighter mb-8 leading-none">
+                    <h2 className={`text-7xl font-headline uppercase tracking-tighter mb-8 leading-none ${currentSection?.shineClass}`}>
                       {currentSection?.title}
                     </h2>
                     <p className="text-silver/50 text-xl italic font-light leading-relaxed border-l border-white/10 pl-8 mb-12">
@@ -187,6 +190,7 @@ export default function ReglementPage() {
         </AnimatePresence>
 
         <footer className="mt-auto h-24 flex flex-col items-center justify-center relative z-20 border-t border-white/5 bg-black/40">
+          <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-gold/10 to-transparent mb-4" />
           <span className="shine-text text-[10px] tracking-[0.8em] uppercase font-bold text-center">
             CONCLAVE SUPRÊME — ÉQUILIBRE D'ASGARM V3.1
           </span>
