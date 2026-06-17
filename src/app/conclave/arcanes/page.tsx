@@ -33,15 +33,8 @@ export default function ArcanesPage() {
     <main className="relative min-h-screen flex flex-col bg-transparent overflow-hidden">
       <Navigation />
       
-      {/* Ambiance Visuelle Arcanique */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 blur-[180px] rounded-full" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-white/5 blur-[150px] rounded-full" />
-      </div>
-
       <div className="relative z-10 flex-1 flex flex-col pt-32 px-12 pb-12 max-w-7xl mx-auto w-full">
         
-        {/* En-tête de Faction */}
         <header className="mb-20">
           <Link href="/conclave" className="inline-flex items-center gap-2 text-gold/40 hover:text-gold transition-colors mb-8 group">
             <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -62,7 +55,6 @@ export default function ArcanesPage() {
           </div>
         </header>
 
-        {/* Grille des Grades Professionnelle */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {roles.map((role, i) => (
             <motion.div

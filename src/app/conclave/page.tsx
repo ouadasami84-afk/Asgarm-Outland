@@ -47,7 +47,7 @@ export default function ConclavePage() {
                 "Seule la magie arcanique est autorisée. Nous sommes le rempart contre l'obscurité, les juges du flux sacré."
               </p>
               <div className="px-12 py-4 border border-gold/20 text-gold text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-gold hover:text-night transition-all duration-500">
-                Entrer dans l'Ordre
+                Accéder au Conclave des Arcanes
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function ConclavePage() {
                 "La magie reste de la magie. Nous embrassons l'abysse pour forger nos propres lois dans le sang et l'ombre."
               </p>
               <div className="px-12 py-4 border border-indigo-500/20 text-indigo-400 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-indigo-400 hover:text-night transition-all duration-500">
-                Invoquer l'Abysse
+                Accéder au Conclave des Ombres
               </div>
             </div>
           </div>
