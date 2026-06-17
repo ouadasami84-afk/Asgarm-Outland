@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState, useEffect } from 'react'
@@ -11,7 +10,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000)
+    const timer = setTimeout(() => setLoading(false), 1500)
     return () => clearTimeout(timer)
   }, [])
 
@@ -37,7 +36,7 @@ export default function Home() {
                 <motion.div 
                   initial={{ x: '-100%' }}
                   animate={{ x: '100%' }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
                   className="absolute inset-0 bg-gold/60"
                 />
               </div>
@@ -48,14 +47,14 @@ export default function Home() {
             key="content"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1 }}
           >
             <Navigation />
             <div className="relative z-10">
               <Hero />
               
               {/* Manifeste de Qualité */}
-              <section className="py-16 px-8 max-w-7xl mx-auto text-center border-b border-gold/5">
+              <section className="py-24 px-8 max-w-7xl mx-auto text-center">
                 <motion.div 
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -76,16 +75,10 @@ export default function Home() {
                   </p>
                 </motion.div>
 
-                {/* Section Roadmap / Chronologie */}
-                <div className="max-w-4xl mx-auto mb-16 text-left">
+                {/* Section Roadmap */}
+                <div className="max-w-4xl mx-auto mb-32 text-left">
                   <div className="flex flex-col gap-12 relative">
-                    <motion.div 
-                      initial={{ height: 0 }}
-                      whileInView={{ height: '100%' }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, ease: "easeInOut" }}
-                      className="absolute left-[7px] top-0 w-[1px] bg-gradient-to-b from-gold/40 via-gold/10 to-transparent hidden md:block" 
-                    />
+                    <div className="absolute left-[7px] top-0 w-[1px] h-full bg-gradient-to-b from-gold/40 via-gold/10 to-transparent hidden md:block" />
                     
                     {[
                       {
@@ -110,10 +103,10 @@ export default function Home() {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: index * 0.2, duration: 0.8 }}
+                        transition={{ delay: index * 0.1 }}
                         className="relative pl-0 md:pl-16"
                       >
-                        <div className={`absolute left-0 top-3 w-4 h-4 rounded-full border ${item.highlight ? 'border-gold bg-gold/20' : 'border-gold/40 bg-night'} hidden md:block`} />
+                        <div className={`absolute left-0 top-3 w-4 h-4 rounded-full border ${item.highlight ? 'border-gold bg-gold/20' : 'border-gold/40 bg-[#010208]'} hidden md:block`} />
                         <span className="text-gold/40 text-[9px] tracking-[0.4em] uppercase font-bold block mb-2">{item.phase}</span>
                         <h3 className={`text-3xl font-headline mb-3 uppercase tracking-tight ${item.highlight ? 'text-gold text-glow-gold' : 'text-white'}`}>
                           {item.title}
@@ -127,14 +120,11 @@ export default function Home() {
                 </div>
                 
                 {/* Communauté Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-32 max-w-4xl mx-auto">
                   <motion.a
                     href="https://discord.gg/ztvJVZU5FK"
                     target="_blank"
                     rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
                     className="glass-night p-10 border border-gold/10 group transition-all duration-500"
                   >
@@ -149,10 +139,6 @@ export default function Home() {
                     href="https://www.tiktok.com/@outland_fonda"
                     target="_blank"
                     rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
                     whileHover={{ scale: 1.02 }}
                     className="glass-night p-10 border border-gold/10 group transition-all duration-500"
                   >
@@ -164,21 +150,20 @@ export default function Home() {
                   </motion.a>
                 </div>
 
-                {/* Fin de Page - Licence & Droit d'Auteur */}
+                {/* Fin de Page */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1 }}
-                  className="max-w-5xl mx-auto pt-12 border-t border-gold/10"
+                  className="max-w-5xl mx-auto pt-16 border-t border-gold/10"
                 >
-                  <div className="mb-8">
+                  <div className="mb-12">
                     <span className="text-gold text-xl tracking-[0.4em] uppercase font-bold block mb-6 text-glow-gold">Certification de Licence Propriétaire</span>
                     <p className="text-white/80 text-xl italic leading-relaxed max-w-3xl mx-auto font-light">
                       L'ensemble des architectures logicielles et modélisations 3D d'Outland sont protégés. Toute utilisation non autorisée entraînera des mesures légales immédiates.
                     </p>
                   </div>
-                  <div className="flex flex-col items-center gap-6">
+                  <div className="flex flex-col items-center gap-8">
                     <div className="h-12 w-[1px] bg-gradient-to-b from-gold/40 to-transparent" />
                     <div className="text-center">
                       <span className="font-headline text-4xl text-gold tracking-[0.3em] uppercase block mb-2 text-glow-gold">© 2026 Outland Studios</span>
