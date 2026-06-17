@@ -9,22 +9,34 @@ import { ChevronLeft } from 'lucide-react'
 
 const roles = [
   {
-    title: "Haut Éminence",
-    rank: "Souveraineté Occulte",
+    title: "GRAND SORCIER DES OMBRES",
+    rank: "SOUVERAINETÉ OCCULTE",
     desc: "Maître absolu des réseaux clandestins et gardien des secrets d'État du Seigneur du Mal. Il manipule l'influence pour assurer la pérennité de l'ombre.",
     responsibilities: ["Renseignement Suprême", "Gestion des Ombres", "Influence Géopolitique"]
   },
   {
-    title: "Maître Silencieux",
-    rank: "Commandement Tactique",
-    desc: "Stratège des opérations d'infiltration. Il enseigne les arts interdits aux nouveaux sorciers et coordonne les agents de l'ombre.",
+    title: "MAÎTRE DES TÉNÈBRES",
+    rank: "COMMANDEMENT TACTIQUE",
+    desc: "Stratège des opérations d'infiltration. Il enseigne les arts interdits de la magie noire aux nouveaux sorciers et coordonne les agents de l'ombre.",
     responsibilities: ["Planification Clandestine", "Enseignement Noir", "Logistique Occulte"]
   },
   {
-    title: "Lame d'Asgarm",
-    rank: "Exécuteur d'Élite",
-    desc: "Le bras armé invisible. Spécialiste de la neutralisation des menaces arcaniques avant qu'elles ne parviennent à entraver nos lois.",
-    responsibilities: ["Infiltration", "Neutralisation de Cibles", "Sabotage Tactique"]
+    title: "CONSEILLER OBSCUR",
+    rank: "INFLUENCE & SECRETS",
+    desc: "Architecte de la manipulation politique. Il tisse les toiles de pouvoir dans l'ombre pour asseoir la domination du Royaume du Mal.",
+    responsibilities: ["Manipulation Politique", "Archives Secrètes", "Tissage d'Influence"]
+  },
+  {
+    title: "PROTECTEUR DES OMBRES",
+    rank: "EXÉCUTEUR D'ÉLITE",
+    desc: "Le bras armé invisible. Spécialiste de la neutralisation des menaces arcaniques avant qu'elles ne parviennent à entraver nos lois de l'ombre.",
+    responsibilities: ["Neutralisation de Cibles", "Sabotage Tactique", "Infiltration"]
+  },
+  {
+    title: "GARDIEN DES OMBRES",
+    rank: "VEILLEUR DU SANG",
+    desc: "Protecteur des artefacts de sang et des rituels occultes. Il veille à ce que nul ne puisse profaner les sources de notre puissance.",
+    responsibilities: ["Garde des Reliques", "Protection des Rituels", "Sécurité du Royaume"]
   }
 ]
 
@@ -44,9 +56,9 @@ export default function OmbresPage() {
           <div className="flex flex-col">
             <div className="flex items-center gap-4 mb-4">
               <div className="h-[1px] w-12 bg-indigo-500/30" />
-              <span className="text-indigo-400 text-[10px] tracking-[1.2em] uppercase font-bold">L'Ordre du Seigneur du Mal</span>
+              <span className="text-indigo-400 text-[10px] tracking-[1.2em] uppercase font-bold text-glow-indigo">L'Ordre du Seigneur du Mal</span>
             </div>
-            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+            <h1 className="text-8xl font-headline text-white uppercase tracking-tighter leading-none mb-8">
               Conclave des <br /> <span className="text-indigo-400 italic font-light">Ombres</span>
             </h1>
             <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-indigo-500/20 pl-8">
@@ -55,7 +67,7 @@ export default function OmbresPage() {
           </div>
         </header>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {roles.map((role, i) => (
             <motion.div
               key={role.title}
@@ -65,7 +77,7 @@ export default function OmbresPage() {
               className="group p-10 bg-indigo-950/20 border border-indigo-500/10 hover:border-indigo-400/30 hover:bg-indigo-950/30 transition-all duration-700 flex flex-col shadow-2xl"
             >
               <span className="text-[9px] text-indigo-400/60 font-bold uppercase tracking-[0.4em] mb-4">{role.rank}</span>
-              <h3 className="text-3xl font-headline text-white uppercase mb-6 group-hover:text-indigo-400 transition-all">{role.title}</h3>
+              <h3 className="text-2xl font-headline text-white uppercase mb-6 group-hover:text-indigo-400 transition-all leading-tight">{role.title}</h3>
               <div className="h-[1px] w-full bg-indigo-500/10 mb-8" />
               <p className="text-silver/40 text-sm leading-relaxed italic mb-10 flex-1">
                 {role.desc}

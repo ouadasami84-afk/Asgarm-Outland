@@ -9,22 +9,34 @@ import { ChevronLeft } from 'lucide-react'
 
 const roles = [
   {
-    title: "Grand Sorcier",
-    rank: "Haut Magistrat",
-    desc: "Architecte du Code Législatif Régalien. Il possède le pouvoir d'arbitrage final sur les contentieux territoriaux et constitutionnels.",
-    responsibilities: ["Rédaction des Lois", "Arbitrage Suprême", "Validation des Traités"]
+    title: "GRAND SORCIER DU CONCLAVE",
+    rank: "HAUTE MAGISTRATURE",
+    desc: "Architecte suprême du Code Législatif Régalien. Il possède le pouvoir d'arbitrage final sur les contentieux territoriaux et constitutionnels majeurs d'Asgarm.",
+    responsibilities: ["Arbitrage Suprême", "Validation des Traités", "Garde des Sceaux"]
   },
   {
-    title: "Maître Sorcier",
-    rank: "Commandement Civil",
-    desc: "Gérant de l'infrastructure administrative d'Asgarm. Il coordonne les services publics et assure la fluidité des ressources du royaume.",
+    title: "MAÎTRE SORCIER DU CONCLAVE",
+    rank: "ARCHITECTURE CIVILE",
+    desc: "Gérant de l'infrastructure administrative globale. Il coordonne les services publics et assure la fluidité des ressources éthérées du royaume.",
     responsibilities: ["Gestion Foncière", "Coordination des Services", "Logistique Royale"]
   },
   {
-    title: "Protecteur des Arcanes",
-    rank: "Force de l'Ordre",
-    desc: "Garant de la paix publique et de l'application stricte du droit. Il incarne la puissance répressive légitime du trône.",
-    responsibilities: ["Maintien de l'Ordre", "Protection Citoyenne", "Exécution Légale"]
+    title: "CONSEILLER DU CONCLAVE",
+    rank: "DIPLOMATIE ROYALE",
+    desc: "Expert en médiation et stratégie légale. Il assure la liaison entre les différents royaumes et veille à la pérennité des alliances sacrées.",
+    responsibilities: ["Médiation Inter-Royaumes", "Conseil Stratégique", "Audit des Lois"]
+  },
+  {
+    title: "PROTECTEUR DU CONCLAVE",
+    rank: "ORDRE PUBLIC",
+    desc: "Garant de l'application stricte du droit. Il incarne la puissance répressive légitime du trône et assure la neutralisation des mages déviants.",
+    responsibilities: ["Maintien de l'Ordre", "Exécution Légale", "Sécurité Citoyenne"]
+  },
+  {
+    title: "GARDIEN DU CONCLAVE",
+    rank: "VIGILANCE ARCANIQUE",
+    desc: "Sentinelle des frontières éthérées. Il surveille les flux de magie et prévient toute infiltration d'énergie occulte ou de magie du sang.",
+    responsibilities: ["Surveillance de l'Ether", "Patrouille de Frontière", "Interdiction Occulte"]
   }
 ]
 
@@ -50,12 +62,12 @@ export default function ArcanesPage() {
               Conclave des <br /> <span className="text-gold italic font-light">Arcanes</span>
             </h1>
             <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-gold/20 pl-8">
-              "Le Conclave des Arcanes incarne la justice de la magie. Fondé après la Grande Guerre par le rassemblement des Rois des royaumes, il a pour mission de protéger le monde des sorciers d'Asgarm. Nous créons les lois qui régissent l'éther, jugeons, emprisonnons, enquêtons et arrêtons les sorciers déviants pour protéger les citoyens de la magie noire et de la magie du sang. Notre serment est absolu : seule la magie arcanique est autorisée dans le monde d'Asgarm."
+              "Le Conclave des Arcanes incarne la justice de la magie. Fondé après la Grande Guerre par le rassemblement des Rois, il a pour mission de protéger le monde des sorciers d'Asgarm. Nous créons les lois qui régissent l'éther, jugeons, emprisonnons, enquêtons et arrêtons les sorciers déviants pour protéger les citoyens de la magie noire et de la magie du sang. Notre serment est absolu : seule la magie arcanique est autorisée dans le monde d'Asgarm."
             </p>
           </div>
         </header>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {roles.map((role, i) => (
             <motion.div
               key={role.title}
@@ -65,7 +77,7 @@ export default function ArcanesPage() {
               className="group p-10 bg-white/[0.03] border border-gold/10 hover:border-gold/30 hover:bg-white/[0.05] transition-all duration-700 flex flex-col shadow-2xl"
             >
               <span className="text-[9px] text-gold/60 font-bold uppercase tracking-[0.4em] mb-4">{role.rank}</span>
-              <h3 className="text-3xl font-headline text-white uppercase mb-6 group-hover:text-glow-gold transition-all">{role.title}</h3>
+              <h3 className="text-2xl font-headline text-white uppercase mb-6 group-hover:text-glow-gold transition-all leading-tight">{role.title}</h3>
               <div className="h-[1px] w-full bg-gold/10 mb-8" />
               <p className="text-silver/40 text-sm leading-relaxed italic mb-10 flex-1">
                 {role.desc}
