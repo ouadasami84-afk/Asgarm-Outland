@@ -5,7 +5,7 @@ import React from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ChevronLeft, Flame, Skull, Ghost, Zap } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
 
 export default function ObscuraPage() {
   return (
@@ -52,7 +52,6 @@ export default function ObscuraPage() {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
           <div className="p-10 bg-red-950/10 border border-red-500/10 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <Skull className="w-8 h-8 text-red-600 mb-6" />
             <h3 className="text-2xl font-headline text-white uppercase mb-4">Liberté Absolue</h3>
             <p className="text-silver/40 text-sm leading-relaxed italic font-light">
               À Obscura, nous refusons les chaînes du Conclave. La magie noire et la magie du sang sont enseignées sans filtre pour ceux qui osent les maîtriser.
@@ -60,7 +59,6 @@ export default function ObscuraPage() {
           </div>
           <div className="p-10 bg-red-950/10 border border-red-500/10 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <Ghost className="w-8 h-8 text-red-600 mb-6" />
             <h3 className="text-2xl font-headline text-white uppercase mb-4">L'Appel du Mal</h3>
             <p className="text-silver/40 text-sm leading-relaxed italic font-light">
               Nul ne s'inscrit à Obscura. Vous devez être remarqué par le Mal lui-même pour recevoir l'autorisation d'avoir un maître sorcier et apprendre nos secrets.
@@ -70,9 +68,6 @@ export default function ObscuraPage() {
 
         {/* Section Lore Fondation */}
         <section className="mb-24 p-12 bg-black/60 border border-red-900/20 relative">
-          <div className="absolute top-0 right-0 p-8 opacity-5">
-            <Flame className="w-32 h-32 text-red-600" />
-          </div>
           <h2 className="text-3xl font-headline text-white uppercase mb-8 border-b border-red-600/20 pb-4">L'Héritage des Seigneurs du Mal</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <p className="text-silver/50 text-lg italic leading-relaxed font-light">

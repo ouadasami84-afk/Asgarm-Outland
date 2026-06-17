@@ -1,10 +1,11 @@
+
 "use client"
 
 import React from 'react'
 import { Navigation } from '@/components/Navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ChevronLeft, GraduationCap, Users, BookOpen, ShieldCheck } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
 
 const houses = [
   {
@@ -92,21 +93,18 @@ export default function AscarniaPage() {
         {/* Section Admissions */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
-            <GraduationCap className="w-8 h-8 text-sky-400 mb-6" />
             <h3 className="text-lg text-white font-headline uppercase mb-4">Excellence Académique</h3>
             <p className="text-silver/40 text-xs leading-relaxed italic font-light">
               Un cursus rigoureux de 100 sorts fondamentaux arcaniques, validé par le Conclave suprême.
             </p>
           </div>
           <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
-            <ShieldCheck className="w-8 h-8 text-sky-400 mb-6" />
             <h3 className="text-lg text-white font-headline uppercase mb-4">Héritage des Rois</h3>
             <p className="text-silver/40 text-xs leading-relaxed italic font-light">
               Fondée pour protéger le monde des sorciers contre toute déviance après la Grande Guerre.
             </p>
           </div>
           <div className="p-8 bg-sky-950/10 border border-sky-500/10 flex flex-col items-center text-center">
-            <BookOpen className="w-8 h-8 text-sky-400 mb-6" />
             <h3 className="text-lg text-white font-headline uppercase mb-4">Équilibre d'Asgarm</h3>
             <p className="text-silver/40 text-xs leading-relaxed italic font-light">
               Un savoir millénaire transmis par les maîtres pour préserver la paix et l'ordre arcanique.
