@@ -183,20 +183,14 @@ export default function GuidePage() {
                 </div>
               </div>
 
-              {/* Roles Grid - Panorama Zero Scroll */}
-              <div className="flex-1 overflow-hidden">
-                <div className={`grid h-full w-full gap-4 ${
-                  activeInst.roles.length > 8 
-                  ? 'grid-cols-4 grid-rows-3' 
-                  : activeInst.roles.length > 3 
-                  ? 'grid-cols-3 grid-rows-2' 
-                  : 'grid-cols-3 grid-rows-1'
-                }`}>
+              {/* Roles Grid - Scrollable area inside frame */}
+              <div className="flex-1 overflow-y-auto pr-6 custom-scrollbar pb-10">
+                <div className="grid grid-cols-3 gap-4">
                   {activeInst.roles.map((role, i) => (
                     <motion.div
                       key={i}
-                      initial={{ opacity: 0, scale: 0.98 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.03 }}
                       className="group/role flex flex-col p-5 bg-gold/[0.02] border border-gold/5 hover:border-gold/20 transition-all duration-500"
                     >
