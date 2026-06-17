@@ -19,7 +19,7 @@ export const Navigation: React.FC = () => {
 
   const navItems = [
     { name: 'Guide Arrivant', href: '/guide' },
-    { name: 'Archive', href: '/archive' },
+    { name: 'Histoire', href: '/histoire' },
     { name: 'Reliques', href: '/reliques' },
     { name: 'Maîtrise', href: '/maitrise' },
   ]
