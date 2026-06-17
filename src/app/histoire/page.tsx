@@ -91,7 +91,7 @@ export default function HistoirePage() {
             <span className="text-gold text-[9px] tracking-[1.2em] uppercase font-bold text-glow-gold">Chroniques d'Asgarm</span>
             <div className="h-[1px] w-12 bg-gold/20" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-headline text-white uppercase tracking-tighter mb-4 leading-tight">
+          <h1 className="text-3xl md:text-4xl font-headline text-gold uppercase tracking-tighter mb-4 leading-tight text-glow-gold">
             Les Annales de la Souveraineté
           </h1>
           <p className="text-gold/80 text-xs italic font-medium tracking-[0.15em] max-w-2xl mx-auto leading-relaxed text-glow-gold">
@@ -157,7 +157,7 @@ export default function HistoirePage() {
                 <h2 className="text-sm font-headline text-[#4a3721]/60 uppercase tracking-[0.4em] mb-8 border-b border-[#4a3721]/5 pb-4">Chapitre I</h2>
                 <h3 className="text-lg font-headline text-[#4a3721] mb-6">L'Âge d'Harmonie</h3>
                 <p className="text-[#3d2b19] first-letter:text-5xl first-letter:font-headline first-letter:mr-4 first-letter:float-left first-letter:text-[#4a3721] first-letter:leading-none font-serif leading-relaxed text-justify text-[13px]">
-                  Autrefois, dans un temps que seuls les plus vieux récits murmurent, le monde d'Asgarm respirait en harmonie. C'était l'Âge d'Harmonie, un équilibre parfait maintenu par une règle immuable : seuls les Elfes à la peau verdoyante et leurs cousins reclus, les Elfes de Lune à la peau bleutée, pouvaient manier la magie. Les Elfes, avec leur grâce infinie, maîtrisaient la magie arcanique, une force pure et ordonnée, canalisée à travers des baguettes sculptées dans le bois ancestral. Les Elfes de Lune, eux, veillaient en secret sur la magie obscure, une énergie chaotique qu'ils contenaient avec une volonté de fer. Pendant ce temps, dans les montagnes, les Nains à la peau grisée forgeaient des merveilles de métal, et dans les plaines, les Humains à la peau beige ou blanche, jeunes et ambitieux, bâtissaient des cités prospères, ignorant tout des arcanes. La vie était simple, et la paix semblait éternelle.
+                  Autrefois, dans un temps que seuls les plus vieux récits murmurent, le monde d'Asgarm respirait en harmonie. C'était l'Âge d'Harmonie, un équilibre parfait maintenu par une règle immuable : seuls les Elfes à la peau verdoyante et leurs cousins reclus, les Elfes de Lune à la peau bleutée, pouvaient manier la magie. Les Elfes, avec leur grâce infinie, maîtrisaient la magie arcanique, une force pure et ordonnée, canalisée à travers des baguettes sculptées dans le bois ancestral. Les Elfes de Lune, eux, veillaient en secret sur la magie obscure, une énergie chaotique qu'ils contenaient avec une volonté de fer. Pendant ce temps, dans les montagnes, les Nains à la peau grisée forgeaient des merveilles de métal, et dans les plaines, les Humains à la peau beige ou blanche, bâtissaient des cités prospères, ignorant tout des arcanes. La vie était simple, et la paix semblait éternelle.
                 </p>
               </Page>
 
@@ -291,11 +291,11 @@ export default function HistoirePage() {
           transition={{ delay: 2 }}
           className="mt-12 flex items-center gap-6"
         >
-          <div className="h-[1px] w-12 bg-gold/40" />
+          <div className="h-[1px] w-12 bg-gold/40 shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
           <span className="text-gold text-[10px] tracking-[0.6em] uppercase font-bold text-glow-gold">
             Faites glisser les pages pour explorer les annales
           </span>
-          <div className="h-[1px] w-12 bg-gold/40" />
+          <div className="h-[1px] w-12 bg-gold/40 shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
         </motion.div>
       </div>
 
