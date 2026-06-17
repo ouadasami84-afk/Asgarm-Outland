@@ -1,3 +1,4 @@
+
 "use client"
 
 import React from 'react'
@@ -49,7 +50,7 @@ export default function OmbresPage() {
               Conclave des <br /> <span className="text-indigo-400 italic font-light">Ombres</span>
             </h1>
             <p className="text-silver/50 text-xl italic font-light max-w-3xl leading-relaxed border-l border-indigo-500/20 pl-8">
-              "Le Conclave des Ombres appartient au royaume du mal et au Seigneur du Mal. Nous appliquons nos propres lois, souvent en confrontation directe avec les Arcanes. Nous jugeons, arrêtons et créons de nouvelles lois, tout en utilisant la magie noire et la magie du sang. Notre devise : la magie reste de la magie, et chacun a le droit d'utiliser la magie noire et les arts interdits."
+              "Le Conclave des Ombres appartient au Royaume du Mal. Fondé après la Grande Guerre par deux Seigneurs du Mal sous le nom de sorciers de l'ombre, ils ont créé ce royaume ainsi que l'école de magie noire Obscura. Nous appliquons nos propres lois, souvent en confrontation directe avec les Arcanes. Nous jugeons, arrêtons et créons de nouvelles lois, tout en enseignant les sorts du mal. Notre devise : la magie reste de la magie, et chacun a le droit d'utiliser la magie noire et la magie du sang."
             </p>
           </div>
         </header>
