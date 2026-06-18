@@ -24,20 +24,27 @@ const regulationSections = [
     desc: "Lois fondamentales régissant le comportement communautaire, l'intégrité technique et la diffusion du contenu d'Asgarm.",
     chapters: [
       {
-        title: "I. Intégrité Technique & Exploitation",
+        title: "Chapitre I : Flux d'Informations & Transparence",
         rules: [
-          { name: "05 • USE BUG (Exploitation des Bugs)", desc: "Tout bug, glitch ou dysfonctionnement doit être signalé à l'équipe administrative. L'exploitation volontaire d'une faille afin d'obtenir un avantage est passible de lourdes sanctions." },
-          { name: "18 • COMBAT LOG", desc: "Se déconnecter volontairement afin d'échapper aux conséquences d'une scène RP est strictement interdit. En cas de problème technique réel, il est recommandé de prévenir rapidement un membre du staff." },
-          { name: "19 • BUNNY HOP", desc: "L'utilisation répétée des sauts pour augmenter artificiellement sa vitesse ou obtenir un avantage lors d'une poursuite est interdite. Les déplacements doivent rester naturels et cohérents." }
+          { name: "04 • MÉTAGAMING", desc: "L'utilisation d'informations obtenues hors du jeu pour influencer vos actions en RP est strictement interdite. Cela inclut Discord, Streams, Réseaux sociaux et conversations HRP. Toute information utilisée en jeu doit avoir été découverte directement par votre personnage par des moyens RP." },
+          { name: "14 • STREAM HACK", desc: "Utiliser un stream en direct pour localiser un joueur, obtenir des informations stratégiques ou anticiper ses actions est une violation majeure. Cette pratique est assimilée à du méta-gaming aggravé et passible d'un bannissement immédiat." },
+          { name: "15 • BACKSEAT GAMING", desc: "Les spectateurs ou amis extérieurs à la scène ne doivent en aucun cas influencer les décisions d'un joueur en temps réel. Chaque personnage doit agir selon ses propres connaissances, sa propre réflexion et l'historique de son vécu en jeu." },
+          { name: "06 • CONFUSION RP / HRP", desc: "Les informations RP et HRP doivent rester totalement étanches. Ce que vous apprenez en dehors du personnage ne doit jamais influencer vos décisions en jeu, tout comme les événements RP ne doivent pas affecter vos relations réelles hors du serveur." }
         ]
       },
       {
-        title: "II. Informations & Flux de Données",
+        title: "Chapitre II : Exploitation du Système & Rigueur Technique",
         rules: [
-          { name: "04 • MÉTAGAMING", desc: "L'utilisation d'informations obtenues hors du jeu pour influencer vos actions en RP est interdite (Discord, Streams, Réseaux sociaux, Conversations HRP). Toute information utilisée en jeu doit avoir été découverte directement par votre personnage." },
-          { name: "06 • CONFUSION RP / HRP", desc: "Les informations RP et HRP doivent rester totalement séparées. Ce que vous apprenez en dehors du personnage ne doit jamais influencer vos décisions en jeu." },
-          { name: "14 • STREAM HACK", desc: "Utiliser un stream pour localiser un joueur, obtenir des informations stratégiques ou anticiper ses actions est strictement interdit. Cette pratique est assimilée à du méta-gaming aggravé." },
-          { name: "15 • BACKSEAT GAMING", desc: "Les spectateurs ou amis extérieurs à la scène ne doivent pas influencer les décisions d'un joueur. Chaque personnage doit agir selon ses propres connaissances et sa propre réflexion." }
+          { name: "05 • USE BUG (Exploitation de Faille)", desc: "Tout bug, glitch ou dysfonctionnement doit être signalé immédiatement via un ticket. L'exploitation volontaire d'une faille (collision, duplication, script) afin d'obtenir un avantage est considérée comme une trahison envers l'intégrité du royaume." },
+          { name: "18 • COMBAT LOG", desc: "Se déconnecter volontairement afin d'échapper aux conséquences d'une scène RP (arrestation, mort, défaite) est strictement interdit. En cas de crash réel, le joueur doit se manifester sur Discord dans les 5 minutes suivant l'incident." },
+          { name: "19 • BUNNY HOP", desc: "L'utilisation répétée des sauts pour augmenter artificiellement sa vitesse ou obtenir un avantage lors d'une poursuite est interdite. Les déplacements doivent rester naturels, cohérents et conformes aux capacités physiques de la race choisie." }
+        ]
+      },
+      {
+        title: "Chapitre III : Éthique Communautaire & Respect",
+        rules: [
+          { name: "13 • TROLL & COMPORTEMENT TOXIQUE", desc: "Tout comportement destiné à perturber volontairement l'expérience des autres est proscrit. Cela comprend les provocations inutiles, les nuisances sonores, et les comportements absurdes sans justification RP sérieuse." },
+          { name: "Respect du Support", desc: "Les échanges avec le Staff doivent être courtois. Toute insulte, menace ou manque de respect envers un modérateur en intervention entraînera une sanction immédiate et définitive." }
         ]
       }
     ]
@@ -50,33 +57,32 @@ const regulationSections = [
     accent: "text-gold",
     glow: "text-glow-gold",
     shineClass: "shine-text",
-    desc: "Recueil des lois d'immersion régissant les interactions, les arcanes et la destinée des citoyens dans le royaume.",
+    desc: "Recueil des lois d'immersion régissant les interactions, les arcanes et la destinée des citoyens dans le royaume d'Asgarm.",
     chapters: [
       {
-        title: "I. Fondamentaux de l'Existence",
+        title: "Chapitre I : Fondations de l'Existence Arcanique",
         rules: [
-          { name: "01 • COHÉRENCE ROLEPLAY", desc: "Chaque joueur doit agir de façon logique et crédible selon la personnalité, l'histoire et les capacités de son personnage. Toute action irréaliste ou incohérente est considérée comme du Fail RP." },
-          { name: "02 • POWERGAMING", desc: "Réaliser des actions impossibles ou imposer des réactions à un autre joueur sans lui laisser la possibilité d'interpréter son rôle est interdit. Exemple : forcer quelqu'un à tomber inconscient sans interaction." },
-          { name: "03 • FEAR RP (Valeur de la vie)", desc: "Votre personnage tient à sa vie. Face à une menace sérieuse, vous devez réagir avec prudence. Ignorer totalement le danger constitue une violation des règles RP." },
-          { name: "11 • WIN RP", desc: "Le but du RP n'est pas de gagner systématiquement. Chercher l'avantage au détriment de la logique ou de l'histoire est interdit. Privilégiez la qualité de la scène." },
-          { name: "12 • LOSE RP", desc: "Savoir perdre fait partie intégrante du RP. Accepter les conséquences de ses actes ou subir un échec contribue à construire des scènes plus riches." }
+          { name: "01 • COHÉRENCE ROLEPLAY", desc: "Chaque joueur doit agir de façon logique selon la personnalité, l'histoire et les capacités de son personnage. Toute action irréaliste ou visant à détourner le déroulement naturel d'une scène est considérée comme du Fail RP." },
+          { name: "02 • POWERGAMING", desc: "Réaliser des actions physiquement ou magiquement impossibles est interdit. Vous ne pouvez pas imposer une réaction à un autre joueur sans lui laisser la possibilité d'interpréter son rôle. L'usage d'émotes pour traverser des murs ou forcer des interactions est banni." },
+          { name: "03 • FEAR RP (Valeur de la Vie)", desc: "Votre personnage tient à sa vie. Face à une menace sérieuse (baguette sur la tempe, acculé, infériorité numérique flagrante), vous devez réagir avec la prudence et la crainte qu'impose la situation. Ignorer le danger constitue une rupture d'immersion majeure." }
         ]
       },
       {
-        title: "II. Conflits & Agressions",
+        title: "Chapitre II : Lois de la Violence & Conflits Territoriaux",
         rules: [
-          { name: "07 • FREE KILL & FREE PUNCH", desc: "Toute agression physique doit être justifiée par une raison RP valable. Attaquer ou tuer un joueur sans contexte cohérent est interdit." },
-          { name: "08 • VEHICLE DEATHMATCH (VDM)", desc: "Un véhicule ne doit jamais être utilisé comme une arme (Balai compris). Percuter volontairement un joueur pour le blesser est sanctionné." },
-          { name: "16 • REVENGE KILL", desc: "Après une défaite ou un décès RP, revenir immédiatement se venger sans évolution scénaristique cohérente est interdit." },
-          { name: "17 • SPAWN KILL", desc: "Attendre ou attaquer un joueur dès son apparition en jeu dans le seul but de l'éliminer est interdit." }
+          { name: "07 • FREE KILL & FREE PUNCH", desc: "Toute agression physique ou magique doit être justifiée par une raison RP solide. Attaquer, frapper ou tuer un joueur sans contexte cohérent ou sans interaction préalable est une violation directe de la paix d'Asgarm." },
+          { name: "08 • VEHICLE DEATHMATCH (VDM)", desc: "Un véhicule, incluant les balais magiques et montures, ne doit jamais être utilisé comme une arme. Percuter volontairement un citoyen pour le blesser ou le tuer sans interaction est formellement interdit." },
+          { name: "16 • REVENGE KILL", desc: "Après une défaite ou un décès RP, revenir immédiatement se venger sur le lieu de la scène sans évolution scénaristique cohérente est interdit. Le traumatisme d'une défaite doit être joué sur la durée." },
+          { name: "17 • SPAWN KILL", desc: "Attendre ou attaquer un joueur dès son apparition (connexion ou sortie d'infirmerie) dans le seul but de l'éliminer est proscrit. Chaque citoyen doit avoir une chance équitable de reprendre son récit." }
         ]
       },
       {
-        title: "III. Vie Sociale & Immersion",
+        title: "Chapitre III : Philosophie de Jeu & Protocoles",
         rules: [
-          { name: "09 • MASS RP", desc: "Vous devez considérer que le monde est vivant. Les actions en public doivent tenir compte de la présence potentielle de civils, de témoins ou des autorités." },
-          { name: "13 • TROLL", desc: "Tout comportement destiné à perturber l'expérience des autres (provocations inutiles, nuisances répétées) est strictement interdit." },
-          { name: "20 • UTILISATION DES COMMANDES RP", desc: "Les commandes /me, /do, etc., doivent enrichir la scène en décrivant des gestes ou éléments visibles. Toute utilisation abusive est sanctionnée." }
+          { name: "09 • MASS RP (Monde Vivant)", desc: "Considérez que le monde est peuplé de milliers de citoyens non-joueurs. Les actions en public doivent tenir compte de la présence de témoins invisibles, des autorités et de l'influence des lieux d'affluence." },
+          { name: "11 • WIN RP", desc: "Le but n'est pas de gagner systématiquement. Chercher l'avantage au détriment de la logique narrative est du Win RP. La beauté d'Asgarm réside dans les péripéties, pas dans la victoire constante." },
+          { name: "12 • LOSE RP", desc: "Savoir perdre est une vertu. Accepter les conséquences de ses erreurs, reconnaître une supériorité magique ou subir un échec narratif construit les scènes les plus mémorables du serveur." },
+          { name: "20 • COMMANDES D'IMMERSION (/me, /do)", desc: "Les commandes /me et /do doivent enrichir la scène en décrivant des actions ou des états invisibles à l'écran. Elles doivent être factuelles et ne jamais être utilisées pour forcer le RP d'un tiers." }
         ]
       }
     ]
@@ -92,10 +98,17 @@ const regulationSections = [
     desc: "Protocoles, devoirs de réserve et obligations déontologiques de la haute direction et de la modération d'Asgarm.",
     chapters: [
       {
-        title: "I. Arbitrage & Gestion des Conflits",
+        title: "Chapitre I : Arbitrage & Résolution de Conflits",
         rules: [
-          { name: "10 • GESTION DES CONFLITS HRP", desc: "Lorsqu'un problème survient, la scène doit se poursuivre normalement. Les litiges se règlent après l'action via les outils prévus (report, ticket, support ou médiation staff)." },
-          { name: "Déontologie Staff", desc: "Neutralité absolue et devoir de réserve sur les dossiers joueurs. Chaque sanction doit être appuyée par des preuves tangibles." }
+          { name: "10 • GESTION DES CONFLITS HRP", desc: "Lorsqu'un incident survient, la scène doit se poursuivre jusqu'à son terme naturel. Les litiges se règlent uniquement après l'action via un ticket de support ou une médiation staff en vocal." },
+          { name: "Neutralité Souveraine", desc: "Tout membre du Staff doit faire preuve d'une impartialité absolue. Aucun favoritisme lié à l'appartenance à un clan ou une faction ne sera toléré sous peine de destitution immédiate." }
+        ]
+      },
+      {
+        title: "Chapitre II : Devoir de Réserve & Exemplarité",
+        rules: [
+          { name: "Secret Professionnel", desc: "Les informations concernant les développements futurs, les dossiers de joueurs ou les logs de modération sont confidentiels. Toute fuite d'information sera lourdement sanctionnée." },
+          { name: "Exemplarité RP", desc: "Un modérateur se doit d'avoir un comportement Roleplay irréprochable. Il incarne l'autorité et le respect des règles en toutes circonstances, servant de modèle aux nouveaux citoyens." }
         ]
       }
     ]
